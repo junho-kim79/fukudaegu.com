@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>福大邱 - fukudaegu.com</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Noto Sans JP', sans-serif; background: #f5f5f5; }
+.screen { display: none; width: 100%; min-height: 100vh; flex-direction: column; max-width: 430px; margin: 0 auto; background: white; }
+.screen.active { display: flex; }
+
+#home {
+  background: #0f1923; min-height: 100vh;
+  align-items: center; justify-content: center;
+  gap: 28px; padding: 36px 24px;
+}
+.home-title { text-align: center; color: white; }
+.home-title h1 { font-size: 26px; font-weight: 700; letter-spacing: 3px; margin-bottom: 4px; }
+.home-title p { font-size: 12px; color: rgba(255,255,255,0.4); letter-spacing: 1px; }
+
+.menu-cards { display: flex; flex-direction: column; gap: 14px; width: 100%; max-width: 320px; }
+.menu-card {
+  border-radius: 14px; padding: 18px 20px; cursor: pointer;
+  transition: all 0.18s; display: flex; align-items: center; gap: 16px;
+  color: white; border: 1px solid rgba(255,255,255,0.1);
+}
+.menu-card:active { transform: scale(0.97); }
+.menu-card.jp { background: rgba(100,160,255,0.12); }
+.menu-card.jp:hover { background: rgba(100,160,255,0.22); }
+.menu-card.kr { background: rgba(255,100,100,0.12); }
+.menu-card.kr:hover { background: rgba(255,100,100,0.22); }
+.menu-card.tour { background: rgba(255,180,80,0.12); }
+.menu-card.tour:hover { background: rgba(255,180,80,0.22); }
+.card-icon { font-size: 28px; width: 48px; text-align: center; flex-shrink: 0; }
+.card-text h2 { font-size: 15px; font-weight: 600; margin-bottom: 3px; }
+.card-text p { font-size: 11px; color: rgba(255,255,255,0.45); }
+
+.app-header {
+  padding: 13px 16px; display: flex; align-items: center; gap: 10px;
+  color: white; flex-shrink: 0;
+}
+.app-header.jp { background: #0d2a4a; }
+.app-header.kr { background: #4a0d0d; }
+.app-header.tour { background: #7a3800; }
+.back-btn { background: none; border: none; color: white; cursor: pointer; font-size: 20px; padding: 2px 6px; line-height: 1; }
+.app-header h2 { font-size: 14px; font-weight: 600; }
+
+.level-screen { flex: 1; padding: 20px; display: flex; flex-direction: column; gap: 14px; background: #fff; }
+.level-label { font-size: 13px; color: #888; font-weight: 500; }
+.level-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
+.level-btn {
+  border-radius: 12px; padding: 16px 12px; cursor: pointer;
+  border: 1px solid #ddd; background: #f9f9f9;
+  display: flex; flex-direction: column; align-items: center; gap: 6px; transition: all 0.15s;
+}
+.level-btn:active { transform: scale(0.96); }
+.level-btn .lv { font-size: 18px; font-weight: 700; }
+.level-btn .desc { font-size: 11px; color: #888; text-align: center; }
+.level-btn.jp-lv:hover { background: #e6f1fb; border-color: #378add; }
+.level-btn.jp-lv .lv { color: #0d2a4a; }
+.level-btn.kr-lv:hover { background: #fcebeb; border-color: #e24b4a; }
+.level-btn.kr-lv .lv { color: #4a0d0d; }
+
+.progress-bar { height: 3px; background: #eee; flex-shrink: 0; }
+.progress-fill { height: 100%; transition: width 0.4s; }
+.jp-fill { background: #378add; }
+.kr-fill2 { background: #e24b4a; }
+
+.quiz-body { padding: 16px; flex: 1; display: flex; flex-direction: column; gap: 12px; background: #fff; }
+.quiz-top { display: flex; justify-content: space-between; align-items: center; }
+.quiz-level-badge { font-size: 11px; font-weight: 600; padding: 3px 10px; border-radius: 20px; }
+.jp-badge { background: #e6f1fb; color: #0d2a4a; }
+.kr-badge { background: #fcebeb; color: #4a0d0d; }
+.quiz-count { font-size: 12px; color: #888; }
+
+.kanji-display { text-align: center; }
+.kanji-char { font-size: 62px; font-weight: 300; color: #111; line-height: 1.1; display: block; }
+.kanji-sub { font-size: 12px; color: #888; margin-top: 4px; }
+
+.canvas-wrap {
+  position: relative; margin: 0 auto;
+  width: 240px; height: 240px;
+  border: 1px solid #ccc; border-radius: 12px; overflow: hidden;
+  background: #f9f9f9; touch-action: none; flex-shrink: 0;
+}
+.canvas-grid { position: absolute; inset: 0; pointer-events: none; }
+canvas.draw { position: absolute; inset: 0; cursor: crosshair; touch-action: none; }
+
+.btns { display: flex; gap: 8px; justify-content: center; }
+.btns button {
+  padding: 8px 14px; border-radius: 8px; font-size: 12px; cursor: pointer;
+  border: 1px solid #ccc; background: #fff; color: #333; transition: all 0.15s;
+}
+.btns button.primary-jp { background: #0d2a4a; color: white; border-color: #0d2a4a; }
+.btns button.primary-kr { background: #4a0d0d; color: white; border-color: #4a0d0d; }
+.btns button:active { transform: scale(0.96); }
+
+.answer-box {
+  background: #f5f5f5; border-radius: 10px;
+  padding: 12px 14px; font-size: 13px; color: #888;
+  min-height: 46px; display: flex; align-items: center;
+}
+.answer-box.ok { background: #eaf3de; color: #27500a; border: 1px solid #c0dd97; }
+
+.travel-body { flex: 1; display: flex; flex-direction: column; background: #fff; overflow-y: auto; }
+.flight-banner {
+  background: #7a3800; padding: 16px 18px;
+  color: white; display: flex; align-items: center; justify-content: space-between;
+}
+.flight-banner .route { font-size: 17px; font-weight: 700; letter-spacing: 0.5px; }
+.flight-banner .time { font-size: 11px; color: rgba(255,255,255,0.7); margin-top: 2px; }
+.flight-badge { background: rgba(255,255,255,0.2); border-radius: 8px; padding: 6px 12px; font-size: 12px; font-weight: 600; }
+
+.travel-tabs { display: flex; border-bottom: 1px solid #eee; background: #fff; flex-shrink: 0; }
+.tab-btn {
+  flex: 1; padding: 11px 4px; font-size: 12px; font-weight: 500;
+  cursor: pointer; border: none; background: none;
+  color: #888; border-bottom: 2px solid transparent; transition: all 0.15s;
+}
+.tab-btn.active { color: #7a3800; border-bottom-color: #7a3800; }
+
+.tab-content { display: none; padding: 16px; flex-direction: column; gap: 12px; }
+.tab-content.active { display: flex; }
+
+.spot-card { border: 1px solid #eee; border-radius: 12px; padding: 14px; display: flex; gap: 12px; align-items: flex-start; }
+.spot-icon { font-size: 28px; flex-shrink: 0; width: 40px; text-align: center; }
+.spot-info h3 { font-size: 14px; font-weight: 600; color: #111; margin-bottom: 2px; }
+.spot-info .jp-label { font-size: 12px; color: #7a3800; font-weight: 500; margin-bottom: 4px; }
+.spot-info p { font-size: 12px; color: #888; line-height: 1.6; }
+
+.tip-box { background: #faeeda; border-radius: 10px; padding: 12px 14px; font-size: 12px; color: #633806; line-height: 1.7; }
+.tip-box strong { font-weight: 600; display: block; margin-bottom: 4px; }
+.info-row { display: flex; justify-content: space-between; align-items: center; padding: 10px 0; border-bottom: 1px solid #eee; font-size: 13px; }
+.info-row:last-child { border-bottom: none; }
+.info-row .label { color: #888; }
+.info-row .val { font-weight: 500; color: #111; }
+</style>
+</head>
+<body>
+
+<div id="home" class="screen active">
+  <div class="home-title">
+    <h1>福 大邱</h1>
+    <p>fukudaegu.com</p>
+  </div>
+  <div class="menu-cards">
+    <div class="menu-card jp" onclick="show('jp-level')">
+      <div class="card-icon">🇯🇵</div>
+      <div class="card-text"><h2>일본어 공부</h2><p>N5~N1 한자 필기 퀴즈</p></div>
+    </div>
+    <div class="menu-card kr" onclick="show('kr-level')">
+      <div class="card-icon">🇰🇷</div>
+      <div class="card-text"><h2>한국어 공부</h2><p>TOPIK 1~6급 어휘 퀴즈</p></div>
+    </div>
+    <div class="menu-card tour" onclick="show('travel')">
+      <div class="card-icon">✈️</div>
+      <div class="card-text"><h2>福岡 → 大邱 旅行</h2><p>直行便で行く大邱旅行ガイド</p></div>
+    </div>
+  </div>
+</div>
+
+<div id="jp-level" class="screen">
+  <div class="app-header jp">
+    <button class="back-btn" onclick="show('home')">←</button>
+    <h2>🇯🇵 레벨 선택</h2>
+  </div>
+  <div class="level-screen">
+    <div class="level-label">JLPT レベルを選んでください</div>
+    <div class="level-grid">
+      <div class="level-btn jp-lv" onclick="startQuiz('jp','N5')"><span class="lv">N5</span><span class="desc">入門 · 基礎漢字<br>103字</span></div>
+      <div class="level-btn jp-lv" onclick="startQuiz('jp','N4')"><span class="lv">N4</span><span class="desc">初級 · 日常漢字<br>181字</span></div>
+      <div class="level-btn jp-lv" onclick="startQuiz('jp','N3')"><span class="lv">N3</span><span class="desc">中級 · 応用漢字<br>367字</span></div>
+      <div class="level-btn jp-lv" onclick="startQuiz('jp','N2')"><span class="lv">N2</span><span class="desc">上級 · 深化漢字<br>367字</span></div>
+      <div class="level-btn jp-lv" onclick="startQuiz('jp','N1')" style="grid-column:1/-1"><span class="lv">N1</span><span class="desc">最上級 · 高難度 · 2000字+</span></div>
+    </div>
+  </div>
+</div>
+
+<div id="kr-level" class="screen">
+  <div class="app-header kr">
+    <button class="back-btn" onclick="show('home')">←</button>
+    <h2>🇰🇷 レベル選択</h2>
+  </div>
+  <div class="level-screen">
+    <div class="level-label">TOPIK レベルを選んでください</div>
+    <div class="level-grid">
+      <div class="level-btn kr-lv" onclick="startQuiz('kr','1급')"><span class="lv">1급</span><span class="desc">入門 · あいさつ<br>800語</span></div>
+      <div class="level-btn kr-lv" onclick="startQuiz('kr','2급')"><span class="lv">2급</span><span class="desc">初級 · 日常会話<br>2000語</span></div>
+      <div class="level-btn kr-lv" onclick="startQuiz('kr','3급')"><span class="lv">3급</span><span class="desc">中級 · 社会生活<br>3000語</span></div>
+      <div class="level-btn kr-lv" onclick="startQuiz('kr','4급')"><span class="lv">4급</span><span class="desc">中上級 · 応用<br>5000語</span></div>
+      <div class="level-btn kr-lv" onclick="startQuiz('kr','5급')"><span class="lv">5급</span><span class="desc">上級 · ニュース<br>8000語</span></div>
+      <div class="level-btn kr-lv" onclick="startQuiz('kr','6급')"><span class="lv">6급</span><span class="desc">最上級 · 専門<br>10000語</span></div>
+    </div>
+  </div>
+</div>
+
+<div id="jp-quiz" class="screen">
+  <div class="app-header jp">
+    <button class="back-btn" onclick="show('jp-level')">←</button>
+    <h2>🇯🇵 한자 퀴즈</h2>
+  </div>
+  <div class="progress-bar"><div class="progress-fill jp-fill" id="jp-prog" style="width:10%"></div></div>
+  <div class="quiz-body">
+    <div class="quiz-top">
+      <span class="quiz-level-badge jp-badge" id="jp-badge">N3</span>
+      <span class="quiz-count" id="jp-count">1 / 8</span>
+    </div>
+    <div class="kanji-display">
+      <span class="kanji-char" id="jp-char">橋</span>
+      <span class="kanji-sub">읽는 법을 캔버스에 써보세요</span>
+    </div>
+    <div class="canvas-wrap">
+      <svg class="canvas-grid" viewBox="0 0 240 240">
+        <line x1="120" y1="0" x2="120" y2="240" stroke="#ddd" stroke-width="1"/>
+        <line x1="0" y1="120" x2="240" y2="120" stroke="#ddd" stroke-width="1"/>
+        <line x1="0" y1="0" x2="240" y2="240" stroke="#ddd" stroke-width="0.5" stroke-dasharray="4,6"/>
+        <line x1="240" y1="0" x2="0" y2="240" stroke="#ddd" stroke-width="0.5" stroke-dasharray="4,6"/>
+      </svg>
+      <canvas class="draw" id="jp-canvas" width="240" height="240"></canvas>
+    </div>
+    <div class="btns">
+      <button onclick="clearC('jp')">지우기</button>
+      <button class="primary-jp" onclick="checkC('jp')">정답 확인</button>
+      <button onclick="nextC('jp')">다음 →</button>
+    </div>
+    <div class="answer-box" id="jp-ans">손으로 읽는 법을 써보세요</div>
+  </div>
+</div>
+
+<div id="kr-quiz" class="screen">
+  <div class="app-header kr">
+    <button class="back-btn" onclick="show('kr-level')">←</button>
+    <h2>🇰🇷 한국어 퀴즈</h2>
+  </div>
+  <div class="progress-bar"><div class="progress-fill kr-fill2" id="kr-prog" style="width:10%"></div></div>
+  <div class="quiz-body">
+    <div class="quiz-top">
+      <span class="quiz-level-badge kr-badge" id="kr-badge">1급</span>
+      <span class="quiz-count" id="kr-count">1 / 8</span>
+    </div>
+    <div class="kanji-display">
+      <span class="kanji-char" id="kr-char" style="font-size:44px">감사합니다</span>
+      <span class="kanji-sub">ハングルを書いてみよう</span>
+    </div>
+    <div class="canvas-wrap">
+      <svg class="canvas-grid" viewBox="0 0 240 240">
+        <line x1="120" y1="0" x2="120" y2="240" stroke="#ddd" stroke-width="1"/>
+        <line x1="0" y1="120" x2="240" y2="120" stroke="#ddd" stroke-width="1"/>
+      </svg>
+      <canvas class="draw" id="kr-canvas" width="240" height="240"></canvas>
+    </div>
+    <div class="btns">
+      <button onclick="clearC('kr')">消す</button>
+      <button class="primary-kr" onclick="checkC('kr')">答え合わせ</button>
+      <button onclick="nextC('kr')">次へ →</button>
+    </div>
+    <div class="answer-box" id="kr-ans">キャンバスに書いてみよう</div>
+  </div>
+</div>
+
+<div id="travel" class="screen">
+  <div class="app-header tour">
+    <button class="back-btn" onclick="show('home')">←</button>
+    <h2>✈️ 福岡 → 大邱 旅行ガイド</h2>
+  </div>
+  <div class="travel-body">
+    <div class="flight-banner">
+      <div>
+        <div class="route">福岡空港 ✈️ 大邱国際空港</div>
+        <div class="time">直行便 約55分 · 最安値から</div>
+      </div>
+      <div class="flight-badge">直航</div>
+    </div>
+    <div class="travel-tabs">
+      <button class="tab-btn active" onclick="switchTab('spots',this)">観光</button>
+      <button class="tab-btn" onclick="switchTab('food',this)">グルメ</button>
+      <button class="tab-btn" onclick="switchTab('tips',this)">実用情報</button>
+    </div>
+    <div id="tab-spots" class="tab-content active">
+      <div class="spot-card"><div class="spot-icon">🏯</div><div class="spot-info"><h3>서문시장 (西門市場)</h3><div class="jp-label">ソムン市場</div><p>大邱最大の伝統市場。屋台グルメが充実。夜市も人気。</p></div></div>
+      <div class="spot-card"><div class="spot-icon">🌿</div><div class="spot-info"><h3>팔공산 (八公山)</h3><div class="jp-label">パルゴンサン</div><p>大邱を代表する山。ロープウェイあり。紅葉シーズンが特に美しい。</p></div></div>
+      <div class="spot-card"><div class="spot-icon">⛪</div><div class="spot-info"><h3>근대골목 (近代路地)</h3><div class="jp-label">クンデコルモク</div><p>近代建築が残る歴史的エリア。レトロな雰囲気でフォトジェニック。</p></div></div>
+      <div class="spot-card"><div class="spot-icon">💊</div><div class="spot-info"><h3>약령시장 (薬令市場)</h3><div class="jp-label">ヤンニョン市場</div><p>韓方薬・漢方の専門市場。韓国伝統医学文化を体験できる。</p></div></div>
+    </div>
+    <div id="tab-food" class="tab-content">
+      <div class="spot-card"><div class="spot-icon">🍖</div><div class="spot-info"><h3>막창 (マクチャン)</h3><div class="jp-label">豚の大腸焼き</div><p>大邱名物。炭火で焼いた豚の大腸。ニンニクたっぷりのタレで絶品。</p></div></div>
+      <div class="spot-card"><div class="spot-icon">🌶️</div><div class="spot-info"><h3>납작만두 (ナプチャンマンドゥ)</h3><div class="jp-label">平たい餃子</div><p>大邱発祥の平たい餃子。서문시장の名物。</p></div></div>
+      <div class="spot-card"><div class="spot-icon">🍜</div><div class="spot-info"><h3>따로국밥 (タロクッパ)</h3><div class="jp-label">クッパの一種</div><p>ご飯とスープが別々に出るのが大邱流。豚骨ベースの濃厚スープ。</p></div></div>
+      <div class="spot-card"><div class="spot-icon">🍺</div><div class="spot-info"><h3>동성로 포장마차</h3><div class="jp-label">屋台通り</div><p>東城路の夜の屋台エリア。地元の人と一緒に飲める庶民的な雰囲気。</p></div></div>
+    </div>
+    <div id="tab-tips" class="tab-content">
+      <div class="tip-box"><strong>✈️ アクセス</strong>福岡空港 → 大邱国際空港（直行便 約55分）<br>大邱空港からバス・タクシーで市内へ約20分</div>
+      <div style="background:#f9f9f9;border-radius:10px;padding:14px;">
+        <div class="info-row"><span class="label">通貨</span><span class="val">韓国ウォン (₩)</span></div>
+        <div class="info-row"><span class="label">両替</span><span class="val">空港・市内両替所</span></div>
+        <div class="info-row"><span class="label">決済</span><span class="val">カード OK · PayPay ✕</span></div>
+        <div class="info-row"><span class="label">WiFi</span><span class="val">空港でポケットWiFi</span></div>
+        <div class="info-row"><span class="label">気候</span><span class="val">夏暑い · 冬寒い</span></div>
+        <div class="info-row"><span class="label">言語</span><span class="val">韓国語 · 英語は少なめ</span></div>
+      </div>
+      <div class="tip-box"><strong>💡 旅のコツ</strong>大邱は釜山・ソウルより物価が安め。地元グルメを楽しむなら서문시장へ。カードが使える店が多いが念のため現金も持参を。</div>
+    </div>
+  </div>
+</div>
+
+<script>
+const DATA = {
+  jp: {
+    N5:[{char:'山',reading:'やま / さん',meaning:'산'},{char:'川',reading:'かわ / せん',meaning:'강'},{char:'日',reading:'にち / ひ',meaning:'날, 해'},{char:'月',reading:'つき / げつ',meaning:'달, 월'},{char:'火',reading:'ひ / か',meaning:'불'},{char:'水',reading:'みず / すい',meaning:'물'},{char:'木',reading:'き / もく',meaning:'나무'},{char:'金',reading:'かね / きん',meaning:'금, 돈'}],
+    N4:[{char:'家',reading:'いえ / か',meaning:'집'},{char:'友',reading:'とも / ゆう',meaning:'친구'},{char:'旅',reading:'たび / りょ',meaning:'여행'},{char:'食',reading:'た / しょく',meaning:'먹다'},{char:'飲',reading:'の / いん',meaning:'마시다'},{char:'買',reading:'か / ばい',meaning:'사다'},{char:'駅',reading:'えき',meaning:'역'},{char:'電',reading:'でん',meaning:'전기'}],
+    N3:[{char:'橋',reading:'はし / きょう',meaning:'다리'},{char:'感',reading:'かん',meaning:'느낌'},{char:'客',reading:'きゃく',meaning:'손님'},{char:'急',reading:'きゅう / いそ',meaning:'급하다'},{char:'暗',reading:'あん / くら',meaning:'어둡다'},{char:'育',reading:'いく / そだ',meaning:'키우다'},{char:'医',reading:'い',meaning:'의사'},{char:'温',reading:'おん / あたた',meaning:'따뜻하다'}],
+    N2:[{char:'怒',reading:'いか / ど',meaning:'화내다'},{char:'沿',reading:'えん / そ',meaning:'따라가다'},{char:'恩',reading:'おん',meaning:'은혜'},{char:'仮',reading:'かり / か',meaning:'임시'},{char:'環',reading:'かん',meaning:'고리'},{char:'観',reading:'かん / み',meaning:'보다'},{char:'慣',reading:'かん / な',meaning:'익숙하다'},{char:'缶',reading:'かん',meaning:'캔'}],
+    N1:[{char:'葛',reading:'かつ / くず',meaning:'칡'},{char:'嚇',reading:'かく',meaning:'위협하다'},{char:'騎',reading:'き',meaning:'말을 타다'},{char:'僅',reading:'きん / わず',meaning:'겨우'},{char:'詰',reading:'きつ / つ',meaning:'막히다'},{char:'矜',reading:'きん / こう',meaning:'자랑하다'},{char:'錦',reading:'きん / にしき',meaning:'비단'},{char:'僑',reading:'きょう',meaning:'나그네'}],
+  },
+  kr: {
+    '1급':[{char:'감사합니다',reading:'ありがとうございます',meaning:'고마워요'},{char:'안녕하세요',reading:'こんにちは',meaning:'안녕'},{char:'주세요',reading:'ください',meaning:'주세요'},{char:'얼마예요',reading:'いくらですか',meaning:'얼마예요?'},{char:'화장실',reading:'トイレ',meaning:'화장실'},{char:'맛있어요',reading:'おいしいです',meaning:'맛있어요'},{char:'어디예요',reading:'どこですか',meaning:'어디예요?'},{char:'사랑해요',reading:'愛しています',meaning:'사랑해요'}],
+    '2급':[{char:'예약하다',reading:'予約する',meaning:'예약하다'},{char:'교통카드',reading:'交通カード',meaning:'교통카드'},{char:'지하철',reading:'地下鉄',meaning:'지하철'},{char:'편의점',reading:'コンビニ',meaning:'편의점'},{char:'영수증',reading:'レシート',meaning:'영수증'},{char:'환전',reading:'両替',meaning:'환전'},{char:'할인',reading:'割引',meaning:'할인'},{char:'배달',reading:'デリバリー',meaning:'배달'}],
+    '3급':[{char:'출발하다',reading:'出発する',meaning:'출발하다'},{char:'도착하다',reading:'到着する',meaning:'도착하다'},{char:'신청하다',reading:'申請する',meaning:'신청하다'},{char:'경험',reading:'経験',meaning:'경험'},{char:'문화',reading:'文化',meaning:'문화'},{char:'방법',reading:'方法',meaning:'방법'},{char:'관계',reading:'関係',meaning:'관계'},{char:'사회',reading:'社会',meaning:'사회'}],
+    '4급':[{char:'갈등',reading:'葛藤',meaning:'갈등'},{char:'논리',reading:'論理',meaning:'논리'},{char:'비판',reading:'批判',meaning:'비판'},{char:'성과',reading:'成果',meaning:'성과'},{char:'역할',reading:'役割',meaning:'역할'},{char:'원칙',reading:'原則',meaning:'원칙'},{char:'전략',reading:'戦略',meaning:'전략'},{char:'효율',reading:'効率',meaning:'효율'}],
+    '5급':[{char:'논의하다',reading:'議論する',meaning:'논의하다'},{char:'반영하다',reading:'反映する',meaning:'반영하다'},{char:'분석하다',reading:'分析する',meaning:'분석하다'},{char:'수립하다',reading:'樹立する',meaning:'수립하다'},{char:'촉진하다',reading:'促進する',meaning:'촉진하다'},{char:'합리적',reading:'合理的',meaning:'합리적'},{char:'구조적',reading:'構造的',meaning:'구조적'},{char:'체계적',reading:'体系的',meaning:'체계적'}],
+    '6급':[{char:'패러다임',reading:'パラダイム',meaning:'패러다임'},{char:'맥락',reading:'文脈',meaning:'맥락'},{char:'함의',reading:'含意',meaning:'함의'},{char:'메커니즘',reading:'メカニズム',meaning:'메커니즘'},{char:'내재하다',reading:'内在する',meaning:'내재하다'},{char:'역설적',reading:'逆説的',meaning:'역설적'},{char:'보편적',reading:'普遍的',meaning:'보편적'},{char:'추상적',reading:'抽象的',meaning:'추상적'}],
+  }
+};
+
+const state = {
+  jp:{level:'N3',idx:0,ctx:null,drawing:false,lx:0,ly:0},
+  kr:{level:'1급',idx:0,ctx:null,drawing:false,lx:0,ly:0},
+};
+
+function show(id) {
+  document.querySelectorAll('.screen').forEach(s=>{s.classList.remove('active');s.style.display='none';});
+  const el=document.getElementById(id);
+  el.style.display='flex'; el.classList.add('active');
+}
+
+function switchTab(name,btn) {
+  document.querySelectorAll('.tab-content').forEach(t=>t.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
+  document.getElementById('tab-'+name).classList.add('active');
+  btn.classList.add('active');
+}
+
+function startQuiz(type,level) {
+  state[type].level=level; state[type].idx=0; state[type].ctx=null;
+  const item=DATA[type][level][0];
+  if(type==='jp'){
+    document.getElementById('jp-badge').textContent=level;
+    document.getElementById('jp-char').textContent=item.char;
+    document.getElementById('jp-char').style.fontSize='62px';
+    document.getElementById('jp-count').textContent='1 / '+DATA[type][level].length;
+    document.getElementById('jp-prog').style.width='12%';
+    document.getElementById('jp-ans').className='answer-box';
+    document.getElementById('jp-ans').textContent='손으로 읽는 법을 써보세요';
+    show('jp-quiz');
+  } else {
+    document.getElementById('kr-badge').textContent=level;
+    document.getElementById('kr-char').textContent=item.char;
+    document.getElementById('kr-char').style.fontSize=item.char.length>5?'32px':'44px';
+    document.getElementById('kr-count').textContent='1 / '+DATA[type][level].length;
+    document.getElementById('kr-prog').style.width='12%';
+    document.getElementById('kr-ans').className='answer-box';
+    document.getElementById('kr-ans').textContent='キャンバスに書いてみよう';
+    show('kr-quiz');
+  }
+  setTimeout(()=>initCanvas(type),50);
+}
+
+function initCanvas(type) {
+  const s=state[type];
+  const old=document.getElementById(type+'-canvas');
+  if(!old) return;
+  const nc=old.cloneNode(true);
+  old.parentNode.replaceChild(nc,old);
+  s.ctx=nc.getContext('2d');
+  s.ctx.strokeStyle=type==='jp'?'#0d2a4a':'#4a0d0d';
+  s.ctx.lineWidth=3; s.ctx.lineCap='round'; s.ctx.lineJoin='round';
+  function pos(e){const r=nc.getBoundingClientRect();const src=e.touches?e.touches[0]:e;return[src.clientX-r.left,src.clientY-r.top];}
+  nc.addEventListener('mousedown',e=>{s.drawing=true;[s.lx,s.ly]=pos(e);});
+  nc.addEventListener('mousemove',e=>{if(!s.drawing)return;const[x,y]=pos(e);s.ctx.beginPath();s.ctx.moveTo(s.lx,s.ly);s.ctx.lineTo(x,y);s.ctx.stroke();[s.lx,s.ly]=[x,y];});
+  nc.addEventListener('mouseup',()=>s.drawing=false);
+  nc.addEventListener('mouseleave',()=>s.drawing=false);
+  nc.addEventListener('touchstart',e=>{e.preventDefault();s.drawing=true;[s.lx,s.ly]=pos(e);},{passive:false});
+  nc.addEventListener('touchmove',e=>{e.preventDefault();if(!s.drawing)return;const[x,y]=pos(e);s.ctx.beginPath();s.ctx.moveTo(s.lx,s.ly);s.ctx.lineTo(x,y);s.ctx.stroke();[s.lx,s.ly]=[x,y];},{passive:false});
+  nc.addEventListener('touchend',()=>s.drawing=false);
+}
+
+function clearC(type) {
+  const s=state[type];
+  if(s.ctx) s.ctx.clearRect(0,0,240,240);
+  const ans=document.getElementById(type+'-ans');
+  ans.className='answer-box';
+  ans.textContent=type==='jp'?'손으로 읽는 법을 써보세요':'キャンバスに書いてみよう';
+}
+
+function checkC(type) {
+  const item=DATA[type][state[type].level][state[type].idx%DATA[type][state[type].level].length];
+  const ans=document.getElementById(type+'-ans');
+  ans.className='answer-box ok';
+  ans.innerHTML='<strong>'+(type==='jp'?'읽기':'意味')+':</strong> '+item.reading+' &nbsp;|&nbsp; '+item.meaning;
+}
+
+function nextC(type) {
+  const s=state[type]; s.idx++;
+  const list=DATA[type][s.level];
+  const item=list[s.idx%list.length];
+  const charEl=document.getElementById(type+'-char');
+  charEl.textContent=item.char;
+  if(type==='kr') charEl.style.fontSize=item.char.length>5?'32px':'44px';
+  clearC(type);
+  const pct=Math.round(((s.idx%list.length)+1)/list.length*100);
+  document.getElementById(type+'-prog').style.width=pct+'%';
+  document.getElementById(type+'-count').textContent=(s.idx%list.length+1)+' / '+list.length;
+}
+
+document.querySelectorAll('.screen').forEach(s=>s.style.display='none');
+document.getElementById('home').style.display='flex';
+document.getElementById('home').classList.add('active');
+</script>
+</body>
+</html>
