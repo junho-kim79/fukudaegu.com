@@ -197,7 +197,7 @@ canvas.draw { position: absolute; inset: 0; cursor: crosshair; touch-action: non
     </div>
     <div class="menu-card game" onclick="show('game')">
       <div class="card-icon">🎮</div>
-      <div class="card-text"><h2>한자 낙하 게임</h2><p>떨어지는 한자 뜻 맞추기 · 랭킹</p></div>
+      <div class="card-text"><h2>일본어 낙하 게임</h2><p>한자·단어 뜻 맞추기 · 랭킹</p></div>
     </div>
   </div>
 </div>
@@ -306,7 +306,7 @@ canvas.draw { position: absolute; inset: 0; cursor: crosshair; touch-action: non
 <div id="game" class="screen">
   <div class="app-header game-hd">
     <button class="back-btn" onclick="stopGame();show('home')">←</button>
-    <h2>🎮 한자 낙하 게임</h2>
+    <h2>🎮 일본어 낙하 게임</h2>
     <span id="game-score-disp" style="margin-left:auto">점수: 0</span>
   </div>
   <div class="game-topbar">
@@ -319,7 +319,7 @@ canvas.draw { position: absolute; inset: 0; cursor: crosshair; touch-action: non
     <div class="game-overlay" id="game-start-overlay">
       <div style="font-size:50px">漢</div>
       <h2>한자 낙하 게임</h2>
-      <p>한자가 위에서 떨어져요<br>히라가나 없이 뜻을 맞춰보세요!<br>힌트는 5번 사용 가능해요</p>
+      <p>한자와 단어가 위에서 떨어져요<br>뜻을 맞춰보세요!<br>힌트는 5번 사용 가능해요</p>
       <div class="game-setup">
         <input type="text" id="game-nickname" placeholder="닉네임 입력 (예: 준호)" maxlength="10">
         <select id="game-level-sel">
@@ -581,6 +581,55 @@ const G={
   timer:null,dropTimer:null,currentItem:null
 };
 
+/* ===== 게임용 생활 단어 추가 =====
+   기존 jp_kanji.json + jp_word.json에 아래 단어를 섞어서 사용합니다.
+   char: 화면에 떨어지는 글자 / reading: 힌트 / meaning: 정답 보기 */
+const extraGameWords={
+  N5:[
+    {char:'天気予報',reading:'てんきよほう',meaning:'일기예보'},
+    {char:'営業時間',reading:'えいぎょうじかん',meaning:'영업시간'},
+    {char:'日本料理',reading:'にほんりょうり',meaning:'일본요리'},
+    {char:'地下鉄',reading:'ちかてつ',meaning:'지하철'},
+    {char:'入口',reading:'いりぐち',meaning:'입구'},
+    {char:'出口',reading:'でぐち',meaning:'출구'}
+  ],
+  N4:[
+    {char:'自動販売機',reading:'じどうはんばいき',meaning:'자판기'},
+    {char:'国際空港',reading:'こくさいくうこう',meaning:'국제공항'},
+    {char:'緊急速報',reading:'きんきゅうそくほう',meaning:'긴급속보'},
+    {char:'観光案内',reading:'かんこうあんない',meaning:'관광안내'},
+    {char:'使用禁止',reading:'しようきんし',meaning:'사용금지'},
+    {char:'新幹線',reading:'しんかんせん',meaning:'신칸센'},
+    {char:'居酒屋',reading:'いざかや',meaning:'이자카야'},
+    {char:'焼肉定食',reading:'やきにくていしょく',meaning:'야키니쿠 정식'}
+  ],
+  N3:[
+    {char:'電子決済',reading:'でんしけっさい',meaning:'전자결제'},
+    {char:'交通情報',reading:'こうつうじょうほう',meaning:'교통정보'},
+    {char:'予約確認',reading:'よやくかくにん',meaning:'예약확인'},
+    {char:'本日限定',reading:'ほんじつげんてい',meaning:'오늘 한정'},
+    {char:'観光案内所',reading:'かんこうあんないじょ',meaning:'관광안내소'},
+    {char:'免税手続',reading:'めんぜいてつづき',meaning:'면세 절차'}
+  ]
+};
+
+function normalizeGameItem(item){
+  return {
+    ...item,
+    char:item.char||item.word||item.kanji||'',
+    reading:item.reading||'',
+    meaning:item.meaning||''
+  };
+}
+
+function gameTextMetrics(text,canvasWidth){
+  const len=(text||'').length;
+  const boxW=Math.min((canvasWidth||360)-24,Math.max(64,len*30+28));
+  const boxH=len>=4?58:64;
+  const fontSize=len>=6?18:len>=5?20:len>=4?22:len>=3?26:34;
+  return {boxW,boxH,fontSize};
+}
+
 function getStage(){if(G.correct<6)return 1;if(G.correct<16)return 2;return 3;}
 function getSpeed(){return 0.65+getStage()*0.35;}
 function getMaxItems(){return getStage();}
@@ -609,8 +658,15 @@ async function _runGame(){
   document.getElementById('game-start-overlay').style.display='none';
   document.getElementById('game-over-overlay').style.display='none';
   document.getElementById('game-ranking-overlay').style.display='none';
-  const data=await loadData('jp_kanji.json');
-  G.list=shuffle(data[G.level]||[]);
+  const kanjiData=await loadData('jp_kanji.json');
+  const wordData=await loadData('jp_word.json');
+
+  const kanjiList=(kanjiData[G.level]||[]).map(normalizeGameItem);
+  const wordList=(wordData[G.level]||[]).map(normalizeGameItem);
+  const extraList=(extraGameWords[G.level]||[]).map(normalizeGameItem);
+
+  G.list=shuffle([...kanjiList,...wordList,...extraList])
+    .filter(i=>i.char&&i.meaning);
   G.score=0;G.lives=3;G.hints=5;G.correct=0;G.items=[];G.currentItem=null;G.running=true;
   sfxStart();
   updateGameUI();
@@ -627,7 +683,10 @@ function dropItem(){
   const item=G.list[Math.floor(Math.random()*G.list.length)];
   const canvas=document.getElementById('game-canvas');
   const w=canvas.offsetWidth||360;
-  G.items.push({item,x:44+Math.random()*(w-88),y:-52,vy:getSpeed()});
+  const m=gameTextMetrics(item.char,w);
+  const margin=m.boxW/2+8;
+  const x=margin+Math.random()*Math.max(1,w-margin*2);
+  G.items.push({item,x,y:-52,vy:getSpeed()});
   if(!G.currentItem){G.currentItem=item;renderGameOpts(item);}
 }
 
@@ -642,8 +701,9 @@ function gameLoop(){
     obj.y+=obj.vy;
     ctx.save();
     ctx.fillStyle='#1a3a2a';ctx.strokeStyle='#3a7a4a';ctx.lineWidth=1.5;
-    rr(ctx,obj.x-32,obj.y-32,64,64,10);ctx.fill();ctx.stroke();
-    ctx.fillStyle='#e8ffe8';ctx.font='bold 34px serif';
+    const m=gameTextMetrics(obj.item.char,canvas.width);
+    rr(ctx,obj.x-m.boxW/2,obj.y-m.boxH/2,m.boxW,m.boxH,10);ctx.fill();ctx.stroke();
+    ctx.fillStyle='#e8ffe8';ctx.font=`bold ${m.fontSize}px serif`;
     ctx.textAlign='center';ctx.textBaseline='middle';
     ctx.fillText(obj.item.char,obj.x,obj.y);
     ctx.restore();
