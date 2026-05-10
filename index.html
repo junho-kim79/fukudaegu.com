@@ -30,6 +30,8 @@ body { font-family: 'Noto Sans JP', sans-serif; background: #f5f5f5; }
 .menu-card.kr:hover { background: rgba(255,100,100,0.22); }
 .menu-card.tour { background: rgba(255,180,80,0.12); }
 .menu-card.tour:hover { background: rgba(255,180,80,0.22); }
+.menu-card.game { background: rgba(80,200,120,0.12); }
+.menu-card.game:hover { background: rgba(80,200,120,0.22); }
 .card-icon { font-size: 28px; width: 48px; text-align: center; flex-shrink: 0; }
 .card-text h2 { font-size: 15px; font-weight: 600; margin-bottom: 3px; }
 .card-text p { font-size: 11px; color: rgba(255,255,255,0.45); }
@@ -38,6 +40,7 @@ body { font-family: 'Noto Sans JP', sans-serif; background: #f5f5f5; }
 .app-header.jp { background: #0d2a4a; }
 .app-header.kr { background: #4a0d0d; }
 .app-header.tour { background: #7a3800; }
+.app-header.game-hd { background: #1a4a2a; }
 .back-btn { background: none; border: none; color: white; cursor: pointer; font-size: 20px; padding: 2px 6px; line-height: 1; }
 .app-header h2 { font-size: 14px; font-weight: 600; }
 
@@ -70,7 +73,6 @@ body { font-family: 'Noto Sans JP', sans-serif; background: #f5f5f5; }
 .quiz-type-badge { font-size: 10px; padding: 2px 8px; border-radius: 20px; background: #f0f0f0; color: #666; margin-left: 4px; }
 .quiz-count { font-size: 12px; color: #888; }
 
-/* 한자/단어 퀴즈 */
 .kanji-display { text-align: center; }
 .kanji-char { font-size: 62px; font-weight: 300; color: #111; line-height: 1.1; display: block; }
 .kanji-char.word-mode { font-size: 42px; }
@@ -131,6 +133,46 @@ canvas.draw { position: absolute; inset: 0; cursor: crosshair; touch-action: non
 .info-row .label { color: #888; }
 .info-row .val { font-weight: 500; color: #111; }
 .loading { flex: 1; display: flex; align-items: center; justify-content: center; color: #888; font-size: 14px; }
+
+/* ===== 게임 ===== */
+#game { background: #0d1a0d; }
+.game-topbar { padding: 8px 14px; display: flex; align-items: center; gap: 10px; background: #1a4a2a; flex-shrink: 0; }
+#game-score-disp { margin-left: auto; font-size: 13px; color: #8bc34a; font-weight: 600; }
+#game-lives-disp { font-size: 15px; }
+#game-hint-disp { font-size: 11px; color: rgba(255,255,255,0.6); }
+#game-stage-disp { font-size: 11px; color: rgba(255,255,255,0.4); }
+#game-area { flex: 1; position: relative; background: #0d1a0d; overflow: hidden; min-height: 260px; }
+#game-canvas { position: absolute; inset: 0; width: 100%; height: 100%; }
+.game-overlay { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px; background: rgba(0,0,0,0.88); padding: 20px; }
+.game-overlay h2 { color: white; font-size: 20px; font-weight: 700; }
+.game-overlay p { color: rgba(255,255,255,0.55); font-size: 13px; text-align: center; line-height: 1.7; }
+.game-btn { background: #2d8a4a; color: white; border: none; padding: 11px 28px; border-radius: 10px; font-size: 14px; font-weight: 600; cursor: pointer; }
+.game-btn.secondary { background: transparent; border: 1px solid rgba(255,255,255,0.25); color: rgba(255,255,255,0.7); font-size: 13px; padding: 8px 20px; }
+.game-setup { display: flex; flex-direction: column; gap: 10px; width: 100%; max-width: 260px; }
+.game-setup input, .game-setup select { width: 100%; padding: 10px 14px; border-radius: 8px; border: 1px solid #3a7a4a; background: #0d2a1a; color: white; font-size: 14px; text-align: center; font-family: 'Noto Sans JP', sans-serif; }
+.game-setup input::placeholder { color: rgba(255,255,255,0.3); }
+#game-score-card { background: #1a4a2a; border-radius: 12px; padding: 14px 20px; text-align: center; width: 220px; }
+#game-score-card .sc-name { font-size: 16px; font-weight: 700; color: #8bc34a; }
+#game-score-card .sc-score { font-size: 30px; font-weight: 700; color: white; margin: 4px 0; }
+#game-score-card .sc-sub { font-size: 12px; color: rgba(255,255,255,0.5); }
+#game-score-card .sc-site { font-size: 10px; color: rgba(255,255,255,0.25); margin-top: 6px; }
+.ranking-box { width: 100%; max-width: 260px; background: #1a4a2a; border-radius: 10px; padding: 10px 14px; max-height: 150px; overflow-y: auto; }
+.ranking-box h3 { font-size: 11px; color: rgba(255,255,255,0.4); margin-bottom: 8px; text-align: center; letter-spacing: 1px; }
+.rank-row { display: flex; align-items: center; gap: 8px; padding: 4px 0; border-bottom: 1px solid rgba(255,255,255,0.05); font-size: 12px; color: white; }
+.rank-row:last-child { border-bottom: none; }
+.rank-num { font-size: 11px; color: rgba(255,255,255,0.35); width: 16px; }
+.rank-name { flex: 1; font-weight: 600; }
+.rank-score { color: #8bc34a; font-weight: 700; }
+.rank-lv { font-size: 10px; color: rgba(255,255,255,0.35); }
+#game-opts { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; padding: 10px 12px; background: #111d11; flex-shrink: 0; min-height: 116px; }
+.game-opt-btn { padding: 14px 8px; border-radius: 10px; font-size: 13px; cursor: pointer; border: 1.5px solid #2a5a3a; background: #1a3a2a; color: #ccc; text-align: center; font-family: 'Noto Sans JP', sans-serif; transition: all 0.12s; }
+.game-opt-btn.g-correct { background: #2d6a3a; border-color: #8bc34a; color: white; }
+.game-opt-btn.g-wrong { background: #6a2d2d; border-color: #e57373; color: white; }
+.game-opt-btn:disabled { cursor: default; }
+.game-hint-bar { display: flex; align-items: center; justify-content: center; gap: 10px; padding: 6px 12px; background: #111d11; flex-shrink: 0; }
+.hint-btn { padding: 6px 16px; border-radius: 8px; font-size: 12px; cursor: pointer; border: 1px solid #3a7a4a; background: #0d2a1a; color: #8bc34a; font-family: 'Noto Sans JP', sans-serif; }
+.hint-btn:disabled { color: rgba(255,255,255,0.2); border-color: rgba(255,255,255,0.1); cursor: default; }
+#hint-reading-disp { font-size: 15px; color: #8bc34a; font-weight: 600; min-width: 100px; text-align: center; }
 </style>
 </head>
 <body>
@@ -152,6 +194,10 @@ canvas.draw { position: absolute; inset: 0; cursor: crosshair; touch-action: non
     <div class="menu-card tour" onclick="show('travel')">
       <div class="card-icon">✈️</div>
       <div class="card-text"><h2>福岡 → 大邱 旅行</h2><p>直行便で行く大邱旅行ガイド</p></div>
+    </div>
+    <div class="menu-card game" onclick="show('game')">
+      <div class="card-icon">🎮</div>
+      <div class="card-text"><h2>한자 낙하 게임</h2><p>떨어지는 한자 뜻 맞추기 · 랭킹</p></div>
     </div>
   </div>
 </div>
@@ -203,9 +249,7 @@ canvas.draw { position: absolute; inset: 0; cursor: crosshair; touch-action: non
     <h2>🇯🇵 <span id="jp-quiz-title">한자 퀴즈</span></h2>
   </div>
   <div class="progress-bar"><div class="progress-fill jp-fill" id="jp-prog" style="width:5%"></div></div>
-  <div class="quiz-body" id="jp-quiz-body">
-    <div class="loading">데이터 로딩 중...</div>
-  </div>
+  <div class="quiz-body" id="jp-quiz-body"><div class="loading">데이터 로딩 중...</div></div>
 </div>
 
 <div id="kr-quiz" class="screen">
@@ -214,9 +258,7 @@ canvas.draw { position: absolute; inset: 0; cursor: crosshair; touch-action: non
     <h2>🇰🇷 한국어 퀴즈</h2>
   </div>
   <div class="progress-bar"><div class="progress-fill kr-fill2" id="kr-prog" style="width:5%"></div></div>
-  <div class="quiz-body" id="kr-quiz-body">
-    <div class="loading">데이터 로딩 중...</div>
-  </div>
+  <div class="quiz-body" id="kr-quiz-body"><div class="loading">데이터 로딩 중...</div></div>
 </div>
 
 <div id="travel" class="screen">
@@ -226,10 +268,7 @@ canvas.draw { position: absolute; inset: 0; cursor: crosshair; touch-action: non
   </div>
   <div class="travel-body">
     <div class="flight-banner">
-      <div>
-        <div class="route">福岡空港 ✈️ 大邱国際空港</div>
-        <div class="time">直行便 約55分</div>
-      </div>
+      <div><div class="route">福岡空港 ✈️ 大邱国際空港</div><div class="time">直行便 約55分</div></div>
       <div class="flight-badge">直航</div>
     </div>
     <div class="travel-tabs">
@@ -264,101 +303,137 @@ canvas.draw { position: absolute; inset: 0; cursor: crosshair; touch-action: non
   </div>
 </div>
 
+<!-- 게임 화면 -->
+<div id="game" class="screen">
+  <div class="app-header game-hd">
+    <button class="back-btn" onclick="stopGame();show('home')">←</button>
+    <h2>🎮 한자 낙하 게임</h2>
+    <span id="game-score-disp" style="margin-left:auto">점수: 0</span>
+  </div>
+  <div class="game-topbar">
+    <span id="game-lives-disp">❤️❤️❤️</span>
+    <span id="game-hint-disp">💡 힌트 5회</span>
+    <span id="game-stage-disp" style="margin-left:auto"></span>
+  </div>
+  <div id="game-area">
+    <canvas id="game-canvas"></canvas>
+    <!-- 시작 -->
+    <div class="game-overlay" id="game-start-overlay">
+      <div style="font-size:50px">漢</div>
+      <h2>한자 낙하 게임</h2>
+      <p>한자가 위에서 떨어져요<br>히라가나 없이 뜻을 맞춰보세요!<br>힌트는 5번 사용 가능해요</p>
+      <div class="game-setup">
+        <input type="text" id="game-nickname" placeholder="닉네임 입력 (예: 준호)" maxlength="10">
+        <select id="game-level-sel">
+          <option value="N5">N5 — 입문</option>
+          <option value="N4" selected>N4 — 초급</option>
+          <option value="N3">N3 — 중급</option>
+        </select>
+        <button class="game-btn" onclick="startGame()" style="width:100%">게임 시작 🎮</button>
+        <button class="game-btn secondary" onclick="showRanking()">🏆 랭킹 보기</button>
+      </div>
+    </div>
+    <!-- 랭킹 -->
+    <div class="game-overlay" id="game-ranking-overlay" style="display:none">
+      <h2>🏆 랭킹</h2>
+      <div class="ranking-box" id="ranking-list"></div>
+      <button class="game-btn secondary" onclick="hideRanking()">← 돌아가기</button>
+    </div>
+    <!-- 게임오버 -->
+    <div class="game-overlay" id="game-over-overlay" style="display:none">
+      <h2>💀 게임 오버</h2>
+      <div id="game-score-card">
+        <div class="sc-name" id="sc-name-disp"></div>
+        <div class="sc-score" id="sc-score-disp"></div>
+        <div class="sc-sub" id="sc-sub-disp"></div>
+        <div class="sc-site">fukudaegu.com</div>
+      </div>
+      <div class="ranking-box" id="gameover-ranking"></div>
+      <div style="display:flex;gap:8px;flex-wrap:wrap;justify-content:center">
+        <button class="game-btn secondary" onclick="showStartOverlay()">← 처음으로</button>
+        <button class="game-btn" onclick="restartGame()">다시 하기 🎮</button>
+      </div>
+    </div>
+  </div>
+  <div class="game-hint-bar">
+    <button class="hint-btn" id="hint-btn" onclick="useHint()">💡 힌트 보기</button>
+    <span id="hint-reading-disp"></span>
+  </div>
+  <div id="game-opts"></div>
+</div>
+
 <script>
+/* ===== 공통 ===== */
 const jpState = { type:'kanji', level:'N5', list:[], idx:0, ctx:null, drawing:false, lx:0, ly:0 };
 const krState = { level:'1급', list:[], idx:0 };
 const cache = {};
 
 function show(id) {
-  document.querySelectorAll('.screen').forEach(s => { s.classList.remove('active'); s.style.display = 'none'; });
+  document.querySelectorAll('.screen').forEach(s => { s.classList.remove('active'); s.style.display='none'; });
   const el = document.getElementById(id);
-  el.style.display = 'flex';
-  el.classList.add('active');
+  el.style.display = 'flex'; el.classList.add('active');
 }
-
 function switchTab(name, btn) {
   document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
   document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-  document.getElementById('tab-' + name).classList.add('active');
+  document.getElementById('tab-'+name).classList.add('active');
   btn.classList.add('active');
 }
-
 function setJpType(type) {
   jpState.type = type;
   document.querySelectorAll('.qtype-btn').forEach(b => b.classList.remove('active'));
-  document.getElementById('jp-type-' + type).classList.add('active');
+  document.getElementById('jp-type-'+type).classList.add('active');
 }
-
 async function loadData(file) {
   if (cache[file]) return cache[file];
-  const res = await fetch('data/' + file);
+  const res = await fetch('data/'+file);
   const data = await res.json();
-  cache[file] = data;
-  return data;
+  cache[file] = data; return data;
 }
-
 function shuffle(arr) {
-  const a = [...arr];
-  for (let i = a.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [a[i], a[j]] = [a[j], a[i]];
-  }
+  const a=[...arr];
+  for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}
   return a;
 }
 
+/* ===== 일본어 퀴즈 ===== */
 async function startJpQuiz(level) {
-  jpState.level = level;
-  jpState.idx = 0;
-  jpState.ctx = null;
-  show('jp-quiz');
-
-  const titles = { kanji:'한자 퀴즈', word:'단어 퀴즈', vocab:'어휘 퀴즈', grammar:'문법 퀴즈' };
-  document.getElementById('jp-quiz-title').textContent = titles[jpState.type];
-  document.getElementById('jp-quiz-body').innerHTML = '<div class="loading">로딩 중...</div>';
-
+  jpState.level=level; jpState.idx=0; jpState.ctx=null; show('jp-quiz');
+  const titles={kanji:'한자 퀴즈',word:'단어 퀴즈',vocab:'어휘 퀴즈',grammar:'문법 퀴즈'};
+  document.getElementById('jp-quiz-title').textContent=titles[jpState.type];
+  document.getElementById('jp-quiz-body').innerHTML='<div class="loading">로딩 중...</div>';
   try {
-    const fileMap = { kanji:'jp_kanji.json', word:'jp_word.json', vocab:'jp_vocab.json', grammar:'jp_grammar.json' };
-    const data = await loadData(fileMap[jpState.type]);
-    jpState.list = shuffle(data[level] || []);
-    if (!jpState.list.length) {
-      document.getElementById('jp-quiz-body').innerHTML = '<div class="loading">이 레벨 데이터 준비중입니다</div>';
-      return;
-    }
+    const fileMap={kanji:'jp_kanji.json',word:'jp_word.json',vocab:'jp_vocab.json',grammar:'jp_grammar.json'};
+    const data=await loadData(fileMap[jpState.type]);
+    jpState.list=shuffle(data[level]||[]);
+    if(!jpState.list.length){document.getElementById('jp-quiz-body').innerHTML='<div class="loading">이 레벨 데이터 준비중입니다</div>';return;}
     renderJpQuiz();
-  } catch(e) {
-    document.getElementById('jp-quiz-body').innerHTML = '<div class="loading">데이터 로딩 실패</div>';
-  }
+  } catch(e){document.getElementById('jp-quiz-body').innerHTML='<div class="loading">데이터 로딩 실패</div>';}
 }
-
 function renderJpQuiz() {
-  const { type, level, list, idx } = jpState;
-  if (!list.length) return;
-  const item = list[idx % list.length];
-  const pct = Math.round(((idx % list.length) + 1) / list.length * 100);
-  document.getElementById('jp-prog').style.width = pct + '%';
-
-  if (type === 'kanji') renderKanjiQuiz(item, level, false);
-  else if (type === 'word') renderKanjiQuiz(item, level, true);
-  else if (type === 'vocab') renderVocabQuiz(item, level, 'jp');
-  else renderGrammarQuiz(item, level, 'jp');
+  const {type,level,list,idx}=jpState;
+  if(!list.length)return;
+  const item=list[idx%list.length];
+  const pct=Math.round(((idx%list.length)+1)/list.length*100);
+  document.getElementById('jp-prog').style.width=pct+'%';
+  if(type==='kanji')renderKanjiQuiz(item,level,false);
+  else if(type==='word')renderKanjiQuiz(item,level,true);
+  else if(type==='vocab')renderVocabQuiz(item,level,'jp');
+  else renderGrammarQuiz(item,level,'jp');
 }
-
-// 한자/단어 필기 퀴즈 (isWord: 단어모드)
-function renderKanjiQuiz(item, level, isWord) {
-  const body = document.getElementById('jp-quiz-body');
-  const displayChar = isWord ? item.word : item.char;
-  const charClass = isWord ? 'kanji-char word-mode' : 'kanji-char';
-  const badgeText = isWord ? '단어' : '한자';
-  const hintText = isWord ? '읽는 법을 캔버스에 써보세요' : '읽는 법을 캔버스에 써보세요';
-
-  body.innerHTML = `
+function renderKanjiQuiz(item,level,isWord) {
+  const body=document.getElementById('jp-quiz-body');
+  const displayChar=isWord?item.word:item.char;
+  const charClass=isWord?'kanji-char word-mode':'kanji-char';
+  const badgeText=isWord?'단어':'한자';
+  body.innerHTML=`
     <div class="quiz-top">
       <span><span class="quiz-level-badge jp-badge">${level}</span><span class="quiz-type-badge">${badgeText}</span></span>
-      <span class="quiz-count">${(jpState.idx % jpState.list.length) + 1} / ${jpState.list.length}</span>
+      <span class="quiz-count">${(jpState.idx%jpState.list.length)+1} / ${jpState.list.length}</span>
     </div>
     <div class="kanji-display">
       <span class="${charClass}">${displayChar}</span>
-      <span class="kanji-sub">${hintText}</span>
+      <span class="kanji-sub">읽는 법을 캔버스에 써보세요</span>
     </div>
     <div class="canvas-wrap">
       <svg class="canvas-grid" viewBox="0 0 240 240">
@@ -376,85 +451,78 @@ function renderKanjiQuiz(item, level, isWord) {
     </div>
     <div class="answer-box" id="jp-ans">손으로 읽는 법을 써보세요</div>
   `;
-  setTimeout(() => initCanvas(), 50);
+  setTimeout(()=>initCanvas(),50);
 }
-
 function initCanvas() {
-  const s = jpState;
-  const old = document.getElementById('jp-canvas');
-  if (!old) return;
-  const nc = old.cloneNode(true);
-  old.parentNode.replaceChild(nc, old);
-  s.ctx = nc.getContext('2d');
-  s.ctx.strokeStyle = '#0d2a4a';
-  s.ctx.lineWidth = 3; s.ctx.lineCap = 'round'; s.ctx.lineJoin = 'round';
-  function pos(e) { const r = nc.getBoundingClientRect(); const src = e.touches ? e.touches[0] : e; return [src.clientX - r.left, src.clientY - r.top]; }
-  nc.addEventListener('mousedown', e => { s.drawing = true; [s.lx, s.ly] = pos(e); });
-  nc.addEventListener('mousemove', e => { if (!s.drawing) return; const [x,y] = pos(e); s.ctx.beginPath(); s.ctx.moveTo(s.lx, s.ly); s.ctx.lineTo(x, y); s.ctx.stroke(); [s.lx, s.ly] = [x, y]; });
-  nc.addEventListener('mouseup', () => s.drawing = false);
-  nc.addEventListener('mouseleave', () => s.drawing = false);
-  nc.addEventListener('touchstart', e => { e.preventDefault(); s.drawing = true; [s.lx, s.ly] = pos(e); }, {passive:false});
-  nc.addEventListener('touchmove', e => { e.preventDefault(); if (!s.drawing) return; const [x,y] = pos(e); s.ctx.beginPath(); s.ctx.moveTo(s.lx, s.ly); s.ctx.lineTo(x, y); s.ctx.stroke(); [s.lx, s.ly] = [x, y]; }, {passive:false});
-  nc.addEventListener('touchend', () => s.drawing = false);
+  const s=jpState;
+  const old=document.getElementById('jp-canvas');
+  if(!old)return;
+  const nc=old.cloneNode(true);
+  old.parentNode.replaceChild(nc,old);
+  s.ctx=nc.getContext('2d');
+  s.ctx.strokeStyle='#0d2a4a';s.ctx.lineWidth=3;s.ctx.lineCap='round';s.ctx.lineJoin='round';
+  function pos(e){const r=nc.getBoundingClientRect();const src=e.touches?e.touches[0]:e;return[src.clientX-r.left,src.clientY-r.top];}
+  nc.addEventListener('mousedown',e=>{s.drawing=true;[s.lx,s.ly]=pos(e);});
+  nc.addEventListener('mousemove',e=>{if(!s.drawing)return;const[x,y]=pos(e);s.ctx.beginPath();s.ctx.moveTo(s.lx,s.ly);s.ctx.lineTo(x,y);s.ctx.stroke();[s.lx,s.ly]=[x,y];});
+  nc.addEventListener('mouseup',()=>s.drawing=false);
+  nc.addEventListener('mouseleave',()=>s.drawing=false);
+  nc.addEventListener('touchstart',e=>{e.preventDefault();s.drawing=true;[s.lx,s.ly]=pos(e);},{passive:false});
+  nc.addEventListener('touchmove',e=>{e.preventDefault();if(!s.drawing)return;const[x,y]=pos(e);s.ctx.beginPath();s.ctx.moveTo(s.lx,s.ly);s.ctx.lineTo(x,y);s.ctx.stroke();[s.lx,s.ly]=[x,y];},{passive:false});
+  nc.addEventListener('touchend',()=>s.drawing=false);
 }
-
 function clearCanvas() {
-  if (jpState.ctx) jpState.ctx.clearRect(0, 0, 240, 240);
-  const ans = document.getElementById('jp-ans');
-  if (ans) { ans.className = 'answer-box'; ans.textContent = '손으로 읽는 법을 써보세요'; }
+  if(jpState.ctx)jpState.ctx.clearRect(0,0,240,240);
+  const ans=document.getElementById('jp-ans');
+  if(ans){ans.className='answer-box';ans.textContent='손으로 읽는 법을 써보세요';}
 }
-
 function showKanjiAnswer() {
-  const item = jpState.list[jpState.idx % jpState.list.length];
-  const ans = document.getElementById('jp-ans');
-  if (!ans) return;
-  ans.className = 'answer-box ok';
-  ans.innerHTML = `
+  const item=jpState.list[jpState.idx%jpState.list.length];
+  const ans=document.getElementById('jp-ans');
+  if(!ans)return;
+  ans.className='answer-box ok';
+  ans.innerHTML=`
     <span class="ans-reading">읽기: ${item.reading}</span>
     <span class="ans-meaning">뜻: ${item.meaning}</span>
-    <span class="ans-example">📝 ${item.example || ''}<br><small style="color:#5a9a6a">${item.example_meaning || ''}</small></span>
+    <span class="ans-example">📝 ${item.example||''}<br><small style="color:#5a9a6a">${item.example_meaning||''}</small></span>
   `;
 }
-
-function renderVocabQuiz(item, level, type) {
-  const body = document.getElementById(type + '-quiz-body');
-  const badge = type === 'jp' ? 'jp-badge' : 'kr-badge';
-  const nextFn = type === 'jp' ? 'nextJp()' : 'nextKr()';
-  const state = type === 'jp' ? jpState : krState;
-  const opts = shuffle(item.options || [item.meaning]);
-  body.innerHTML = `
+function renderVocabQuiz(item,level,type) {
+  const body=document.getElementById(type+'-quiz-body');
+  const badge=type==='jp'?'jp-badge':'kr-badge';
+  const nextFn=type==='jp'?'nextJp()':'nextKr()';
+  const state=type==='jp'?jpState:krState;
+  const opts=shuffle(item.options||[item.meaning]);
+  body.innerHTML=`
     <div class="quiz-top">
       <span><span class="quiz-level-badge ${badge}">${level}</span><span class="quiz-type-badge">어휘</span></span>
-      <span class="quiz-count">${(state.idx % state.list.length) + 1} / ${state.list.length}</span>
+      <span class="quiz-count">${(state.idx%state.list.length)+1} / ${state.list.length}</span>
     </div>
-<div class="vocab-word">
-      <span class="word">${item.kanji || item.word}</span>
+    <div class="vocab-word">
+      <span class="word">${item.kanji||item.word}</span>
       <span class="reading">${item.reading}</span>
     </div>
     <div class="example-box">📝 ${item.example}<br><small style="color:#aaa">${item.example_meaning}</small></div>
     <div class="options-grid" id="${type}-opts">
-      ${opts.map((o,i) => `<button class="opt-btn" onclick="checkVocab('${type}','${o.replace(/'/g,"\\'")}','${item.meaning.replace(/'/g,"\\'")}',${i})">${o}</button>`).join('')}
+      ${opts.map((o,i)=>`<button class="opt-btn" onclick="checkVocab('${type}','${o.replace(/'/g,"\\'")}','${item.meaning.replace(/'/g,"\\'")}',${i})">${o}</button>`).join('')}
     </div>
     <button class="next-btn ${type}-next" onclick="${nextFn}" style="margin-top:4px">다음 →</button>
   `;
 }
-
-function checkVocab(type, selected, correct, idx) {
-  const btns = document.querySelectorAll(`#${type}-opts .opt-btn`);
-  btns.forEach(b => { b.disabled = true; if (b.textContent === correct) b.classList.add('correct'); });
-  if (selected !== correct) btns[idx].classList.add('wrong');
+function checkVocab(type,selected,correct,idx) {
+  const btns=document.querySelectorAll(`#${type}-opts .opt-btn`);
+  btns.forEach(b=>{b.disabled=true;if(b.textContent===correct)b.classList.add('correct');});
+  if(selected!==correct)btns[idx].classList.add('wrong');
 }
-
-function renderGrammarQuiz(item, level, type) {
-  const body = document.getElementById(type + '-quiz-body');
-  const badge = type === 'jp' ? 'jp-badge' : 'kr-badge';
-  const state = type === 'jp' ? jpState : krState;
-  const nextFn = type === 'jp' ? 'nextJp()' : 'nextKr()';
-  const opts = shuffle(item.options || [item.meaning]);
-  body.innerHTML = `
+function renderGrammarQuiz(item,level,type) {
+  const body=document.getElementById(type+'-quiz-body');
+  const badge=type==='jp'?'jp-badge':'kr-badge';
+  const state=type==='jp'?jpState:krState;
+  const nextFn=type==='jp'?'nextJp()':'nextKr()';
+  const opts=shuffle(item.options||[item.meaning]);
+  body.innerHTML=`
     <div class="quiz-top">
       <span><span class="quiz-level-badge ${badge}">${level}</span><span class="quiz-type-badge">문법</span></span>
-      <span class="quiz-count">${(state.idx % state.list.length) + 1} / ${state.list.length}</span>
+      <span class="quiz-count">${(state.idx%state.list.length)+1} / ${state.list.length}</span>
     </div>
     <div class="grammar-pattern">
       <span class="pattern">${item.pattern}</span>
@@ -462,48 +530,206 @@ function renderGrammarQuiz(item, level, type) {
     </div>
     <div class="example-box">📝 ${item.example}<br><small style="color:#aaa">${item.example_meaning}</small></div>
     <div class="options-grid" id="${type}-opts">
-      ${opts.map((o,i) => `<button class="opt-btn" onclick="checkVocab('${type}','${o.replace(/'/g,"\\'")}','${item.meaning.replace(/'/g,"\\'")}',${i})">${o}</button>`).join('')}
+      ${opts.map((o,i)=>`<button class="opt-btn" onclick="checkVocab('${type}','${o.replace(/'/g,"\\'")}','${item.meaning.replace(/'/g,"\\'")}',${i})">${o}</button>`).join('')}
     </div>
-    <button class="next-btn ${type === 'jp' ? 'jp-next' : 'kr-next'}" onclick="${nextFn}" style="margin-top:4px">다음 →</button>
+    <button class="next-btn ${type==='jp'?'jp-next':'kr-next'}" onclick="${nextFn}" style="margin-top:4px">다음 →</button>
   `;
 }
+function nextJp(){jpState.idx++;renderJpQuiz();}
 
-function nextJp() { jpState.idx++; renderJpQuiz(); }
-
-const krData = {
-  '1급':[{word:'감사합니다',reading:'감사합니다',meaning:'ありがとうございます',example:'도와줘서 감사합니다.',example_meaning:'助けてくれてありがとうございます。',options:['ありがとうございます','すみません','おはようございます','さようなら']},{word:'안녕하세요',reading:'안녕하세요',meaning:'こんにちは',example:'선생님, 안녕하세요.',example_meaning:'先生、こんにちは。',options:['こんにちは','さようなら','おやすみなさい','いただきます']},{word:'주세요',reading:'주세요',meaning:'ください',example:'물 한 잔 주세요.',example_meaning:'水を一杯ください。',options:['ください','ありがとう','すみません','どうぞ']},{word:'얼마예요',reading:'얼마예요',meaning:'いくらですか',example:'이거 얼마예요?',example_meaning:'これはいくらですか？',options:['いくらですか','どこですか','なんですか','だれですか']},{word:'맛있어요',reading:'맛있어요',meaning:'おいしいです',example:'이 음식 정말 맛있어요.',example_meaning:'この料理、本当においしいです。',options:['おいしいです','まずいです','からいです','あまいです']},{word:'어디예요',reading:'어디예요',meaning:'どこですか',example:'화장실이 어디예요?',example_meaning:'トイレはどこですか？',options:['どこですか','なんですか','いくらですか','いつですか']},{word:'화장실',reading:'화장실',meaning:'トイレ',example:'화장실이 어디에 있어요?',example_meaning:'トイレはどこにありますか？',options:['トイレ','レストラン','ホテル','コンビニ']},{word:'사랑해요',reading:'사랑해요',meaning:'愛しています',example:'당신을 사랑해요.',example_meaning:'あなたを愛しています。',options:['愛しています','好きです','嫌いです','会いたいです']}],
-  '2급':[{word:'예약하다',reading:'예약하다',meaning:'予約する',example:'호텔을 예약했어요.',example_meaning:'ホテルを予約しました。',options:['予約する','キャンセルする','確認する','変更する']},{word:'지하철',reading:'지하철',meaning:'地下鉄',example:'지하철로 가요.',example_meaning:'地下鉄で行きます。',options:['地下鉄','バス','タクシー','電車']},{word:'편의점',reading:'편의점',meaning:'コンビニ',example:'편의점에서 샀어요.',example_meaning:'コンビニで買いました。',options:['コンビニ','スーパー','デパート','薬局']},{word:'환전',reading:'환전',meaning:'両替',example:'공항에서 환전했어요.',example_meaning:'空港で両替しました。',options:['両替','送金','引き出し','預金']},{word:'할인',reading:'할인',meaning:'割引',example:'할인 받을 수 있어요?',example_meaning:'割引してもらえますか？',options:['割引','無料','追加料金','定価']},{word:'영수증',reading:'영수증',meaning:'レシート',example:'영수증 주세요.',example_meaning:'レシートをください。',options:['レシート','クーポン','領収書','請求書']},{word:'배달',reading:'배달',meaning:'デリバリー',example:'배달 시켜요.',example_meaning:'デリバリーを頼みます。',options:['デリバリー','テイクアウト','食べ放題','予約']},{word:'교통카드',reading:'교통카드',meaning:'交通カード',example:'교통카드로 결제해요.',example_meaning:'交通カードで支払います。',options:['交通カード','クレジットカード','現金','ポイントカード']}],
-  '3급':[{word:'출발하다',reading:'출발하다',meaning:'出発する',example:'내일 아침에 출발해요.',example_meaning:'明日の朝、出発します。',options:['出発する','到着する','乗り換える','乗る']},{word:'도착하다',reading:'도착하다',meaning:'到着する',example:'서울에 도착했어요.',example_meaning:'ソウルに到着しました。',options:['到着する','出発する','通過する','寄る']},{word:'경험',reading:'경험',meaning:'経験',example:'소중한 경험이에요.',example_meaning:'大切な経験です。',options:['経験','実力','知識','能力']},{word:'문화',reading:'문화',meaning:'文化',example:'한국 문화를 배워요.',example_meaning:'韓国文化を学びます。',options:['文化','歴史','伝統','芸術']},{word:'방법',reading:'방법',meaning:'方法',example:'좋은 방법이 있어요.',example_meaning:'良い方法があります。',options:['方法','理由','原因','結果']},{word:'관계',reading:'관계',meaning:'関係',example:'좋은 관계를 유지해요.',example_meaning:'良い関係を維持します。',options:['関係','状況','問題','状態']},{word:'신청하다',reading:'신청하다',meaning:'申請する',example:'비자를 신청했어요.',example_meaning:'ビザを申請しました。',options:['申請する','許可する','断る','認める']},{word:'사회',reading:'사회',meaning:'社会',example:'사회 문제예요.',example_meaning:'社会問題です。',options:['社会','政治','経済','文化']}],
-  '4급':[{word:'갈등',reading:'갈등',meaning:'葛藤',example:'내면의 갈등이 있어요.',example_meaning:'内面の葛藤があります。',options:['葛藤','対立','協力','調和']},{word:'전략',reading:'전략',meaning:'戦略',example:'새로운 전략이 필요해요.',example_meaning:'新しい戦略が必要です。',options:['戦略','戦術','作戦','計画']},{word:'효율',reading:'효율',meaning:'効率',example:'효율을 높여요.',example_meaning:'効率を高めます。',options:['効率','効果','成果','結果']},{word:'비판',reading:'비판',meaning:'批判',example:'건설적인 비판이에요.',example_meaning:'建設的な批判です。',options:['批判','賞賛','無視','受け入れ']},{word:'성과',reading:'성과',meaning:'成果',example:'좋은 성과를 냈어요.',example_meaning:'良い成果を出しました。',options:['成果','失敗','過程','努力']},{word:'역할',reading:'역할',meaning:'役割',example:'중요한 역할을 해요.',example_meaning:'重要な役割を果たします。',options:['役割','仕事','任務','責任']},{word:'원칙',reading:'원칙',meaning:'原則',example:'원칙을 지켜요.',example_meaning:'原則を守ります。',options:['原則','規則','法律','方針']},{word:'논리',reading:'논리',meaning:'論理',example:'논리적으로 생각해요.',example_meaning:'論理的に考えます。',options:['論理','感情','直感','経験']}],
-  '5급':[{word:'논의하다',reading:'논의하다',meaning:'議論する',example:'방향을 논의해요.',example_meaning:'方向を議論します。',options:['議論する','決定する','実行する','評価する']},{word:'분석하다',reading:'분석하다',meaning:'分析する',example:'데이터를 분석해요.',example_meaning:'データを分析します。',options:['分析する','収集する','処理する','保存する']},{word:'합리적',reading:'합리적',meaning:'合理的',example:'합리적인 판단이에요.',example_meaning:'合理的な判断です。',options:['合理的','感情的','主観的','直感的']},{word:'체계적',reading:'체계적',meaning:'体系的',example:'체계적으로 공부해요.',example_meaning:'体系的に勉強します。',options:['体系的','無計画','感覚的','臨機応変']},{word:'반영하다',reading:'반영하다',meaning:'反映する',example:'의견을 반영해요.',example_meaning:'意見を反映します。',options:['反映する','無視する','否定する','変更する']},{word:'수립하다',reading:'수립하다',meaning:'樹立する',example:'계획을 수립해요.',example_meaning:'計画を樹立します。',options:['樹立する','実行する','変更する','廃止する']},{word:'촉진하다',reading:'촉진하다',meaning:'促進する',example:'성장을 촉진해요.',example_meaning:'成長を促進します。',options:['促進する','抑制する','維持する','評価する']},{word:'구조적',reading:'구조적',meaning:'構造的',example:'구조적인 문제예요.',example_meaning:'構造的な問題です。',options:['構造的','表面的','一時的','個人的']}],
-  '6급':[{word:'패러다임',reading:'패러다임',meaning:'パラダイム',example:'패러다임이 바뀌었어요.',example_meaning:'パラダイムが変わりました。',options:['パラダイム','システム','メカニズム','フレームワーク']},{word:'맥락',reading:'맥락',meaning:'文脈',example:'맥락을 파악해요.',example_meaning:'文脈を把握します。',options:['文脈','内容','意味','背景']},{word:'내재하다',reading:'내재하다',meaning:'内在する',example:'문제가 내재해 있어요.',example_meaning:'問題が内在しています。',options:['内在する','外在する','存在する','発生する']},{word:'역설적',reading:'역설적',meaning:'逆説的',example:'역설적인 상황이에요.',example_meaning:'逆説的な状況です。',options:['逆説的','論理的','一般的','普遍的']},{word:'보편적',reading:'보편적',meaning:'普遍的',example:'보편적인 가치예요.',example_meaning:'普遍的な価値です。',options:['普遍的','特殊的','個別的','例外的']},{word:'함의',reading:'함의',meaning:'含意',example:'깊은 함의가 있어요.',example_meaning:'深い含意があります。',options:['含意','意味','内容','表現']},{word:'추상적',reading:'추상적',meaning:'抽象的',example:'추상적인 개념이에요.',example_meaning:'抽象的な概念です。',options:['抽象的','具体的','現実的','実際的']},{word:'메커니즘',reading:'메커니즘',meaning:'メカニズム',example:'작동 메커니즘이에요.',example_meaning:'作動メカニズムです。',options:['メカニズム','システム','プロセス','パターン']}]
-};
+/* ===== 한국어 퀴즈 ===== */
+const krData={'1급':[{word:'감사합니다',reading:'감사합니다',meaning:'ありがとうございます',example:'도와줘서 감사합니다.',example_meaning:'助けてくれてありがとうございます。',options:['ありがとうございます','すみません','おはようございます','さようなら']},{word:'안녕하세요',reading:'안녕하세요',meaning:'こんにちは',example:'선생님, 안녕하세요.',example_meaning:'先生、こんにちは。',options:['こんにちは','さようなら','おやすみなさい','いただきます']},{word:'주세요',reading:'주세요',meaning:'ください',example:'물 한 잔 주세요.',example_meaning:'水を一杯ください。',options:['ください','ありがとう','すみません','どうぞ']},{word:'얼마예요',reading:'얼마예요',meaning:'いくらですか',example:'이거 얼마예요?',example_meaning:'これはいくらですか？',options:['いくらですか','どこですか','なんですか','だれですか']},{word:'맛있어요',reading:'맛있어요',meaning:'おいしいです',example:'이 음식 정말 맛있어요.',example_meaning:'この料理、本当においしいです。',options:['おいしいです','まずいです','からいです','あまいです']},{word:'어디예요',reading:'어디예요',meaning:'どこですか',example:'화장실이 어디예요?',example_meaning:'トイレはどこですか？',options:['どこですか','なんですか','いくらですか','いつですか']},{word:'화장실',reading:'화장실',meaning:'トイレ',example:'화장실이 어디에 있어요?',example_meaning:'トイレはどこにありますか？',options:['トイレ','レストラン','ホテル','コンビニ']},{word:'사랑해요',reading:'사랑해요',meaning:'愛しています',example:'당신을 사랑해요.',example_meaning:'あなたを愛しています。',options:['愛しています','好きです','嫌いです','会いたいです']}],'2급':[{word:'예약하다',reading:'예약하다',meaning:'予約する',example:'호텔을 예약했어요.',example_meaning:'ホテルを予約しました。',options:['予約する','キャンセルする','確認する','変更する']},{word:'지하철',reading:'지하철',meaning:'地下鉄',example:'지하철로 가요.',example_meaning:'地下鉄で行きます。',options:['地下鉄','バス','タクシー','電車']},{word:'편의점',reading:'편의점',meaning:'コンビニ',example:'편의점에서 샀어요.',example_meaning:'コンビニで買いました。',options:['コンビニ','スーパー','デパート','薬局']},{word:'환전',reading:'환전',meaning:'両替',example:'공항에서 환전했어요.',example_meaning:'空港で両替しました。',options:['両替','送金','引き出し','預金']},{word:'할인',reading:'할인',meaning:'割引',example:'할인 받을 수 있어요?',example_meaning:'割引してもらえますか？',options:['割引','無料','追加料金','定価']},{word:'영수증',reading:'영수증',meaning:'レシート',example:'영수증 주세요.',example_meaning:'レシートをください。',options:['レシート','クーポン','領収書','請求書']},{word:'배달',reading:'배달',meaning:'デリバリー',example:'배달 시켜요.',example_meaning:'デリバリーを頼みます。',options:['デリバリー','テイクアウト','食べ放題','予約']},{word:'교통카드',reading:'교통카드',meaning:'交通カード',example:'교통카드로 결제해요.',example_meaning:'交通カードで支払います。',options:['交通カード','クレジットカード','現金','ポイントカード']}],'3급':[{word:'출발하다',reading:'출발하다',meaning:'出発する',example:'내일 아침에 출발해요.',example_meaning:'明日の朝、出発します。',options:['出発する','到着する','乗り換える','乗る']},{word:'도착하다',reading:'도착하다',meaning:'到着する',example:'서울에 도착했어요.',example_meaning:'ソウルに到着しました。',options:['到着する','出発する','通過する','寄る']},{word:'경험',reading:'경험',meaning:'経験',example:'소중한 경험이에요.',example_meaning:'大切な経験です。',options:['経験','実力','知識','能力']},{word:'문화',reading:'문화',meaning:'文化',example:'한국 문화를 배워요.',example_meaning:'韓国文化を学びます。',options:['文化','歴史','伝統','芸術']},{word:'방법',reading:'방법',meaning:'方法',example:'좋은 방법이 있어요.',example_meaning:'良い方法があります。',options:['方法','理由','原因','結果']},{word:'관계',reading:'관계',meaning:'関係',example:'좋은 관계를 유지해요.',example_meaning:'良い関係を維持します。',options:['関係','状況','問題','状態']},{word:'신청하다',reading:'신청하다',meaning:'申請する',example:'비자를 신청했어요.',example_meaning:'ビザを申請しました。',options:['申請する','許可する','断る','認める']},{word:'사회',reading:'사회',meaning:'社会',example:'사회 문제예요.',example_meaning:'社会問題です。',options:['社会','政治','経済','文化']}],'4급':[{word:'갈등',reading:'갈등',meaning:'葛藤',example:'내면의 갈등이 있어요.',example_meaning:'内面の葛藤があります。',options:['葛藤','対立','協力','調和']},{word:'전략',reading:'전략',meaning:'戦略',example:'새로운 전략이 필요해요.',example_meaning:'新しい戦略が必要です。',options:['戦略','戦術','作戦','計画']},{word:'효율',reading:'효율',meaning:'効率',example:'효율을 높여요.',example_meaning:'効率を高めます。',options:['効率','効果','成果','結果']},{word:'비판',reading:'비판',meaning:'批判',example:'건설적인 비판이에요.',example_meaning:'建設的な批判です。',options:['批判','賞賛','無視','受け入れ']},{word:'성과',reading:'성과',meaning:'成果',example:'좋은 성과를 냈어요.',example_meaning:'良い成果を出しました。',options:['成果','失敗','過程','努力']},{word:'역할',reading:'역할',meaning:'役割',example:'중요한 역할을 해요.',example_meaning:'重要な役割を果たします。',options:['役割','仕事','任務','責任']},{word:'원칙',reading:'원칙',meaning:'原則',example:'원칙을 지켜요.',example_meaning:'原則を守ります。',options:['原則','規則','法律','方針']},{word:'논리',reading:'논리',meaning:'論理',example:'논리적으로 생각해요.',example_meaning:'論理的に考えます。',options:['論理','感情','直感','経験']}],'5급':[{word:'논의하다',reading:'논의하다',meaning:'議論する',example:'방향을 논의해요.',example_meaning:'方向を議論します。',options:['議論する','決定する','実行する','評価する']},{word:'분석하다',reading:'분석하다',meaning:'分析する',example:'데이터를 분석해요.',example_meaning:'データを分析します。',options:['分析する','収集する','処理する','保存する']},{word:'합리적',reading:'합리적',meaning:'合理的',example:'합리적인 판단이에요.',example_meaning:'合理的な判断です。',options:['合理的','感情的','主観的','直感的']},{word:'체계적',reading:'체계적',meaning:'体系的',example:'체계적으로 공부해요.',example_meaning:'体系的に勉強します。',options:['体系的','無計画','感覚的','臨機応変']},{word:'반영하다',reading:'반영하다',meaning:'反映する',example:'의견을 반영해요.',example_meaning:'意見を反映します。',options:['反映する','無視する','否定する','変更する']},{word:'수립하다',reading:'수립하다',meaning:'樹立する',example:'계획을 수립해요.',example_meaning:'計画を樹立します。',options:['樹立する','実行する','変更する','廃止する']},{word:'촉진하다',reading:'촉진하다',meaning:'促進する',example:'성장을 촉진해요.',example_meaning:'成長を促進します。',options:['促進する','抑制する','維持する','評価する']},{word:'구조적',reading:'구조적',meaning:'構造的',example:'구조적인 문제예요.',example_meaning:'構造的な問題です。',options:['構造的','表面的','一時的','個人的']}],'6급':[{word:'패러다임',reading:'패러다임',meaning:'パラダイム',example:'패러다임이 바뀌었어요.',example_meaning:'パラダイムが変わりました。',options:['パラダイム','システム','メカニズム','フレームワーク']},{word:'맥락',reading:'맥락',meaning:'文脈',example:'맥락을 파악해요.',example_meaning:'文脈を把握します。',options:['文脈','内容','意味','背景']},{word:'내재하다',reading:'내재하다',meaning:'内在する',example:'문제가 내재해 있어요.',example_meaning:'問題が内在しています。',options:['内在する','外在する','存在する','発生する']},{word:'역설적',reading:'역설적',meaning:'逆説的',example:'역설적인 상황이에요.',example_meaning:'逆説的な状況です。',options:['逆説的','論理的','一般的','普遍的']},{word:'보편적',reading:'보편적',meaning:'普遍的',example:'보편적인 가치예요.',example_meaning:'普遍的な価値です。',options:['普遍的','特殊的','個別的','例外的']},{word:'함의',reading:'함의',meaning:'含意',example:'깊은 함의가 있어요.',example_meaning:'深い含意があります。',options:['含意','意味','内容','表現']},{word:'추상적',reading:'추상적',meaning:'抽象的',example:'추상적인 개념이에요.',example_meaning:'抽象的な概念です。',options:['抽象的','具体的','現実的','実際的']},{word:'메커니즘',reading:'메커니즘',meaning:'メカニズム',example:'작동 메커니즘이에요.',example_meaning:'作動メカニズムです。',options:['メカニズム','システム','プロセス','パターン']}]};
 
 async function startKrQuiz(level) {
-  krState.level = level;
-  krState.idx = 0;
-  krState.list = shuffle(krData[level] || []);
-  show('kr-quiz');
-  renderKrQuiz();
+  krState.level=level;krState.idx=0;
+  krState.list=shuffle(krData[level]||[]);
+  show('kr-quiz');renderKrQuiz();
 }
-
 function renderKrQuiz() {
-  const { level, list, idx } = krState;
-  if (!list.length) return;
-  const item = list[idx % list.length];
-  const pct = Math.round(((idx % list.length) + 1) / list.length * 100);
-  document.getElementById('kr-prog').style.width = pct + '%';
-  renderVocabQuiz(item, level, 'kr');
+  const{level,list,idx}=krState;
+  if(!list.length)return;
+  const item=list[idx%list.length];
+  const pct=Math.round(((idx%list.length)+1)/list.length*100);
+  document.getElementById('kr-prog').style.width=pct+'%';
+  renderVocabQuiz(item,level,'kr');
+}
+function nextKr(){krState.idx++;renderKrQuiz();}
+
+/* ===== 게임 ===== */
+const G={running:false,score:0,lives:3,hints:5,correct:0,list:[],items:[],level:'N4',nickname:'플레이어',timer:null,dropTimer:null,currentItem:null};
+
+function getStage(){if(G.correct<6)return 1;if(G.correct<16)return 2;return 3;}
+function getSpeed(){return 0.65+getStage()*0.35;}
+function getMaxItems(){return getStage();}
+
+function stopGame(){clearInterval(G.timer);clearInterval(G.dropTimer);G.running=false;}
+
+function showStartOverlay(){
+  document.getElementById('game-start-overlay').style.display='flex';
+  document.getElementById('game-ranking-overlay').style.display='none';
+  document.getElementById('game-over-overlay').style.display='none';
+  document.getElementById('game-opts').innerHTML='';
+  document.getElementById('hint-reading-disp').textContent='';
 }
 
-function nextKr() { krState.idx++; renderKrQuiz(); }
+async function startGame(){
+  const nick=document.getElementById('game-nickname').value.trim();
+  if(!nick){alert('닉네임을 입력해주세요!');return;}
+  G.nickname=nick;
+  G.level=document.getElementById('game-level-sel').value;
+  await _runGame();
+}
+async function restartGame(){await _runGame();}
 
-if ('serviceWorker' in navigator) {
-  window.addEventListener('load', () => navigator.serviceWorker.register('/sw.js'));
+async function _runGame(){
+  stopGame();
+  document.getElementById('game-start-overlay').style.display='none';
+  document.getElementById('game-over-overlay').style.display='none';
+  document.getElementById('game-ranking-overlay').style.display='none';
+  const data=await loadData('jp_kanji.json');
+  G.list=shuffle(data[G.level]||[]);
+  G.score=0;G.lives=3;G.hints=5;G.correct=0;G.items=[];G.currentItem=null;G.running=true;
+  updateGameUI();
+  document.getElementById('hint-reading-disp').textContent='';
+  document.getElementById('hint-btn').disabled=false;
+  document.getElementById('game-opts').innerHTML='';
+  dropItem();
+  G.timer=setInterval(gameLoop,40);
+  G.dropTimer=setInterval(()=>{if(G.running&&G.items.length<getMaxItems())dropItem();},3500);
 }
 
-document.querySelectorAll('.screen').forEach(s => s.style.display = 'none');
-document.getElementById('home').style.display = 'flex';
+function dropItem(){
+  if(!G.list.length||!G.running)return;
+  const item=G.list[Math.floor(Math.random()*G.list.length)];
+  const canvas=document.getElementById('game-canvas');
+  const w=canvas.offsetWidth||360;
+  G.items.push({item,x:44+Math.random()*(w-88),y:-52,vy:getSpeed()});
+  if(!G.currentItem){G.currentItem=item;renderGameOpts(item);}
+}
+
+function gameLoop(){
+  const canvas=document.getElementById('game-canvas');
+  const ctx=canvas.getContext('2d');
+  canvas.width=canvas.offsetWidth;canvas.height=canvas.offsetHeight;
+  ctx.clearRect(0,0,canvas.width,canvas.height);
+  let landed=false;
+  for(let i=G.items.length-1;i>=0;i--){
+    const obj=G.items[i];
+    obj.y+=obj.vy;
+    ctx.save();
+    ctx.fillStyle='#1a3a2a';ctx.strokeStyle='#3a7a4a';ctx.lineWidth=1.5;
+    rr(ctx,obj.x-32,obj.y-32,64,64,10);ctx.fill();ctx.stroke();
+    ctx.fillStyle='#e8ffe8';ctx.font='bold 34px serif';
+    ctx.textAlign='center';ctx.textBaseline='middle';
+    ctx.fillText(obj.item.char,obj.x,obj.y);
+    ctx.restore();
+    if(obj.y>canvas.height+44){G.items.splice(i,1);G.lives--;landed=true;}
+  }
+  if(landed){
+    updateGameUI();
+    document.getElementById('hint-reading-disp').textContent='';
+    if(G.lives<=0){endGame();return;}
+    if(G.items.length===0){G.currentItem=null;dropItem();}
+    else{G.currentItem=G.items[0].item;renderGameOpts(G.currentItem);}
+  }
+  document.getElementById('game-stage-disp').textContent=`STAGE ${getStage()} · ${G.level}`;
+}
+
+function rr(ctx,x,y,w,h,r){
+  ctx.beginPath();ctx.moveTo(x+r,y);ctx.lineTo(x+w-r,y);
+  ctx.quadraticCurveTo(x+w,y,x+w,y+r);ctx.lineTo(x+w,y+h-r);
+  ctx.quadraticCurveTo(x+w,y+h,x+w-r,y+h);ctx.lineTo(x+r,y+h);
+  ctx.quadraticCurveTo(x,y+h,x,y+h-r);ctx.lineTo(x,y+r);
+  ctx.quadraticCurveTo(x,y,x+r,y);ctx.closePath();
+}
+
+function renderGameOpts(item){
+  const opts=document.getElementById('game-opts');
+  const pool=G.list.filter(i=>i.char!==item.char);
+  const wrongs=shuffle(pool).slice(0,3).map(i=>i.meaning);
+  const choices=shuffle([item.meaning,...wrongs]);
+  opts.innerHTML=choices.map(c=>`<button class="game-opt-btn" onclick="checkGame('${item.char}','${c.replace(/'/g,"\\'")}','${item.meaning.replace(/'/g,"\\'")}',this)">${c}</button>`).join('');
+  document.getElementById('hint-reading-disp').textContent='';
+}
+
+function checkGame(char,selected,correct,btn){
+  const allBtns=document.querySelectorAll('#game-opts .game-opt-btn');
+  allBtns.forEach(b=>b.disabled=true);
+  allBtns.forEach(b=>{if(b.textContent===correct)b.classList.add('g-correct');});
+  if(selected===correct){
+    btn.classList.add('g-correct');
+    G.items=G.items.filter(o=>o.item.char!==char);
+    G.score+=getStage()===1?10:getStage()===2?15:20;
+    G.correct++;updateGameUI();
+    document.getElementById('hint-reading-disp').textContent='';
+    setTimeout(()=>{
+      if(!G.running)return;
+      if(G.items.length<getMaxItems())dropItem();
+      if(G.items.length>0){G.currentItem=G.items[0].item;renderGameOpts(G.currentItem);}
+      else G.currentItem=null;
+    },400);
+  } else {
+    btn.classList.add('g-wrong');G.lives--;updateGameUI();
+    if(G.lives<=0){setTimeout(endGame,500);return;}
+    setTimeout(()=>{allBtns.forEach(b=>{b.disabled=false;b.classList.remove('g-wrong','g-correct');});},700);
+  }
+}
+
+function useHint(){
+  if(G.hints<=0||!G.currentItem)return;
+  G.hints--;
+  document.getElementById('hint-reading-disp').textContent=G.currentItem.reading;
+  updateGameUI();
+  if(G.hints===0)document.getElementById('hint-btn').disabled=true;
+}
+
+function updateGameUI(){
+  document.getElementById('game-score-disp').textContent='점수: '+G.score;
+  document.getElementById('game-lives-disp').textContent='❤️'.repeat(G.lives)+'🖤'.repeat(Math.max(0,3-G.lives));
+  document.getElementById('game-hint-disp').textContent=`💡 힌트 ${G.hints}회`;
+}
+
+async function endGame(){
+  stopGame();
+  saveRanking({name:G.nickname,score:G.score,level:G.level,correct:G.correct});
+  document.getElementById('sc-name-disp').textContent=G.nickname;
+  document.getElementById('sc-score-disp').textContent=G.score+'점';
+  document.getElementById('sc-sub-disp').textContent=`${G.level} · ${G.correct}개 정답`;
+  const goR=document.getElementById('gameover-ranking');
+  goR.innerHTML='<h3>🏆 RANKING</h3>'+buildRankingHTML();
+  document.getElementById('game-over-overlay').style.display='flex';
+}
+
+function saveRanking(entry){
+  try{
+    const key='fukudaegu_ranking';
+    const list=JSON.parse(localStorage.getItem(key)||'[]');
+    list.push({...entry,date:new Date().toLocaleDateString('ko-KR')});
+    list.sort((a,b)=>b.score-a.score);
+    localStorage.setItem(key,JSON.stringify(list.slice(0,50)));
+  }catch(e){}
+}
+function getRanking(){try{return JSON.parse(localStorage.getItem('fukudaegu_ranking')||'[]');}catch(e){return[];}}
+function buildRankingHTML(){
+  const list=getRanking();
+  if(!list.length)return '<div style="color:rgba(255,255,255,0.4);font-size:12px;text-align:center;padding:12px">아직 기록이 없어요</div>';
+  return list.slice(0,10).map((r,i)=>`<div class="rank-row"><span class="rank-num">${i+1}</span><span class="rank-name">${r.name}</span><span class="rank-score">${r.score}점</span><span class="rank-lv">${r.level}</span></div>`).join('');
+}
+function showRanking(){
+  document.getElementById('game-start-overlay').style.display='none';
+  const rl=document.getElementById('ranking-list');
+  rl.innerHTML='<h3>🏆 RANKING</h3>'+buildRankingHTML();
+  document.getElementById('game-ranking-overlay').style.display='flex';
+}
+function hideRanking(){
+  document.getElementById('game-ranking-overlay').style.display='none';
+  document.getElementById('game-start-overlay').style.display='flex';
+}
+
+/* ===== 초기화 ===== */
+if('serviceWorker' in navigator){window.addEventListener('load',()=>navigator.serviceWorker.register('/sw.js'));}
+document.querySelectorAll('.screen').forEach(s=>s.style.display='none');
+document.getElementById('home').style.display='flex';
 document.getElementById('home').classList.add('active');
 </script>
 </body>
