@@ -556,7 +556,22 @@ function renderKrQuiz() {
 function nextKr(){krState.idx++;renderKrQuiz();}
 
 /* ===== 게임 ===== */
-const G={running:false,score:0,lives:3,hints:5,correct:0,list:[],items:[],level:'N4',nickname:'플레이어',timer:null,dropTimer:null,currentItem:null};
+const AC=new(window.AudioContext||window.webkitAudioContext)();
+function beep(freq,dur,type='square',vol=0.3){
+  const o=AC.createOscillator(),g=AC.createGain();
+  o.connect(g);g.connect(AC.destination);
+  o.type=type;o.frequency.setValueAtTime(freq,AC.currentTime);
+  g.gain.setValueAtTime(vol,AC.currentTime);
+  g.gain.exponentialRampToValueAtTime(0.001,AC.currentTime+dur);
+  o.start();o.stop(AC.currentTime+dur);
+}
+function sfxCorrect(){beep(523,0.1);setTimeout(()=>beep(659,0.1),100);setTimeout(()=>beep(784,0.15),200);}
+function sfxWrong(){beep(200,0.2,'sawtooth',0.4);}
+function sfxLose(){beep(300,0.1);setTimeout(()=>beep(250,0.1),120);setTimeout(()=>beep(180,0.3),240);}
+function sfxStart(){beep(262,0.08);setTimeout(()=>beep(330,0.08),90);setTimeout(()=>beep(392,0.08),180);setTimeout(()=>beep(523,0.15),270);}
+function sfxLanded(){beep(150,0.15,'sawtooth',0.3);}
+
+const G={running:false,
 
 function getStage(){if(G.correct<6)return 1;if(G.correct<16)return 2;return 3;}
 function getSpeed(){return 0.65+getStage()*0.35;}
@@ -589,6 +604,7 @@ async function _runGame(){
   const data=await loadData('jp_kanji.json');
   G.list=shuffle(data[G.level]||[]);
   G.score=0;G.lives=3;G.hints=5;G.correct=0;G.items=[];G.currentItem=null;G.running=true;
+  sfxStart();
   updateGameUI();
   document.getElementById('hint-reading-disp').textContent='';
   document.getElementById('hint-btn').disabled=false;
@@ -628,6 +644,7 @@ function gameLoop(){
   if(landed){
     updateGameUI();
     document.getElementById('hint-reading-disp').textContent='';
+   sfxLanded();
     if(G.lives<=0){endGame();return;}
     if(G.items.length===0){G.currentItem=null;dropItem();}
     else{G.currentItem=G.items[0].item;renderGameOpts(G.currentItem);}
@@ -656,7 +673,8 @@ function checkGame(char,selected,correct,btn){
   const allBtns=document.querySelectorAll('#game-opts .game-opt-btn');
   allBtns.forEach(b=>b.disabled=true);
   allBtns.forEach(b=>{if(b.textContent===correct)b.classList.add('g-correct');});
-  if(selected===correct){
+if(selected===correct){
+    sfxCorrect();
     btn.classList.add('g-correct');
     G.items=G.items.filter(o=>o.item.char!==char);
     G.score+=getStage()===1?10:getStage()===2?15:20;
@@ -668,7 +686,8 @@ function checkGame(char,selected,correct,btn){
       if(G.items.length>0){G.currentItem=G.items[0].item;renderGameOpts(G.currentItem);}
       else G.currentItem=null;
     },400);
-  } else {
+} else {
+    sfxWrong();
     btn.classList.add('g-wrong');G.lives--;updateGameUI();
     if(G.lives<=0){setTimeout(endGame,500);return;}
     setTimeout(()=>{allBtns.forEach(b=>{b.disabled=false;b.classList.remove('g-wrong','g-correct');});},700);
@@ -690,6 +709,7 @@ function updateGameUI(){
 }
 
 async function endGame(){
+  sfxLose();
   stopGame();
   saveRanking({name:G.nickname,score:G.score,level:G.level,correct:G.correct});
   document.getElementById('sc-name-disp').textContent=G.nickname;
