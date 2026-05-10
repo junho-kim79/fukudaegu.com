@@ -84,6 +84,9 @@ canvas.draw { position: absolute; inset: 0; cursor: crosshair; touch-action: non
 .btns button.primary-kr { background: #4a0d0d; color: white; border-color: #4a0d0d; }
 .btns button:active { transform: scale(0.96); }
 .answer-box { background: #f5f5f5; border-radius: 10px; padding: 12px 14px; font-size: 13px; color: #888; min-height: 46px; display: flex; flex-direction: column; gap: 4px; }
+.answer-box.ok .ans-reading { font-size: 22px; font-weight: 600; color: #1a5c2a; }
+.answer-box.ok .ans-meaning { font-size: 18px; color: #27500a; margin-top: 2px; }
+.answer-box.ok .ans-example { font-size: 14px; color: #3a7a2a; margin-top: 8px; line-height: 1.6; }
 .answer-box.ok { background: #eaf3de; color: #27500a; border: 1px solid #c0dd97; }
 
 .vocab-word { text-align: center; padding: 16px 0; }
@@ -405,11 +408,11 @@ function showKanjiAnswer() {
   const ans = document.getElementById('jp-ans');
   if (!ans) return;
   ans.className = 'answer-box ok';
-  if (jpState.type === 'word') {
-    ans.innerHTML = `<strong>읽기:</strong> ${item.reading}<br><strong>뜻:</strong> ${item.meaning}`;
-  } else {
-    ans.innerHTML = `<strong>읽기:</strong> ${item.reading}<br><strong>뜻:</strong> ${item.meaning}`;
-  }
+  ans.innerHTML = `
+    <span class="ans-reading">읽기: ${item.reading}</span>
+    <span class="ans-meaning">뜻: ${item.meaning}</span>
+    <span class="ans-example">📝 ${item.example || ''}<br><small style="color:#5a9a6a">${item.example_meaning || ''}</small></span>
+  `;
 }
 
 function renderVocabQuiz(item, level, type) {
