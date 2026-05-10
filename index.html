@@ -428,7 +428,7 @@ function renderVocabQuiz(item, level, type) {
       <span class="quiz-count">${(state.idx % state.list.length) + 1} / ${state.list.length}</span>
     </div>
 <div class="vocab-word">
-      <span class="word">${item.word}</span>
+      <span class="word">${item.kanji || item.word}</span>
       <span class="reading">${item.reading}</span>
     </div>
     <div class="example-box">📝 ${item.example}<br><small style="color:#aaa">${item.example_meaning}</small></div>
