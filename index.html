@@ -92,7 +92,8 @@ canvas.draw { position: absolute; inset: 0; cursor: crosshair; touch-action: non
 .vocab-word { text-align: center; padding: 16px 0; }
 .vocab-word .word { font-size: 36px; font-weight: 300; color: #111; display: block; margin-bottom: 6px; }
 .vocab-word .reading { font-size: 14px; color: #888; }
-.example-box { background: #f5f5f5; border-radius: 10px; padding: 12px 14px; font-size: 13px; color: #555; line-height: 1.6; }
+.example-box { background: #f5f5f5; border-radius: 10px; padding: 12px 14px; font-size: 16px; color: #555; line-height: 1.8; }
+.example-box small { font-size: 14px; color: #888; }
 .options-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
 .opt-btn { padding: 12px 8px; border-radius: 10px; font-size: 13px; cursor: pointer; border: 1.5px solid #ddd; background: #f9f9f9; color: #333; transition: all 0.15s; text-align: center; line-height: 1.4; }
 .opt-btn:active { transform: scale(0.97); }
@@ -426,7 +427,7 @@ function renderVocabQuiz(item, level, type) {
       <span><span class="quiz-level-badge ${badge}">${level}</span><span class="quiz-type-badge">어휘</span></span>
       <span class="quiz-count">${(state.idx % state.list.length) + 1} / ${state.list.length}</span>
     </div>
-    <div class="vocab-word">
+<div class="vocab-word">
       <span class="word">${item.word}</span>
       <span class="reading">${item.reading}</span>
     </div>
