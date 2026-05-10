@@ -303,7 +303,6 @@ canvas.draw { position: absolute; inset: 0; cursor: crosshair; touch-action: non
   </div>
 </div>
 
-<!-- 게임 화면 -->
 <div id="game" class="screen">
   <div class="app-header game-hd">
     <button class="back-btn" onclick="stopGame();show('home')">←</button>
@@ -317,7 +316,6 @@ canvas.draw { position: absolute; inset: 0; cursor: crosshair; touch-action: non
   </div>
   <div id="game-area">
     <canvas id="game-canvas"></canvas>
-    <!-- 시작 -->
     <div class="game-overlay" id="game-start-overlay">
       <div style="font-size:50px">漢</div>
       <h2>한자 낙하 게임</h2>
@@ -333,13 +331,11 @@ canvas.draw { position: absolute; inset: 0; cursor: crosshair; touch-action: non
         <button class="game-btn secondary" onclick="showRanking()">🏆 랭킹 보기</button>
       </div>
     </div>
-    <!-- 랭킹 -->
     <div class="game-overlay" id="game-ranking-overlay" style="display:none">
       <h2>🏆 랭킹</h2>
       <div class="ranking-box" id="ranking-list"></div>
       <button class="game-btn secondary" onclick="hideRanking()">← 돌아가기</button>
     </div>
-    <!-- 게임오버 -->
     <div class="game-overlay" id="game-over-overlay" style="display:none">
       <h2>💀 게임 오버</h2>
       <div id="game-score-card">
@@ -364,54 +360,54 @@ canvas.draw { position: absolute; inset: 0; cursor: crosshair; touch-action: non
 
 <script>
 /* ===== 공통 ===== */
-const jpState = { type:'kanji', level:'N5', list:[], idx:0, ctx:null, drawing:false, lx:0, ly:0 };
-const krState = { level:'1급', list:[], idx:0 };
-const cache = {};
+const jpState={type:'kanji',level:'N5',list:[],idx:0,ctx:null,drawing:false,lx:0,ly:0};
+const krState={level:'1급',list:[],idx:0};
+const cache={};
 
-function show(id) {
-  document.querySelectorAll('.screen').forEach(s => { s.classList.remove('active'); s.style.display='none'; });
-  const el = document.getElementById(id);
-  el.style.display = 'flex'; el.classList.add('active');
+function show(id){
+  document.querySelectorAll('.screen').forEach(s=>{s.classList.remove('active');s.style.display='none';});
+  const el=document.getElementById(id);
+  el.style.display='flex';el.classList.add('active');
 }
-function switchTab(name, btn) {
-  document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
-  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+function switchTab(name,btn){
+  document.querySelectorAll('.tab-content').forEach(t=>t.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
   document.getElementById('tab-'+name).classList.add('active');
   btn.classList.add('active');
 }
-function setJpType(type) {
-  jpState.type = type;
-  document.querySelectorAll('.qtype-btn').forEach(b => b.classList.remove('active'));
+function setJpType(type){
+  jpState.type=type;
+  document.querySelectorAll('.qtype-btn').forEach(b=>b.classList.remove('active'));
   document.getElementById('jp-type-'+type).classList.add('active');
 }
-async function loadData(file) {
-  if (cache[file]) return cache[file];
-  const res = await fetch('data/'+file);
-  const data = await res.json();
-  cache[file] = data; return data;
+async function loadData(file){
+  if(cache[file])return cache[file];
+  const res=await fetch('data/'+file);
+  const data=await res.json();
+  cache[file]=data;return data;
 }
-function shuffle(arr) {
+function shuffle(arr){
   const a=[...arr];
   for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}
   return a;
 }
 
 /* ===== 일본어 퀴즈 ===== */
-async function startJpQuiz(level) {
-  jpState.level=level; jpState.idx=0; jpState.ctx=null; show('jp-quiz');
+async function startJpQuiz(level){
+  jpState.level=level;jpState.idx=0;jpState.ctx=null;show('jp-quiz');
   const titles={kanji:'한자 퀴즈',word:'단어 퀴즈',vocab:'어휘 퀴즈',grammar:'문법 퀴즈'};
   document.getElementById('jp-quiz-title').textContent=titles[jpState.type];
   document.getElementById('jp-quiz-body').innerHTML='<div class="loading">로딩 중...</div>';
-  try {
+  try{
     const fileMap={kanji:'jp_kanji.json',word:'jp_word.json',vocab:'jp_vocab.json',grammar:'jp_grammar.json'};
     const data=await loadData(fileMap[jpState.type]);
     jpState.list=shuffle(data[level]||[]);
     if(!jpState.list.length){document.getElementById('jp-quiz-body').innerHTML='<div class="loading">이 레벨 데이터 준비중입니다</div>';return;}
     renderJpQuiz();
-  } catch(e){document.getElementById('jp-quiz-body').innerHTML='<div class="loading">데이터 로딩 실패</div>';}
+  }catch(e){document.getElementById('jp-quiz-body').innerHTML='<div class="loading">데이터 로딩 실패</div>';}
 }
-function renderJpQuiz() {
-  const {type,level,list,idx}=jpState;
+function renderJpQuiz(){
+  const{type,level,list,idx}=jpState;
   if(!list.length)return;
   const item=list[idx%list.length];
   const pct=Math.round(((idx%list.length)+1)/list.length*100);
@@ -421,7 +417,7 @@ function renderJpQuiz() {
   else if(type==='vocab')renderVocabQuiz(item,level,'jp');
   else renderGrammarQuiz(item,level,'jp');
 }
-function renderKanjiQuiz(item,level,isWord) {
+function renderKanjiQuiz(item,level,isWord){
   const body=document.getElementById('jp-quiz-body');
   const displayChar=isWord?item.word:item.char;
   const charClass=isWord?'kanji-char word-mode':'kanji-char';
@@ -453,7 +449,7 @@ function renderKanjiQuiz(item,level,isWord) {
   `;
   setTimeout(()=>initCanvas(),50);
 }
-function initCanvas() {
+function initCanvas(){
   const s=jpState;
   const old=document.getElementById('jp-canvas');
   if(!old)return;
@@ -470,12 +466,12 @@ function initCanvas() {
   nc.addEventListener('touchmove',e=>{e.preventDefault();if(!s.drawing)return;const[x,y]=pos(e);s.ctx.beginPath();s.ctx.moveTo(s.lx,s.ly);s.ctx.lineTo(x,y);s.ctx.stroke();[s.lx,s.ly]=[x,y];},{passive:false});
   nc.addEventListener('touchend',()=>s.drawing=false);
 }
-function clearCanvas() {
+function clearCanvas(){
   if(jpState.ctx)jpState.ctx.clearRect(0,0,240,240);
   const ans=document.getElementById('jp-ans');
   if(ans){ans.className='answer-box';ans.textContent='손으로 읽는 법을 써보세요';}
 }
-function showKanjiAnswer() {
+function showKanjiAnswer(){
   const item=jpState.list[jpState.idx%jpState.list.length];
   const ans=document.getElementById('jp-ans');
   if(!ans)return;
@@ -486,7 +482,7 @@ function showKanjiAnswer() {
     <span class="ans-example">📝 ${item.example||''}<br><small style="color:#5a9a6a">${item.example_meaning||''}</small></span>
   `;
 }
-function renderVocabQuiz(item,level,type) {
+function renderVocabQuiz(item,level,type){
   const body=document.getElementById(type+'-quiz-body');
   const badge=type==='jp'?'jp-badge':'kr-badge';
   const nextFn=type==='jp'?'nextJp()':'nextKr()';
@@ -508,12 +504,12 @@ function renderVocabQuiz(item,level,type) {
     <button class="next-btn ${type}-next" onclick="${nextFn}" style="margin-top:4px">다음 →</button>
   `;
 }
-function checkVocab(type,selected,correct,idx) {
+function checkVocab(type,selected,correct,idx){
   const btns=document.querySelectorAll(`#${type}-opts .opt-btn`);
   btns.forEach(b=>{b.disabled=true;if(b.textContent===correct)b.classList.add('correct');});
   if(selected!==correct)btns[idx].classList.add('wrong');
 }
-function renderGrammarQuiz(item,level,type) {
+function renderGrammarQuiz(item,level,type){
   const body=document.getElementById(type+'-quiz-body');
   const badge=type==='jp'?'jp-badge':'kr-badge';
   const state=type==='jp'?jpState:krState;
@@ -540,12 +536,12 @@ function nextJp(){jpState.idx++;renderJpQuiz();}
 /* ===== 한국어 퀴즈 ===== */
 const krData={'1급':[{word:'감사합니다',reading:'감사합니다',meaning:'ありがとうございます',example:'도와줘서 감사합니다.',example_meaning:'助けてくれてありがとうございます。',options:['ありがとうございます','すみません','おはようございます','さようなら']},{word:'안녕하세요',reading:'안녕하세요',meaning:'こんにちは',example:'선생님, 안녕하세요.',example_meaning:'先生、こんにちは。',options:['こんにちは','さようなら','おやすみなさい','いただきます']},{word:'주세요',reading:'주세요',meaning:'ください',example:'물 한 잔 주세요.',example_meaning:'水を一杯ください。',options:['ください','ありがとう','すみません','どうぞ']},{word:'얼마예요',reading:'얼마예요',meaning:'いくらですか',example:'이거 얼마예요?',example_meaning:'これはいくらですか？',options:['いくらですか','どこですか','なんですか','だれですか']},{word:'맛있어요',reading:'맛있어요',meaning:'おいしいです',example:'이 음식 정말 맛있어요.',example_meaning:'この料理、本当においしいです。',options:['おいしいです','まずいです','からいです','あまいです']},{word:'어디예요',reading:'어디예요',meaning:'どこですか',example:'화장실이 어디예요?',example_meaning:'トイレはどこですか？',options:['どこですか','なんですか','いくらですか','いつですか']},{word:'화장실',reading:'화장실',meaning:'トイレ',example:'화장실이 어디에 있어요?',example_meaning:'トイレはどこにありますか？',options:['トイレ','レストラン','ホテル','コンビニ']},{word:'사랑해요',reading:'사랑해요',meaning:'愛しています',example:'당신을 사랑해요.',example_meaning:'あなたを愛しています。',options:['愛しています','好きです','嫌いです','会いたいです']}],'2급':[{word:'예약하다',reading:'예약하다',meaning:'予約する',example:'호텔을 예약했어요.',example_meaning:'ホテルを予約しました。',options:['予約する','キャンセルする','確認する','変更する']},{word:'지하철',reading:'지하철',meaning:'地下鉄',example:'지하철로 가요.',example_meaning:'地下鉄で行きます。',options:['地下鉄','バス','タクシー','電車']},{word:'편의점',reading:'편의점',meaning:'コンビニ',example:'편의점에서 샀어요.',example_meaning:'コンビニで買いました。',options:['コンビニ','スーパー','デパート','薬局']},{word:'환전',reading:'환전',meaning:'両替',example:'공항에서 환전했어요.',example_meaning:'空港で両替しました。',options:['両替','送金','引き出し','預金']},{word:'할인',reading:'할인',meaning:'割引',example:'할인 받을 수 있어요?',example_meaning:'割引してもらえますか？',options:['割引','無料','追加料金','定価']},{word:'영수증',reading:'영수증',meaning:'レシート',example:'영수증 주세요.',example_meaning:'レシートをください。',options:['レシート','クーポン','領収書','請求書']},{word:'배달',reading:'배달',meaning:'デリバリー',example:'배달 시켜요.',example_meaning:'デリバリーを頼みます。',options:['デリバリー','テイクアウト','食べ放題','予約']},{word:'교통카드',reading:'교통카드',meaning:'交通カード',example:'교통카드로 결제해요.',example_meaning:'交通カードで支払います。',options:['交通カード','クレジットカード','現金','ポイントカード']}],'3급':[{word:'출발하다',reading:'출발하다',meaning:'出発する',example:'내일 아침에 출발해요.',example_meaning:'明日の朝、出発します。',options:['出発する','到着する','乗り換える','乗る']},{word:'도착하다',reading:'도착하다',meaning:'到着する',example:'서울에 도착했어요.',example_meaning:'ソウルに到着しました。',options:['到着する','出発する','通過する','寄る']},{word:'경험',reading:'경험',meaning:'経験',example:'소중한 경험이에요.',example_meaning:'大切な経験です。',options:['経験','実力','知識','能力']},{word:'문화',reading:'문화',meaning:'文化',example:'한국 문화를 배워요.',example_meaning:'韓国文化を学びます。',options:['文化','歴史','伝統','芸術']},{word:'방법',reading:'방법',meaning:'方法',example:'좋은 방법이 있어요.',example_meaning:'良い方法があります。',options:['方法','理由','原因','結果']},{word:'관계',reading:'관계',meaning:'関係',example:'좋은 관계를 유지해요.',example_meaning:'良い関係を維持します。',options:['関係','状況','問題','状態']},{word:'신청하다',reading:'신청하다',meaning:'申請する',example:'비자를 신청했어요.',example_meaning:'ビザを申請しました。',options:['申請する','許可する','断る','認める']},{word:'사회',reading:'사회',meaning:'社会',example:'사회 문제예요.',example_meaning:'社会問題です。',options:['社会','政治','経済','文化']}],'4급':[{word:'갈등',reading:'갈등',meaning:'葛藤',example:'내면의 갈등이 있어요.',example_meaning:'内面の葛藤があります。',options:['葛藤','対立','協力','調和']},{word:'전략',reading:'전략',meaning:'戦略',example:'새로운 전략이 필요해요.',example_meaning:'新しい戦略が必要です。',options:['戦略','戦術','作戦','計画']},{word:'효율',reading:'효율',meaning:'効率',example:'효율을 높여요.',example_meaning:'効率を高めます。',options:['効率','効果','成果','結果']},{word:'비판',reading:'비판',meaning:'批判',example:'건설적인 비판이에요.',example_meaning:'建設的な批判です。',options:['批判','賞賛','無視','受け入れ']},{word:'성과',reading:'성과',meaning:'成果',example:'좋은 성과를 냈어요.',example_meaning:'良い成果を出しました。',options:['成果','失敗','過程','努力']},{word:'역할',reading:'역할',meaning:'役割',example:'중요한 역할을 해요.',example_meaning:'重要な役割を果たします。',options:['役割','仕事','任務','責任']},{word:'원칙',reading:'원칙',meaning:'原則',example:'원칙을 지켜요.',example_meaning:'原則を守ります。',options:['原則','規則','法律','方針']},{word:'논리',reading:'논리',meaning:'論理',example:'논리적으로 생각해요.',example_meaning:'論理的に考えます。',options:['論理','感情','直感','経験']}],'5급':[{word:'논의하다',reading:'논의하다',meaning:'議論する',example:'방향을 논의해요.',example_meaning:'方向を議論します。',options:['議論する','決定する','実行する','評価する']},{word:'분석하다',reading:'분석하다',meaning:'分析する',example:'데이터를 분석해요.',example_meaning:'データを分析します。',options:['分析する','収集する','処理する','保存する']},{word:'합리적',reading:'합리적',meaning:'合理的',example:'합리적인 판단이에요.',example_meaning:'合理的な判断です。',options:['合理的','感情的','主観的','直感的']},{word:'체계적',reading:'체계적',meaning:'体系的',example:'체계적으로 공부해요.',example_meaning:'体系的に勉強します。',options:['体系的','無計画','感覚的','臨機応変']},{word:'반영하다',reading:'반영하다',meaning:'反映する',example:'의견을 반영해요.',example_meaning:'意見を反映します。',options:['反映する','無視する','否定する','変更する']},{word:'수립하다',reading:'수립하다',meaning:'樹立する',example:'계획을 수립해요.',example_meaning:'計画を樹立します。',options:['樹立する','実行する','変更する','廃止する']},{word:'촉진하다',reading:'촉진하다',meaning:'促進する',example:'성장을 촉진해요.',example_meaning:'成長を促進します。',options:['促進する','抑制する','維持する','評価する']},{word:'구조적',reading:'구조적',meaning:'構造的',example:'구조적인 문제예요.',example_meaning:'構造的な問題です。',options:['構造的','表面的','一時的','個人的']}],'6급':[{word:'패러다임',reading:'패러다임',meaning:'パラダイム',example:'패러다임이 바뀌었어요.',example_meaning:'パラダイムが変わりました。',options:['パラダイム','システム','メカニズム','フレームワーク']},{word:'맥락',reading:'맥락',meaning:'文脈',example:'맥락을 파악해요.',example_meaning:'文脈を把握します。',options:['文脈','内容','意味','背景']},{word:'내재하다',reading:'내재하다',meaning:'内在する',example:'문제가 내재해 있어요.',example_meaning:'問題が内在しています。',options:['内在する','外在する','存在する','発生する']},{word:'역설적',reading:'역설적',meaning:'逆説的',example:'역설적인 상황이에요.',example_meaning:'逆説的な状況です。',options:['逆説的','論理的','一般的','普遍的']},{word:'보편적',reading:'보편적',meaning:'普遍的',example:'보편적인 가치예요.',example_meaning:'普遍的な価値です。',options:['普遍的','特殊的','個別的','例外的']},{word:'함의',reading:'함의',meaning:'含意',example:'깊은 함의가 있어요.',example_meaning:'深い含意があります。',options:['含意','意味','内容','表現']},{word:'추상적',reading:'추상적',meaning:'抽象的',example:'추상적인 개념이에요.',example_meaning:'抽象的な概念です。',options:['抽象的','具体的','現実的','実際的']},{word:'메커니즘',reading:'메커니즘',meaning:'メカニズム',example:'작동 메커니즘이에요.',example_meaning:'作動メカニズムです。',options:['メカニズム','システム','プロセス','パターン']}]};
 
-async function startKrQuiz(level) {
+async function startKrQuiz(level){
   krState.level=level;krState.idx=0;
   krState.list=shuffle(krData[level]||[]);
   show('kr-quiz');renderKrQuiz();
 }
-function renderKrQuiz() {
+function renderKrQuiz(){
   const{level,list,idx}=krState;
   if(!list.length)return;
   const item=list[idx%list.length];
@@ -555,23 +551,35 @@ function renderKrQuiz() {
 }
 function nextKr(){krState.idx++;renderKrQuiz();}
 
-/* ===== 게임 ===== */
-const AC=new(window.AudioContext||window.webkitAudioContext)();
-function beep(freq,dur,type='square',vol=0.3){
-  const o=AC.createOscillator(),g=AC.createGain();
-  o.connect(g);g.connect(AC.destination);
-  o.type=type;o.frequency.setValueAtTime(freq,AC.currentTime);
-  g.gain.setValueAtTime(vol,AC.currentTime);
-  g.gain.exponentialRampToValueAtTime(0.001,AC.currentTime+dur);
-  o.start();o.stop(AC.currentTime+dur);
+/* ===== 8비트 사운드 ===== */
+let AC=null;
+function getAC(){
+  if(!AC)AC=new(window.AudioContext||window.webkitAudioContext)();
+  return AC;
 }
-function sfxCorrect(){beep(523,0.1);setTimeout(()=>beep(659,0.1),100);setTimeout(()=>beep(784,0.15),200);}
-function sfxWrong(){beep(200,0.2,'sawtooth',0.4);}
+function beep(freq,dur,type='square',vol=0.3){
+  try{
+    const ac=getAC();
+    const o=ac.createOscillator(),g=ac.createGain();
+    o.connect(g);g.connect(ac.destination);
+    o.type=type;o.frequency.setValueAtTime(freq,ac.currentTime);
+    g.gain.setValueAtTime(vol,ac.currentTime);
+    g.gain.exponentialRampToValueAtTime(0.001,ac.currentTime+dur);
+    o.start();o.stop(ac.currentTime+dur);
+  }catch(e){}
+}
+function sfxCorrect(){beep(523,0.08);setTimeout(()=>beep(659,0.08),90);setTimeout(()=>beep(784,0.12),180);}
+function sfxWrong(){beep(180,0.2,'sawtooth',0.35);}
 function sfxLose(){beep(300,0.1);setTimeout(()=>beep(250,0.1),120);setTimeout(()=>beep(180,0.3),240);}
-function sfxStart(){beep(262,0.08);setTimeout(()=>beep(330,0.08),90);setTimeout(()=>beep(392,0.08),180);setTimeout(()=>beep(523,0.15),270);}
-function sfxLanded(){beep(150,0.15,'sawtooth',0.3);}
+function sfxStart(){beep(262,0.07);setTimeout(()=>beep(330,0.07),80);setTimeout(()=>beep(392,0.07),160);setTimeout(()=>beep(523,0.12),240);}
+function sfxLanded(){beep(140,0.15,'sawtooth',0.25);}
 
-const G={running:false,
+/* ===== 게임 ===== */
+const G={
+  running:false,score:0,lives:3,hints:5,correct:0,
+  list:[],items:[],level:'N4',nickname:'플레이어',
+  timer:null,dropTimer:null,currentItem:null
+};
 
 function getStage(){if(G.correct<6)return 1;if(G.correct<16)return 2;return 3;}
 function getSpeed(){return 0.65+getStage()*0.35;}
@@ -642,9 +650,9 @@ function gameLoop(){
     if(obj.y>canvas.height+44){G.items.splice(i,1);G.lives--;landed=true;}
   }
   if(landed){
+    sfxLanded();
     updateGameUI();
     document.getElementById('hint-reading-disp').textContent='';
-   sfxLanded();
     if(G.lives<=0){endGame();return;}
     if(G.items.length===0){G.currentItem=null;dropItem();}
     else{G.currentItem=G.items[0].item;renderGameOpts(G.currentItem);}
@@ -662,8 +670,10 @@ function rr(ctx,x,y,w,h,r){
 
 function renderGameOpts(item){
   const opts=document.getElementById('game-opts');
-  const pool=G.list.filter(i=>i.char!==item.char);
-  const wrongs=shuffle(pool).slice(0,3).map(i=>i.meaning);
+  const pool=G.list.filter(i=>i.char!==item.char&&i.meaning!==item.meaning);
+  const allMeanings=[...new Set(pool.map(i=>i.meaning))];
+  const wrongs=shuffle(allMeanings).slice(0,3);
+  while(wrongs.length<3)wrongs.push('???');
   const choices=shuffle([item.meaning,...wrongs]);
   opts.innerHTML=choices.map(c=>`<button class="game-opt-btn" onclick="checkGame('${item.char}','${c.replace(/'/g,"\\'")}','${item.meaning.replace(/'/g,"\\'")}',this)">${c}</button>`).join('');
   document.getElementById('hint-reading-disp').textContent='';
@@ -673,7 +683,7 @@ function checkGame(char,selected,correct,btn){
   const allBtns=document.querySelectorAll('#game-opts .game-opt-btn');
   allBtns.forEach(b=>b.disabled=true);
   allBtns.forEach(b=>{if(b.textContent===correct)b.classList.add('g-correct');});
-if(selected===correct){
+  if(selected===correct){
     sfxCorrect();
     btn.classList.add('g-correct');
     G.items=G.items.filter(o=>o.item.char!==char);
@@ -686,7 +696,7 @@ if(selected===correct){
       if(G.items.length>0){G.currentItem=G.items[0].item;renderGameOpts(G.currentItem);}
       else G.currentItem=null;
     },400);
-} else {
+  }else{
     sfxWrong();
     btn.classList.add('g-wrong');G.lives--;updateGameUI();
     if(G.lives<=0){setTimeout(endGame,500);return;}
