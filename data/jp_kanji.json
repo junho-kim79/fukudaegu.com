@@ -1,237 +1,2329 @@
 {
   "N5": [
-    {"char":"一","reading":"いち / ひと","meaning":"하나","example":"一つください。","example_meaning":"하나 주세요."},
-    {"char":"二","reading":"に / ふた","meaning":"둘","example":"二人で行きます。","example_meaning":"둘이서 갑니다."},
-    {"char":"三","reading":"さん / み","meaning":"셋","example":"三時に会いましょう。","example_meaning":"3시에 만나요."},
-    {"char":"四","reading":"し / よ","meaning":"넷","example":"四月に桜が咲きます。","example_meaning":"4월에 벚꽃이 핍니다."},
-    {"char":"五","reading":"ご / いつ","meaning":"다섯","example":"五分待ってください。","example_meaning":"5분 기다려 주세요."},
-    {"char":"六","reading":"ろく / む","meaning":"여섯","example":"六時に起きます。","example_meaning":"6시에 일어납니다."},
-    {"char":"七","reading":"しち / なな","meaning":"일곱","example":"七月は暑いです。","example_meaning":"7월은 덥습니다."},
-    {"char":"八","reading":"はち / や","meaning":"여덟","example":"八時に出発します。","example_meaning":"8시에 출발합니다."},
-    {"char":"九","reading":"く / ここの","meaning":"아홉","example":"九月になりました。","example_meaning":"9월이 됐습니다."},
-    {"char":"十","reading":"じゅう / とお","meaning":"열","example":"十人のグループです。","example_meaning":"10명의 그룹입니다."},
-    {"char":"百","reading":"ひゃく","meaning":"백","example":"百円ショップで買いました。","example_meaning":"100엔샵에서 샀습니다."},
-    {"char":"千","reading":"せん / ち","meaning":"천","example":"千円でいいですか。","example_meaning":"천 엔 괜찮습니까?"},
-    {"char":"万","reading":"まん / ばん","meaning":"만","example":"一万円を両替しました。","example_meaning":"만 엔을 환전했습니다."},
-    {"char":"円","reading":"えん","meaning":"원(화폐), 둥글다","example":"五百円のランチです。","example_meaning":"500엔 점심입니다."},
-    {"char":"年","reading":"ねん / とし","meaning":"해, 년","example":"今年は何年ですか。","example_meaning":"올해는 몇 년입니까?"},
-    {"char":"月","reading":"つき / げつ","meaning":"달, 월","example":"来月、日本へ行きます。","example_meaning":"다음 달 일본에 갑니다."},
-    {"char":"日","reading":"にち / ひ","meaning":"날, 해","example":"今日はいい天気ですね。","example_meaning":"오늘은 날씨가 좋네요."},
-    {"char":"時","reading":"じ / とき","meaning":"시간, 때","example":"今、何時ですか。","example_meaning":"지금 몇 시예요?"},
-    {"char":"分","reading":"ふん / ぶん","meaning":"분, 나누다","example":"十分後に来ます。","example_meaning":"10분 후에 옵니다."},
-    {"char":"半","reading":"はん","meaning":"반","example":"三時半に会いましょう。","example_meaning":"3시 반에 만나요."},
-    {"char":"今","reading":"いま / こん","meaning":"지금","example":"今、どこにいますか。","example_meaning":"지금 어디에 있어요?"},
-    {"char":"先","reading":"さき / せん","meaning":"앞, 먼저","example":"先生に聞いてください。","example_meaning":"선생님께 물어보세요."},
-    {"char":"後","reading":"あと / ご","meaning":"뒤, 후","example":"後で電話します。","example_meaning":"나중에 전화할게요."},
-    {"char":"午","reading":"ご","meaning":"낮","example":"午後三時に来てください。","example_meaning":"오후 3시에 와 주세요."},
-    {"char":"前","reading":"まえ / ぜん","meaning":"앞, 전","example":"駅の前で待っています。","example_meaning":"역 앞에서 기다리고 있어요."},
-    {"char":"毎","reading":"まい","meaning":"매, 마다","example":"毎朝コーヒーを飲みます。","example_meaning":"매일 아침 커피를 마십니다."},
-    {"char":"週","reading":"しゅう","meaning":"주","example":"来週、旅行に行きます。","example_meaning":"다음 주에 여행 갑니다."},
-    {"char":"何","reading":"なに / なん","meaning":"무엇, 몇","example":"何が食べたいですか。","example_meaning":"뭐가 먹고 싶어요?"},
-    {"char":"山","reading":"やま / さん","meaning":"산","example":"山に登りました。","example_meaning":"산에 올랐습니다."},
-    {"char":"川","reading":"かわ / せん","meaning":"강","example":"川で泳ぎました。","example_meaning":"강에서 수영했습니다."},
-    {"char":"海","reading":"うみ / かい","meaning":"바다","example":"海がきれいです。","example_meaning":"바다가 아름다워요."},
-    {"char":"空","reading":"そら / くう","meaning":"하늘, 비다","example":"空が青いですね。","example_meaning":"하늘이 파랗네요."},
-    {"char":"木","reading":"き / もく","meaning":"나무","example":"木の下で休みました。","example_meaning":"나무 아래서 쉬었습니다."},
-    {"char":"花","reading":"はな / か","meaning":"꽃","example":"花を買いました。","example_meaning":"꽃을 샀습니다."},
-    {"char":"雨","reading":"あめ / う","meaning":"비","example":"雨が降っています。","example_meaning":"비가 내리고 있습니다."},
-    {"char":"火","reading":"ひ / か","meaning":"불","example":"火曜日に会いましょう。","example_meaning":"화요일에 만나요."},
-    {"char":"水","reading":"みず / すい","meaning":"물","example":"水を飲んでください。","example_meaning":"물을 마셔주세요."},
-    {"char":"土","reading":"つち / ど","meaning":"흙","example":"土曜日は暇です。","example_meaning":"토요일은 한가해요."},
-    {"char":"金","reading":"かね / きん","meaning":"금, 돈","example":"お金が足りません。","example_meaning":"돈이 부족합니다."},
-    {"char":"石","reading":"いし / せき","meaning":"돌","example":"石を拾いました。","example_meaning":"돌을 주웠습니다."},
-    {"char":"田","reading":"た / でん","meaning":"논","example":"田んぼが広いです。","example_meaning":"논이 넓습니다."},
-    {"char":"人","reading":"ひと / じん","meaning":"사람","example":"あの人は親切です。","example_meaning":"저 사람은 친절해요."},
-    {"char":"男","reading":"おとこ / だん","meaning":"남자","example":"男の子が走っています。","example_meaning":"남자아이가 달리고 있어요."},
-    {"char":"女","reading":"おんな / じょ","meaning":"여자","example":"女の人が歌っています。","example_meaning":"여자가 노래하고 있어요."},
-    {"char":"子","reading":"こ / し","meaning":"아이","example":"子どもと公園へ行きます。","example_meaning":"아이와 공원에 가요."},
-    {"char":"父","reading":"ちち / ふ","meaning":"아버지","example":"父は会社員です。","example_meaning":"아버지는 회사원입니다."},
-    {"char":"母","reading":"はは / も","meaning":"어머니","example":"母の料理が好きです。","example_meaning":"어머니 요리를 좋아해요."},
-    {"char":"友","reading":"とも / ゆう","meaning":"친구","example":"友だちと映画を見ました。","example_meaning":"친구와 영화를 봤습니다."},
-    {"char":"上","reading":"うえ / じょう","meaning":"위","example":"テーブルの上に置いてください。","example_meaning":"테이블 위에 놓아주세요."},
-    {"char":"下","reading":"した / か","meaning":"아래","example":"椅子の下を見てください。","example_meaning":"의자 아래를 봐주세요."},
-    {"char":"中","reading":"なか / ちゅう","meaning":"안, 중간","example":"箱の中に何がありますか。","example_meaning":"상자 안에 뭐가 있어요?"},
-    {"char":"大","reading":"おお / だい","meaning":"크다","example":"大きいケーキを買いました。","example_meaning":"큰 케이크를 샀습니다."},
-    {"char":"小","reading":"ちい / しょう","meaning":"작다","example":"小さい犬がかわいいです。","example_meaning":"작은 강아지가 귀여워요."},
-    {"char":"高","reading":"たか / こう","meaning":"높다","example":"この山は高いです。","example_meaning":"이 산은 높습니다."},
-    {"char":"安","reading":"やす / あん","meaning":"싸다, 편안","example":"安いレストランを探しています。","example_meaning":"저렴한 식당을 찾고 있어요."},
-    {"char":"新","reading":"あたら / しん","meaning":"새롭다","example":"新しいスマホを買いました。","example_meaning":"새 스마트폰을 샀습니다."},
-    {"char":"古","reading":"ふる / こ","meaning":"오래되다","example":"古いお寺を見学しました。","example_meaning":"오래된 절을 견학했습니다."},
-    {"char":"長","reading":"なが / ちょう","meaning":"길다","example":"長い映画でした。","example_meaning":"긴 영화였습니다."},
-    {"char":"白","reading":"しろ / はく","meaning":"하얗다","example":"白いシャツを着ています。","example_meaning":"흰 셔츠를 입고 있어요."},
-    {"char":"黒","reading":"くろ / こく","meaning":"검다","example":"黒い車が好きです。","example_meaning":"검은 차를 좋아해요."},
-    {"char":"赤","reading":"あか / せき","meaning":"빨갛다","example":"赤いバラをもらいました。","example_meaning":"빨간 장미를 받았습니다."},
-    {"char":"青","reading":"あお / せい","meaning":"파랗다","example":"青い空が好きです。","example_meaning":"파란 하늘을 좋아해요."},
-    {"char":"右","reading":"みぎ / う","meaning":"오른쪽","example":"右に曲がってください。","example_meaning":"오른쪽으로 돌아주세요."},
-    {"char":"左","reading":"ひだり / さ","meaning":"왼쪽","example":"左の道を行きます。","example_meaning":"왼쪽 길로 갑니다."},
-    {"char":"東","reading":"ひがし / とう","meaning":"동쪽","example":"東口で待っています。","example_meaning":"동쪽 출구에서 기다리고 있어요."},
-    {"char":"西","reading":"にし / せい","meaning":"서쪽","example":"西日本を旅行しました。","example_meaning":"서일본을 여행했습니다."},
-    {"char":"南","reading":"みなみ / なん","meaning":"남쪽","example":"南の島に行きたいです。","example_meaning":"남쪽 섬에 가고 싶어요."},
-    {"char":"北","reading":"きた / ほく","meaning":"북쪽","example":"北海道は寒いです。","example_meaning":"홋카이도는 춥습니다."},
-    {"char":"外","reading":"そと / がい","meaning":"밖","example":"外で遊びましょう。","example_meaning":"밖에서 놀아요."},
-    {"char":"国","reading":"くに / こく","meaning":"나라","example":"どの国から来ましたか。","example_meaning":"어느 나라에서 왔어요?"},
-    {"char":"語","reading":"ご / かた","meaning":"말, 언어","example":"日本語を勉強しています。","example_meaning":"일본어를 공부하고 있어요."},
-    {"char":"学","reading":"まな / がく","meaning":"배우다","example":"大学で経済を学びました。","example_meaning":"대학에서 경제를 배웠습니다."},
-    {"char":"校","reading":"こう","meaning":"학교","example":"学校は九時から始まります。","example_meaning":"학교는 9시부터 시작합니다."},
-    {"char":"生","reading":"い / せい","meaning":"살다, 생","example":"学生のとき、よく旅行しました。","example_meaning":"학생 때 자주 여행했습니다."},
-    {"char":"本","reading":"もと / ほん","meaning":"책, 근본","example":"本を三冊読みました。","example_meaning":"책을 3권 읽었습니다."},
-    {"char":"読","reading":"よ / どく","meaning":"읽다","example":"毎日新聞を読みます。","example_meaning":"매일 신문을 읽습니다."},
-    {"char":"書","reading":"か / しょ","meaning":"쓰다","example":"手紙を書きました。","example_meaning":"편지를 썼습니다."},
-    {"char":"聞","reading":"き / ぶん","meaning":"듣다","example":"音楽を聞きながら走ります。","example_meaning":"음악을 들으면서 달립니다."},
-    {"char":"話","reading":"はな / わ","meaning":"말하다","example":"日本語で話してください。","example_meaning":"일본어로 말해주세요."},
-    {"char":"見","reading":"み / けん","meaning":"보다","example":"映画を見に行きます。","example_meaning":"영화 보러 갑니다."},
-    {"char":"食","reading":"た / しょく","meaning":"먹다","example":"朝ご飯を食べましたか。","example_meaning":"아침밥 먹었어요?"},
-    {"char":"飲","reading":"の / いん","meaning":"마시다","example":"コーヒーを飲みましょう。","example_meaning":"커피를 마셔요."},
-    {"char":"買","reading":"か / ばい","meaning":"사다","example":"スーパーで野菜を買いました。","example_meaning":"슈퍼에서 채소를 샀습니다."},
-    {"char":"行","reading":"い / こう","meaning":"가다","example":"明日、大邱へ行きます。","example_meaning":"내일 대구에 갑니다."},
-    {"char":"来","reading":"く / らい","meaning":"오다","example":"友だちが来ました。","example_meaning":"친구가 왔습니다."},
-    {"char":"帰","reading":"かえ / き","meaning":"돌아가다","example":"六時に家に帰ります。","example_meaning":"6시에 집에 돌아가요."},
-    {"char":"出","reading":"で / しゅつ","meaning":"나오다","example":"七時に家を出ます。","example_meaning":"7시에 집을 나옵니다."},
-    {"char":"入","reading":"はい / にゅう","meaning":"들어가다","example":"部屋に入ってください。","example_meaning":"방에 들어와주세요."},
-    {"char":"乗","reading":"の / じょう","meaning":"타다","example":"電車に乗ります。","example_meaning":"전철을 탑니다."},
-    {"char":"起","reading":"お / き","meaning":"일어나다","example":"毎朝七時に起きます。","example_meaning":"매일 아침 7시에 일어납니다."},
-    {"char":"寝","reading":"ね / しん","meaning":"자다","example":"早く寝てください。","example_meaning":"일찍 자주세요."},
-    {"char":"立","reading":"た / りつ","meaning":"서다","example":"ここに立ってください。","example_meaning":"여기 서주세요."},
-    {"char":"待","reading":"ま / たい","meaning":"기다리다","example":"少し待ってください。","example_meaning":"조금 기다려주세요."},
-    {"char":"会","reading":"あ / かい","meaning":"만나다","example":"駅で会いましょう。","example_meaning":"역에서 만나요."},
-    {"char":"休","reading":"やす / きゅう","meaning":"쉬다","example":"今日は休みです。","example_meaning":"오늘은 쉬는 날이에요."},
-    {"char":"開","reading":"あ / かい","meaning":"열다","example":"窓を開けてください。","example_meaning":"창문을 열어주세요."},
-    {"char":"閉","reading":"し / へい","meaning":"닫다","example":"ドアを閉めてください。","example_meaning":"문을 닫아주세요."},
-    {"char":"電","reading":"でん","meaning":"전기","example":"電気を消してください。","example_meaning":"전기를 꺼주세요."},
-    {"char":"車","reading":"くるま / しゃ","meaning":"차","example":"車で来ましたか。","example_meaning":"차로 왔어요?"},
-    {"char":"駅","reading":"えき","meaning":"역","example":"駅まで歩いて行きます。","example_meaning":"역까지 걸어갑니다."},
-    {"char":"店","reading":"みせ / てん","meaning":"가게","example":"あの店においしいラーメンがあります。","example_meaning":"저 가게에 맛있는 라멘이 있어요."},
-    {"char":"家","reading":"いえ / か","meaning":"집","example":"家に帰りたいです。","example_meaning":"집에 돌아가고 싶어요."}
+    {
+      "char": "一",
+      "reading": "いち / ひと",
+      "meaning": "하나",
+      "example": "一つください。",
+      "example_meaning": "하나 주세요."
+    },
+    {
+      "char": "二",
+      "reading": "に / ふた",
+      "meaning": "둘",
+      "example": "二人で行きます。",
+      "example_meaning": "둘이서 갑니다."
+    },
+    {
+      "char": "三",
+      "reading": "さん / み",
+      "meaning": "셋",
+      "example": "三時に会いましょう。",
+      "example_meaning": "3시에 만나요."
+    },
+    {
+      "char": "四",
+      "reading": "し / よ",
+      "meaning": "넷",
+      "example": "四月に桜が咲きます。",
+      "example_meaning": "4월에 벚꽃이 핍니다."
+    },
+    {
+      "char": "五",
+      "reading": "ご / いつ",
+      "meaning": "다섯",
+      "example": "五分待ってください。",
+      "example_meaning": "5분 기다려 주세요."
+    },
+    {
+      "char": "六",
+      "reading": "ろく / む",
+      "meaning": "여섯",
+      "example": "六時に起きます。",
+      "example_meaning": "6시에 일어납니다."
+    },
+    {
+      "char": "七",
+      "reading": "しち / なな",
+      "meaning": "일곱",
+      "example": "七月は暑いです。",
+      "example_meaning": "7월은 덥습니다."
+    },
+    {
+      "char": "八",
+      "reading": "はち / や",
+      "meaning": "여덟",
+      "example": "八時に出発します。",
+      "example_meaning": "8시에 출발합니다."
+    },
+    {
+      "char": "九",
+      "reading": "く / ここの",
+      "meaning": "아홉",
+      "example": "九月になりました。",
+      "example_meaning": "9월이 됐습니다."
+    },
+    {
+      "char": "十",
+      "reading": "じゅう / とお",
+      "meaning": "열",
+      "example": "十人のグループです。",
+      "example_meaning": "10명의 그룹입니다."
+    },
+    {
+      "char": "百",
+      "reading": "ひゃく",
+      "meaning": "백",
+      "example": "百円ショップで買いました。",
+      "example_meaning": "100엔샵에서 샀습니다."
+    },
+    {
+      "char": "千",
+      "reading": "せん / ち",
+      "meaning": "천",
+      "example": "千円でいいですか。",
+      "example_meaning": "천 엔 괜찮습니까?"
+    },
+    {
+      "char": "万",
+      "reading": "まん / ばん",
+      "meaning": "만",
+      "example": "一万円を両替しました。",
+      "example_meaning": "만 엔을 환전했습니다."
+    },
+    {
+      "char": "円",
+      "reading": "えん",
+      "meaning": "원(화폐), 둥글다",
+      "example": "五百円のランチです。",
+      "example_meaning": "500엔 점심입니다."
+    },
+    {
+      "char": "年",
+      "reading": "ねん / とし",
+      "meaning": "해, 년",
+      "example": "今年は何年ですか。",
+      "example_meaning": "올해는 몇 년입니까?"
+    },
+    {
+      "char": "月",
+      "reading": "つき / げつ",
+      "meaning": "달, 월",
+      "example": "来月、日本へ行きます。",
+      "example_meaning": "다음 달 일본에 갑니다."
+    },
+    {
+      "char": "日",
+      "reading": "にち / ひ",
+      "meaning": "날, 해",
+      "example": "今日はいい天気ですね。",
+      "example_meaning": "오늘은 날씨가 좋네요."
+    },
+    {
+      "char": "時",
+      "reading": "じ / とき",
+      "meaning": "시간, 때",
+      "example": "今、何時ですか。",
+      "example_meaning": "지금 몇 시예요?"
+    },
+    {
+      "char": "分",
+      "reading": "ふん / ぶん",
+      "meaning": "분, 나누다",
+      "example": "十分後に来ます。",
+      "example_meaning": "10분 후에 옵니다."
+    },
+    {
+      "char": "半",
+      "reading": "はん",
+      "meaning": "반",
+      "example": "三時半に会いましょう。",
+      "example_meaning": "3시 반에 만나요."
+    },
+    {
+      "char": "今",
+      "reading": "いま / こん",
+      "meaning": "지금",
+      "example": "今、どこにいますか。",
+      "example_meaning": "지금 어디에 있어요?"
+    },
+    {
+      "char": "先",
+      "reading": "さき / せん",
+      "meaning": "앞, 먼저",
+      "example": "先生に聞いてください。",
+      "example_meaning": "선생님께 물어보세요."
+    },
+    {
+      "char": "後",
+      "reading": "あと / ご",
+      "meaning": "뒤, 후",
+      "example": "後で電話します。",
+      "example_meaning": "나중에 전화할게요."
+    },
+    {
+      "char": "午",
+      "reading": "ご",
+      "meaning": "낮",
+      "example": "午後三時に来てください。",
+      "example_meaning": "오후 3시에 와 주세요."
+    },
+    {
+      "char": "前",
+      "reading": "まえ / ぜん",
+      "meaning": "앞, 전",
+      "example": "駅の前で待っています。",
+      "example_meaning": "역 앞에서 기다리고 있어요."
+    },
+    {
+      "char": "毎",
+      "reading": "まい",
+      "meaning": "매, 마다",
+      "example": "毎朝コーヒーを飲みます。",
+      "example_meaning": "매일 아침 커피를 마십니다."
+    },
+    {
+      "char": "週",
+      "reading": "しゅう",
+      "meaning": "주",
+      "example": "来週、旅行に行きます。",
+      "example_meaning": "다음 주에 여행 갑니다."
+    },
+    {
+      "char": "何",
+      "reading": "なに / なん",
+      "meaning": "무엇, 몇",
+      "example": "何が食べたいですか。",
+      "example_meaning": "뭐가 먹고 싶어요?"
+    },
+    {
+      "char": "山",
+      "reading": "やま / さん",
+      "meaning": "산",
+      "example": "山に登りました。",
+      "example_meaning": "산에 올랐습니다."
+    },
+    {
+      "char": "川",
+      "reading": "かわ / せん",
+      "meaning": "강",
+      "example": "川で泳ぎました。",
+      "example_meaning": "강에서 수영했습니다."
+    },
+    {
+      "char": "海",
+      "reading": "うみ / かい",
+      "meaning": "바다",
+      "example": "海がきれいです。",
+      "example_meaning": "바다가 아름다워요."
+    },
+    {
+      "char": "空",
+      "reading": "そら / くう",
+      "meaning": "하늘, 비다",
+      "example": "空が青いですね。",
+      "example_meaning": "하늘이 파랗네요."
+    },
+    {
+      "char": "木",
+      "reading": "き / もく",
+      "meaning": "나무",
+      "example": "木の下で休みました。",
+      "example_meaning": "나무 아래서 쉬었습니다."
+    },
+    {
+      "char": "花",
+      "reading": "はな / か",
+      "meaning": "꽃",
+      "example": "花を買いました。",
+      "example_meaning": "꽃을 샀습니다."
+    },
+    {
+      "char": "雨",
+      "reading": "あめ / う",
+      "meaning": "비",
+      "example": "雨が降っています。",
+      "example_meaning": "비가 내리고 있습니다."
+    },
+    {
+      "char": "火",
+      "reading": "ひ / か",
+      "meaning": "불",
+      "example": "火曜日に会いましょう。",
+      "example_meaning": "화요일에 만나요."
+    },
+    {
+      "char": "水",
+      "reading": "みず / すい",
+      "meaning": "물",
+      "example": "水を飲んでください。",
+      "example_meaning": "물을 마셔주세요."
+    },
+    {
+      "char": "土",
+      "reading": "つち / ど",
+      "meaning": "흙",
+      "example": "土曜日は暇です。",
+      "example_meaning": "토요일은 한가해요."
+    },
+    {
+      "char": "金",
+      "reading": "かね / きん",
+      "meaning": "금, 돈",
+      "example": "お金が足りません。",
+      "example_meaning": "돈이 부족합니다."
+    },
+    {
+      "char": "石",
+      "reading": "いし / せき",
+      "meaning": "돌",
+      "example": "石を拾いました。",
+      "example_meaning": "돌을 주웠습니다."
+    },
+    {
+      "char": "田",
+      "reading": "た / でん",
+      "meaning": "논",
+      "example": "田んぼが広いです。",
+      "example_meaning": "논이 넓습니다."
+    },
+    {
+      "char": "人",
+      "reading": "ひと / じん",
+      "meaning": "사람",
+      "example": "あの人は親切です。",
+      "example_meaning": "저 사람은 친절해요."
+    },
+    {
+      "char": "男",
+      "reading": "おとこ / だん",
+      "meaning": "남자",
+      "example": "男の子が走っています。",
+      "example_meaning": "남자아이가 달리고 있어요."
+    },
+    {
+      "char": "女",
+      "reading": "おんな / じょ",
+      "meaning": "여자",
+      "example": "女の人が歌っています。",
+      "example_meaning": "여자가 노래하고 있어요."
+    },
+    {
+      "char": "子",
+      "reading": "こ / し",
+      "meaning": "아이",
+      "example": "子どもと公園へ行きます。",
+      "example_meaning": "아이와 공원에 가요."
+    },
+    {
+      "char": "父",
+      "reading": "ちち / ふ",
+      "meaning": "아버지",
+      "example": "父は会社員です。",
+      "example_meaning": "아버지는 회사원입니다."
+    },
+    {
+      "char": "母",
+      "reading": "はは / も",
+      "meaning": "어머니",
+      "example": "母の料理が好きです。",
+      "example_meaning": "어머니 요리를 좋아해요."
+    },
+    {
+      "char": "友",
+      "reading": "とも / ゆう",
+      "meaning": "친구",
+      "example": "友だちと映画を見ました。",
+      "example_meaning": "친구와 영화를 봤습니다."
+    },
+    {
+      "char": "上",
+      "reading": "うえ / じょう",
+      "meaning": "위",
+      "example": "テーブルの上に置いてください。",
+      "example_meaning": "테이블 위에 놓아주세요."
+    },
+    {
+      "char": "下",
+      "reading": "した / か",
+      "meaning": "아래",
+      "example": "椅子の下を見てください。",
+      "example_meaning": "의자 아래를 봐주세요."
+    },
+    {
+      "char": "中",
+      "reading": "なか / ちゅう",
+      "meaning": "안, 중간",
+      "example": "箱の中に何がありますか。",
+      "example_meaning": "상자 안에 뭐가 있어요?"
+    },
+    {
+      "char": "大",
+      "reading": "おお / だい",
+      "meaning": "크다",
+      "example": "大きいケーキを買いました。",
+      "example_meaning": "큰 케이크를 샀습니다."
+    },
+    {
+      "char": "小",
+      "reading": "ちい / しょう",
+      "meaning": "작다",
+      "example": "小さい犬がかわいいです。",
+      "example_meaning": "작은 강아지가 귀여워요."
+    },
+    {
+      "char": "高",
+      "reading": "たか / こう",
+      "meaning": "높다",
+      "example": "この山は高いです。",
+      "example_meaning": "이 산은 높습니다."
+    },
+    {
+      "char": "安",
+      "reading": "やす / あん",
+      "meaning": "싸다, 편안",
+      "example": "安いレストランを探しています。",
+      "example_meaning": "저렴한 식당을 찾고 있어요."
+    },
+    {
+      "char": "新",
+      "reading": "あたら / しん",
+      "meaning": "새롭다",
+      "example": "新しいスマホを買いました。",
+      "example_meaning": "새 스마트폰을 샀습니다."
+    },
+    {
+      "char": "古",
+      "reading": "ふる / こ",
+      "meaning": "오래되다",
+      "example": "古いお寺を見学しました。",
+      "example_meaning": "오래된 절을 견학했습니다."
+    },
+    {
+      "char": "長",
+      "reading": "なが / ちょう",
+      "meaning": "길다",
+      "example": "長い映画でした。",
+      "example_meaning": "긴 영화였습니다."
+    },
+    {
+      "char": "白",
+      "reading": "しろ / はく",
+      "meaning": "하얗다",
+      "example": "白いシャツを着ています。",
+      "example_meaning": "흰 셔츠를 입고 있어요."
+    },
+    {
+      "char": "黒",
+      "reading": "くろ / こく",
+      "meaning": "검다",
+      "example": "黒い車が好きです。",
+      "example_meaning": "검은 차를 좋아해요."
+    },
+    {
+      "char": "赤",
+      "reading": "あか / せき",
+      "meaning": "빨갛다",
+      "example": "赤いバラをもらいました。",
+      "example_meaning": "빨간 장미를 받았습니다."
+    },
+    {
+      "char": "青",
+      "reading": "あお / せい",
+      "meaning": "파랗다",
+      "example": "青い空が好きです。",
+      "example_meaning": "파란 하늘을 좋아해요."
+    },
+    {
+      "char": "右",
+      "reading": "みぎ / う",
+      "meaning": "오른쪽",
+      "example": "右に曲がってください。",
+      "example_meaning": "오른쪽으로 돌아주세요."
+    },
+    {
+      "char": "左",
+      "reading": "ひだり / さ",
+      "meaning": "왼쪽",
+      "example": "左の道を行きます。",
+      "example_meaning": "왼쪽 길로 갑니다."
+    },
+    {
+      "char": "東",
+      "reading": "ひがし / とう",
+      "meaning": "동쪽",
+      "example": "東口で待っています。",
+      "example_meaning": "동쪽 출구에서 기다리고 있어요."
+    },
+    {
+      "char": "西",
+      "reading": "にし / せい",
+      "meaning": "서쪽",
+      "example": "西日本を旅行しました。",
+      "example_meaning": "서일본을 여행했습니다."
+    },
+    {
+      "char": "南",
+      "reading": "みなみ / なん",
+      "meaning": "남쪽",
+      "example": "南の島に行きたいです。",
+      "example_meaning": "남쪽 섬에 가고 싶어요."
+    },
+    {
+      "char": "北",
+      "reading": "きた / ほく",
+      "meaning": "북쪽",
+      "example": "北海道は寒いです。",
+      "example_meaning": "홋카이도는 춥습니다."
+    },
+    {
+      "char": "外",
+      "reading": "そと / がい",
+      "meaning": "밖",
+      "example": "外で遊びましょう。",
+      "example_meaning": "밖에서 놀아요."
+    },
+    {
+      "char": "国",
+      "reading": "くに / こく",
+      "meaning": "나라",
+      "example": "どの国から来ましたか。",
+      "example_meaning": "어느 나라에서 왔어요?"
+    },
+    {
+      "char": "語",
+      "reading": "ご / かた",
+      "meaning": "말, 언어",
+      "example": "日本語を勉強しています。",
+      "example_meaning": "일본어를 공부하고 있어요."
+    },
+    {
+      "char": "学",
+      "reading": "まな / がく",
+      "meaning": "배우다",
+      "example": "大学で経済を学びました。",
+      "example_meaning": "대학에서 경제를 배웠습니다."
+    },
+    {
+      "char": "校",
+      "reading": "こう",
+      "meaning": "학교",
+      "example": "学校は九時から始まります。",
+      "example_meaning": "학교는 9시부터 시작합니다."
+    },
+    {
+      "char": "生",
+      "reading": "い / せい",
+      "meaning": "살다, 생",
+      "example": "学生のとき、よく旅行しました。",
+      "example_meaning": "학생 때 자주 여행했습니다."
+    },
+    {
+      "char": "本",
+      "reading": "もと / ほん",
+      "meaning": "책, 근본",
+      "example": "本を三冊読みました。",
+      "example_meaning": "책을 3권 읽었습니다."
+    },
+    {
+      "char": "読",
+      "reading": "よ / どく",
+      "meaning": "읽다",
+      "example": "毎日新聞を読みます。",
+      "example_meaning": "매일 신문을 읽습니다."
+    },
+    {
+      "char": "書",
+      "reading": "か / しょ",
+      "meaning": "쓰다",
+      "example": "手紙を書きました。",
+      "example_meaning": "편지를 썼습니다."
+    },
+    {
+      "char": "聞",
+      "reading": "き / ぶん",
+      "meaning": "듣다",
+      "example": "音楽を聞きながら走ります。",
+      "example_meaning": "음악을 들으면서 달립니다."
+    },
+    {
+      "char": "話",
+      "reading": "はな / わ",
+      "meaning": "말하다",
+      "example": "日本語で話してください。",
+      "example_meaning": "일본어로 말해주세요."
+    },
+    {
+      "char": "見",
+      "reading": "み / けん",
+      "meaning": "보다",
+      "example": "映画を見に行きます。",
+      "example_meaning": "영화 보러 갑니다."
+    },
+    {
+      "char": "食",
+      "reading": "た / しょく",
+      "meaning": "먹다",
+      "example": "朝ご飯を食べましたか。",
+      "example_meaning": "아침밥 먹었어요?"
+    },
+    {
+      "char": "飲",
+      "reading": "の / いん",
+      "meaning": "마시다",
+      "example": "コーヒーを飲みましょう。",
+      "example_meaning": "커피를 마셔요."
+    },
+    {
+      "char": "買",
+      "reading": "か / ばい",
+      "meaning": "사다",
+      "example": "スーパーで野菜を買いました。",
+      "example_meaning": "슈퍼에서 채소를 샀습니다."
+    },
+    {
+      "char": "行",
+      "reading": "い / こう",
+      "meaning": "가다",
+      "example": "明日、大邱へ行きます。",
+      "example_meaning": "내일 대구에 갑니다."
+    },
+    {
+      "char": "来",
+      "reading": "く / らい",
+      "meaning": "오다",
+      "example": "友だちが来ました。",
+      "example_meaning": "친구가 왔습니다."
+    },
+    {
+      "char": "帰",
+      "reading": "かえ / き",
+      "meaning": "돌아가다",
+      "example": "六時に家に帰ります。",
+      "example_meaning": "6시에 집에 돌아가요."
+    },
+    {
+      "char": "出",
+      "reading": "で / しゅつ",
+      "meaning": "나오다",
+      "example": "七時に家を出ます。",
+      "example_meaning": "7시에 집을 나옵니다."
+    },
+    {
+      "char": "入",
+      "reading": "はい / にゅう",
+      "meaning": "들어가다",
+      "example": "部屋に入ってください。",
+      "example_meaning": "방에 들어와주세요."
+    },
+    {
+      "char": "乗",
+      "reading": "の / じょう",
+      "meaning": "타다",
+      "example": "電車に乗ります。",
+      "example_meaning": "전철을 탑니다."
+    },
+    {
+      "char": "起",
+      "reading": "お / き",
+      "meaning": "일어나다",
+      "example": "毎朝七時に起きます。",
+      "example_meaning": "매일 아침 7시에 일어납니다."
+    },
+    {
+      "char": "寝",
+      "reading": "ね / しん",
+      "meaning": "자다",
+      "example": "早く寝てください。",
+      "example_meaning": "일찍 자주세요."
+    },
+    {
+      "char": "立",
+      "reading": "た / りつ",
+      "meaning": "서다",
+      "example": "ここに立ってください。",
+      "example_meaning": "여기 서주세요."
+    },
+    {
+      "char": "待",
+      "reading": "ま / たい",
+      "meaning": "기다리다",
+      "example": "少し待ってください。",
+      "example_meaning": "조금 기다려주세요."
+    },
+    {
+      "char": "会",
+      "reading": "あ / かい",
+      "meaning": "만나다",
+      "example": "駅で会いましょう。",
+      "example_meaning": "역에서 만나요."
+    },
+    {
+      "char": "休",
+      "reading": "やす / きゅう",
+      "meaning": "쉬다",
+      "example": "今日は休みです。",
+      "example_meaning": "오늘은 쉬는 날이에요."
+    },
+    {
+      "char": "開",
+      "reading": "あ / かい",
+      "meaning": "열다",
+      "example": "窓を開けてください。",
+      "example_meaning": "창문을 열어주세요."
+    },
+    {
+      "char": "閉",
+      "reading": "し / へい",
+      "meaning": "닫다",
+      "example": "ドアを閉めてください。",
+      "example_meaning": "문을 닫아주세요."
+    },
+    {
+      "char": "電",
+      "reading": "でん",
+      "meaning": "전기",
+      "example": "電気を消してください。",
+      "example_meaning": "전기를 꺼주세요."
+    },
+    {
+      "char": "車",
+      "reading": "くるま / しゃ",
+      "meaning": "차",
+      "example": "車で来ましたか。",
+      "example_meaning": "차로 왔어요?"
+    },
+    {
+      "char": "駅",
+      "reading": "えき",
+      "meaning": "역",
+      "example": "駅まで歩いて行きます。",
+      "example_meaning": "역까지 걸어갑니다."
+    },
+    {
+      "char": "店",
+      "reading": "みせ / てん",
+      "meaning": "가게",
+      "example": "あの店においしいラーメンがあります。",
+      "example_meaning": "저 가게에 맛있는 라멘이 있어요."
+    },
+    {
+      "char": "家",
+      "reading": "いえ / か",
+      "meaning": "집",
+      "example": "家に帰りたいです。",
+      "example_meaning": "집에 돌아가고 싶어요."
+    }
   ],
   "N4": [
-    {"char":"春","reading":"はる / しゅん","meaning":"봄","example":"春になると桜が咲きます。","example_meaning":"봄이 되면 벚꽃이 핍니다."},
-    {"char":"夏","reading":"なつ / か","meaning":"여름","example":"夏は海に行きます。","example_meaning":"여름에는 바다에 가요."},
-    {"char":"秋","reading":"あき / しゅう","meaning":"가을","example":"秋は紅葉がきれいです。","example_meaning":"가을은 단풍이 아름다워요."},
-    {"char":"冬","reading":"ふゆ / とう","meaning":"겨울","example":"冬は雪が降ります。","example_meaning":"겨울에는 눈이 내려요."},
-    {"char":"朝","reading":"あさ / ちょう","meaning":"아침","example":"朝ご飯は何を食べますか。","example_meaning":"아침밥은 뭐 먹어요?"},
-    {"char":"昼","reading":"ひる / ちゅう","meaning":"점심","example":"昼ご飯を一緒に食べましょう。","example_meaning":"점심을 같이 먹어요."},
-    {"char":"夜","reading":"よる / や","meaning":"밤","example":"夜遅くまで働きました。","example_meaning":"밤늦게까지 일했습니다."},
-    {"char":"晩","reading":"ばん","meaning":"저녁","example":"今晩、暇ですか。","example_meaning":"오늘 저녁 한가해요?"},
-    {"char":"近","reading":"ちか / きん","meaning":"가깝다","example":"駅の近くに住んでいます。","example_meaning":"역 근처에 살고 있어요."},
-    {"char":"遠","reading":"とお / えん","meaning":"멀다","example":"会社まで遠いです。","example_meaning":"회사까지 멀어요."},
-    {"char":"多","reading":"おお / た","meaning":"많다","example":"人が多くて混んでいます。","example_meaning":"사람이 많아서 붐벼요."},
-    {"char":"少","reading":"すく / しょう","meaning":"적다","example":"時間が少ししかありません。","example_meaning":"시간이 조금밖에 없어요."},
-    {"char":"広","reading":"ひろ / こう","meaning":"넓다","example":"部屋が広くていいですね。","example_meaning":"방이 넓어서 좋네요."},
-    {"char":"重","reading":"おも / じゅう","meaning":"무겁다","example":"このかばんは重いです。","example_meaning":"이 가방은 무거워요."},
-    {"char":"強","reading":"つよ / きょう","meaning":"강하다","example":"風が強いです。","example_meaning":"바람이 강해요."},
-    {"char":"速","reading":"はや / そく","meaning":"빠르다","example":"新幹線はとても速いです。","example_meaning":"신칸센은 매우 빠릅니다."},
-    {"char":"暑","reading":"あつ / しょ","meaning":"덥다","example":"今日は暑いですね。","example_meaning":"오늘은 덥네요."},
-    {"char":"寒","reading":"さむ / かん","meaning":"춥다","example":"冬はとても寒いです。","example_meaning":"겨울은 매우 추워요."},
-    {"char":"暖","reading":"あたた / だん","meaning":"따뜻하다","example":"春は暖かくていいです。","example_meaning":"봄은 따뜻해서 좋아요."},
-    {"char":"晴","reading":"は / せい","meaning":"맑다","example":"明日は晴れるでしょう。","example_meaning":"내일은 맑을 거예요."},
-    {"char":"風","reading":"かぜ / ふう","meaning":"바람","example":"今日は風が強いです。","example_meaning":"오늘은 바람이 강해요."},
-    {"char":"雪","reading":"ゆき / せつ","meaning":"눈","example":"雪が積もりました。","example_meaning":"눈이 쌓였습니다."},
-    {"char":"病","reading":"やまい / びょう","meaning":"병","example":"病院に行きました。","example_meaning":"병원에 갔습니다."},
-    {"char":"薬","reading":"くすり / やく","meaning":"약","example":"薬を飲んでください。","example_meaning":"약을 드세요."},
-    {"char":"体","reading":"からだ / たい","meaning":"몸","example":"体の具合が悪いです。","example_meaning":"몸 상태가 안 좋아요."},
-    {"char":"頭","reading":"あたま / とう","meaning":"머리","example":"頭が痛いです。","example_meaning":"머리가 아파요."},
-    {"char":"目","reading":"め / もく","meaning":"눈","example":"目が疲れました。","example_meaning":"눈이 피로해졌어요."},
-    {"char":"手","reading":"て / しゅ","meaning":"손","example":"手を洗ってください。","example_meaning":"손을 씻어주세요."},
-    {"char":"足","reading":"あし / そく","meaning":"발","example":"足が痛くて歩けません。","example_meaning":"발이 아파서 걸을 수 없어요."},
-    {"char":"心","reading":"こころ / しん","meaning":"마음","example":"心から感謝します。","example_meaning":"마음으로부터 감사합니다."},
-    {"char":"声","reading":"こえ / せい","meaning":"목소리","example":"声が大きいです。","example_meaning":"목소리가 커요."},
-    {"char":"気","reading":"き / け","meaning":"기운","example":"元気ですか。","example_meaning":"건강하세요?"},
-    {"char":"力","reading":"ちから / りょく","meaning":"힘","example":"もっと力を入れてください。","example_meaning":"더 힘을 넣어주세요."},
-    {"char":"着","reading":"き / ちゃく","meaning":"입다","example":"コートを着てください。","example_meaning":"코트를 입어주세요."},
-    {"char":"使","reading":"つか / し","meaning":"사용하다","example":"この道具はどう使いますか。","example_meaning":"이 도구는 어떻게 사용해요?"},
-    {"char":"作","reading":"つく / さく","meaning":"만들다","example":"料理を作りました。","example_meaning":"요리를 만들었습니다."},
-    {"char":"教","reading":"おし / きょう","meaning":"가르치다","example":"日本語を教えています。","example_meaning":"일본어를 가르치고 있어요."},
-    {"char":"考","reading":"かんが / こう","meaning":"생각하다","example":"よく考えてから決めます。","example_meaning":"잘 생각하고 나서 결정해요."},
-    {"char":"知","reading":"し / ち","meaning":"알다","example":"その店を知っていますか。","example_meaning":"그 가게 알고 있어요?"},
-    {"char":"忘","reading":"わす / ぼう","meaning":"잊다","example":"傘を忘れました。","example_meaning":"우산을 잊어버렸어요."},
-    {"char":"走","reading":"はし / そう","meaning":"달리다","example":"毎朝公園を走ります。","example_meaning":"매일 아침 공원을 달려요."},
-    {"char":"泳","reading":"およ / えい","meaning":"수영하다","example":"海で泳ぎました。","example_meaning":"바다에서 수영했습니다."},
-    {"char":"住","reading":"す / じゅう","meaning":"살다","example":"大邱に住んでいます。","example_meaning":"대구에 살고 있어요."},
-    {"char":"働","reading":"はたら / どう","meaning":"일하다","example":"病院で働いています。","example_meaning":"병원에서 일하고 있어요."},
-    {"char":"夫","reading":"おっと / ふ","meaning":"남편","example":"夫は会社員です。","example_meaning":"남편은 회사원입니다."},
-    {"char":"妻","reading":"つま / さい","meaning":"아내","example":"妻と旅行に行きます。","example_meaning":"아내와 여행 갑니다."},
-    {"char":"兄","reading":"あに / けい","meaning":"형, 오빠","example":"兄は医者です。","example_meaning":"형은 의사입니다."},
-    {"char":"姉","reading":"あね / し","meaning":"누나, 언니","example":"姉と買い物をしました。","example_meaning":"언니와 쇼핑했습니다."},
-    {"char":"弟","reading":"おとうと / てい","meaning":"남동생","example":"弟は高校生です。","example_meaning":"남동생은 고등학생이에요."},
-    {"char":"妹","reading":"いもうと / まい","meaning":"여동생","example":"妹はかわいいです。","example_meaning":"여동생은 귀여워요."},
-    {"char":"物","reading":"もの / ぶつ","meaning":"물건","example":"大切な物を忘れました。","example_meaning":"중요한 물건을 잊어버렸어요."},
-    {"char":"場","reading":"ば / じょう","meaning":"장소","example":"待ち合わせの場所はどこですか。","example_meaning":"만나는 장소는 어디예요?"},
-    {"char":"社","reading":"しゃ","meaning":"회사","example":"会社に遅刻しました。","example_meaning":"회사에 지각했습니다."},
-    {"char":"急","reading":"いそ / きゅう","meaning":"급하다","example":"急いで来てください。","example_meaning":"서둘러 와주세요."},
-    {"char":"暇","reading":"ひま / か","meaning":"여가","example":"暇なとき何をしますか。","example_meaning":"한가할 때 뭐 해요?"},
-    {"char":"道","reading":"みち / どう","meaning":"길","example":"この道をまっすぐ行ってください。","example_meaning":"이 길을 똑바로 가주세요."},
-    {"char":"橋","reading":"はし / きょう","meaning":"다리","example":"橋を渡ってください。","example_meaning":"다리를 건너주세요."},
-    {"char":"町","reading":"まち / ちょう","meaning":"마을","example":"静かな町に住んでいます。","example_meaning":"조용한 마을에 살고 있어요."},
-    {"char":"払","reading":"はら / ふつ","meaning":"지불하다","example":"カードで払えますか。","example_meaning":"카드로 낼 수 있어요?"},
-    {"char":"貸","reading":"か / たい","meaning":"빌려주다","example":"傘を貸してください。","example_meaning":"우산을 빌려주세요."},
-    {"char":"借","reading":"か / しゃく","meaning":"빌리다","example":"図書館で本を借りました。","example_meaning":"도서관에서 책을 빌렸어요."}
+    {
+      "char": "春",
+      "reading": "はる / しゅん",
+      "meaning": "봄",
+      "example": "春になると桜が咲きます。",
+      "example_meaning": "봄이 되면 벚꽃이 핍니다."
+    },
+    {
+      "char": "夏",
+      "reading": "なつ / か",
+      "meaning": "여름",
+      "example": "夏は海に行きます。",
+      "example_meaning": "여름에는 바다에 가요."
+    },
+    {
+      "char": "秋",
+      "reading": "あき / しゅう",
+      "meaning": "가을",
+      "example": "秋は紅葉がきれいです。",
+      "example_meaning": "가을은 단풍이 아름다워요."
+    },
+    {
+      "char": "冬",
+      "reading": "ふゆ / とう",
+      "meaning": "겨울",
+      "example": "冬は雪が降ります。",
+      "example_meaning": "겨울에는 눈이 내려요."
+    },
+    {
+      "char": "朝",
+      "reading": "あさ / ちょう",
+      "meaning": "아침",
+      "example": "朝ご飯は何を食べますか。",
+      "example_meaning": "아침밥은 뭐 먹어요?"
+    },
+    {
+      "char": "昼",
+      "reading": "ひる / ちゅう",
+      "meaning": "점심",
+      "example": "昼ご飯を一緒に食べましょう。",
+      "example_meaning": "점심을 같이 먹어요."
+    },
+    {
+      "char": "夜",
+      "reading": "よる / や",
+      "meaning": "밤",
+      "example": "夜遅くまで働きました。",
+      "example_meaning": "밤늦게까지 일했습니다."
+    },
+    {
+      "char": "晩",
+      "reading": "ばん",
+      "meaning": "저녁",
+      "example": "今晩、暇ですか。",
+      "example_meaning": "오늘 저녁 한가해요?"
+    },
+    {
+      "char": "近",
+      "reading": "ちか / きん",
+      "meaning": "가깝다",
+      "example": "駅の近くに住んでいます。",
+      "example_meaning": "역 근처에 살고 있어요."
+    },
+    {
+      "char": "遠",
+      "reading": "とお / えん",
+      "meaning": "멀다",
+      "example": "会社まで遠いです。",
+      "example_meaning": "회사까지 멀어요."
+    },
+    {
+      "char": "多",
+      "reading": "おお / た",
+      "meaning": "많다",
+      "example": "人が多くて混んでいます。",
+      "example_meaning": "사람이 많아서 붐벼요."
+    },
+    {
+      "char": "少",
+      "reading": "すく / しょう",
+      "meaning": "적다",
+      "example": "時間が少ししかありません。",
+      "example_meaning": "시간이 조금밖에 없어요."
+    },
+    {
+      "char": "広",
+      "reading": "ひろ / こう",
+      "meaning": "넓다",
+      "example": "部屋が広くていいですね。",
+      "example_meaning": "방이 넓어서 좋네요."
+    },
+    {
+      "char": "重",
+      "reading": "おも / じゅう",
+      "meaning": "무겁다",
+      "example": "このかばんは重いです。",
+      "example_meaning": "이 가방은 무거워요."
+    },
+    {
+      "char": "強",
+      "reading": "つよ / きょう",
+      "meaning": "강하다",
+      "example": "風が強いです。",
+      "example_meaning": "바람이 강해요."
+    },
+    {
+      "char": "速",
+      "reading": "はや / そく",
+      "meaning": "빠르다",
+      "example": "新幹線はとても速いです。",
+      "example_meaning": "신칸센은 매우 빠릅니다."
+    },
+    {
+      "char": "暑",
+      "reading": "あつ / しょ",
+      "meaning": "덥다",
+      "example": "今日は暑いですね。",
+      "example_meaning": "오늘은 덥네요."
+    },
+    {
+      "char": "寒",
+      "reading": "さむ / かん",
+      "meaning": "춥다",
+      "example": "冬はとても寒いです。",
+      "example_meaning": "겨울은 매우 추워요."
+    },
+    {
+      "char": "暖",
+      "reading": "あたた / だん",
+      "meaning": "따뜻하다",
+      "example": "春は暖かくていいです。",
+      "example_meaning": "봄은 따뜻해서 좋아요."
+    },
+    {
+      "char": "晴",
+      "reading": "は / せい",
+      "meaning": "맑다",
+      "example": "明日は晴れるでしょう。",
+      "example_meaning": "내일은 맑을 거예요."
+    },
+    {
+      "char": "風",
+      "reading": "かぜ / ふう",
+      "meaning": "바람",
+      "example": "今日は風が強いです。",
+      "example_meaning": "오늘은 바람이 강해요."
+    },
+    {
+      "char": "雪",
+      "reading": "ゆき / せつ",
+      "meaning": "눈",
+      "example": "雪が積もりました。",
+      "example_meaning": "눈이 쌓였습니다."
+    },
+    {
+      "char": "病",
+      "reading": "やまい / びょう",
+      "meaning": "병",
+      "example": "病院に行きました。",
+      "example_meaning": "병원에 갔습니다."
+    },
+    {
+      "char": "薬",
+      "reading": "くすり / やく",
+      "meaning": "약",
+      "example": "薬を飲んでください。",
+      "example_meaning": "약을 드세요."
+    },
+    {
+      "char": "体",
+      "reading": "からだ / たい",
+      "meaning": "몸",
+      "example": "体の具合が悪いです。",
+      "example_meaning": "몸 상태가 안 좋아요."
+    },
+    {
+      "char": "頭",
+      "reading": "あたま / とう",
+      "meaning": "머리",
+      "example": "頭が痛いです。",
+      "example_meaning": "머리가 아파요."
+    },
+    {
+      "char": "目",
+      "reading": "め / もく",
+      "meaning": "눈",
+      "example": "目が疲れました。",
+      "example_meaning": "눈이 피로해졌어요."
+    },
+    {
+      "char": "手",
+      "reading": "て / しゅ",
+      "meaning": "손",
+      "example": "手を洗ってください。",
+      "example_meaning": "손을 씻어주세요."
+    },
+    {
+      "char": "足",
+      "reading": "あし / そく",
+      "meaning": "발",
+      "example": "足が痛くて歩けません。",
+      "example_meaning": "발이 아파서 걸을 수 없어요."
+    },
+    {
+      "char": "心",
+      "reading": "こころ / しん",
+      "meaning": "마음",
+      "example": "心から感謝します。",
+      "example_meaning": "마음으로부터 감사합니다."
+    },
+    {
+      "char": "声",
+      "reading": "こえ / せい",
+      "meaning": "목소리",
+      "example": "声が大きいです。",
+      "example_meaning": "목소리가 커요."
+    },
+    {
+      "char": "気",
+      "reading": "き / け",
+      "meaning": "기운",
+      "example": "元気ですか。",
+      "example_meaning": "건강하세요?"
+    },
+    {
+      "char": "力",
+      "reading": "ちから / りょく",
+      "meaning": "힘",
+      "example": "もっと力を入れてください。",
+      "example_meaning": "더 힘을 넣어주세요."
+    },
+    {
+      "char": "着",
+      "reading": "き / ちゃく",
+      "meaning": "입다",
+      "example": "コートを着てください。",
+      "example_meaning": "코트를 입어주세요."
+    },
+    {
+      "char": "使",
+      "reading": "つか / し",
+      "meaning": "사용하다",
+      "example": "この道具はどう使いますか。",
+      "example_meaning": "이 도구는 어떻게 사용해요?"
+    },
+    {
+      "char": "作",
+      "reading": "つく / さく",
+      "meaning": "만들다",
+      "example": "料理を作りました。",
+      "example_meaning": "요리를 만들었습니다."
+    },
+    {
+      "char": "教",
+      "reading": "おし / きょう",
+      "meaning": "가르치다",
+      "example": "日本語を教えています。",
+      "example_meaning": "일본어를 가르치고 있어요."
+    },
+    {
+      "char": "考",
+      "reading": "かんが / こう",
+      "meaning": "생각하다",
+      "example": "よく考えてから決めます。",
+      "example_meaning": "잘 생각하고 나서 결정해요."
+    },
+    {
+      "char": "知",
+      "reading": "し / ち",
+      "meaning": "알다",
+      "example": "その店を知っていますか。",
+      "example_meaning": "그 가게 알고 있어요?"
+    },
+    {
+      "char": "忘",
+      "reading": "わす / ぼう",
+      "meaning": "잊다",
+      "example": "傘を忘れました。",
+      "example_meaning": "우산을 잊어버렸어요."
+    },
+    {
+      "char": "走",
+      "reading": "はし / そう",
+      "meaning": "달리다",
+      "example": "毎朝公園を走ります。",
+      "example_meaning": "매일 아침 공원을 달려요."
+    },
+    {
+      "char": "泳",
+      "reading": "およ / えい",
+      "meaning": "수영하다",
+      "example": "海で泳ぎました。",
+      "example_meaning": "바다에서 수영했습니다."
+    },
+    {
+      "char": "住",
+      "reading": "す / じゅう",
+      "meaning": "살다",
+      "example": "大邱に住んでいます。",
+      "example_meaning": "대구에 살고 있어요."
+    },
+    {
+      "char": "働",
+      "reading": "はたら / どう",
+      "meaning": "일하다",
+      "example": "病院で働いています。",
+      "example_meaning": "병원에서 일하고 있어요."
+    },
+    {
+      "char": "夫",
+      "reading": "おっと / ふ",
+      "meaning": "남편",
+      "example": "夫は会社員です。",
+      "example_meaning": "남편은 회사원입니다."
+    },
+    {
+      "char": "妻",
+      "reading": "つま / さい",
+      "meaning": "아내",
+      "example": "妻と旅行に行きます。",
+      "example_meaning": "아내와 여행 갑니다."
+    },
+    {
+      "char": "兄",
+      "reading": "あに / けい",
+      "meaning": "형, 오빠",
+      "example": "兄は医者です。",
+      "example_meaning": "형은 의사입니다."
+    },
+    {
+      "char": "姉",
+      "reading": "あね / し",
+      "meaning": "누나, 언니",
+      "example": "姉と買い物をしました。",
+      "example_meaning": "언니와 쇼핑했습니다."
+    },
+    {
+      "char": "弟",
+      "reading": "おとうと / てい",
+      "meaning": "남동생",
+      "example": "弟は高校生です。",
+      "example_meaning": "남동생은 고등학생이에요."
+    },
+    {
+      "char": "妹",
+      "reading": "いもうと / まい",
+      "meaning": "여동생",
+      "example": "妹はかわいいです。",
+      "example_meaning": "여동생은 귀여워요."
+    },
+    {
+      "char": "物",
+      "reading": "もの / ぶつ",
+      "meaning": "물건",
+      "example": "大切な物を忘れました。",
+      "example_meaning": "중요한 물건을 잊어버렸어요."
+    },
+    {
+      "char": "場",
+      "reading": "ば / じょう",
+      "meaning": "장소",
+      "example": "待ち合わせの場所はどこですか。",
+      "example_meaning": "만나는 장소는 어디예요?"
+    },
+    {
+      "char": "社",
+      "reading": "しゃ",
+      "meaning": "회사",
+      "example": "会社に遅刻しました。",
+      "example_meaning": "회사에 지각했습니다."
+    },
+    {
+      "char": "急",
+      "reading": "いそ / きゅう",
+      "meaning": "급하다",
+      "example": "急いで来てください。",
+      "example_meaning": "서둘러 와주세요."
+    },
+    {
+      "char": "暇",
+      "reading": "ひま / か",
+      "meaning": "여가",
+      "example": "暇なとき何をしますか。",
+      "example_meaning": "한가할 때 뭐 해요?"
+    },
+    {
+      "char": "道",
+      "reading": "みち / どう",
+      "meaning": "길",
+      "example": "この道をまっすぐ行ってください。",
+      "example_meaning": "이 길을 똑바로 가주세요."
+    },
+    {
+      "char": "橋",
+      "reading": "はし / きょう",
+      "meaning": "다리",
+      "example": "橋を渡ってください。",
+      "example_meaning": "다리를 건너주세요."
+    },
+    {
+      "char": "町",
+      "reading": "まち / ちょう",
+      "meaning": "마을",
+      "example": "静かな町に住んでいます。",
+      "example_meaning": "조용한 마을에 살고 있어요."
+    },
+    {
+      "char": "払",
+      "reading": "はら / ふつ",
+      "meaning": "지불하다",
+      "example": "カードで払えますか。",
+      "example_meaning": "카드로 낼 수 있어요?"
+    },
+    {
+      "char": "貸",
+      "reading": "か / たい",
+      "meaning": "빌려주다",
+      "example": "傘を貸してください。",
+      "example_meaning": "우산을 빌려주세요."
+    },
+    {
+      "char": "借",
+      "reading": "か / しゃく",
+      "meaning": "빌리다",
+      "example": "図書館で本を借りました。",
+      "example_meaning": "도서관에서 책을 빌렸어요."
+    }
   ],
   "N3": [
-    {"char":"愛","reading":"あい","meaning":"사랑","example":"愛する人と旅行したいです。","example_meaning":"사랑하는 사람과 여행하고 싶어요."},
-    {"char":"悪","reading":"わる / あく","meaning":"나쁘다","example":"体に悪い食べ物です。","example_meaning":"몸에 나쁜 음식이에요."},
-    {"char":"意","reading":"い","meaning":"뜻","example":"意味がわかりません。","example_meaning":"의미를 모르겠어요."},
-    {"char":"運","reading":"はこ / うん","meaning":"운반하다, 운","example":"運がよかったです。","example_meaning":"운이 좋았어요."},
-    {"char":"化","reading":"か / け","meaning":"변하다","example":"文化の違いを学びました。","example_meaning":"문화 차이를 배웠습니다."},
-    {"char":"界","reading":"かい","meaning":"세계","example":"世界中を旅行したいです。","example_meaning":"전 세계를 여행하고 싶어요."},
-    {"char":"解","reading":"と / かい","meaning":"풀다","example":"問題を解決しました。","example_meaning":"문제를 해결했습니다."},
-    {"char":"感","reading":"かん","meaning":"느낌","example":"感動して泣きました。","example_meaning":"감동받아서 울었습니다."},
-    {"char":"関","reading":"かん / せき","meaning":"관계","example":"仕事に関する質問です。","example_meaning":"일에 관한 질문입니다."},
-    {"char":"期","reading":"き","meaning":"기간","example":"期待していました。","example_meaning":"기대하고 있었어요."},
-    {"char":"機","reading":"き","meaning":"기계","example":"機会があれば行きます。","example_meaning":"기회가 있으면 가요."},
-    {"char":"記","reading":"き","meaning":"기록","example":"日記を毎日書きます。","example_meaning":"일기를 매일 씁니다."},
-    {"char":"急","reading":"いそ / きゅう","meaning":"급하다","example":"急に雨が降ってきました。","example_meaning":"갑자기 비가 내렸어요."},
-    {"char":"決","reading":"き / けつ","meaning":"결정하다","example":"旅行の日程を決めました。","example_meaning":"여행 일정을 정했습니다."},
-    {"char":"研","reading":"けん","meaning":"연구","example":"新薬の研究をしています。","example_meaning":"신약 연구를 하고 있어요."},
-    {"char":"個","reading":"こ","meaning":"개","example":"りんごを三個買いました。","example_meaning":"사과를 3개 샀습니다."},
-    {"char":"光","reading":"ひかり / こう","meaning":"빛","example":"太陽の光が強いです。","example_meaning":"태양 빛이 강해요."},
-    {"char":"港","reading":"みなと / こう","meaning":"항구","example":"港から船が出ます。","example_meaning":"항구에서 배가 출발해요."},
-    {"char":"最","reading":"もっと / さい","meaning":"가장","example":"これが最高のレストランです。","example_meaning":"이게 최고의 식당이에요."},
-    {"char":"産","reading":"う / さん","meaning":"낳다","example":"大邱産のりんごです。","example_meaning":"대구산 사과입니다."},
-    {"char":"試","reading":"こころ / し","meaning":"시험","example":"試験に合格しました。","example_meaning":"시험에 합격했습니다."},
-    {"char":"実","reading":"じつ / み","meaning":"실제","example":"実は知っていました。","example_meaning":"사실 알고 있었어요."},
-    {"char":"質","reading":"しつ / ちつ","meaning":"질","example":"品質がいい商品です。","example_meaning":"품질이 좋은 상품이에요."},
-    {"char":"集","reading":"あつ / しゅう","meaning":"모으다","example":"データを集めました。","example_meaning":"데이터를 모았습니다."},
-    {"char":"住","reading":"す / じゅう","meaning":"살다","example":"住所を教えてください。","example_meaning":"주소를 알려주세요."},
-    {"char":"情","reading":"なさけ / じょう","meaning":"감정","example":"感情を表現するのが難しいです。","example_meaning":"감정을 표현하기가 어려워요."},
-    {"char":"信","reading":"しん","meaning":"믿다","example":"あの人を信頼しています。","example_meaning":"저 사람을 신뢰하고 있어요."},
-    {"char":"深","reading":"ふか / しん","meaning":"깊다","example":"深い関係を築きました。","example_meaning":"깊은 관계를 쌓았습니다."},
-    {"char":"進","reading":"すす / しん","meaning":"나아가다","example":"計画が順調に進んでいます。","example_meaning":"계획이 순조롭게 진행되고 있어요."},
-    {"char":"成","reading":"な / せい","meaning":"이루다","example":"夢を成功させました。","example_meaning":"꿈을 성공시켰습니다."},
-    {"char":"責","reading":"せめ / せき","meaning":"책임","example":"責任を持ってやります。","example_meaning":"책임감을 갖고 할게요."},
-    {"char":"選","reading":"えら / せん","meaning":"선택하다","example":"自分で選んでください。","example_meaning":"스스로 선택하세요."},
-    {"char":"然","reading":"ぜん / ねん","meaning":"그러하다","example":"自然の中で過ごしました。","example_meaning":"자연 속에서 지냈습니다."},
-    {"char":"相","reading":"あい / そう","meaning":"서로","example":"相談してもいいですか。","example_meaning":"상담해도 될까요?"},
-    {"char":"続","reading":"つづ / ぞく","meaning":"계속하다","example":"毎日練習を続けます。","example_meaning":"매일 연습을 계속해요."},
-    {"char":"対","reading":"たい","meaning":"대","example":"問題に対して考えます。","example_meaning":"문제에 대해 생각해요."},
-    {"char":"達","reading":"たち / たつ","meaning":"도달하다","example":"友達と旅行しました。","example_meaning":"친구와 여행했습니다."},
-    {"char":"断","reading":"こと / だん","meaning":"거절하다","example":"お断りします。","example_meaning":"거절하겠습니다."},
-    {"char":"知","reading":"し / ち","meaning":"알다","example":"知識を身につけます。","example_meaning":"지식을 습득합니다."},
-    {"char":"注","reading":"そそ / ちゅう","meaning":"주의","example":"注意してください。","example_meaning":"주의해주세요."},
-    {"char":"調","reading":"しら / ちょう","meaning":"조사하다","example":"インターネットで調べました。","example_meaning":"인터넷으로 조사했습니다."},
-    {"char":"定","reading":"さだ / てい","meaning":"정하다","example":"予定を確認してください。","example_meaning":"예정을 확인해주세요."},
-    {"char":"転","reading":"ころ / てん","meaning":"구르다","example":"自転車に乗ります。","example_meaning":"자전거를 탑니다."},
-    {"char":"登","reading":"のぼ / とう","meaning":"오르다","example":"山に登りました。","example_meaning":"산에 올랐습니다."},
-    {"char":"特","reading":"とく","meaning":"특별","example":"特別なプレゼントです。","example_meaning":"특별한 선물이에요."},
-    {"char":"得","reading":"え / とく","meaning":"얻다","example":"経験を得ることができました。","example_meaning":"경험을 얻을 수 있었어요."},
-    {"char":"難","reading":"むずか / なん","meaning":"어렵다","example":"この問題は難しいです。","example_meaning":"이 문제는 어렵습니다."},
-    {"char":"認","reading":"みと / にん","meaning":"인정하다","example":"失敗を認めました。","example_meaning":"실패를 인정했습니다."},
-    {"char":"配","reading":"くば / はい","meaning":"배달하다","example":"心配しないでください。","example_meaning":"걱정하지 마세요."},
-    {"char":"判","reading":"はん","meaning":"판단","example":"自分で判断してください。","example_meaning":"스스로 판단하세요."},
-    {"char":"反","reading":"はん","meaning":"반대","example":"反対意見を言いました。","example_meaning":"반대 의견을 말했어요."},
-    {"char":"比","reading":"くら / ひ","meaning":"비교","example":"去年と比べて暖かいです。","example_meaning":"작년과 비교해서 따뜻해요."},
-    {"char":"表","reading":"ひょう / あらわ","meaning":"표","example":"気持ちを表現しました。","example_meaning":"마음을 표현했습니다."},
-    {"char":"不","reading":"ふ / ぶ","meaning":"아니다","example":"不便なところがありますか。","example_meaning":"불편한 점이 있나요?"},
-    {"char":"変","reading":"か / へん","meaning":"변하다","example":"季節が変わりました。","example_meaning":"계절이 바뀌었습니다."},
-    {"char":"法","reading":"ほう","meaning":"방법","example":"方法を教えてください。","example_meaning":"방법을 알려주세요."},
-    {"char":"満","reading":"み / まん","meaning":"가득하다","example":"電車が満員です。","example_meaning":"전철이 만원입니다."},
-    {"char":"明","reading":"あか / めい","meaning":"밝다","example":"説明してください。","example_meaning":"설명해주세요."},
-    {"char":"面","reading":"おもて / めん","meaning":"얼굴, 면","example":"面接がありました。","example_meaning":"면접이 있었습니다."},
-    {"char":"問","reading":"と / もん","meaning":"묻다","example":"質問があります。","example_meaning":"질문이 있어요."},
-    {"char":"役","reading":"やく","meaning":"역할","example":"役に立ちたいです。","example_meaning":"도움이 되고 싶어요."},
-    {"char":"約","reading":"やく","meaning":"약속","example":"約束を守ります。","example_meaning":"약속을 지켜요."},
-    {"char":"要","reading":"い / よう","meaning":"필요하다","example":"時間が必要です。","example_meaning":"시간이 필요해요."},
-    {"char":"理","reading":"り","meaning":"이유","example":"理由を教えてください。","example_meaning":"이유를 알려주세요."},
-    {"char":"論","reading":"ろん","meaning":"논의","example":"議論しましょう。","example_meaning":"논의해봐요."},
-    {"char":"和","reading":"やわ / わ","meaning":"화목하다","example":"平和な世界を願います。","example_meaning":"평화로운 세계를 바랍니다."}
+    {
+      "char": "愛",
+      "reading": "あい",
+      "meaning": "사랑",
+      "example": "愛する人と旅行したいです。",
+      "example_meaning": "사랑하는 사람과 여행하고 싶어요."
+    },
+    {
+      "char": "悪",
+      "reading": "わる / あく",
+      "meaning": "나쁘다",
+      "example": "体に悪い食べ物です。",
+      "example_meaning": "몸에 나쁜 음식이에요."
+    },
+    {
+      "char": "意",
+      "reading": "い",
+      "meaning": "뜻",
+      "example": "意味がわかりません。",
+      "example_meaning": "의미를 모르겠어요."
+    },
+    {
+      "char": "運",
+      "reading": "はこ / うん",
+      "meaning": "운반하다, 운",
+      "example": "運がよかったです。",
+      "example_meaning": "운이 좋았어요."
+    },
+    {
+      "char": "化",
+      "reading": "か / け",
+      "meaning": "변하다",
+      "example": "文化の違いを学びました。",
+      "example_meaning": "문화 차이를 배웠습니다."
+    },
+    {
+      "char": "界",
+      "reading": "かい",
+      "meaning": "세계",
+      "example": "世界中を旅行したいです。",
+      "example_meaning": "전 세계를 여행하고 싶어요."
+    },
+    {
+      "char": "解",
+      "reading": "と / かい",
+      "meaning": "풀다",
+      "example": "問題を解決しました。",
+      "example_meaning": "문제를 해결했습니다."
+    },
+    {
+      "char": "感",
+      "reading": "かん",
+      "meaning": "느낌",
+      "example": "感動して泣きました。",
+      "example_meaning": "감동받아서 울었습니다."
+    },
+    {
+      "char": "関",
+      "reading": "かん / せき",
+      "meaning": "관계",
+      "example": "仕事に関する質問です。",
+      "example_meaning": "일에 관한 질문입니다."
+    },
+    {
+      "char": "期",
+      "reading": "き",
+      "meaning": "기간",
+      "example": "期待していました。",
+      "example_meaning": "기대하고 있었어요."
+    },
+    {
+      "char": "機",
+      "reading": "き",
+      "meaning": "기계",
+      "example": "機会があれば行きます。",
+      "example_meaning": "기회가 있으면 가요."
+    },
+    {
+      "char": "記",
+      "reading": "き",
+      "meaning": "기록",
+      "example": "日記を毎日書きます。",
+      "example_meaning": "일기를 매일 씁니다."
+    },
+    {
+      "char": "急",
+      "reading": "いそ / きゅう",
+      "meaning": "급하다",
+      "example": "急に雨が降ってきました。",
+      "example_meaning": "갑자기 비가 내렸어요."
+    },
+    {
+      "char": "決",
+      "reading": "き / けつ",
+      "meaning": "결정하다",
+      "example": "旅行の日程を決めました。",
+      "example_meaning": "여행 일정을 정했습니다."
+    },
+    {
+      "char": "研",
+      "reading": "けん",
+      "meaning": "연구",
+      "example": "新薬の研究をしています。",
+      "example_meaning": "신약 연구를 하고 있어요."
+    },
+    {
+      "char": "個",
+      "reading": "こ",
+      "meaning": "개",
+      "example": "りんごを三個買いました。",
+      "example_meaning": "사과를 3개 샀습니다."
+    },
+    {
+      "char": "光",
+      "reading": "ひかり / こう",
+      "meaning": "빛",
+      "example": "太陽の光が強いです。",
+      "example_meaning": "태양 빛이 강해요."
+    },
+    {
+      "char": "港",
+      "reading": "みなと / こう",
+      "meaning": "항구",
+      "example": "港から船が出ます。",
+      "example_meaning": "항구에서 배가 출발해요."
+    },
+    {
+      "char": "最",
+      "reading": "もっと / さい",
+      "meaning": "가장",
+      "example": "これが最高のレストランです。",
+      "example_meaning": "이게 최고의 식당이에요."
+    },
+    {
+      "char": "産",
+      "reading": "う / さん",
+      "meaning": "낳다",
+      "example": "大邱産のりんごです。",
+      "example_meaning": "대구산 사과입니다."
+    },
+    {
+      "char": "試",
+      "reading": "こころ / し",
+      "meaning": "시험",
+      "example": "試験に合格しました。",
+      "example_meaning": "시험에 합격했습니다."
+    },
+    {
+      "char": "実",
+      "reading": "じつ / み",
+      "meaning": "실제",
+      "example": "実は知っていました。",
+      "example_meaning": "사실 알고 있었어요."
+    },
+    {
+      "char": "質",
+      "reading": "しつ / ちつ",
+      "meaning": "질",
+      "example": "品質がいい商品です。",
+      "example_meaning": "품질이 좋은 상품이에요."
+    },
+    {
+      "char": "集",
+      "reading": "あつ / しゅう",
+      "meaning": "모으다",
+      "example": "データを集めました。",
+      "example_meaning": "데이터를 모았습니다."
+    },
+    {
+      "char": "住",
+      "reading": "す / じゅう",
+      "meaning": "살다",
+      "example": "住所を教えてください。",
+      "example_meaning": "주소를 알려주세요."
+    },
+    {
+      "char": "情",
+      "reading": "なさけ / じょう",
+      "meaning": "감정",
+      "example": "感情を表現するのが難しいです。",
+      "example_meaning": "감정을 표현하기가 어려워요."
+    },
+    {
+      "char": "信",
+      "reading": "しん",
+      "meaning": "믿다",
+      "example": "あの人を信頼しています。",
+      "example_meaning": "저 사람을 신뢰하고 있어요."
+    },
+    {
+      "char": "深",
+      "reading": "ふか / しん",
+      "meaning": "깊다",
+      "example": "深い関係を築きました。",
+      "example_meaning": "깊은 관계를 쌓았습니다."
+    },
+    {
+      "char": "進",
+      "reading": "すす / しん",
+      "meaning": "나아가다",
+      "example": "計画が順調に進んでいます。",
+      "example_meaning": "계획이 순조롭게 진행되고 있어요."
+    },
+    {
+      "char": "成",
+      "reading": "な / せい",
+      "meaning": "이루다",
+      "example": "夢を成功させました。",
+      "example_meaning": "꿈을 성공시켰습니다."
+    },
+    {
+      "char": "責",
+      "reading": "せめ / せき",
+      "meaning": "책임",
+      "example": "責任を持ってやります。",
+      "example_meaning": "책임감을 갖고 할게요."
+    },
+    {
+      "char": "選",
+      "reading": "えら / せん",
+      "meaning": "선택하다",
+      "example": "自分で選んでください。",
+      "example_meaning": "스스로 선택하세요."
+    },
+    {
+      "char": "然",
+      "reading": "ぜん / ねん",
+      "meaning": "그러하다",
+      "example": "自然の中で過ごしました。",
+      "example_meaning": "자연 속에서 지냈습니다."
+    },
+    {
+      "char": "相",
+      "reading": "あい / そう",
+      "meaning": "서로",
+      "example": "相談してもいいですか。",
+      "example_meaning": "상담해도 될까요?"
+    },
+    {
+      "char": "続",
+      "reading": "つづ / ぞく",
+      "meaning": "계속하다",
+      "example": "毎日練習を続けます。",
+      "example_meaning": "매일 연습을 계속해요."
+    },
+    {
+      "char": "対",
+      "reading": "たい",
+      "meaning": "대",
+      "example": "問題に対して考えます。",
+      "example_meaning": "문제에 대해 생각해요."
+    },
+    {
+      "char": "達",
+      "reading": "たち / たつ",
+      "meaning": "도달하다",
+      "example": "友達と旅行しました。",
+      "example_meaning": "친구와 여행했습니다."
+    },
+    {
+      "char": "断",
+      "reading": "こと / だん",
+      "meaning": "거절하다",
+      "example": "お断りします。",
+      "example_meaning": "거절하겠습니다."
+    },
+    {
+      "char": "知",
+      "reading": "し / ち",
+      "meaning": "알다",
+      "example": "知識を身につけます。",
+      "example_meaning": "지식을 습득합니다."
+    },
+    {
+      "char": "注",
+      "reading": "そそ / ちゅう",
+      "meaning": "주의",
+      "example": "注意してください。",
+      "example_meaning": "주의해주세요."
+    },
+    {
+      "char": "調",
+      "reading": "しら / ちょう",
+      "meaning": "조사하다",
+      "example": "インターネットで調べました。",
+      "example_meaning": "인터넷으로 조사했습니다."
+    },
+    {
+      "char": "定",
+      "reading": "さだ / てい",
+      "meaning": "정하다",
+      "example": "予定を確認してください。",
+      "example_meaning": "예정을 확인해주세요."
+    },
+    {
+      "char": "転",
+      "reading": "ころ / てん",
+      "meaning": "구르다",
+      "example": "自転車に乗ります。",
+      "example_meaning": "자전거를 탑니다."
+    },
+    {
+      "char": "登",
+      "reading": "のぼ / とう",
+      "meaning": "오르다",
+      "example": "山に登りました。",
+      "example_meaning": "산에 올랐습니다."
+    },
+    {
+      "char": "特",
+      "reading": "とく",
+      "meaning": "특별",
+      "example": "特別なプレゼントです。",
+      "example_meaning": "특별한 선물이에요."
+    },
+    {
+      "char": "得",
+      "reading": "え / とく",
+      "meaning": "얻다",
+      "example": "経験を得ることができました。",
+      "example_meaning": "경험을 얻을 수 있었어요."
+    },
+    {
+      "char": "難",
+      "reading": "むずか / なん",
+      "meaning": "어렵다",
+      "example": "この問題は難しいです。",
+      "example_meaning": "이 문제는 어렵습니다."
+    },
+    {
+      "char": "認",
+      "reading": "みと / にん",
+      "meaning": "인정하다",
+      "example": "失敗を認めました。",
+      "example_meaning": "실패를 인정했습니다."
+    },
+    {
+      "char": "配",
+      "reading": "くば / はい",
+      "meaning": "배달하다",
+      "example": "心配しないでください。",
+      "example_meaning": "걱정하지 마세요."
+    },
+    {
+      "char": "判",
+      "reading": "はん",
+      "meaning": "판단",
+      "example": "自分で判断してください。",
+      "example_meaning": "스스로 판단하세요."
+    },
+    {
+      "char": "反",
+      "reading": "はん",
+      "meaning": "반대",
+      "example": "反対意見を言いました。",
+      "example_meaning": "반대 의견을 말했어요."
+    },
+    {
+      "char": "比",
+      "reading": "くら / ひ",
+      "meaning": "비교",
+      "example": "去年と比べて暖かいです。",
+      "example_meaning": "작년과 비교해서 따뜻해요."
+    },
+    {
+      "char": "表",
+      "reading": "ひょう / あらわ",
+      "meaning": "표",
+      "example": "気持ちを表現しました。",
+      "example_meaning": "마음을 표현했습니다."
+    },
+    {
+      "char": "不",
+      "reading": "ふ / ぶ",
+      "meaning": "아니다",
+      "example": "不便なところがありますか。",
+      "example_meaning": "불편한 점이 있나요?"
+    },
+    {
+      "char": "変",
+      "reading": "か / へん",
+      "meaning": "변하다",
+      "example": "季節が変わりました。",
+      "example_meaning": "계절이 바뀌었습니다."
+    },
+    {
+      "char": "法",
+      "reading": "ほう",
+      "meaning": "방법",
+      "example": "方法を教えてください。",
+      "example_meaning": "방법을 알려주세요."
+    },
+    {
+      "char": "満",
+      "reading": "み / まん",
+      "meaning": "가득하다",
+      "example": "電車が満員です。",
+      "example_meaning": "전철이 만원입니다."
+    },
+    {
+      "char": "明",
+      "reading": "あか / めい",
+      "meaning": "밝다",
+      "example": "説明してください。",
+      "example_meaning": "설명해주세요."
+    },
+    {
+      "char": "面",
+      "reading": "おもて / めん",
+      "meaning": "얼굴, 면",
+      "example": "面接がありました。",
+      "example_meaning": "면접이 있었습니다."
+    },
+    {
+      "char": "問",
+      "reading": "と / もん",
+      "meaning": "묻다",
+      "example": "質問があります。",
+      "example_meaning": "질문이 있어요."
+    },
+    {
+      "char": "役",
+      "reading": "やく",
+      "meaning": "역할",
+      "example": "役に立ちたいです。",
+      "example_meaning": "도움이 되고 싶어요."
+    },
+    {
+      "char": "約",
+      "reading": "やく",
+      "meaning": "약속",
+      "example": "約束を守ります。",
+      "example_meaning": "약속을 지켜요."
+    },
+    {
+      "char": "要",
+      "reading": "い / よう",
+      "meaning": "필요하다",
+      "example": "時間が必要です。",
+      "example_meaning": "시간이 필요해요."
+    },
+    {
+      "char": "理",
+      "reading": "り",
+      "meaning": "이유",
+      "example": "理由を教えてください。",
+      "example_meaning": "이유를 알려주세요."
+    },
+    {
+      "char": "論",
+      "reading": "ろん",
+      "meaning": "논의",
+      "example": "議論しましょう。",
+      "example_meaning": "논의해봐요."
+    },
+    {
+      "char": "和",
+      "reading": "やわ / わ",
+      "meaning": "화목하다",
+      "example": "平和な世界を願います。",
+      "example_meaning": "평화로운 세계를 바랍니다."
+    }
+  ],
+  "N2": [
+    {
+      "char": "握",
+      "reading": "にぎ / あく",
+      "meaning": "쥐다",
+      "example": "手を握りました。",
+      "example_meaning": "손을 쥐었습니다."
+    },
+    {
+      "char": "域",
+      "reading": "いき",
+      "meaning": "영역",
+      "example": "専門の域に達しました。",
+      "example_meaning": "전문 영역에 도달했습니다."
+    },
+    {
+      "char": "一般",
+      "reading": "いっぱん",
+      "meaning": "일반",
+      "example": "一般的な方法でやります。",
+      "example_meaning": "일반적인 방법으로 해요."
+    },
+    {
+      "char": "印象",
+      "reading": "いんしょう",
+      "meaning": "인상",
+      "example": "第一印象が大切です。",
+      "example_meaning": "첫인상이 중요합니다."
+    },
+    {
+      "char": "影響",
+      "reading": "えいきょう",
+      "meaning": "영향",
+      "example": "天気が体に影響します。",
+      "example_meaning": "날씨가 몸에 영향을 줍니다."
+    },
+    {
+      "char": "援助",
+      "reading": "えんじょ",
+      "meaning": "원조",
+      "example": "被災地を援助しました。",
+      "example_meaning": "피재지를 원조했습니다."
+    },
+    {
+      "char": "応用",
+      "reading": "おうよう",
+      "meaning": "응용",
+      "example": "理論を応用します。",
+      "example_meaning": "이론을 응용합니다."
+    },
+    {
+      "char": "温暖",
+      "reading": "おんだん",
+      "meaning": "온난",
+      "example": "温暖化が進んでいます。",
+      "example_meaning": "온난화가 진행되고 있어요."
+    },
+    {
+      "char": "価値",
+      "reading": "かち",
+      "meaning": "가치",
+      "example": "価値のあるものです。",
+      "example_meaning": "가치 있는 것이에요."
+    },
+    {
+      "char": "過去",
+      "reading": "かこ",
+      "meaning": "과거",
+      "example": "過去を振り返ります。",
+      "example_meaning": "과거를 돌아봅니다."
+    },
+    {
+      "char": "環境",
+      "reading": "かんきょう",
+      "meaning": "환경",
+      "example": "環境問題に取り組みます。",
+      "example_meaning": "환경 문제에 임합니다."
+    },
+    {
+      "char": "企業",
+      "reading": "きぎょう",
+      "meaning": "기업",
+      "example": "大企業で働いています。",
+      "example_meaning": "대기업에서 일하고 있어요."
+    },
+    {
+      "char": "規模",
+      "reading": "きぼ",
+      "meaning": "규모",
+      "example": "大規模なイベントです。",
+      "example_meaning": "대규모 이벤트예요."
+    },
+    {
+      "char": "競争",
+      "reading": "きょうそう",
+      "meaning": "경쟁",
+      "example": "激しい競争があります。",
+      "example_meaning": "치열한 경쟁이 있어요."
+    },
+    {
+      "char": "均衡",
+      "reading": "きんこう",
+      "meaning": "균형",
+      "example": "均衡を保つことが大切です。",
+      "example_meaning": "균형을 유지하는 게 중요해요."
+    },
+    {
+      "char": "継続",
+      "reading": "けいぞく",
+      "meaning": "계속",
+      "example": "努力を継続します。",
+      "example_meaning": "노력을 계속합니다."
+    },
+    {
+      "char": "結果",
+      "reading": "けっか",
+      "meaning": "결과",
+      "example": "努力の結果です。",
+      "example_meaning": "노력의 결과예요."
+    },
+    {
+      "char": "限界",
+      "reading": "げんかい",
+      "meaning": "한계",
+      "example": "限界を超えました。",
+      "example_meaning": "한계를 넘었습니다."
+    },
+    {
+      "char": "現実",
+      "reading": "げんじつ",
+      "meaning": "현실",
+      "example": "現実を受け入れます。",
+      "example_meaning": "현실을 받아들입니다."
+    },
+    {
+      "char": "効果",
+      "reading": "こうか",
+      "meaning": "효과",
+      "example": "薬の効果が出ました。",
+      "example_meaning": "약 효과가 나타났어요."
+    },
+    {
+      "char": "構造",
+      "reading": "こうぞう",
+      "meaning": "구조",
+      "example": "建物の構造を調べます。",
+      "example_meaning": "건물 구조를 조사합니다."
+    },
+    {
+      "char": "根拠",
+      "reading": "こんきょ",
+      "meaning": "근거",
+      "example": "根拠を示してください。",
+      "example_meaning": "근거를 제시해주세요."
+    },
+    {
+      "char": "採用",
+      "reading": "さいよう",
+      "meaning": "채용",
+      "example": "新卒を採用しました。",
+      "example_meaning": "신입을 채용했습니다."
+    },
+    {
+      "char": "参考",
+      "reading": "さんこう",
+      "meaning": "참고",
+      "example": "参考にしてください。",
+      "example_meaning": "참고해주세요."
+    },
+    {
+      "char": "資源",
+      "reading": "しげん",
+      "meaning": "자원",
+      "example": "天然資源が豊富です。",
+      "example_meaning": "천연자원이 풍부해요."
+    },
+    {
+      "char": "支持",
+      "reading": "しじ",
+      "meaning": "지지",
+      "example": "多くの人に支持されました。",
+      "example_meaning": "많은 사람에게 지지받았어요."
+    },
+    {
+      "char": "手段",
+      "reading": "しゅだん",
+      "meaning": "수단",
+      "example": "交通手段を考えます。",
+      "example_meaning": "교통수단을 생각해요."
+    },
+    {
+      "char": "状況",
+      "reading": "じょうきょう",
+      "meaning": "상황",
+      "example": "状況を確認してください。",
+      "example_meaning": "상황을 확인해주세요."
+    },
+    {
+      "char": "処理",
+      "reading": "しょり",
+      "meaning": "처리",
+      "example": "データを処理しました。",
+      "example_meaning": "데이터를 처리했습니다."
+    },
+    {
+      "char": "進展",
+      "reading": "しんてん",
+      "meaning": "진전",
+      "example": "交渉が進展しました。",
+      "example_meaning": "협상이 진전됐습니다."
+    },
+    {
+      "char": "設備",
+      "reading": "せつび",
+      "meaning": "설비",
+      "example": "設備を整えました。",
+      "example_meaning": "설비를 갖췄습니다."
+    },
+    {
+      "char": "専門",
+      "reading": "せんもん",
+      "meaning": "전문",
+      "example": "専門家に相談します。",
+      "example_meaning": "전문가에게 상담합니다."
+    },
+    {
+      "char": "総合",
+      "reading": "そうごう",
+      "meaning": "종합",
+      "example": "総合的に判断します。",
+      "example_meaning": "종합적으로 판단합니다."
+    },
+    {
+      "char": "対策",
+      "reading": "たいさく",
+      "meaning": "대책",
+      "example": "問題の対策を立てます。",
+      "example_meaning": "문제 대책을 세웁니다."
+    },
+    {
+      "char": "達成",
+      "reading": "たっせい",
+      "meaning": "달성",
+      "example": "目標を達成しました。",
+      "example_meaning": "목표를 달성했습니다."
+    },
+    {
+      "char": "担当",
+      "reading": "たんとう",
+      "meaning": "담당",
+      "example": "この件を担当します。",
+      "example_meaning": "이 건을 담당합니다."
+    },
+    {
+      "char": "蓄積",
+      "reading": "ちくせき",
+      "meaning": "축적",
+      "example": "経験を蓄積しました。",
+      "example_meaning": "경험을 축적했습니다."
+    },
+    {
+      "char": "提案",
+      "reading": "ていあん",
+      "meaning": "제안",
+      "example": "新しい案を提案しました。",
+      "example_meaning": "새 안을 제안했습니다."
+    },
+    {
+      "char": "展開",
+      "reading": "てんかい",
+      "meaning": "전개",
+      "example": "計画を展開します。",
+      "example_meaning": "계획을 전개합니다."
+    },
+    {
+      "char": "統計",
+      "reading": "とうけい",
+      "meaning": "통계",
+      "example": "統計データを分析します。",
+      "example_meaning": "통계 데이터를 분석합니다."
+    },
+    {
+      "char": "独自",
+      "reading": "どくじ",
+      "meaning": "독자",
+      "example": "独自の方法でやります。",
+      "example_meaning": "독자적인 방법으로 해요."
+    },
+    {
+      "char": "把握",
+      "reading": "はあく",
+      "meaning": "파악",
+      "example": "状況を把握しました。",
+      "example_meaning": "상황을 파악했습니다."
+    },
+    {
+      "char": "背景",
+      "reading": "はいけい",
+      "meaning": "배경",
+      "example": "歴史的な背景があります。",
+      "example_meaning": "역사적 배경이 있어요."
+    },
+    {
+      "char": "判断",
+      "reading": "はんだん",
+      "meaning": "판단",
+      "example": "正しい判断をします。",
+      "example_meaning": "올바른 판단을 합니다."
+    },
+    {
+      "char": "普及",
+      "reading": "ふきゅう",
+      "meaning": "보급",
+      "example": "スマホが普及しました。",
+      "example_meaning": "스마트폰이 보급됐습니다."
+    },
+    {
+      "char": "分析",
+      "reading": "ぶんせき",
+      "meaning": "분석",
+      "example": "データを分析します。",
+      "example_meaning": "데이터를 분석합니다."
+    },
+    {
+      "char": "方針",
+      "reading": "ほうしん",
+      "meaning": "방침",
+      "example": "会社の方針に従います。",
+      "example_meaning": "회사 방침에 따릅니다."
+    },
+    {
+      "char": "目的",
+      "reading": "もくてき",
+      "meaning": "목적",
+      "example": "目的を明確にします。",
+      "example_meaning": "목적을 명확히 합니다."
+    },
+    {
+      "char": "問題点",
+      "reading": "もんだいてん",
+      "meaning": "문제점",
+      "example": "問題点を洗い出します。",
+      "example_meaning": "문제점을 찾아냅니다."
+    },
+    {
+      "char": "要因",
+      "reading": "よういん",
+      "meaning": "요인",
+      "example": "成功の要因を探ります。",
+      "example_meaning": "성공 요인을 탐색합니다."
+    },
+    {
+      "char": "立場",
+      "reading": "たちば",
+      "meaning": "입장",
+      "example": "相手の立場を考えます。",
+      "example_meaning": "상대 입장을 생각합니다."
+    }
+  ],
+  "N1": [
+    {
+      "char": "曖昧",
+      "reading": "あいまい",
+      "meaning": "애매하다",
+      "example": "曖昧な返答はやめましょう。",
+      "example_meaning": "애매한 답변은 그만해요."
+    },
+    {
+      "char": "威厳",
+      "reading": "いげん",
+      "meaning": "위엄",
+      "example": "威厳のある態度が必要です。",
+      "example_meaning": "위엄 있는 태도가 필요해요."
+    },
+    {
+      "char": "一貫",
+      "reading": "いっかん",
+      "meaning": "일관",
+      "example": "一貫した方針を持ちます。",
+      "example_meaning": "일관된 방침을 가집니다."
+    },
+    {
+      "char": "逸脱",
+      "reading": "いつだつ",
+      "meaning": "일탈",
+      "example": "規則から逸脱しました。",
+      "example_meaning": "규칙에서 일탈했습니다."
+    },
+    {
+      "char": "疑惑",
+      "reading": "ぎわく",
+      "meaning": "의혹",
+      "example": "疑惑が晴れました。",
+      "example_meaning": "의혹이 풀렸습니다."
+    },
+    {
+      "char": "矛盾",
+      "reading": "むじゅん",
+      "meaning": "모순",
+      "example": "矛盾した意見があります。",
+      "example_meaning": "모순된 의견이 있어요."
+    },
+    {
+      "char": "欺く",
+      "reading": "あざむく",
+      "meaning": "속이다",
+      "example": "人を欺いてはいけません。",
+      "example_meaning": "사람을 속이면 안 돼요."
+    },
+    {
+      "char": "概念",
+      "reading": "がいねん",
+      "meaning": "개념",
+      "example": "新しい概念を学びました。",
+      "example_meaning": "새로운 개념을 배웠습니다."
+    },
+    {
+      "char": "乖離",
+      "reading": "かいり",
+      "meaning": "괴리",
+      "example": "理想と現実の乖離があります。",
+      "example_meaning": "이상과 현실의 괴리가 있어요."
+    },
+    {
+      "char": "慣習",
+      "reading": "かんしゅう",
+      "meaning": "관습",
+      "example": "古い慣習を守ります。",
+      "example_meaning": "오래된 관습을 지켜요."
+    },
+    {
+      "char": "干渉",
+      "reading": "かんしょう",
+      "meaning": "간섭",
+      "example": "他人の問題に干渉しません。",
+      "example_meaning": "타인의 문제에 간섭하지 않아요."
+    },
+    {
+      "char": "寛容",
+      "reading": "かんよう",
+      "meaning": "관용",
+      "example": "寛容な心を持ちましょう。",
+      "example_meaning": "관용의 마음을 가져요."
+    },
+    {
+      "char": "機微",
+      "reading": "きび",
+      "meaning": "미묘한 사정",
+      "example": "人の機微を読みます。",
+      "example_meaning": "사람의 미묘함을 읽습니다."
+    },
+    {
+      "char": "逆説",
+      "reading": "ぎゃくせつ",
+      "meaning": "역설",
+      "example": "逆説的な状況です。",
+      "example_meaning": "역설적인 상황이에요."
+    },
+    {
+      "char": "脅迫",
+      "reading": "きょうはく",
+      "meaning": "협박",
+      "example": "脅迫に屈しません。",
+      "example_meaning": "협박에 굴복하지 않아요."
+    },
+    {
+      "char": "均質",
+      "reading": "きんしつ",
+      "meaning": "균질",
+      "example": "均質なサービスを提供します。",
+      "example_meaning": "균질한 서비스를 제공합니다."
+    },
+    {
+      "char": "結託",
+      "reading": "けったく",
+      "meaning": "결탁",
+      "example": "悪人と結託してはいけない。",
+      "example_meaning": "악인과 결탁해서는 안 됩니다."
+    },
+    {
+      "char": "顕在",
+      "reading": "けんざい",
+      "meaning": "현재",
+      "example": "問題が顕在化しました。",
+      "example_meaning": "문제가 현재화됐습니다."
+    },
+    {
+      "char": "謙虚",
+      "reading": "けんきょ",
+      "meaning": "겸허",
+      "example": "謙虚な姿勢が大切です。",
+      "example_meaning": "겸허한 자세가 중요해요."
+    },
+    {
+      "char": "誤謬",
+      "reading": "ごびゅう",
+      "meaning": "오류",
+      "example": "論理の誤謬を指摘しました。",
+      "example_meaning": "논리의 오류를 지적했습니다."
+    },
+    {
+      "char": "斟酌",
+      "reading": "しんしゃく",
+      "meaning": "참작",
+      "example": "事情を斟酌しました。",
+      "example_meaning": "사정을 참작했습니다."
+    },
+    {
+      "char": "錯誤",
+      "reading": "さくご",
+      "meaning": "착오",
+      "example": "試行錯誤を繰り返します。",
+      "example_meaning": "시행착오를 반복합니다."
+    },
+    {
+      "char": "恣意",
+      "reading": "しい",
+      "meaning": "자의",
+      "example": "恣意的な判断はよくない。",
+      "example_meaning": "자의적 판단은 좋지 않아요."
+    },
+    {
+      "char": "示唆",
+      "reading": "しさ",
+      "meaning": "시사",
+      "example": "問題を示唆しています。",
+      "example_meaning": "문제를 시사하고 있어요."
+    },
+    {
+      "char": "収拾",
+      "reading": "しゅうしゅう",
+      "meaning": "수습",
+      "example": "混乱を収拾しました。",
+      "example_meaning": "혼란을 수습했습니다."
+    },
+    {
+      "char": "主観",
+      "reading": "しゅかん",
+      "meaning": "주관",
+      "example": "主観的な意見です。",
+      "example_meaning": "주관적인 의견이에요."
+    },
+    {
+      "char": "醸成",
+      "reading": "じょうせい",
+      "meaning": "조성",
+      "example": "信頼関係を醸成します。",
+      "example_meaning": "신뢰 관계를 조성합니다."
+    },
+    {
+      "char": "制約",
+      "reading": "せいやく",
+      "meaning": "제약",
+      "example": "時間的な制約があります。",
+      "example_meaning": "시간적 제약이 있어요."
+    },
+    {
+      "char": "潜在",
+      "reading": "せんざい",
+      "meaning": "잠재",
+      "example": "潜在能力を引き出します。",
+      "example_meaning": "잠재력을 이끌어냅니다."
+    },
+    {
+      "char": "漸進",
+      "reading": "ぜんしん",
+      "meaning": "점진",
+      "example": "漸進的な改革を進めます。",
+      "example_meaning": "점진적 개혁을 진행합니다."
+    },
+    {
+      "char": "創出",
+      "reading": "そうしゅつ",
+      "meaning": "창출",
+      "example": "新たな価値を創出します。",
+      "example_meaning": "새로운 가치를 창출합니다."
+    },
+    {
+      "char": "卓越",
+      "reading": "たくえつ",
+      "meaning": "탁월",
+      "example": "卓越した能力があります。",
+      "example_meaning": "탁월한 능력이 있어요."
+    },
+    {
+      "char": "妥協",
+      "reading": "だきょう",
+      "meaning": "타협",
+      "example": "妥協点を見つけました。",
+      "example_meaning": "타협점을 찾았습니다."
+    },
+    {
+      "char": "抽象",
+      "reading": "ちゅうしょう",
+      "meaning": "추상",
+      "example": "抽象的な概念です。",
+      "example_meaning": "추상적인 개념이에요."
+    },
+    {
+      "char": "逓減",
+      "reading": "ていげん",
+      "meaning": "체감",
+      "example": "効果が逓減しています。",
+      "example_meaning": "효과가 체감되고 있어요."
+    },
+    {
+      "char": "統括",
+      "reading": "とうかつ",
+      "meaning": "통괄",
+      "example": "全体を統括します。",
+      "example_meaning": "전체를 통괄합니다."
+    },
+    {
+      "char": "内包",
+      "reading": "ないほう",
+      "meaning": "내포",
+      "example": "問題を内包しています。",
+      "example_meaning": "문제를 내포하고 있어요."
+    },
+    {
+      "char": "把持",
+      "reading": "はじ",
+      "meaning": "파지",
+      "example": "信念を把持します。",
+      "example_meaning": "신념을 견지합니다."
+    },
+    {
+      "char": "範疇",
+      "reading": "はんちゅう",
+      "meaning": "범주",
+      "example": "専門の範疇を超えます。",
+      "example_meaning": "전문 범주를 넘어요."
+    },
+    {
+      "char": "普遍",
+      "reading": "ふへん",
+      "meaning": "보편",
+      "example": "普遍的な真理を探します。",
+      "example_meaning": "보편적 진리를 탐구합니다."
+    },
+    {
+      "char": "弊害",
+      "reading": "へいがい",
+      "meaning": "폐해",
+      "example": "制度の弊害を指摘します。",
+      "example_meaning": "제도의 폐해를 지적합니다."
+    },
+    {
+      "char": "包括",
+      "reading": "ほうかつ",
+      "meaning": "포괄",
+      "example": "包括的な対策が必要です。",
+      "example_meaning": "포괄적 대책이 필요해요."
+    },
+    {
+      "char": "本質",
+      "reading": "ほんしつ",
+      "meaning": "본질",
+      "example": "問題の本質を見ます。",
+      "example_meaning": "문제의 본질을 봅니다."
+    },
+    {
+      "char": "黙示",
+      "reading": "もくし",
+      "meaning": "묵시",
+      "example": "黙示的な了解があります。",
+      "example_meaning": "묵시적 양해가 있어요."
+    },
+    {
+      "char": "融合",
+      "reading": "ゆうごう",
+      "meaning": "융합",
+      "example": "技術が融合しました。",
+      "example_meaning": "기술이 융합됐습니다."
+    },
+    {
+      "char": "余儀",
+      "reading": "よぎ",
+      "meaning": "어쩔 수 없이",
+      "example": "変更を余儀なくされました。",
+      "example_meaning": "변경을 어쩔 수 없이 하게 됐어요."
+    },
+    {
+      "char": "抑制",
+      "reading": "よくせい",
+      "meaning": "억제",
+      "example": "感情を抑制します。",
+      "example_meaning": "감정을 억제합니다."
+    },
+    {
+      "char": "羅列",
+      "reading": "られつ",
+      "meaning": "나열",
+      "example": "事実を羅列しました。",
+      "example_meaning": "사실을 나열했습니다."
+    },
+    {
+      "char": "論拠",
+      "reading": "ろんきょ",
+      "meaning": "논거",
+      "example": "論拠を示してください。",
+      "example_meaning": "논거를 제시해주세요."
+    },
+    {
+      "char": "隷属",
+      "reading": "れいぞく",
+      "meaning": "예속",
+      "example": "権力に隷属しません。",
+      "example_meaning": "권력에 예속되지 않아요."
+    },
+    {
+      "char": "連携",
+      "reading": "れんけい",
+      "meaning": "연계",
+      "example": "他部門と連携します。",
+      "example_meaning": "다른 부문과 연계합니다."
+    }
   ]
 }
