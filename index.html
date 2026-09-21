@@ -80,6 +80,12 @@ body { font-family: 'Noto Sans JP', sans-serif; background: #f5f5f5; }
 .canvas-wrap { position: relative; margin: 0 auto; width: 240px; height: 240px; border: 1px solid #ddd; border-radius: 12px; overflow: hidden; background: #f9f9f9; touch-action: none; flex-shrink: 0; }
 .canvas-grid { position: absolute; inset: 0; pointer-events: none; }
 canvas.draw { position: absolute; inset: 0; cursor: crosshair; touch-action: none; }
+.expr-display { text-align: center; padding: 6px 4px; }
+.expr-main { font-size: 26px; font-weight: 600; color: #111; line-height: 1.4; word-break: keep-all; }
+.expr-example { font-size: 15px; color: #555; margin-top: 8px; line-height: 1.6; }
+.expr-sub { font-size: 12px; color: #888; margin-top: 6px; display: block; }
+.canvas-wrap-long { position: relative; margin: 0 auto; width: 100%; max-width: 680px; height: 170px; border: 1px solid #ddd; border-radius: 12px; overflow: hidden; background: #fdfdfd repeating-linear-gradient(180deg, transparent 0px, transparent 54px, #e6e6e6 55px, transparent 56px); touch-action: none; flex-shrink: 0; }
+canvas.draw-long { position: absolute; inset: 0; cursor: crosshair; touch-action: none; width: 100%; height: 100%; }
 .btns { display: flex; gap: 8px; justify-content: center; }
 .btns button { padding: 8px 14px; border-radius: 8px; font-size: 12px; cursor: pointer; border: 1px solid #ddd; background: #fff; color: #333; transition: all 0.15s; }
 .btns button.primary-jp { background: #0d2a4a; color: white; border-color: #0d2a4a; }
@@ -213,6 +219,7 @@ canvas.draw { position: absolute; inset: 0; cursor: crosshair; touch-action: non
       <button class="qtype-btn jp-q" id="jp-type-word" onclick="setJpType('word')">🔤 단어</button>
       <button class="qtype-btn jp-q" id="jp-type-vocab" onclick="setJpType('vocab')">📖 어휘</button>
       <button class="qtype-btn jp-q" id="jp-type-grammar" onclick="setJpType('grammar')">✏️ 문법</button>
+      <button class="qtype-btn jp-q" id="jp-type-expr" onclick="setJpType('expr')">💬 표현</button>
     </div>
     <div class="level-label">JLPT レベルを選んでください</div>
     <div class="level-grid">
@@ -395,11 +402,11 @@ function shuffle(arr){
 /* ===== 일본어 퀴즈 ===== */
 async function startJpQuiz(level){
   jpState.level=level;jpState.idx=0;jpState.ctx=null;show('jp-quiz');
-  const titles={kanji:'한자 퀴즈',word:'단어 퀴즈',vocab:'어휘 퀴즈',grammar:'문법 퀴즈'};
+  const titles={kanji:'한자 퀴즈',word:'단어 퀴즈',vocab:'어휘 퀴즈',grammar:'문법 퀴즈',expr:'표현 따라쓰기'};
   document.getElementById('jp-quiz-title').textContent=titles[jpState.type];
   document.getElementById('jp-quiz-body').innerHTML='<div class="loading">로딩 중...</div>';
   try{
-    const fileMap={kanji:'jp_kanji.json',word:'jp_word.json',vocab:'jp_vocab.json',grammar:'jp_grammar.json'};
+    const fileMap={kanji:'jp_kanji.json',word:'jp_word.json',vocab:'jp_vocab.json',grammar:'jp_grammar.json',expr:'jp_expr.json'};
     const data=await loadData(fileMap[jpState.type]);
     jpState.list=shuffle(data[level]||[]);
     if(!jpState.list.length){document.getElementById('jp-quiz-body').innerHTML='<div class="loading">이 레벨 데이터 준비중입니다</div>';return;}
@@ -415,7 +422,8 @@ function renderJpQuiz(){
   if(type==='kanji')renderKanjiQuiz(item,level,false);
   else if(type==='word')renderKanjiQuiz(item,level,true);
   else if(type==='vocab')renderVocabQuiz(item,level,'jp');
-  else renderGrammarQuiz(item,level,'jp');
+  else if(type==='grammar')renderGrammarQuiz(item,level,'jp');
+  else renderExprQuiz(item,level);
 }
 function renderKanjiQuiz(item,level,isWord){
   const body=document.getElementById('jp-quiz-body');
@@ -480,6 +488,67 @@ function showKanjiAnswer(){
     <span class="ans-reading">읽기: ${item.reading}</span>
     <span class="ans-meaning">뜻: ${item.meaning}</span>
     <span class="ans-example">📝 ${item.example||''}<br><small style="color:#5a9a6a">${item.example_meaning||''}</small></span>
+  `;
+}
+function renderExprQuiz(item,level){
+  const body=document.getElementById('jp-quiz-body');
+  body.innerHTML=`
+    <div class="quiz-top">
+      <span><span class="quiz-level-badge jp-badge">${level}</span><span class="quiz-type-badge">표현</span></span>
+      <span class="quiz-count">${(jpState.idx%jpState.list.length)+1} / ${jpState.list.length}</span>
+    </div>
+    <div class="expr-display">
+      <span class="expr-main">${item.expr}</span>
+      <div class="expr-example">📝 ${item.example}</div>
+      <span class="expr-sub">위 표현과 예문을 캔버스에 따라 써보세요</span>
+    </div>
+    <div class="canvas-wrap-long">
+      <canvas class="draw-long" id="jp-canvas-long" width="680" height="170"></canvas>
+    </div>
+    <div class="btns">
+      <button onclick="clearCanvasLong()">지우기</button>
+      <button class="primary-jp" onclick="showExprAnswer()">뜻 보기</button>
+      <button onclick="nextJp()">다음 →</button>
+    </div>
+    <div class="answer-box" id="jp-ans">뜻을 확인하려면 '뜻 보기'를 누르세요</div>
+  `;
+  setTimeout(()=>initCanvasLong(),50);
+}
+function initCanvasLong(){
+  const s=jpState;
+  const old=document.getElementById('jp-canvas-long');
+  if(!old)return;
+  const wrap=old.parentElement;
+  const w=wrap.offsetWidth||680;
+  const nc=old.cloneNode(true);
+  nc.width=w;nc.height=170;
+  old.parentNode.replaceChild(nc,old);
+  s.ctxLong=nc.getContext('2d');
+  s.ctxLong.strokeStyle='#0d2a4a';s.ctxLong.lineWidth=3;s.ctxLong.lineCap='round';s.ctxLong.lineJoin='round';
+  function pos(e){const r=nc.getBoundingClientRect();const src=e.touches?e.touches[0]:e;return[(src.clientX-r.left)*(nc.width/r.width),(src.clientY-r.top)*(nc.height/r.height)];}
+  nc.addEventListener('mousedown',e=>{s.drawing=true;[s.lx,s.ly]=pos(e);});
+  nc.addEventListener('mousemove',e=>{if(!s.drawing)return;const[x,y]=pos(e);s.ctxLong.beginPath();s.ctxLong.moveTo(s.lx,s.ly);s.ctxLong.lineTo(x,y);s.ctxLong.stroke();[s.lx,s.ly]=[x,y];});
+  nc.addEventListener('mouseup',()=>s.drawing=false);
+  nc.addEventListener('mouseleave',()=>s.drawing=false);
+  nc.addEventListener('touchstart',e=>{e.preventDefault();s.drawing=true;[s.lx,s.ly]=pos(e);},{passive:false});
+  nc.addEventListener('touchmove',e=>{e.preventDefault();if(!s.drawing)return;const[x,y]=pos(e);s.ctxLong.beginPath();s.ctxLong.moveTo(s.lx,s.ly);s.ctxLong.lineTo(x,y);s.ctxLong.stroke();[s.lx,s.ly]=[x,y];},{passive:false});
+  nc.addEventListener('touchend',()=>s.drawing=false);
+}
+function clearCanvasLong(){
+  const c=document.getElementById('jp-canvas-long');
+  if(jpState.ctxLong&&c)jpState.ctxLong.clearRect(0,0,c.width,c.height);
+  const ans=document.getElementById('jp-ans');
+  if(ans){ans.className='answer-box';ans.textContent="뜻을 확인하려면 '뜻 보기'를 누르세요";}
+}
+function showExprAnswer(){
+  const item=jpState.list[jpState.idx%jpState.list.length];
+  const ans=document.getElementById('jp-ans');
+  if(!ans)return;
+  ans.className='answer-box ok';
+  ans.innerHTML=`
+    <span class="ans-reading">읽기: ${item.reading}</span>
+    <span class="ans-meaning">뜻: ${item.meaning}</span>
+    <span class="ans-example">${item.example_meaning||''}</span>
   `;
 }
 function renderVocabQuiz(item,level,type){
