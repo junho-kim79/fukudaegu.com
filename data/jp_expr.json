@@ -1,0 +1,2504 @@
+{
+ "N1": [
+  {
+   "expr": "あっさり捨てる",
+   "reading": "あっさりすてる",
+   "meaning": "깨끗하게 버리다, 미련 없이 버리다",
+   "example": "古い写真をあっさり捨てました。",
+   "example_meaning": "오래된 사진을 미련 없이 버렸습니다."
+  },
+  {
+   "expr": "脂っこいものを控える",
+   "reading": "あぶらっこいものをひかえる",
+   "meaning": "기름진 것을 삼가다",
+   "example": "健康のために脂っこいものを控えています。",
+   "example_meaning": "건강을 위해 기름진 것을 삼가고 있습니다."
+  },
+  {
+   "expr": "一切認めない",
+   "reading": "いっさいみとめない",
+   "meaning": "전혀 인정하지 않다",
+   "example": "彼は自分のミスを一切認めません。",
+   "example_meaning": "그는 자신의 실수를 전혀 인정하지 않습니다."
+  },
+  {
+   "expr": "ウエストを詰める",
+   "reading": "ウエストをつめる",
+   "meaning": "허리품을 줄이다",
+   "example": "スカートのウエストを詰めてもらいました。",
+   "example_meaning": "치마 허리품을 줄여 받았습니다."
+  },
+  {
+   "expr": "おまけがつく",
+   "reading": "おまけがつく",
+   "meaning": "덤이 붙다, 증정품이 제공되다",
+   "example": "このお菓子を買うとおまけがつきます。",
+   "example_meaning": "이 과자를 사면 덤이 붙습니다."
+  },
+  {
+   "expr": "思い出に浸る",
+   "reading": "おもいでにひたる",
+   "meaning": "추억에 잠기다",
+   "example": "古いアルバムを見て思い出に浸りました。",
+   "example_meaning": "오래된 앨범을 보며 추억에 잠겼습니다."
+  },
+  {
+   "expr": "影をひそめる",
+   "reading": "かげをひそめる",
+   "meaning": "자취를 감추다",
+   "example": "最近、その噂は影をひそめました。",
+   "example_meaning": "요즘 그 소문은 자취를 감췄습니다."
+  },
+  {
+   "expr": "筋肉を鍛える",
+   "reading": "きんにくをきたえる",
+   "meaning": "근육을 단련하다",
+   "example": "ジムで筋肉を鍛えています。",
+   "example_meaning": "헬스장에서 근육을 단련하고 있습니다."
+  },
+  {
+   "expr": "空腹を覚える",
+   "reading": "くうふくをおぼえる",
+   "meaning": "공복을 느끼다",
+   "example": "昼過ぎに空腹を覚えました。",
+   "example_meaning": "점심때가 지나서 공복을 느꼈습니다."
+  },
+  {
+   "expr": "工夫を凝らす",
+   "reading": "くふうをこらす",
+   "meaning": "궁리를 하다",
+   "example": "デザインに工夫を凝らしました。",
+   "example_meaning": "디자인에 궁리를 했습니다."
+  },
+  {
+   "expr": "敬遠する",
+   "reading": "けいえんする",
+   "meaning": "경원시하다, 꺼리다",
+   "example": "彼はその話題を敬遠しています。",
+   "example_meaning": "그는 그 화제를 꺼리고 있습니다."
+  },
+  {
+   "expr": "喧嘩を売る",
+   "reading": "けんかをうる",
+   "meaning": "싸움을 걸다",
+   "example": "彼にわざと喧嘩を売りました。",
+   "example_meaning": "그에게 일부러 싸움을 걸었습니다."
+  },
+  {
+   "expr": "試験を控える",
+   "reading": "しけんをひかえる",
+   "meaning": "시험을 앞두다",
+   "example": "来週、試験を控えています。",
+   "example_meaning": "다음 주에 시험을 앞두고 있습니다."
+  },
+  {
+   "expr": "支障をきたす",
+   "reading": "ししょうをきたす",
+   "meaning": "지장을 초래하다",
+   "example": "寝不足は仕事に支障をきたします。",
+   "example_meaning": "수면 부족은 업무에 지장을 초래합니다."
+  },
+  {
+   "expr": "実感を持つ",
+   "reading": "じっかんをもつ",
+   "meaning": "실감을 느끼다, 실감이 나다",
+   "example": "合格したという実感をまだ持てません。",
+   "example_meaning": "합격했다는 실감이 아직 나지 않습니다."
+  },
+  {
+   "expr": "衝動買いをする",
+   "reading": "しょうどうがいをする",
+   "meaning": "충동구매를 하다",
+   "example": "セールでつい衝動買いをしました。",
+   "example_meaning": "세일에서 그만 충동구매를 했습니다."
+  },
+  {
+   "expr": "隙を狙う",
+   "reading": "すきをねらう",
+   "meaning": "틈을 노리다",
+   "example": "泥棒は隙を狙っています。",
+   "example_meaning": "도둑은 틈을 노리고 있습니다."
+  },
+  {
+   "expr": "セールにつられる",
+   "reading": "セールにつられる",
+   "meaning": "세일에 현혹되다",
+   "example": "セールにつられて余計な物を買いました。",
+   "example_meaning": "세일에 현혹되어 불필요한 물건을 샀습니다."
+  },
+  {
+   "expr": "席を詰める",
+   "reading": "せきをつめる",
+   "meaning": "자리를 좁히다, 자리를 당겨 앉다",
+   "example": "少し席を詰めてください。",
+   "example_meaning": "좀 자리를 당겨 앉아 주세요."
+  },
+  {
+   "expr": "そっとしておく",
+   "reading": "そっとしておく",
+   "meaning": "가만히 내버려 두다",
+   "example": "今は彼女をそっとしておきましょう。",
+   "example_meaning": "지금은 그녀를 가만히 내버려 둡시다."
+  },
+  {
+   "expr": "ついていけない",
+   "reading": "ついていけない",
+   "meaning": "따라갈 수 없다",
+   "example": "授業のスピードについていけません。",
+   "example_meaning": "수업 속도를 따라갈 수 없습니다."
+  },
+  {
+   "expr": "つきものだ",
+   "reading": "つきものだ",
+   "meaning": "당연히 뒤따른다, 항상 붙어 있다",
+   "example": "失敗は成功につきものです。",
+   "example_meaning": "실패는 성공에 항상 따르는 법입니다."
+  },
+  {
+   "expr": "煮炊きをする",
+   "reading": "にたきをする",
+   "meaning": "취사를 하다, 밥을 짓고 반찬을 만들다",
+   "example": "キャンプ場で煮炊きをしました。",
+   "example_meaning": "캠핑장에서 취사를 했습니다."
+  },
+  {
+   "expr": "人間ドックを受ける",
+   "reading": "にんげんドックをうける",
+   "meaning": "정밀 건강 진단을 받다",
+   "example": "毎年、人間ドックを受けています。",
+   "example_meaning": "매년 정밀 건강 진단을 받고 있습니다."
+  },
+  {
+   "expr": "話が脱線する",
+   "reading": "はなしがだっせんする",
+   "meaning": "이야기가 빗나가다, 화제에서 벗어나다",
+   "example": "会議中に話が脱線しました。",
+   "example_meaning": "회의 중에 이야기가 빗나갔습니다."
+  },
+  {
+   "expr": "火の始末をする",
+   "reading": "ひのしまつをする",
+   "meaning": "화기를 처리하다",
+   "example": "寝る前に火の始末をしてください。",
+   "example_meaning": "자기 전에 화기를 처리해 주세요."
+  },
+  {
+   "expr": "まねをする",
+   "reading": "まねをする",
+   "meaning": "흉내를 내다",
+   "example": "子どもは親のまねをします。",
+   "example_meaning": "아이는 부모의 흉내를 냅니다."
+  },
+  {
+   "expr": "予約を承る",
+   "reading": "よやくをうけたまわる",
+   "meaning": "예약을 받다",
+   "example": "こちらで予約を承ります。",
+   "example_meaning": "여기서 예약을 받습니다."
+  },
+  {
+   "expr": "礼儀作法を身につける",
+   "reading": "れいぎさほうをみにつける",
+   "meaning": "예의범절을 익히다",
+   "example": "子どものうちに礼儀作法を身につけます。",
+   "example_meaning": "어릴 때 예의범절을 익힙니다."
+  },
+  {
+   "expr": "愛想がいい",
+   "reading": "あいそがいい",
+   "meaning": "붙임성이 좋다, 붙임성이 있다",
+   "example": "あの店員は愛想がいいです。",
+   "example_meaning": "저 점원은 붙임성이 좋습니다."
+  },
+  {
+   "expr": "愛想が尽きる",
+   "reading": "あいそがつきる",
+   "meaning": "정나미가 떨어지다",
+   "example": "彼の態度に愛想が尽きました。",
+   "example_meaning": "그의 태도에 정나미가 떨어졌습니다."
+  },
+  {
+   "expr": "飽きがくる",
+   "reading": "あきがくる",
+   "meaning": "싫증이 나다",
+   "example": "同じ料理ばかりで飽きがきました。",
+   "example_meaning": "같은 요리만 먹어서 싫증이 났습니다."
+  },
+  {
+   "expr": "当てにならない",
+   "reading": "あてにならない",
+   "meaning": "믿을 수가 없다, 의지할 수가 없다",
+   "example": "天気予報は当てになりません。",
+   "example_meaning": "일기예보는 믿을 수가 없습니다."
+  },
+  {
+   "expr": "露にする",
+   "reading": "あらわにする",
+   "meaning": "노골적으로 드러내다",
+   "example": "彼は不満を露にしました。",
+   "example_meaning": "그는 불만을 노골적으로 드러냈습니다."
+  },
+  {
+   "expr": "息を呑む",
+   "reading": "いきをのむ",
+   "meaning": "(놀라서) 숨을 멈추다",
+   "example": "その美しさに息を呑みました。",
+   "example_meaning": "그 아름다움에 숨을 멈췄습니다."
+  },
+  {
+   "expr": "意気地がない",
+   "reading": "いくじがない",
+   "meaning": "기개가 없다, 나약하다",
+   "example": "彼は意気地がないと言われました。",
+   "example_meaning": "그는 나약하다는 말을 들었습니다."
+  },
+  {
+   "expr": "居心地がいい",
+   "reading": "いごこちがいい",
+   "meaning": "(있기에) 편하다",
+   "example": "この部屋は居心地がいいです。",
+   "example_meaning": "이 방은 있기에 편합니다."
+  },
+  {
+   "expr": "意表を突く",
+   "reading": "いひょうをつく",
+   "meaning": "의표를 찌르다",
+   "example": "彼の質問は意表を突くものでした。",
+   "example_meaning": "그의 질문은 의표를 찌르는 것이었습니다."
+  },
+  {
+   "expr": "違和感を覚える",
+   "reading": "いわかんをおぼえる",
+   "meaning": "위화감을 느끼다",
+   "example": "その言葉に違和感を覚えました。",
+   "example_meaning": "그 말에 위화감을 느꼈습니다."
+  },
+  {
+   "expr": "うかつに言う",
+   "reading": "うかつにいう",
+   "meaning": "경솔하게 말하다, 부주의하게 말하다",
+   "example": "うかつに言ってしまいました。",
+   "example_meaning": "경솔하게 말해 버렸습니다."
+  },
+  {
+   "expr": "内気になる",
+   "reading": "うちきになる",
+   "meaning": "내성적이 되다",
+   "example": "転校してから内気になりました。",
+   "example_meaning": "전학한 후 내성적이 되었습니다."
+  },
+  {
+   "expr": "移り気だ",
+   "reading": "うつりぎだ",
+   "meaning": "변덕스럽다",
+   "example": "彼女は移り気な性格です。",
+   "example_meaning": "그녀는 변덕스러운 성격입니다."
+  },
+  {
+   "expr": "うんざりする",
+   "reading": "うんざりする",
+   "meaning": "진저리가 나다, 지긋지긋하다",
+   "example": "毎日の残業にうんざりしています。",
+   "example_meaning": "매일 야근에 지긋지긋해하고 있습니다."
+  },
+  {
+   "expr": "縁起がいい",
+   "reading": "えんぎがいい",
+   "meaning": "운수가 좋다, 길하다",
+   "example": "この数字は縁起がいいです。",
+   "example_meaning": "이 숫자는 길합니다."
+  },
+  {
+   "expr": "大風呂敷を広げる",
+   "reading": "おおぶろしきをひろげる",
+   "meaning": "허풍을 떨다",
+   "example": "彼はいつも大風呂敷を広げます。",
+   "example_meaning": "그는 항상 허풍을 떱니다."
+  },
+  {
+   "expr": "おずおずとする",
+   "reading": "おずおずとする",
+   "meaning": "주저하다, 주뼛거리다",
+   "example": "おずおずと手を挙げました。",
+   "example_meaning": "주뼛거리며 손을 들었습니다."
+  },
+  {
+   "expr": "思いを馳せる",
+   "reading": "おもいをはせる",
+   "meaning": "(멀리 있는 대상에 대해) 생각하다",
+   "example": "故郷に思いを馳せました。",
+   "example_meaning": "고향을 생각했습니다."
+  },
+  {
+   "expr": "思う存分楽しむ",
+   "reading": "おもうぞんぶんたのしむ",
+   "meaning": "마음껏 즐기다",
+   "example": "休みを思う存分楽しみました。",
+   "example_meaning": "휴일을 마음껏 즐겼습니다."
+  },
+  {
+   "expr": "折り目正しい",
+   "reading": "おりめただしい",
+   "meaning": "예절 바르다, 단정하다",
+   "example": "彼は折り目正しい青年です。",
+   "example_meaning": "그는 예절 바른 청년입니다."
+  },
+  {
+   "expr": "恩に着せる",
+   "reading": "おんにきせる",
+   "meaning": "생색내다",
+   "example": "彼はいつも恩に着せます。",
+   "example_meaning": "그는 항상 생색을 냅니다."
+  },
+  {
+   "expr": "御の字だ",
+   "reading": "おんのじだ",
+   "meaning": "감지덕지다",
+   "example": "この結果なら御の字です。",
+   "example_meaning": "이 결과라면 감지덕지입니다."
+  },
+  {
+   "expr": "我が強い",
+   "reading": "がつよい",
+   "meaning": "고집이 세다",
+   "example": "彼女は我が強いです。",
+   "example_meaning": "그녀는 고집이 셉니다."
+  },
+  {
+   "expr": "かけがえのない",
+   "reading": "かけがえのない",
+   "meaning": "둘도 없는, 더없이 소중한",
+   "example": "家族はかけがえのない存在です。",
+   "example_meaning": "가족은 더없이 소중한 존재입니다."
+  },
+  {
+   "expr": "固唾を呑む",
+   "reading": "かたずをのむ",
+   "meaning": "마른침을 삼키다, 긴장하다",
+   "example": "結果発表を固唾を呑んで待ちました。",
+   "example_meaning": "결과 발표를 마른침을 삼키며 기다렸습니다."
+  },
+  {
+   "expr": "かっとする",
+   "reading": "かっとする",
+   "meaning": "발끈하다",
+   "example": "その言葉にかっとしました。",
+   "example_meaning": "그 말에 발끈했습니다."
+  },
+  {
+   "expr": "我を通す",
+   "reading": "がをとおす",
+   "meaning": "고집을 부리다, 자기 주장을 밀고 나가다",
+   "example": "最後まで我を通しました。",
+   "example_meaning": "끝까지 고집을 부렸습니다."
+  },
+  {
+   "expr": "気概がある",
+   "reading": "きがいがある",
+   "meaning": "기개가 있다",
+   "example": "彼は若いのに気概があります。",
+   "example_meaning": "그는 젊은데도 기개가 있습니다."
+  },
+  {
+   "expr": "気がとがめる",
+   "reading": "きがとがめる",
+   "meaning": "마음에 걸리다, 가책을 느끼다",
+   "example": "嘘をついて気がとがめました。",
+   "example_meaning": "거짓말을 해서 마음에 걸렸습니다."
+  },
+  {
+   "expr": "気兼ねをする",
+   "reading": "きがねをする",
+   "meaning": "어려워하다, 눈치를 보다",
+   "example": "周りに気兼ねをする必要はありません。",
+   "example_meaning": "주변 눈치를 볼 필요는 없습니다."
+  },
+  {
+   "expr": "ぎくしゃくする",
+   "reading": "ぎくしゃくする",
+   "meaning": "삐걱거리다, 순조롭지 못하다",
+   "example": "最近、二人の関係がぎくしゃくしています。",
+   "example_meaning": "요즘 둘의 관계가 삐걱거리고 있습니다."
+  },
+  {
+   "expr": "期待を裏切る",
+   "reading": "きたいをうらぎる",
+   "meaning": "기대를 저버리다",
+   "example": "結果は期待を裏切りませんでした。",
+   "example_meaning": "결과는 기대를 저버리지 않았습니다."
+  },
+  {
+   "expr": "機転が利く",
+   "reading": "きてんがきく",
+   "meaning": "재치가 있다",
+   "example": "彼女は機転が利きます。",
+   "example_meaning": "그녀는 재치가 있습니다."
+  },
+  {
+   "expr": "気に障る",
+   "reading": "きにさわる",
+   "meaning": "비위에 거슬리다",
+   "example": "彼の言い方が気に障りました。",
+   "example_meaning": "그의 말투가 비위에 거슬렸습니다."
+  },
+  {
+   "expr": "気に病む",
+   "reading": "きにやむ",
+   "meaning": "괘념하다, 걱정하다",
+   "example": "そんなに気に病まないでください。",
+   "example_meaning": "그렇게 괘념하지 마세요."
+  },
+  {
+   "expr": "気の病",
+   "reading": "きのやまい",
+   "meaning": "마음의 병",
+   "example": "それは気の病かもしれません。",
+   "example_meaning": "그것은 마음의 병일지도 모릅니다."
+  },
+  {
+   "expr": "気持ちを汲む",
+   "reading": "きもちをくむ",
+   "meaning": "마음을 헤아리다",
+   "example": "相手の気持ちを汲みましょう。",
+   "example_meaning": "상대방의 마음을 헤아립시다."
+  },
+  {
+   "expr": "気持ちを引き起こす",
+   "reading": "きもちをひきおこす",
+   "meaning": "(어떤) 마음을 불러일으키다",
+   "example": "懐かしい気持ちを引き起こしました。",
+   "example_meaning": "그리운 마음을 불러일으켰습니다."
+  },
+  {
+   "expr": "逆上する",
+   "reading": "ぎゃくじょうする",
+   "meaning": "흥분하다, 발끈하다",
+   "example": "彼は批判されて逆上しました。",
+   "example_meaning": "그는 비판을 받고 흥분했습니다."
+  },
+  {
+   "expr": "気を許す",
+   "reading": "きをゆるす",
+   "meaning": "경계심을 풀다, 방심하다",
+   "example": "初対面の人には気を許しません。",
+   "example_meaning": "초면인 사람에게는 경계심을 풀지 않습니다."
+  },
+  {
+   "expr": "琴線に触れる",
+   "reading": "きんせんにふれる",
+   "meaning": "심금을 울리다, 감동을 주다",
+   "example": "その映画は琴線に触れました。",
+   "example_meaning": "그 영화는 심금을 울렸습니다."
+  },
+  {
+   "expr": "くすくす笑う",
+   "reading": "くすくすわらう",
+   "meaning": "킥킥 웃다",
+   "example": "友達とくすくす笑いました。",
+   "example_meaning": "친구와 킥킥 웃었습니다."
+  },
+  {
+   "expr": "愚直なまでに",
+   "reading": "ぐちょくなまでに",
+   "meaning": "우직하게, 어리석을 정도로",
+   "example": "彼は愚直なまでに真面目です。",
+   "example_meaning": "그는 우직할 정도로 성실합니다."
+  },
+  {
+   "expr": "屈託がない",
+   "reading": "くったくがない",
+   "meaning": "스스럼없다, 해맑다, 걱정이 없다",
+   "example": "子どもの屈託がない笑顔が好きです。",
+   "example_meaning": "아이의 해맑은 미소를 좋아합니다."
+  },
+  {
+   "expr": "苦にする",
+   "reading": "くにする",
+   "meaning": "염려하다",
+   "example": "小さいことを苦にしないでください。",
+   "example_meaning": "작은 일을 염려하지 마세요."
+  },
+  {
+   "expr": "激情に駆られる",
+   "reading": "げきじょうにかられる",
+   "meaning": "격정에 사로잡히다",
+   "example": "激情に駆られて涙が出ました。",
+   "example_meaning": "격정에 사로잡혀 눈물이 났습니다."
+  },
+  {
+   "expr": "ゲラゲラ笑う",
+   "reading": "ゲラゲラわらう",
+   "meaning": "껄껄 웃다",
+   "example": "おかしくてゲラゲラ笑いました。",
+   "example_meaning": "웃겨서 껄껄 웃었습니다."
+  },
+  {
+   "expr": "誤解を招く",
+   "reading": "ごかいをまねく",
+   "meaning": "오해를 사다",
+   "example": "その発言は誤解を招きました。",
+   "example_meaning": "그 발언은 오해를 샀습니다."
+  },
+  {
+   "expr": "ご機嫌斜めだ",
+   "reading": "ごきげんななめだ",
+   "meaning": "심기가 편치 않다",
+   "example": "今日は部長がご機嫌斜めです。",
+   "example_meaning": "오늘은 부장님 심기가 편치 않습니다."
+  },
+  {
+   "expr": "心を癒す",
+   "reading": "こころをいやす",
+   "meaning": "마음을 달래다, 마음을 치유하다",
+   "example": "音楽で心を癒しています。",
+   "example_meaning": "음악으로 마음을 치유하고 있습니다."
+  },
+  {
+   "expr": "心を鬼にする",
+   "reading": "こころをおににする",
+   "meaning": "마음을 독하게 먹다",
+   "example": "心を鬼にして叱りました。",
+   "example_meaning": "마음을 독하게 먹고 꾸짖었습니다."
+  },
+  {
+   "expr": "心を砕く",
+   "reading": "こころをくだく",
+   "meaning": "고심하다",
+   "example": "解決策に心を砕きました。",
+   "example_meaning": "해결책에 고심했습니다."
+  },
+  {
+   "expr": "衝撃を受ける",
+   "reading": "しょうげきをうける",
+   "meaning": "충격을 받다",
+   "example": "そのニュースに衝撃を受けました。",
+   "example_meaning": "그 뉴스에 충격을 받았습니다."
+  },
+  {
+   "expr": "尻込みをする",
+   "reading": "しりごみをする",
+   "meaning": "꽁무니를 빼다, 주저하다",
+   "example": "難しい仕事に尻込みをしました。",
+   "example_meaning": "어려운 일에 주저했습니다."
+  },
+  {
+   "expr": "ジレンマに陥る",
+   "reading": "ジレンマにおちいる",
+   "meaning": "딜레마에 빠지다",
+   "example": "選択のジレンマに陥りました。",
+   "example_meaning": "선택의 딜레마에 빠졌습니다."
+  },
+  {
+   "expr": "ずけずけ言う",
+   "reading": "ずけずけいう",
+   "meaning": "거침없이 말하다",
+   "example": "彼は思ったことをずけずけ言います。",
+   "example_meaning": "그는 생각한 것을 거침없이 말합니다."
+  },
+  {
+   "expr": "そっちのけ",
+   "reading": "そっちのけ",
+   "meaning": "뒷전으로 돌림, 거들떠 보지 않음",
+   "example": "宿題をそっちのけにして遊びました。",
+   "example_meaning": "숙제를 뒷전으로 하고 놀았습니다."
+  },
+  {
+   "expr": "粗末に扱う",
+   "reading": "そまつにあつかう",
+   "meaning": "소홀히 다루다, 함부로 다루다",
+   "example": "物を粗末に扱ってはいけません。",
+   "example_meaning": "물건을 함부로 다루면 안 됩니다."
+  },
+  {
+   "expr": "尊敬の念を抱く",
+   "reading": "そんけいのねんをいだく",
+   "meaning": "존경하는 마음을 품다",
+   "example": "先生に尊敬の念を抱いています。",
+   "example_meaning": "선생님께 존경하는 마음을 품고 있습니다."
+  },
+  {
+   "expr": "大変恐縮だ",
+   "reading": "たいへんきょうしゅくだ",
+   "meaning": "대단히 죄송하다",
+   "example": "お手数をおかけして大変恐縮です。",
+   "example_meaning": "번거롭게 해드려서 대단히 죄송합니다."
+  },
+  {
+   "expr": "高く買う",
+   "reading": "たかくかう",
+   "meaning": "높이 사다, 높게 평가하다",
+   "example": "上司は彼の努力を高く買っています。",
+   "example_meaning": "상사는 그의 노력을 높이 평가하고 있습니다."
+  },
+  {
+   "expr": "注意を喚起する",
+   "reading": "ちゅういをかんきする",
+   "meaning": "주의를 환기하다",
+   "example": "事故の危険性について注意を喚起しました。",
+   "example_meaning": "사고의 위험성에 대해 주의를 환기했습니다."
+  },
+  {
+   "expr": "抵抗を感じる",
+   "reading": "ていこうをかんじる",
+   "meaning": "거부감을 느끼다, 저항을 느끼다",
+   "example": "その意見には抵抗を感じます。",
+   "example_meaning": "그 의견에는 거부감을 느낍니다."
+  },
+  {
+   "expr": "名残惜しい",
+   "reading": "なごりおしい",
+   "meaning": "(헤어지기) 서운하다, 아쉽다",
+   "example": "別れが名残惜しいです。",
+   "example_meaning": "이별이 아쉽습니다."
+  },
+  {
+   "expr": "情けをかける",
+   "reading": "なさけをかける",
+   "meaning": "인정을 베풀다",
+   "example": "困っている人に情けをかけました。",
+   "example_meaning": "곤란한 사람에게 인정을 베풀었습니다."
+  },
+  {
+   "expr": "悩みの種",
+   "reading": "なやみのたね",
+   "meaning": "고민거리, 걱정거리",
+   "example": "子どもの成績が悩みの種です。",
+   "example_meaning": "아이의 성적이 고민거리입니다."
+  },
+  {
+   "expr": "荷が重い",
+   "reading": "にがおもい",
+   "meaning": "짐이 무겁다, 부담스럽다",
+   "example": "この役目は少し荷が重いです。",
+   "example_meaning": "이 역할은 좀 부담스럽습니다."
+  },
+  {
+   "expr": "にやにやする",
+   "reading": "にやにやする",
+   "meaning": "히죽거리다",
+   "example": "彼は一人でにやにやしていました。",
+   "example_meaning": "그는 혼자 히죽거리고 있었습니다."
+  },
+  {
+   "expr": "念頭におく",
+   "reading": "ねんとうにおく",
+   "meaning": "염두에 두다",
+   "example": "安全を念頭においてください。",
+   "example_meaning": "안전을 염두에 두세요."
+  },
+  {
+   "expr": "ぱっと見る",
+   "reading": "ぱっとみる",
+   "meaning": "잠깐 보다, 언뜻 보다",
+   "example": "資料をぱっと見ました。",
+   "example_meaning": "자료를 잠깐 봤습니다."
+  },
+  {
+   "expr": "話が弾む",
+   "reading": "はなしがはずむ",
+   "meaning": "이야기가 활기를 띠다",
+   "example": "久しぶりに会って話が弾みました。",
+   "example_meaning": "오랜만에 만나서 이야기가 활기를 띠었습니다."
+  },
+  {
+   "expr": "張りが生まれる",
+   "reading": "はりがうまれる",
+   "meaning": "활력이 생기다, 의욕이 생기다",
+   "example": "目標ができて張りが生まれました。",
+   "example_meaning": "목표가 생겨서 의욕이 생겼습니다."
+  },
+  {
+   "expr": "反発を覚える",
+   "reading": "はんぱつをおぼえる",
+   "meaning": "반발심을 느끼다",
+   "example": "その規則に反発を覚えました。",
+   "example_meaning": "그 규칙에 반발심을 느꼈습니다."
+  },
+  {
+   "expr": "人見知りをする",
+   "reading": "ひとみしりをする",
+   "meaning": "낯을 가리다",
+   "example": "うちの子は人見知りをします。",
+   "example_meaning": "우리 아이는 낯을 가립니다."
+  },
+  {
+   "expr": "悲鳴を上げる",
+   "reading": "ひめいをあげる",
+   "meaning": "비명을 지르다",
+   "example": "驚いて悲鳴を上げました。",
+   "example_meaning": "놀라서 비명을 질렀습니다."
+  },
+  {
+   "expr": "ひやひやする",
+   "reading": "ひやひやする",
+   "meaning": "마음이 조마조마하다",
+   "example": "結果を待つ間、ひやひやしました。",
+   "example_meaning": "결과를 기다리는 동안 마음이 조마조마했습니다."
+  },
+  {
+   "expr": "不安が増す",
+   "reading": "ふあんがます",
+   "meaning": "불안이 증폭되다, 불안감이 더해지다",
+   "example": "連絡がなくて不安が増しました。",
+   "example_meaning": "연락이 없어서 불안이 증폭되었습니다."
+  },
+  {
+   "expr": "不安を招く",
+   "reading": "ふあんをまねく",
+   "meaning": "불안을 초래하다",
+   "example": "急な変更は不安を招きます。",
+   "example_meaning": "갑작스러운 변경은 불안을 초래합니다."
+  },
+  {
+   "expr": "不満を持つ",
+   "reading": "ふまんをもつ",
+   "meaning": "불만을 가지다",
+   "example": "待遇に不満を持っています。",
+   "example_meaning": "대우에 불만을 가지고 있습니다."
+  },
+  {
+   "expr": "紛れもない",
+   "reading": "まぎれもない",
+   "meaning": "틀림없다, 영락없다",
+   "example": "これは紛れもない事実です。",
+   "example_meaning": "이것은 틀림없는 사실입니다."
+  },
+  {
+   "expr": "負け惜しみを言う",
+   "reading": "まけおしみをいう",
+   "meaning": "지고도 억지를 쓰다",
+   "example": "彼はいつも負け惜しみを言います。",
+   "example_meaning": "그는 항상 지고도 억지를 씁니다."
+  },
+  {
+   "expr": "むきになる",
+   "reading": "むきになる",
+   "meaning": "정색하고 대들다",
+   "example": "冗談なのに彼はむきになりました。",
+   "example_meaning": "농담인데 그는 정색하고 대들었습니다."
+  },
+  {
+   "expr": "むしゃくしゃする",
+   "reading": "むしゃくしゃする",
+   "meaning": "기분이 언짢다, 속상하다",
+   "example": "仕事のことでむしゃくしゃしています。",
+   "example_meaning": "일 때문에 속상해하고 있습니다."
+  },
+  {
+   "expr": "物心がつく",
+   "reading": "ものごころがつく",
+   "meaning": "철이 들다, 세상 물정을 알다",
+   "example": "物心がついた頃からピアノを習っています。",
+   "example_meaning": "철이 들었을 때부터 피아노를 배우고 있습니다."
+  },
+  {
+   "expr": "もやもやする",
+   "reading": "もやもやする",
+   "meaning": "흐릿하다, 찜찜하다, 음울하다",
+   "example": "理由が分からずもやもやしています。",
+   "example_meaning": "이유를 몰라서 찜찜해하고 있습니다."
+  },
+  {
+   "expr": "躍起になる",
+   "reading": "やっきになる",
+   "meaning": "기를 쓰다, 열을 올리다",
+   "example": "彼は反論しようと躍起になりました。",
+   "example_meaning": "그는 반론하려고 기를 썼습니다."
+  },
+  {
+   "expr": "やる気が失せる",
+   "reading": "やるきがうせる",
+   "meaning": "의욕이 사라지다",
+   "example": "叱られてやる気が失せました。",
+   "example_meaning": "혼나서 의욕이 사라졌습니다."
+  },
+  {
+   "expr": "融通が利く",
+   "reading": "ゆうずうがきく",
+   "meaning": "융통성이 있다",
+   "example": "この会社は融通が利きます。",
+   "example_meaning": "이 회사는 융통성이 있습니다."
+  },
+  {
+   "expr": "夢うつつ",
+   "reading": "ゆめうつつ",
+   "meaning": "비몽사몽, 잠결",
+   "example": "朝、夢うつつで電話に出ました。",
+   "example_meaning": "아침에 비몽사몽 전화를 받았습니다."
+  },
+  {
+   "expr": "夢にも思わない",
+   "reading": "ゆめにもおもわない",
+   "meaning": "꿈에도 생각지 못하다",
+   "example": "こうなるとは夢にも思いませんでした。",
+   "example_meaning": "이렇게 될 줄은 꿈에도 생각지 못했습니다."
+  },
+  {
+   "expr": "欲を張る",
+   "reading": "よくをはる",
+   "meaning": "욕심을 부리다",
+   "example": "あまり欲を張らないほうがいいです。",
+   "example_meaning": "너무 욕심을 부리지 않는 게 좋습니다."
+  },
+  {
+   "expr": "弱気になる",
+   "reading": "よわきになる",
+   "meaning": "기가 죽다, 마음이 약해지다",
+   "example": "失敗続きで弱気になりました。",
+   "example_meaning": "계속되는 실패로 마음이 약해졌습니다."
+  },
+  {
+   "expr": "理解に苦しむ",
+   "reading": "りかいにくるしむ",
+   "meaning": "이해하기 어렵다",
+   "example": "彼の行動は理解に苦しみます。",
+   "example_meaning": "그의 행동은 이해하기 어렵습니다."
+  },
+  {
+   "expr": "連帯感が生まれる",
+   "reading": "れんたいかんがうまれる",
+   "meaning": "연대감이 생기다",
+   "example": "チームに連帯感が生まれました。",
+   "example_meaning": "팀에 연대감이 생겼습니다."
+  }
+ ],
+ "N2": [
+  {
+   "expr": "アイディアを思いつく",
+   "reading": "アイディアをおもいつく",
+   "meaning": "아이디어를 생각해내다",
+   "example": "いいアイディアを思いつきました。",
+   "example_meaning": "좋은 아이디어를 생각해냈습니다."
+  },
+  {
+   "expr": "仰向けになる",
+   "reading": "あおむけになる",
+   "meaning": "(하늘을 보고) 눕다",
+   "example": "ベッドに仰向けになりました。",
+   "example_meaning": "침대에 반듯이 누웠습니다."
+  },
+  {
+   "expr": "アクセルを踏む",
+   "reading": "アクセルをふむ",
+   "meaning": "액셀을 밟다, 가속 페달을 밟다",
+   "example": "急にアクセルを踏むのは危ないです。",
+   "example_meaning": "갑자기 액셀을 밟는 것은 위험합니다."
+  },
+  {
+   "expr": "あくびが出る",
+   "reading": "あくびがでる",
+   "meaning": "하품이 나다",
+   "example": "授業中にあくびが出ました。",
+   "example_meaning": "수업 중에 하품이 나왔습니다."
+  },
+  {
+   "expr": "あっと言わせる",
+   "reading": "あっといわせる",
+   "meaning": "깜짝 놀라게 하다",
+   "example": "彼のアイディアはみんなをあっと言わせました。",
+   "example_meaning": "그의 아이디어는 모두를 깜짝 놀라게 했습니다."
+  },
+  {
+   "expr": "油で揚げる",
+   "reading": "あぶらであげる",
+   "meaning": "기름에 튀기다, 기름으로 튀기다",
+   "example": "鶏肉を油で揚げます。",
+   "example_meaning": "닭고기를 기름에 튀깁니다."
+  },
+  {
+   "expr": "ありのままに話す",
+   "reading": "ありのままにはなす",
+   "meaning": "있는 그대로 말하다",
+   "example": "先生にありのままに話しました。",
+   "example_meaning": "선생님께 있는 그대로 말했습니다."
+  },
+  {
+   "expr": "暗証番号を押す",
+   "reading": "あんしょうばんごうをおす",
+   "meaning": "비밀번호를 누르다",
+   "example": "ATMで暗証番号を押します。",
+   "example_meaning": "ATM에서 비밀번호를 누릅니다."
+  },
+  {
+   "expr": "いい加減にする",
+   "reading": "いいかげんにする",
+   "meaning": "적당히 하다",
+   "example": "この辺でいい加減にしましょう。",
+   "example_meaning": "이쯤에서 적당히 합시다."
+  },
+  {
+   "expr": "一行を空ける",
+   "reading": "いちぎょうをあける",
+   "meaning": "한 줄을 비우다",
+   "example": "段落の間は一行を空けてください。",
+   "example_meaning": "단락 사이는 한 줄을 비워 주세요."
+  },
+  {
+   "expr": "一段落する",
+   "reading": "いちだんらくする",
+   "meaning": "일단락되다",
+   "example": "やっと仕事が一段落しました。",
+   "example_meaning": "드디어 일이 일단락되었습니다."
+  },
+  {
+   "expr": "一体感が生まれる",
+   "reading": "いったいかんがうまれる",
+   "meaning": "일체감이 생겨나다",
+   "example": "チームに一体感が生まれました。",
+   "example_meaning": "팀에 일체감이 생겨났습니다."
+  },
+  {
+   "expr": "印象を与える",
+   "reading": "いんしょうをあたえる",
+   "meaning": "인상을 주다",
+   "example": "第一印象を与えることは大切です。",
+   "example_meaning": "첫인상을 주는 것은 중요합니다."
+  },
+  {
+   "expr": "うがいをする",
+   "reading": "うがいをする",
+   "meaning": "입을 헹구다, 가글하다",
+   "example": "帰宅したら手洗いとうがいをします。",
+   "example_meaning": "귀가하면 손 씻기와 가글을 합니다."
+  },
+  {
+   "expr": "うまくいく",
+   "reading": "うまくいく",
+   "meaning": "잘 되어가다",
+   "example": "新しい仕事はうまくいっています。",
+   "example_meaning": "새 일은 잘 되어가고 있습니다."
+  },
+  {
+   "expr": "お金が絡む",
+   "reading": "おかねがからむ",
+   "meaning": "돈이 얽히다",
+   "example": "この問題にはお金が絡んでいます。",
+   "example_meaning": "이 문제에는 돈이 얽혀 있습니다."
+  },
+  {
+   "expr": "思い切って捨てる",
+   "reading": "おもいきってすてる",
+   "meaning": "과감하게 버리다",
+   "example": "古い服を思い切って捨てました。",
+   "example_meaning": "오래된 옷을 과감하게 버렸습니다."
+  },
+  {
+   "expr": "風が当たる",
+   "reading": "かぜがあたる",
+   "meaning": "바람이 부딪히다, 바람이 닿다",
+   "example": "窓を開けると風が当たります。",
+   "example_meaning": "창문을 열면 바람이 닿습니다."
+  },
+  {
+   "expr": "肩を痛める",
+   "reading": "かたをいためる",
+   "meaning": "어깨를 다치다",
+   "example": "運動中に肩を痛めました。",
+   "example_meaning": "운동 중에 어깨를 다쳤습니다."
+  },
+  {
+   "expr": "格好をする",
+   "reading": "かっこうをする",
+   "meaning": "모양을 하다, 차림을 하다",
+   "example": "派手な格好をしています。",
+   "example_meaning": "화려한 차림을 하고 있습니다."
+  },
+  {
+   "expr": "活発に活動する",
+   "reading": "かっぱつにかつどうする",
+   "meaning": "활발하게 활동하다",
+   "example": "彼はボランティアとして活発に活動しています。",
+   "example_meaning": "그는 봉사자로 활발하게 활동하고 있습니다."
+  },
+  {
+   "expr": "カロリーが高い",
+   "reading": "カロリーがたかい",
+   "meaning": "칼로리가 높다",
+   "example": "このケーキはカロリーが高いです。",
+   "example_meaning": "이 케이크는 칼로리가 높습니다."
+  },
+  {
+   "expr": "皮をむく",
+   "reading": "かわをむく",
+   "meaning": "껍질을 벗기다",
+   "example": "りんごの皮をむきます。",
+   "example_meaning": "사과 껍질을 벗깁니다."
+  },
+  {
+   "expr": "環境を整える",
+   "reading": "かんきょうをととのえる",
+   "meaning": "환경을 정비하다",
+   "example": "勉強しやすい環境を整えました。",
+   "example_meaning": "공부하기 좋은 환경을 정비했습니다."
+  },
+  {
+   "expr": "看病をする",
+   "reading": "かんびょうをする",
+   "meaning": "간병하다, 간호하다",
+   "example": "入院した母の看病をしました。",
+   "example_meaning": "입원한 어머니를 간병했습니다."
+  },
+  {
+   "expr": "期限が切れる",
+   "reading": "きげんがきれる",
+   "meaning": "기한이 끝나다, 기한을 넘어서다",
+   "example": "パスポートの期限が切れました。",
+   "example_meaning": "여권 기한이 끝났습니다."
+  },
+  {
+   "expr": "機嫌が悪い",
+   "reading": "きげんがわるい",
+   "meaning": "기분이 나쁘다, 기분이 언짢다",
+   "example": "今日は部長の機嫌が悪いです。",
+   "example_meaning": "오늘은 부장님 기분이 언짢습니다."
+  },
+  {
+   "expr": "興味を引く",
+   "reading": "きょうみをひく",
+   "meaning": "흥미를 끌다",
+   "example": "このニュースは多くの人の興味を引きました。",
+   "example_meaning": "이 뉴스는 많은 사람의 흥미를 끌었습니다."
+  },
+  {
+   "expr": "協力を得る",
+   "reading": "きょうりょくをえる",
+   "meaning": "협력을 얻다",
+   "example": "地域の人々の協力を得ました。",
+   "example_meaning": "지역 주민들의 협력을 얻었습니다."
+  },
+  {
+   "expr": "草取りをする",
+   "reading": "くさとりをする",
+   "meaning": "김을 매다, 풀을 뽑다",
+   "example": "庭で草取りをしました。",
+   "example_meaning": "마당에서 풀을 뽑았습니다."
+  },
+  {
+   "expr": "草を刈る",
+   "reading": "くさをかる",
+   "meaning": "풀을 베다",
+   "example": "週末に庭の草を刈りました。",
+   "example_meaning": "주말에 마당의 풀을 베었습니다."
+  },
+  {
+   "expr": "くしゃみをする",
+   "reading": "くしゃみをする",
+   "meaning": "재채기를 하다",
+   "example": "花粉症でくしゃみをします。",
+   "example_meaning": "꽃가루 알레르기로 재채기를 합니다."
+  },
+  {
+   "expr": "苦情を言う",
+   "reading": "くじょうをいう",
+   "meaning": "불평을 말하다",
+   "example": "隣の騒音について苦情を言いました。",
+   "example_meaning": "옆집 소음에 대해 불평했습니다."
+  },
+  {
+   "expr": "車を飛ばす",
+   "reading": "くるまをとばす",
+   "meaning": "차를 급히 몰다",
+   "example": "病院まで車を飛ばしました。",
+   "example_meaning": "병원까지 차를 급히 몰았습니다."
+  },
+  {
+   "expr": "計画を立てる",
+   "reading": "けいかくをたてる",
+   "meaning": "계획을 세우다",
+   "example": "旅行の計画を立てました。",
+   "example_meaning": "여행 계획을 세웠습니다."
+  },
+  {
+   "expr": "経験が豊富だ",
+   "reading": "けいけんがほうふだ",
+   "meaning": "경험이 풍부하다",
+   "example": "彼は営業の経験が豊富です。",
+   "example_meaning": "그는 영업 경험이 풍부합니다."
+  },
+  {
+   "expr": "携帯が鳴る",
+   "reading": "けいたいがなる",
+   "meaning": "핸드폰이 울리다",
+   "example": "会議中に携帯が鳴りました。",
+   "example_meaning": "회의 중에 핸드폰이 울렸습니다."
+  },
+  {
+   "expr": "健康を保つ",
+   "reading": "けんこうをたもつ",
+   "meaning": "건강을 유지하다",
+   "example": "運動をして健康を保っています。",
+   "example_meaning": "운동을 해서 건강을 유지하고 있습니다."
+  },
+  {
+   "expr": "交番に届ける",
+   "reading": "こうばんにとどける",
+   "meaning": "파출소에 신고하다",
+   "example": "拾った財布を交番に届けました。",
+   "example_meaning": "주운 지갑을 파출소에 신고했습니다."
+  },
+  {
+   "expr": "候補を絞る",
+   "reading": "こうほをしぼる",
+   "meaning": "후보를 압축하다",
+   "example": "候補を三つに絞りました。",
+   "example_meaning": "후보를 세 개로 압축했습니다."
+  },
+  {
+   "expr": "交流を深める",
+   "reading": "こうりゅうをふかめる",
+   "meaning": "교류를 강화하다",
+   "example": "地域との交流を深めています。",
+   "example_meaning": "지역과의 교류를 강화하고 있습니다."
+  },
+  {
+   "expr": "故郷を離れる",
+   "reading": "こきょうをはなれる",
+   "meaning": "고향을 떠나다",
+   "example": "進学のために故郷を離れました。",
+   "example_meaning": "진학을 위해 고향을 떠났습니다."
+  },
+  {
+   "expr": "個性を磨く",
+   "reading": "こせいをみがく",
+   "meaning": "개성을 기르다",
+   "example": "自分の個性を磨きたいです。",
+   "example_meaning": "자신의 개성을 기르고 싶습니다."
+  },
+  {
+   "expr": "ご馳走する",
+   "reading": "ごちそうする",
+   "meaning": "대접하다, 한턱내다",
+   "example": "後輩に夕食をご馳走しました。",
+   "example_meaning": "후배에게 저녁을 한턱냈습니다."
+  },
+  {
+   "expr": "ご馳走になる",
+   "reading": "ごちそうになる",
+   "meaning": "대접받다",
+   "example": "先輩にランチをご馳走になりました。",
+   "example_meaning": "선배에게 점심을 대접받았습니다."
+  },
+  {
+   "expr": "コツをつかむ",
+   "reading": "コツをつかむ",
+   "meaning": "요령을 파악하다",
+   "example": "やっと運転のコツをつかみました。",
+   "example_meaning": "드디어 운전 요령을 파악했습니다."
+  },
+  {
+   "expr": "コツを学ぶ",
+   "reading": "コツをまなぶ",
+   "meaning": "요령을 배우다",
+   "example": "先輩から仕事のコツを学びました。",
+   "example_meaning": "선배에게 일의 요령을 배웠습니다."
+  },
+  {
+   "expr": "ご飯を炊く",
+   "reading": "ごはんをたく",
+   "meaning": "밥을 짓다",
+   "example": "炊飯器でご飯を炊きます。",
+   "example_meaning": "전기밥솥으로 밥을 짓습니다."
+  },
+  {
+   "expr": "ゴミを拾う",
+   "reading": "ゴミをひろう",
+   "meaning": "쓰레기를 줍다",
+   "example": "公園でゴミを拾いました。",
+   "example_meaning": "공원에서 쓰레기를 주웠습니다."
+  },
+  {
+   "expr": "困難を乗り越える",
+   "reading": "こんなんをのりこえる",
+   "meaning": "곤란을 극복하다",
+   "example": "みんなで困難を乗り越えました。",
+   "example_meaning": "다 같이 곤란을 극복했습니다."
+  },
+  {
+   "expr": "差がある",
+   "reading": "さがある",
+   "meaning": "차이가 있다",
+   "example": "二つの商品には値段に差があります。",
+   "example_meaning": "두 상품은 가격에 차이가 있습니다."
+  },
+  {
+   "expr": "差し入れをもらう",
+   "reading": "さしいれをもらう",
+   "meaning": "(격려・응원의 의미로) 간식을 받다",
+   "example": "練習中に監督から差し入れをもらいました。",
+   "example_meaning": "연습 중에 감독님께 간식을 받았습니다."
+  },
+  {
+   "expr": "座席が埋まる",
+   "reading": "ざせきがうまる",
+   "meaning": "좌석이 차다, 좌석이 메워지다",
+   "example": "開演前に座席が埋まりました。",
+   "example_meaning": "공연 시작 전에 좌석이 찼습니다."
+  },
+  {
+   "expr": "参考にする",
+   "reading": "さんこうにする",
+   "meaning": "참고하다",
+   "example": "先輩の意見を参考にしました。",
+   "example_meaning": "선배의 의견을 참고했습니다."
+  },
+  {
+   "expr": "資格を取る",
+   "reading": "しかくをとる",
+   "meaning": "자격을 따다, 자격증을 취득하다",
+   "example": "日本語の資格を取りました。",
+   "example_meaning": "일본어 자격증을 취득했습니다."
+  },
+  {
+   "expr": "時間が経つ",
+   "reading": "じかんがたつ",
+   "meaning": "시간이 지나다, 시간이 흐르다",
+   "example": "もう三年も時間が経ちました。",
+   "example_meaning": "벌써 3년이나 시간이 흘렀습니다."
+  },
+  {
+   "expr": "時間に追われる",
+   "reading": "じかんにおわれる",
+   "meaning": "시간에 쫓기다",
+   "example": "締め切りで時間に追われています。",
+   "example_meaning": "마감 때문에 시간에 쫓기고 있습니다."
+  },
+  {
+   "expr": "時間の無駄だ",
+   "reading": "じかんのむだだ",
+   "meaning": "시간 낭비다",
+   "example": "これ以上待つのは時間の無駄です。",
+   "example_meaning": "더 이상 기다리는 것은 시간 낭비입니다."
+  },
+  {
+   "expr": "事故を起こす",
+   "reading": "じこをおこす",
+   "meaning": "사고를 내다",
+   "example": "不注意で事故を起こしました。",
+   "example_meaning": "부주의로 사고를 냈습니다."
+  },
+  {
+   "expr": "姿勢を示す",
+   "reading": "しせいをしめす",
+   "meaning": "자세를 보이다",
+   "example": "積極的な姿勢を示しました。",
+   "example_meaning": "적극적인 자세를 보였습니다."
+  },
+  {
+   "expr": "支払いが済む",
+   "reading": "しはらいがすむ",
+   "meaning": "지불이 끝나다",
+   "example": "カードで支払いが済みました。",
+   "example_meaning": "카드로 지불이 끝났습니다."
+  },
+  {
+   "expr": "自分で確かめる",
+   "reading": "じぶんでたしかめる",
+   "meaning": "직접 확인하다",
+   "example": "情報は自分で確かめてください。",
+   "example_meaning": "정보는 직접 확인해 주세요."
+  },
+  {
+   "expr": "柔軟に対応する",
+   "reading": "じゅうなんにたいおうする",
+   "meaning": "유연하게 대응하다",
+   "example": "状況に柔軟に対応します。",
+   "example_meaning": "상황에 유연하게 대응합니다."
+  },
+  {
+   "expr": "修理に出す",
+   "reading": "しゅうりにだす",
+   "meaning": "수리하러 보내다",
+   "example": "壊れたパソコンを修理に出しました。",
+   "example_meaning": "고장 난 컴퓨터를 수리하러 보냈습니다."
+  },
+  {
+   "expr": "授業に出る",
+   "reading": "じゅぎょうにでる",
+   "meaning": "수업에 출석하다",
+   "example": "今日は全部の授業に出ました。",
+   "example_meaning": "오늘은 모든 수업에 출석했습니다."
+  }
+ ],
+ "N3": [
+  {
+   "expr": "味がする",
+   "reading": "あじがする",
+   "meaning": "맛이 나다",
+   "example": "このスープは変な味がします。",
+   "example_meaning": "이 수프는 이상한 맛이 납니다."
+  },
+  {
+   "expr": "味をつける",
+   "reading": "あじをつける",
+   "meaning": "맛을 내다, 간을 하다",
+   "example": "塩で味をつけます。",
+   "example_meaning": "소금으로 간을 합니다."
+  },
+  {
+   "expr": "汗をかく",
+   "reading": "あせをかく",
+   "meaning": "땀을 흘리다",
+   "example": "運動して汗をかきました。",
+   "example_meaning": "운동해서 땀을 흘렸습니다."
+  },
+  {
+   "expr": "汗を流す",
+   "reading": "あせをながす",
+   "meaning": "땀을 흘리다",
+   "example": "一生懸命働いて汗を流しました。",
+   "example_meaning": "열심히 일해서 땀을 흘렸습니다."
+  },
+  {
+   "expr": "息をする",
+   "reading": "いきをする",
+   "meaning": "숨을 쉬다, 호흡하다",
+   "example": "深く息をしてください。",
+   "example_meaning": "깊게 숨을 쉬어 주세요."
+  },
+  {
+   "expr": "息を吐く",
+   "reading": "いきをはく",
+   "meaning": "숨을 내쉬다",
+   "example": "ゆっくり息を吐きます。",
+   "example_meaning": "천천히 숨을 내쉽니다."
+  },
+  {
+   "expr": "一方通行になっている",
+   "reading": "いっぽうつうこうになっている",
+   "meaning": "일방통행으로 되어 있다",
+   "example": "この道は一方通行になっています。",
+   "example_meaning": "이 길은 일방통행으로 되어 있습니다."
+  },
+  {
+   "expr": "犬を飼う",
+   "reading": "いぬをかう",
+   "meaning": "개를 기르다",
+   "example": "実家で犬を飼っています。",
+   "example_meaning": "본가에서 개를 기르고 있습니다."
+  },
+  {
+   "expr": "うろうろする",
+   "reading": "うろうろする",
+   "meaning": "어정버정하다, (하는 일 없이) 이리저리 천천히 걷다",
+   "example": "駅の前でうろうろしていました。",
+   "example_meaning": "역 앞에서 서성거리고 있었습니다."
+  },
+  {
+   "expr": "影響を与える",
+   "reading": "えいきょうをあたえる",
+   "meaning": "영향을 미치다",
+   "example": "天気は農業に影響を与えます。",
+   "example_meaning": "날씨는 농업에 영향을 미칩니다."
+  },
+  {
+   "expr": "餌をやる",
+   "reading": "えさをやる",
+   "meaning": "먹이를 주다, 모이를 주다",
+   "example": "毎朝、鳥に餌をやります。",
+   "example_meaning": "매일 아침 새에게 모이를 줍니다."
+  },
+  {
+   "expr": "おかしいと思う",
+   "reading": "おかしいとおもう",
+   "meaning": "이상하다고 생각하다",
+   "example": "この話はちょっとおかしいと思います。",
+   "example_meaning": "이 이야기는 좀 이상하다고 생각합니다."
+  },
+  {
+   "expr": "お金を預ける",
+   "reading": "おかねをあずける",
+   "meaning": "돈을 맡기다, 예금하다",
+   "example": "銀行にお金を預けます。",
+   "example_meaning": "은행에 돈을 맡깁니다."
+  },
+  {
+   "expr": "お金を出す",
+   "reading": "おかねをだす",
+   "meaning": "돈을 내다",
+   "example": "友達が食事代を出してくれました。",
+   "example_meaning": "친구가 식사비를 내 주었습니다."
+  },
+  {
+   "expr": "お金を引き出す",
+   "reading": "おかねをひきだす",
+   "meaning": "돈을 인출하다",
+   "example": "ATMでお金を引き出しました。",
+   "example_meaning": "ATM에서 돈을 인출했습니다."
+  },
+  {
+   "expr": "おしゃべりをする",
+   "reading": "おしゃべりをする",
+   "meaning": "잡담하다, 이야기하다",
+   "example": "カフェで友達とおしゃべりをしました。",
+   "example_meaning": "카페에서 친구와 이야기를 나눴습니다."
+  },
+  {
+   "expr": "お茶を出す",
+   "reading": "おちゃをだす",
+   "meaning": "차를 내다, 차를 대접하다",
+   "example": "お客さんにお茶を出しました。",
+   "example_meaning": "손님에게 차를 대접했습니다."
+  },
+  {
+   "expr": "お腹が空く",
+   "reading": "おなかがすく",
+   "meaning": "배가 고프다",
+   "example": "朝から何も食べていなくてお腹が空きました。",
+   "example_meaning": "아침부터 아무것도 안 먹어서 배가 고픕니다."
+  },
+  {
+   "expr": "お弁当を準備する",
+   "reading": "おべんとうをじゅんびする",
+   "meaning": "도시락을 준비하다",
+   "example": "毎朝、子どものお弁当を準備します。",
+   "example_meaning": "매일 아침 아이의 도시락을 준비합니다."
+  },
+  {
+   "expr": "お湯が沸く",
+   "reading": "おゆがわく",
+   "meaning": "물이 끓다",
+   "example": "もうすぐお湯が沸きます。",
+   "example_meaning": "이제 곧 물이 끓습니다."
+  },
+  {
+   "expr": "お湯を沸かす",
+   "reading": "おゆをわかす",
+   "meaning": "물을 끓이다",
+   "example": "やかんでお湯を沸かします。",
+   "example_meaning": "주전자로 물을 끓입니다."
+  },
+  {
+   "expr": "温泉に入る",
+   "reading": "おんせんにはいる",
+   "meaning": "온천에 들어가다, 온천욕을 하다",
+   "example": "旅行で温泉に入りました。",
+   "example_meaning": "여행에서 온천욕을 했습니다."
+  },
+  {
+   "expr": "カードを作る",
+   "reading": "カードをつくる",
+   "meaning": "카드를 만들다",
+   "example": "銀行でカードを作りました。",
+   "example_meaning": "은행에서 카드를 만들었습니다."
+  },
+  {
+   "expr": "会社に戻る",
+   "reading": "かいしゃにもどる",
+   "meaning": "회사로 되돌아가다, 회사로 복귀하다",
+   "example": "昼食の後、会社に戻ります。",
+   "example_meaning": "점심 후에 회사로 복귀합니다."
+  },
+  {
+   "expr": "回数を増やす",
+   "reading": "かいすうをふやす",
+   "meaning": "횟수를 늘리다",
+   "example": "練習の回数を増やしました。",
+   "example_meaning": "연습 횟수를 늘렸습니다."
+  },
+  {
+   "expr": "鍵をかける",
+   "reading": "かぎをかける",
+   "meaning": "문을 잠그다, 자물쇠를 채우다",
+   "example": "出かける時は鍵をかけてください。",
+   "example_meaning": "외출할 때는 문을 잠가 주세요."
+  },
+  {
+   "expr": "鍵を閉める",
+   "reading": "かぎをしめる",
+   "meaning": "문을 잠그다, 자물쇠를 채우다",
+   "example": "寝る前に窓の鍵を閉めます。",
+   "example_meaning": "자기 전에 창문을 잠급니다."
+  },
+  {
+   "expr": "鍵を無くす",
+   "reading": "かぎをなくす",
+   "meaning": "열쇠를 잃어버리다",
+   "example": "家の鍵を無くしてしまいました。",
+   "example_meaning": "집 열쇠를 잃어버리고 말았습니다."
+  },
+  {
+   "expr": "風邪が治る",
+   "reading": "かぜがなおる",
+   "meaning": "감기가 낫다",
+   "example": "薬を飲んで風邪が治りました。",
+   "example_meaning": "약을 먹고 감기가 나았습니다."
+  },
+  {
+   "expr": "雷が鳴る",
+   "reading": "かみなりがなる",
+   "meaning": "천둥이 치다",
+   "example": "夜中に雷が鳴りました。",
+   "example_meaning": "밤중에 천둥이 쳤습니다."
+  },
+  {
+   "expr": "ガラスが割れる",
+   "reading": "ガラスがわれる",
+   "meaning": "유리가 깨지다",
+   "example": "窓のガラスが割れました。",
+   "example_meaning": "창문 유리가 깨졌습니다."
+  },
+  {
+   "expr": "彼と付き合う",
+   "reading": "かれとつきあう",
+   "meaning": "그와 사귀다",
+   "example": "彼女は彼と付き合っています。",
+   "example_meaning": "그녀는 그와 사귀고 있습니다."
+  },
+  {
+   "expr": "感想を言う",
+   "reading": "かんそうをいう",
+   "meaning": "감상을 말하다",
+   "example": "映画を見て感想を言いました。",
+   "example_meaning": "영화를 보고 감상을 말했습니다."
+  },
+  {
+   "expr": "キーボードを打つ",
+   "reading": "キーボードをうつ",
+   "meaning": "키보드를 치다",
+   "example": "速くキーボードを打ちます。",
+   "example_meaning": "빠르게 키보드를 칩니다."
+  },
+  {
+   "expr": "機会ができる",
+   "reading": "きかいができる",
+   "meaning": "기회가 생기다",
+   "example": "留学する機会ができました。",
+   "example_meaning": "유학할 기회가 생겼습니다."
+  },
+  {
+   "expr": "薬を塗る",
+   "reading": "くすりをぬる",
+   "meaning": "약을 바르다",
+   "example": "傷に薬を塗ります。",
+   "example_meaning": "상처에 약을 바릅니다."
+  },
+  {
+   "expr": "車で送る",
+   "reading": "くるまでおくる",
+   "meaning": "차로 데려다주다",
+   "example": "駅まで車で送ります。",
+   "example_meaning": "역까지 차로 데려다줍니다."
+  },
+  {
+   "expr": "経験がない",
+   "reading": "けいけんがない",
+   "meaning": "경험이 없다",
+   "example": "この仕事はまだ経験がありません。",
+   "example_meaning": "이 일은 아직 경험이 없습니다."
+  },
+  {
+   "expr": "景色を眺める",
+   "reading": "けしきをながめる",
+   "meaning": "풍경을 바라보다",
+   "example": "展望台から景色を眺めます。",
+   "example_meaning": "전망대에서 풍경을 바라봅니다."
+  },
+  {
+   "expr": "原因を調べる",
+   "reading": "げんいんをしらべる",
+   "meaning": "원인을 조사하다",
+   "example": "事故の原因を調べています。",
+   "example_meaning": "사고의 원인을 조사하고 있습니다."
+  },
+  {
+   "expr": "健康診断を受ける",
+   "reading": "けんこうしんだんをうける",
+   "meaning": "건강 진단을 받다",
+   "example": "毎年、健康診断を受けます。",
+   "example_meaning": "매년 건강 진단을 받습니다."
+  },
+  {
+   "expr": "効果が出る",
+   "reading": "こうかがでる",
+   "meaning": "효과가 나타나다",
+   "example": "この薬は効果が出るまで時間がかかります。",
+   "example_meaning": "이 약은 효과가 나타나기까지 시간이 걸립니다."
+  },
+  {
+   "expr": "声をかける",
+   "reading": "こえをかける",
+   "meaning": "말을 걸다",
+   "example": "困っている人に声をかけました。",
+   "example_meaning": "곤란해하는 사람에게 말을 걸었습니다."
+  },
+  {
+   "expr": "コーヒーを入れる",
+   "reading": "コーヒーをいれる",
+   "meaning": "커피를 타다, 커피를 내다",
+   "example": "朝、コーヒーを入れます。",
+   "example_meaning": "아침에 커피를 탑니다."
+  },
+  {
+   "expr": "コーヒーをこぼす",
+   "reading": "コーヒーをこぼす",
+   "meaning": "커피를 쏟다, 커피를 엎지르다",
+   "example": "机にコーヒーをこぼしてしまいました。",
+   "example_meaning": "책상에 커피를 쏟고 말았습니다."
+  },
+  {
+   "expr": "子どもが生まれる",
+   "reading": "こどもがうまれる",
+   "meaning": "아이가 태어나다",
+   "example": "来月、子どもが生まれます。",
+   "example_meaning": "다음 달에 아이가 태어납니다."
+  },
+  {
+   "expr": "ゴミを出す",
+   "reading": "ゴミをだす",
+   "meaning": "쓰레기를 내놓다",
+   "example": "朝、ゴミを出します。",
+   "example_meaning": "아침에 쓰레기를 내놓습니다."
+  },
+  {
+   "expr": "材料を混ぜる",
+   "reading": "ざいりょうをまぜる",
+   "meaning": "재료를 섞다",
+   "example": "ボウルで材料を混ぜます。",
+   "example_meaning": "볼에 재료를 섞습니다."
+  },
+  {
+   "expr": "魚をとる",
+   "reading": "さかなをとる",
+   "meaning": "물고기를 잡다",
+   "example": "川で魚をとりました。",
+   "example_meaning": "강에서 물고기를 잡았습니다."
+  },
+  {
+   "expr": "時間が過ぎる",
+   "reading": "じかんがすぎる",
+   "meaning": "시간이 지나다",
+   "example": "あっという間に時間が過ぎました。",
+   "example_meaning": "눈 깜짝할 사이에 시간이 지났습니다."
+  },
+  {
+   "expr": "試験に受かる",
+   "reading": "しけんにうかる",
+   "meaning": "시험에 합격하다",
+   "example": "一生懸命勉強して試験に受かりました。",
+   "example_meaning": "열심히 공부해서 시험에 합격했습니다."
+  },
+  {
+   "expr": "事故に遭う",
+   "reading": "じこにあう",
+   "meaning": "사고를 당하다",
+   "example": "昨日、交通事故に遭いました。",
+   "example_meaning": "어제 교통사고를 당했습니다."
+  },
+  {
+   "expr": "支度をする",
+   "reading": "したくをする",
+   "meaning": "준비를 하다",
+   "example": "出かける支度をします。",
+   "example_meaning": "외출 준비를 합니다."
+  },
+  {
+   "expr": "質問を受ける",
+   "reading": "しつもんをうける",
+   "meaning": "질문을 받다",
+   "example": "発表の後、質問を受けました。",
+   "example_meaning": "발표 후에 질문을 받았습니다."
+  },
+  {
+   "expr": "習慣をつける",
+   "reading": "しゅうかんをつける",
+   "meaning": "습관을 들이다",
+   "example": "早起きの習慣をつけたいです。",
+   "example_meaning": "일찍 일어나는 습관을 들이고 싶습니다."
+  },
+  {
+   "expr": "修理してもらう",
+   "reading": "しゅうりしてもらう",
+   "meaning": "수리받다",
+   "example": "壊れた時計を修理してもらいました。",
+   "example_meaning": "고장 난 시계를 수리받았습니다."
+  }
+ ],
+ "N4": [
+  {
+   "expr": "家に帰る",
+   "reading": "いえにかえる",
+   "meaning": "집으로 돌아오다(돌아가다), 귀가하다",
+   "example": "毎日6時に家に帰ります。",
+   "example_meaning": "매일 6시에 집으로 돌아옵니다."
+  },
+  {
+   "expr": "家を出る",
+   "reading": "いえをでる",
+   "meaning": "집을 나오다, 집을 나서다",
+   "example": "朝7時に家を出ます。",
+   "example_meaning": "아침 7시에 집을 나섭니다."
+  },
+  {
+   "expr": "医者になる",
+   "reading": "いしゃになる",
+   "meaning": "의사가 되다",
+   "example": "将来、医者になりたいです。",
+   "example_meaning": "장래에 의사가 되고 싶습니다."
+  },
+  {
+   "expr": "いすに座る",
+   "reading": "いすにすわる",
+   "meaning": "의자에 앉다",
+   "example": "どうぞ、いすに座ってください。",
+   "example_meaning": "자, 의자에 앉으세요."
+  },
+  {
+   "expr": "いっしょに行く",
+   "reading": "いっしょにいく",
+   "meaning": "함께 가다",
+   "example": "友達といっしょに行きます。",
+   "example_meaning": "친구와 함께 갑니다."
+  },
+  {
+   "expr": "歌を歌う",
+   "reading": "うたをうたう",
+   "meaning": "노래를 부르다",
+   "example": "カラオケで歌を歌います。",
+   "example_meaning": "노래방에서 노래를 부릅니다."
+  },
+  {
+   "expr": "うちへ帰る",
+   "reading": "うちへかえる",
+   "meaning": "집으로 돌아오다(돌아가다), 귀가하다",
+   "example": "早くうちへ帰りたいです。",
+   "example_meaning": "빨리 집으로 돌아가고 싶습니다."
+  },
+  {
+   "expr": "運動をする",
+   "reading": "うんどうをする",
+   "meaning": "운동을 하다",
+   "example": "毎朝、公園で運動をします。",
+   "example_meaning": "매일 아침 공원에서 운동을 합니다."
+  },
+  {
+   "expr": "映画を見る",
+   "reading": "えいがをみる",
+   "meaning": "영화를 보다",
+   "example": "週末に映画を見ます。",
+   "example_meaning": "주말에 영화를 봅니다."
+  },
+  {
+   "expr": "お医者さんに行く",
+   "reading": "おいしゃさんにいく",
+   "meaning": "병원에 가다",
+   "example": "頭が痛くて、お医者さんに行きました。",
+   "example_meaning": "머리가 아파서 병원에 갔습니다."
+  },
+  {
+   "expr": "お菓子を作る",
+   "reading": "おかしをつくる",
+   "meaning": "과자를 만들다",
+   "example": "娘と一緒にお菓子を作りました。",
+   "example_meaning": "딸과 함께 과자를 만들었습니다."
+  },
+  {
+   "expr": "お金が要る",
+   "reading": "おかねがいる",
+   "meaning": "돈이 필요하다",
+   "example": "旅行にはお金が要ります。",
+   "example_meaning": "여행에는 돈이 필요합니다."
+  },
+  {
+   "expr": "お酒を飲む",
+   "reading": "おさけをのむ",
+   "meaning": "술을 마시다",
+   "example": "友達とお酒を飲みました。",
+   "example_meaning": "친구와 술을 마셨습니다."
+  },
+  {
+   "expr": "お腹が痛い",
+   "reading": "おなかがいたい",
+   "meaning": "배가 아프다",
+   "example": "昨日からお腹が痛いです。",
+   "example_meaning": "어제부터 배가 아픕니다."
+  },
+  {
+   "expr": "お風呂に入る",
+   "reading": "おふろにはいる",
+   "meaning": "목욕하다",
+   "example": "寝る前にお風呂に入ります。",
+   "example_meaning": "자기 전에 목욕을 합니다."
+  },
+  {
+   "expr": "音楽を聞く",
+   "reading": "おんがくをきく",
+   "meaning": "음악을 듣다",
+   "example": "電車の中で音楽を聞きます。",
+   "example_meaning": "전철 안에서 음악을 듣습니다."
+  },
+  {
+   "expr": "会議が終わる",
+   "reading": "かいぎがおわる",
+   "meaning": "회의가 끝나다",
+   "example": "会議は5時に終わります。",
+   "example_meaning": "회의는 5시에 끝납니다."
+  },
+  {
+   "expr": "会議をする",
+   "reading": "かいぎをする",
+   "meaning": "회의를 하다",
+   "example": "明日、部長と会議をします。",
+   "example_meaning": "내일 부장님과 회의를 합니다."
+  },
+  {
+   "expr": "外国で働く",
+   "reading": "がいこくではたらく",
+   "meaning": "외국에서 일하다",
+   "example": "将来、外国で働きたいです。",
+   "example_meaning": "장래에 외국에서 일하고 싶습니다."
+  },
+  {
+   "expr": "会社に来る",
+   "reading": "かいしゃにくる",
+   "meaning": "회사에 오다",
+   "example": "彼は毎日9時に会社に来ます。",
+   "example_meaning": "그는 매일 9시에 회사에 옵니다."
+  },
+  {
+   "expr": "会社を出る",
+   "reading": "かいしゃをでる",
+   "meaning": "회사를 나오다, 회사에서 출발하다",
+   "example": "今、会社を出ました。",
+   "example_meaning": "지금 회사를 나왔습니다."
+  },
+  {
+   "expr": "階段を上がる",
+   "reading": "かいだんをあがる",
+   "meaning": "계단을 오르다",
+   "example": "エレベーターより階段を上がります。",
+   "example_meaning": "엘리베이터보다 계단을 오릅니다."
+  },
+  {
+   "expr": "買い物をする",
+   "reading": "かいものをする",
+   "meaning": "물건을 사다, 쇼핑하다, 장을 보다",
+   "example": "週末にスーパーで買い物をします。",
+   "example_meaning": "주말에 슈퍼에서 장을 봅니다."
+  },
+  {
+   "expr": "傘を持っていく",
+   "reading": "かさをもっていく",
+   "meaning": "우산을 가지고 가다",
+   "example": "今日は雨だから傘を持っていきます。",
+   "example_meaning": "오늘은 비가 오니까 우산을 가지고 갑니다."
+  },
+  {
+   "expr": "風が強い",
+   "reading": "かぜがつよい",
+   "meaning": "바람이 세다",
+   "example": "今日は風が強いです。",
+   "example_meaning": "오늘은 바람이 셉니다."
+  },
+  {
+   "expr": "風邪を引く",
+   "reading": "かぜをひく",
+   "meaning": "감기에 걸리다",
+   "example": "寒くて風邪を引きました。",
+   "example_meaning": "추워서 감기에 걸렸습니다."
+  },
+  {
+   "expr": "学校を休む",
+   "reading": "がっこうをやすむ",
+   "meaning": "학교를 쉬다, 학교를 결석하다",
+   "example": "熱があって学校を休みました。",
+   "example_meaning": "열이 나서 학교를 결석했습니다."
+  },
+  {
+   "expr": "カフェに入る",
+   "reading": "カフェにはいる",
+   "meaning": "카페에 들어가다",
+   "example": "疲れたのでカフェに入りました。",
+   "example_meaning": "피곤해서 카페에 들어갔습니다."
+  },
+  {
+   "expr": "漢字を覚える",
+   "reading": "かんじをおぼえる",
+   "meaning": "한자를 외우다, 한자를 익히다",
+   "example": "毎日漢字を覚えています。",
+   "example_meaning": "매일 한자를 외우고 있습니다."
+  },
+  {
+   "expr": "切手をはる",
+   "reading": "きってをはる",
+   "meaning": "우표를 붙이다",
+   "example": "封筒に切手をはります。",
+   "example_meaning": "봉투에 우표를 붙입니다."
+  },
+  {
+   "expr": "きれいにする",
+   "reading": "きれいにする",
+   "meaning": "깨끗하게 하다",
+   "example": "部屋をきれいにしました。",
+   "example_meaning": "방을 깨끗하게 했습니다."
+  },
+  {
+   "expr": "薬を飲む",
+   "reading": "くすりをのむ",
+   "meaning": "약을 먹다",
+   "example": "食後に薬を飲みます。",
+   "example_meaning": "식후에 약을 먹습니다."
+  },
+  {
+   "expr": "国へ帰る",
+   "reading": "くにへかえる",
+   "meaning": "고향에 돌아가다, 귀국하다",
+   "example": "来月、国へ帰ります。",
+   "example_meaning": "다음 달에 귀국합니다."
+  },
+  {
+   "expr": "車が止まる",
+   "reading": "くるまがとまる",
+   "meaning": "차가 멈추다, 차가 서다",
+   "example": "信号で車が止まりました。",
+   "example_meaning": "신호에 차가 멈췄습니다."
+  },
+  {
+   "expr": "ケーキを切る",
+   "reading": "ケーキをきる",
+   "meaning": "케이크를 자르다",
+   "example": "誕生日にケーキを切りました。",
+   "example_meaning": "생일에 케이크를 잘랐습니다."
+  },
+  {
+   "expr": "公園を散歩する",
+   "reading": "こうえんをさんぽする",
+   "meaning": "공원을 산책하다",
+   "example": "毎朝、公園を散歩します。",
+   "example_meaning": "매일 아침 공원을 산책합니다."
+  },
+  {
+   "expr": "コートをかける",
+   "reading": "コートをかける",
+   "meaning": "코트를 걸다",
+   "example": "ハンガーにコートをかけます。",
+   "example_meaning": "옷걸이에 코트를 겁니다."
+  },
+  {
+   "expr": "コーヒーを飲む",
+   "reading": "コーヒーをのむ",
+   "meaning": "커피를 마시다",
+   "example": "朝、コーヒーを飲みます。",
+   "example_meaning": "아침에 커피를 마십니다."
+  },
+  {
+   "expr": "子どもがいる",
+   "reading": "こどもがいる",
+   "meaning": "아이가 있다",
+   "example": "兄には子どもが二人います。",
+   "example_meaning": "형(오빠)에게는 아이가 둘 있습니다."
+  },
+  {
+   "expr": "ご飯を食べる",
+   "reading": "ごはんをたべる",
+   "meaning": "밥을 먹다",
+   "example": "家族とご飯を食べます。",
+   "example_meaning": "가족과 밥을 먹습니다."
+  },
+  {
+   "expr": "財布を忘れる",
+   "reading": "さいふをわすれる",
+   "meaning": "지갑을 두고 오다",
+   "example": "家に財布を忘れました。",
+   "example_meaning": "집에 지갑을 두고 왔습니다."
+  },
+  {
+   "expr": "魚が好きだ",
+   "reading": "さかながすきだ",
+   "meaning": "생선을 좋아하다",
+   "example": "私は魚が好きです。",
+   "example_meaning": "저는 생선을 좋아합니다."
+  },
+  {
+   "expr": "散歩に出かける",
+   "reading": "さんぽにでかける",
+   "meaning": "산책하러 나가다",
+   "example": "夕方、散歩に出かけます。",
+   "example_meaning": "저녁에 산책하러 나갑니다."
+  },
+  {
+   "expr": "時間がある",
+   "reading": "じかんがある",
+   "meaning": "시간이 있다",
+   "example": "今日は時間があります。",
+   "example_meaning": "오늘은 시간이 있습니다."
+  },
+  {
+   "expr": "時間がかかる",
+   "reading": "じかんがかかる",
+   "meaning": "시간이 걸리다",
+   "example": "会社まで1時間かかります。",
+   "example_meaning": "회사까지 1시간 걸립니다."
+  },
+  {
+   "expr": "自己紹介をする",
+   "reading": "じこしょうかいをする",
+   "meaning": "자기소개를 하다",
+   "example": "最初に自己紹介をしました。",
+   "example_meaning": "처음에 자기소개를 했습니다."
+  },
+  {
+   "expr": "仕事が大変だ",
+   "reading": "しごとがたいへんだ",
+   "meaning": "일이 힘들다",
+   "example": "最近、仕事が大変です。",
+   "example_meaning": "요즘 일이 힘듭니다."
+  },
+  {
+   "expr": "仕事で疲れる",
+   "reading": "しごとでつかれる",
+   "meaning": "업무로 지치다",
+   "example": "今日は仕事で疲れました。",
+   "example_meaning": "오늘은 업무로 지쳤습니다."
+  },
+  {
+   "expr": "辞書を使う",
+   "reading": "じしょをつかう",
+   "meaning": "사전을 사용하다",
+   "example": "分からない言葉は辞書を使います。",
+   "example_meaning": "모르는 단어는 사전을 사용합니다."
+  },
+  {
+   "expr": "静かにする",
+   "reading": "しずかにする",
+   "meaning": "조용히 하다",
+   "example": "図書館では静かにしてください。",
+   "example_meaning": "도서관에서는 조용히 해 주세요."
+  },
+  {
+   "expr": "自転車を借りる",
+   "reading": "じてんしゃをかりる",
+   "meaning": "자전거를 빌리다",
+   "example": "友達に自転車を借りました。",
+   "example_meaning": "친구에게 자전거를 빌렸습니다."
+  },
+  {
+   "expr": "シャワーを浴びる",
+   "reading": "シャワーをあびる",
+   "meaning": "샤워를 하다",
+   "example": "運動の後、シャワーを浴びます。",
+   "example_meaning": "운동 후에 샤워를 합니다."
+  },
+  {
+   "expr": "ジュースを作る",
+   "reading": "ジュースをつくる",
+   "meaning": "주스를 만들다",
+   "example": "果物でジュースを作ります。",
+   "example_meaning": "과일로 주스를 만듭니다."
+  },
+  {
+   "expr": "授業が始まる",
+   "reading": "じゅぎょうがはじまる",
+   "meaning": "수업이 시작되다",
+   "example": "9時に授業が始まります。",
+   "example_meaning": "9시에 수업이 시작됩니다."
+  },
+  {
+   "expr": "宿題が多い",
+   "reading": "しゅくだいがおおい",
+   "meaning": "숙제가 많다",
+   "example": "今日は宿題が多いです。",
+   "example_meaning": "오늘은 숙제가 많습니다."
+  },
+  {
+   "expr": "新聞を読む",
+   "reading": "しんぶんをよむ",
+   "meaning": "신문을 읽다",
+   "example": "毎朝、新聞を読みます。",
+   "example_meaning": "매일 아침 신문을 읽습니다."
+  }
+ ],
+ "N5": [
+  {
+   "expr": "家に帰る",
+   "reading": "いえにかえる",
+   "meaning": "집으로 돌아오다(돌아가다), 귀가하다",
+   "example": "毎日6時に家に帰ります。",
+   "example_meaning": "매일 6시에 집으로 돌아옵니다."
+  },
+  {
+   "expr": "家を出る",
+   "reading": "いえをでる",
+   "meaning": "집을 나오다, 집을 나서다",
+   "example": "朝7時に家を出ます。",
+   "example_meaning": "아침 7시에 집을 나섭니다."
+  },
+  {
+   "expr": "医者になる",
+   "reading": "いしゃになる",
+   "meaning": "의사가 되다",
+   "example": "将来、医者になりたいです。",
+   "example_meaning": "장래에 의사가 되고 싶습니다."
+  },
+  {
+   "expr": "いすに座る",
+   "reading": "いすにすわる",
+   "meaning": "의자에 앉다",
+   "example": "どうぞ、いすに座ってください。",
+   "example_meaning": "자, 의자에 앉으세요."
+  },
+  {
+   "expr": "いっしょに行く",
+   "reading": "いっしょにいく",
+   "meaning": "함께 가다",
+   "example": "友達といっしょに行きます。",
+   "example_meaning": "친구와 함께 갑니다."
+  },
+  {
+   "expr": "歌を歌う",
+   "reading": "うたをうたう",
+   "meaning": "노래를 부르다",
+   "example": "カラオケで歌を歌います。",
+   "example_meaning": "노래방에서 노래를 부릅니다."
+  },
+  {
+   "expr": "うちへ帰る",
+   "reading": "うちへかえる",
+   "meaning": "집으로 돌아오다(돌아가다), 귀가하다",
+   "example": "早くうちへ帰りたいです。",
+   "example_meaning": "빨리 집으로 돌아가고 싶습니다."
+  },
+  {
+   "expr": "運動をする",
+   "reading": "うんどうをする",
+   "meaning": "운동을 하다",
+   "example": "毎朝、公園で運動をします。",
+   "example_meaning": "매일 아침 공원에서 운동을 합니다."
+  },
+  {
+   "expr": "映画を見る",
+   "reading": "えいがをみる",
+   "meaning": "영화를 보다",
+   "example": "週末に映画を見ます。",
+   "example_meaning": "주말에 영화를 봅니다."
+  },
+  {
+   "expr": "お医者さんに行く",
+   "reading": "おいしゃさんにいく",
+   "meaning": "병원에 가다",
+   "example": "頭が痛くて、お医者さんに行きました。",
+   "example_meaning": "머리가 아파서 병원에 갔습니다."
+  },
+  {
+   "expr": "お菓子を作る",
+   "reading": "おかしをつくる",
+   "meaning": "과자를 만들다",
+   "example": "娘と一緒にお菓子を作りました。",
+   "example_meaning": "딸과 함께 과자를 만들었습니다."
+  },
+  {
+   "expr": "お金が要る",
+   "reading": "おかねがいる",
+   "meaning": "돈이 필요하다",
+   "example": "旅行にはお金が要ります。",
+   "example_meaning": "여행에는 돈이 필요합니다."
+  },
+  {
+   "expr": "お酒を飲む",
+   "reading": "おさけをのむ",
+   "meaning": "술을 마시다",
+   "example": "友達とお酒を飲みました。",
+   "example_meaning": "친구와 술을 마셨습니다."
+  },
+  {
+   "expr": "お腹が痛い",
+   "reading": "おなかがいたい",
+   "meaning": "배가 아프다",
+   "example": "昨日からお腹が痛いです。",
+   "example_meaning": "어제부터 배가 아픕니다."
+  },
+  {
+   "expr": "お風呂に入る",
+   "reading": "おふろにはいる",
+   "meaning": "목욕하다",
+   "example": "寝る前にお風呂に入ります。",
+   "example_meaning": "자기 전에 목욕을 합니다."
+  },
+  {
+   "expr": "音楽を聞く",
+   "reading": "おんがくをきく",
+   "meaning": "음악을 듣다",
+   "example": "電車の中で音楽を聞きます。",
+   "example_meaning": "전철 안에서 음악을 듣습니다."
+  },
+  {
+   "expr": "会議が終わる",
+   "reading": "かいぎがおわる",
+   "meaning": "회의가 끝나다",
+   "example": "会議は5時に終わります。",
+   "example_meaning": "회의는 5시에 끝납니다."
+  },
+  {
+   "expr": "会議をする",
+   "reading": "かいぎをする",
+   "meaning": "회의를 하다",
+   "example": "明日、部長と会議をします。",
+   "example_meaning": "내일 부장님과 회의를 합니다."
+  },
+  {
+   "expr": "外国で働く",
+   "reading": "がいこくではたらく",
+   "meaning": "외국에서 일하다",
+   "example": "将来、外国で働きたいです。",
+   "example_meaning": "장래에 외국에서 일하고 싶습니다."
+  },
+  {
+   "expr": "会社に来る",
+   "reading": "かいしゃにくる",
+   "meaning": "회사에 오다",
+   "example": "彼は毎日9時に会社に来ます。",
+   "example_meaning": "그는 매일 9시에 회사에 옵니다."
+  },
+  {
+   "expr": "会社を出る",
+   "reading": "かいしゃをでる",
+   "meaning": "회사를 나오다, 회사에서 출발하다",
+   "example": "今、会社を出ました。",
+   "example_meaning": "지금 회사를 나왔습니다."
+  },
+  {
+   "expr": "階段を上がる",
+   "reading": "かいだんをあがる",
+   "meaning": "계단을 오르다",
+   "example": "エレベーターより階段を上がります。",
+   "example_meaning": "엘리베이터보다 계단을 오릅니다."
+  },
+  {
+   "expr": "買い物をする",
+   "reading": "かいものをする",
+   "meaning": "물건을 사다, 쇼핑하다, 장을 보다",
+   "example": "週末にスーパーで買い物をします。",
+   "example_meaning": "주말에 슈퍼에서 장을 봅니다."
+  },
+  {
+   "expr": "傘を持っていく",
+   "reading": "かさをもっていく",
+   "meaning": "우산을 가지고 가다",
+   "example": "今日は雨だから傘を持っていきます。",
+   "example_meaning": "오늘은 비가 오니까 우산을 가지고 갑니다."
+  },
+  {
+   "expr": "風が強い",
+   "reading": "かぜがつよい",
+   "meaning": "바람이 세다",
+   "example": "今日は風が強いです。",
+   "example_meaning": "오늘은 바람이 셉니다."
+  },
+  {
+   "expr": "風邪を引く",
+   "reading": "かぜをひく",
+   "meaning": "감기에 걸리다",
+   "example": "寒くて風邪を引きました。",
+   "example_meaning": "추워서 감기에 걸렸습니다."
+  },
+  {
+   "expr": "学校を休む",
+   "reading": "がっこうをやすむ",
+   "meaning": "학교를 쉬다, 학교를 결석하다",
+   "example": "熱があって学校を休みました。",
+   "example_meaning": "열이 나서 학교를 결석했습니다."
+  },
+  {
+   "expr": "カフェに入る",
+   "reading": "カフェにはいる",
+   "meaning": "카페에 들어가다",
+   "example": "疲れたのでカフェに入りました。",
+   "example_meaning": "피곤해서 카페에 들어갔습니다."
+  },
+  {
+   "expr": "漢字を覚える",
+   "reading": "かんじをおぼえる",
+   "meaning": "한자를 외우다, 한자를 익히다",
+   "example": "毎日漢字を覚えています。",
+   "example_meaning": "매일 한자를 외우고 있습니다."
+  },
+  {
+   "expr": "切手をはる",
+   "reading": "きってをはる",
+   "meaning": "우표를 붙이다",
+   "example": "封筒に切手をはります。",
+   "example_meaning": "봉투에 우표를 붙입니다."
+  },
+  {
+   "expr": "きれいにする",
+   "reading": "きれいにする",
+   "meaning": "깨끗하게 하다",
+   "example": "部屋をきれいにしました。",
+   "example_meaning": "방을 깨끗하게 했습니다."
+  },
+  {
+   "expr": "薬を飲む",
+   "reading": "くすりをのむ",
+   "meaning": "약을 먹다",
+   "example": "食後に薬を飲みます。",
+   "example_meaning": "식후에 약을 먹습니다."
+  },
+  {
+   "expr": "国へ帰る",
+   "reading": "くにへかえる",
+   "meaning": "고향에 돌아가다, 귀국하다",
+   "example": "来月、国へ帰ります。",
+   "example_meaning": "다음 달에 귀국합니다."
+  },
+  {
+   "expr": "車が止まる",
+   "reading": "くるまがとまる",
+   "meaning": "차가 멈추다, 차가 서다",
+   "example": "信号で車が止まりました。",
+   "example_meaning": "신호에 차가 멈췄습니다."
+  },
+  {
+   "expr": "ケーキを切る",
+   "reading": "ケーキをきる",
+   "meaning": "케이크를 자르다",
+   "example": "誕生日にケーキを切りました。",
+   "example_meaning": "생일에 케이크를 잘랐습니다."
+  },
+  {
+   "expr": "公園を散歩する",
+   "reading": "こうえんをさんぽする",
+   "meaning": "공원을 산책하다",
+   "example": "毎朝、公園を散歩します。",
+   "example_meaning": "매일 아침 공원을 산책합니다."
+  },
+  {
+   "expr": "コートをかける",
+   "reading": "コートをかける",
+   "meaning": "코트를 걸다",
+   "example": "ハンガーにコートをかけます。",
+   "example_meaning": "옷걸이에 코트를 겁니다."
+  },
+  {
+   "expr": "コーヒーを飲む",
+   "reading": "コーヒーをのむ",
+   "meaning": "커피를 마시다",
+   "example": "朝、コーヒーを飲みます。",
+   "example_meaning": "아침에 커피를 마십니다."
+  },
+  {
+   "expr": "子どもがいる",
+   "reading": "こどもがいる",
+   "meaning": "아이가 있다",
+   "example": "兄には子どもが二人います。",
+   "example_meaning": "형(오빠)에게는 아이가 둘 있습니다."
+  },
+  {
+   "expr": "ご飯を食べる",
+   "reading": "ごはんをたべる",
+   "meaning": "밥을 먹다",
+   "example": "家族とご飯を食べます。",
+   "example_meaning": "가족과 밥을 먹습니다."
+  },
+  {
+   "expr": "財布を忘れる",
+   "reading": "さいふをわすれる",
+   "meaning": "지갑을 두고 오다",
+   "example": "家に財布を忘れました。",
+   "example_meaning": "집에 지갑을 두고 왔습니다."
+  },
+  {
+   "expr": "魚が好きだ",
+   "reading": "さかながすきだ",
+   "meaning": "생선을 좋아하다",
+   "example": "私は魚が好きです。",
+   "example_meaning": "저는 생선을 좋아합니다."
+  },
+  {
+   "expr": "散歩に出かける",
+   "reading": "さんぽにでかける",
+   "meaning": "산책하러 나가다",
+   "example": "夕方、散歩に出かけます。",
+   "example_meaning": "저녁에 산책하러 나갑니다."
+  },
+  {
+   "expr": "時間がある",
+   "reading": "じかんがある",
+   "meaning": "시간이 있다",
+   "example": "今日は時間があります。",
+   "example_meaning": "오늘은 시간이 있습니다."
+  },
+  {
+   "expr": "時間がかかる",
+   "reading": "じかんがかかる",
+   "meaning": "시간이 걸리다",
+   "example": "会社まで1時間かかります。",
+   "example_meaning": "회사까지 1시간 걸립니다."
+  },
+  {
+   "expr": "自己紹介をする",
+   "reading": "じこしょうかいをする",
+   "meaning": "자기소개를 하다",
+   "example": "最初に自己紹介をしました。",
+   "example_meaning": "처음에 자기소개를 했습니다."
+  },
+  {
+   "expr": "仕事が大変だ",
+   "reading": "しごとがたいへんだ",
+   "meaning": "일이 힘들다",
+   "example": "最近、仕事が大変です。",
+   "example_meaning": "요즘 일이 힘듭니다."
+  },
+  {
+   "expr": "仕事で疲れる",
+   "reading": "しごとでつかれる",
+   "meaning": "업무로 지치다",
+   "example": "今日は仕事で疲れました。",
+   "example_meaning": "오늘은 업무로 지쳤습니다."
+  },
+  {
+   "expr": "辞書を使う",
+   "reading": "じしょをつかう",
+   "meaning": "사전을 사용하다",
+   "example": "分からない言葉は辞書を使います。",
+   "example_meaning": "모르는 단어는 사전을 사용합니다."
+  },
+  {
+   "expr": "静かにする",
+   "reading": "しずかにする",
+   "meaning": "조용히 하다",
+   "example": "図書館では静かにしてください。",
+   "example_meaning": "도서관에서는 조용히 해 주세요."
+  },
+  {
+   "expr": "自転車を借りる",
+   "reading": "じてんしゃをかりる",
+   "meaning": "자전거를 빌리다",
+   "example": "友達に自転車を借りました。",
+   "example_meaning": "친구에게 자전거를 빌렸습니다."
+  },
+  {
+   "expr": "シャワーを浴びる",
+   "reading": "シャワーをあびる",
+   "meaning": "샤워를 하다",
+   "example": "運動の後、シャワーを浴びます。",
+   "example_meaning": "운동 후에 샤워를 합니다."
+  },
+  {
+   "expr": "ジュースを作る",
+   "reading": "ジュースをつくる",
+   "meaning": "주스를 만들다",
+   "example": "果物でジュースを作ります。",
+   "example_meaning": "과일로 주스를 만듭니다."
+  },
+  {
+   "expr": "授業が始まる",
+   "reading": "じゅぎょうがはじまる",
+   "meaning": "수업이 시작되다",
+   "example": "9時に授業が始まります。",
+   "example_meaning": "9시에 수업이 시작됩니다."
+  },
+  {
+   "expr": "宿題が多い",
+   "reading": "しゅくだいがおおい",
+   "meaning": "숙제가 많다",
+   "example": "今日は宿題が多いです。",
+   "example_meaning": "오늘은 숙제가 많습니다."
+  },
+  {
+   "expr": "新聞を読む",
+   "reading": "しんぶんをよむ",
+   "meaning": "신문을 읽다",
+   "example": "毎朝、新聞を読みます。",
+   "example_meaning": "매일 아침 신문을 읽습니다."
+  }
+ ]
+}
