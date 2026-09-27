@@ -173,7 +173,7 @@ function blankOf(item) {
     const stem = cut ? k.slice(0, -cut) : k;
     if (stem.length < 1 || (cut && stem.length < 1)) break;
     const i = e.indexOf(stem);
-    if (i >= 0) { let j = i + stem.length; while (j < e.length && /[ぁ-ん]/.test(e[j]) && j - i - stem.length < 3 && !'をがにはでとものへ、。'.includes(e[j])) j++; return [i, j]; }
+    if (i >= 0) { let j = i + stem.length; if (cut && /[ぁ-ん]$/.test(item.k)) while (j < e.length && /[ぁ-ん]/.test(e[j]) && j - i - stem.length < 2 && !'をがにはでとものへてたか、。'.includes(e[j])) j++; return [i, j]; }
   }
   return null;
 }
