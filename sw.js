@@ -1,11 +1,9 @@
-const CACHE_NAME = 'fukudaegu-v1';
+const CACHE_NAME = 'fukudaegu-v2-n3';
 const ASSETS = [
   '/',
   '/index.html',
   '/manifest.json',
-  '/data/jp_kanji.json',
-  '/data/jp_vocab.json',
-  '/data/jp_grammar.json'
+  '/data/n3.json'
 ];
 
 self.addEventListener('install', e => {

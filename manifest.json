@@ -1,11 +1,11 @@
 {
-  "name": "福大邱 - fukudaegu",
-  "short_name": "福大邱",
-  "description": "일본어/한국어 공부 + 후쿠오카→대구 여행 가이드",
+  "name": "福大邱 N3 - 무한 반복 일본어 암기",
+  "short_name": "福大邱 N3",
+  "description": "JLPT N3 단어·한자·문법을 한자-히라가나-뜻 연결로 무한 반복",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#0f1923",
-  "theme_color": "#0f1923",
+  "background_color": "#F6F1E7",
+  "theme_color": "#1E2A44",
   "orientation": "portrait",
   "icons": [
     {
@@ -15,6 +15,8 @@
       "purpose": "any maskable"
     }
   ],
-  "categories": ["education", "travel"],
-  "lang": "ja"
+  "categories": [
+    "education"
+  ],
+  "lang": "ko"
 }
