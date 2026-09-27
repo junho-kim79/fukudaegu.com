@@ -99,7 +99,7 @@ header{display:flex;align-items:center;gap:10px}
     <button class="next" id="nextBtn" onclick="nextQ()">다음 →</button>
   </div>
 
-  <div class="foot">틀린 건 자주, 외운 건 가끔 나와요. 계속 누르다 보면 외워집니다.<br>福大邱 · fukudaegu.com</div>
+  <div class="foot">틀린 건 자주, 외운 건 가끔 나와요. 계속 누르다 보면 외워집니다.<br>단어 목록: JLPT N3 공개 단어 목록(tanos.co.uk 기반) · 한국어 뜻 재정리<br>福大邱 · fukudaegu.com</div>
 </div>
 
 <div class="sheet" id="sheet" onclick="if(event.target===this)closeSheet()"><div id="sheetBody"></div></div>
@@ -156,6 +156,7 @@ function buildSteps(item) {
       ? [{ type: 'blank' }, { type: 'gmean' }]
       : [{ type: 'gmean' }, { type: 'blank' }];
   }
+  if (item.k === item.r) return [{ type: Math.random() < .7 ? 'k2m' : 'm2k' }];   // 가나로만 쓰는 단어
   const rev = Math.random() < .22;   // 가끔 거꾸로: 뜻 → 한자
   return rev ? [{ type: 'm2k' }, { type: 'k2r' }] : [{ type: 'k2r' }, { type: 'k2m' }];
 }
@@ -178,12 +179,12 @@ function renderStep() {
     ask = '어떻게 읽을까요?'; field = 'r'; jp = true;
     opts = distract('r', item, n, x => x.r[0] === item.r[0] || Math.abs(x.r.length - item.r.length) <= 1);
   } else if (t === 'k2m') {
-    q = `<div class="${bigCls(item.k)}">${esc(item.k)}</div><div class="sub"><span class="kana">${esc(item.r)}</span></div>`;
+    q = `<div class="${bigCls(item.k)}">${esc(item.k)}</div><div class="sub"><span class="kana">${item.k === item.r ? '&nbsp;' : esc(item.r)}</span></div>`;
     ask = '뜻은?'; field = 'm';
     opts = distract('m', item, n);
   } else if (t === 'm2k') {
     q = `<div class="big ko">${esc(item.m)}</div><div class="sub">&nbsp;</div>`;
-    ask = '어떤 한자일까요?'; field = 'k'; jp = true;
+    ask = item.k === item.r ? '어떤 단어일까요?' : '어떤 한자일까요?'; field = 'k'; jp = true;
     opts = distract('k', item, n, x => [...x.k].some(c => item.k.includes(c) && /[一-鿿]/.test(c)));
   } else if (t === 'blank') {
     const frag = (item.s.match(/\{([^}]*)\}/g) || []).map(x => x.slice(1, -1));
@@ -213,14 +214,16 @@ function answer(btn) {
   S.tot++; if (good) { S.ok++; S.streak++; } else S.streak = 0;
   S.today++;
   const t = cur.steps[cur.si].type;
-  if (good && (t === 'k2r' || t === 'm2k') && S.speak) speak(item.r);
+  if (good && (t === 'k2r' || t === 'm2k' || (t === 'k2m' && item.k === item.r)) && S.speak) speak(item.r);
   const last = cur.si === cur.steps.length - 1;
   if (last || !good) showReveal();
   if (!good) { $('nextBtn').classList.add('on'); lock = false; finishWord(false); return; }
+  const mine = cur;   // 그 사이 탭을 바꾸면 이전 문제 타이머는 무시
   setTimeout(() => {
+    if (cur !== mine) return;
     lock = false;
     if (!last) { cur.si++; renderStep(); }
-    else { finishWord(true); setTimeout(nextQ, 650); }
+    else { finishWord(true); setTimeout(() => { if (cur === mine) nextQ(); }, 650); }
   }, last ? 250 : 480);
   updStats();
 }
@@ -281,7 +284,11 @@ function closeSheet() { $('sheet').classList.remove('on'); }
 document.addEventListener('keydown', e => { const k = +e.key; if (k >= 1 && k <= 4) { const b = $('opts').querySelectorAll('button')[k - 1]; if (b) b.click(); } if (e.key === 'Enter' && $('nextBtn').classList.contains('on')) nextQ(); });
 
 /* ───────── 시작 ───────── */
-fetch('/data/n3.json').then(r => r.json()).then(d => { D = d; setMode(S.mode || 'words'); })
+fetch('/data/n3.json?v=2').then(r => r.json()).then(d => {
+  D = d;
+  if (S.dataV !== d.v) { S.prog.words = {}; S.wrong.words = []; S.dataV = d.v; save(); }   // 단어 목록이 바뀌면 단어 기록만 새로
+  setMode(S.mode || 'words');
+})
   .catch(() => { $('q').innerHTML = '<div class="sub">데이터를 불러오지 못했어요. 새로고침해 주세요.</div>'; });
 if ('serviceWorker' in navigator) window.addEventListener('load', () => navigator.serviceWorker.register('/sw.js'));
 </script>
