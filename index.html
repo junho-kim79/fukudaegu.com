@@ -85,6 +85,7 @@ header{display:flex;align-items:center;gap:10px}
 .bv-row .ex{grid-column:1/-1;font-size:.9rem;color:var(--sub);line-height:1.6;border-top:1px dashed var(--line);padding-top:6px}
 .bv-row .hid{color:transparent;background:#EFE8DA;border-radius:6px}
 .danger{margin-top:14px;width:100%;border:1px solid var(--shu);background:none;color:var(--shu);border-radius:14px;padding:11px;font-weight:900;cursor:pointer}
+.sayrow{display:flex;gap:8px;margin-top:10px;flex-wrap:wrap}.say{border:1px solid var(--line,#ddd);background:transparent;color:inherit;border-radius:999px;padding:6px 14px;font-size:.95rem;cursor:pointer}
 </style>
 </head>
 <body>
@@ -160,25 +161,34 @@ const shuffle = a => { for (let i = a.length - 1; i > 0; i--) { const j = Math.f
 /* ───────── 반복 스케줄 (라이트너 상자) ─────────
    상자 0~5. 맞히면 한 칸 올라가고, 틀리면 0으로.
    상자가 높을수록 다음에 나오는 간격이 길어짐. 새 단어는 조금씩 추가. */
-const GAP = [2, 5, 11, 24, 50, 100];
-const ACTIVE = 10;
+const GAP = [20, 60, 150, 350, 800, 2000];   // 맞히면 점점 멀리 (문제 수 기준)
+const WRONG_GAP = 20;                     // 틀린 단어는 20문제 뒤 다시
+const ACTIVE = 25;                        // 동시에 익히는 단어 수
+const RECENT = 20;                        // 최근 20문제에 나온 단어는 절대 다시 안 냄
 function st(id) { const p = S.prog[S.mode]; return p[id] || (p[id] = { b: 0, due: 0, seen: 0 }); }
 function pick() {
   const list = D[S.mode], p = S.prog[S.mode];
+  const recent = (S.recent && S.recent[S.mode]) || [];
+  const ok = i => !recent.includes(i);
   const seenIds = list.map((_, i) => i).filter(i => p[i] && p[i].seen);
-  const learning = seenIds.filter(i => p[i].b < 4);
-  const due = seenIds.filter(i => p[i].due <= S.tick).sort((a, b) => p[a].due - p[b].due);
-  if (due.length && (learning.length >= ACTIVE || Math.random() < .75)) return due[0];
+  const learning = seenIds.filter(i => p[i].b < 2);
+  const due = seenIds.filter(i => p[i].due <= S.tick && ok(i)).sort((a, b) => p[a].due - p[b].due);
+  if (due.length && (learning.length >= ACTIVE || Math.random() < .6)) return due[0];
   const fresh = list.map((_, i) => i).filter(i => !(p[i] && p[i].seen));
   if (S.mode === 'book') fresh.sort((a, b) => (list[b].st || 0) - (list[a].st || 0) || a - b);   // ★ 먼저, 책 순서대로
-  if (fresh.length && learning.length < ACTIVE) return S.mode === 'book' ? fresh[0] : fresh[Math.floor(Math.random() * Math.min(fresh.length, 40))];
+  if (fresh.length && (learning.length < ACTIVE || !due.length)) return S.mode === 'book' ? fresh[0] : fresh[Math.floor(Math.random() * Math.min(fresh.length, 40))];
   if (due.length) return due[0];
-  const all = seenIds.sort((a, b) => p[a].due - p[b].due); return all.length ? all[0] : 0;
+  // 나올 차례인 단어도 새 단어도 없으면: 가장 오래 안 본 단어 (최근 것 제외)
+  const all = seenIds.filter(ok).sort((a, b) => (p[a].last || 0) - (p[b].last || 0));
+  return all.length ? all[0] : (seenIds[0] || 0);
 }
 function grade(id, good) {
-  const s = st(id); s.seen++;
+  const s = st(id); s.seen++; s.last = S.tick;
+  if (!S.recent) S.recent = {};
+  const r = (S.recent[S.mode] = (S.recent[S.mode] || []).filter(x => x !== id));
+  r.unshift(id); r.length = Math.min(r.length, Math.min(RECENT, Math.floor(D[S.mode].length / 3)));
   if (good) { s.b = Math.min(5, s.b + 1); s.due = S.tick + GAP[s.b]; S.wrong[S.mode] = S.wrong[S.mode].filter(x => x !== id); }
-  else { s.b = 0; s.due = S.tick + 2; if (!S.wrong[S.mode].includes(id)) S.wrong[S.mode].unshift(id); S.wrong[S.mode] = S.wrong[S.mode].slice(0, 200); }
+  else { s.b = 0; s.due = S.tick + WRONG_GAP; if (!S.wrong[S.mode].includes(id)) S.wrong[S.mode].unshift(id); S.wrong[S.mode] = S.wrong[S.mode].slice(0, 200); }
 }
 
 /* ───────── 문제 만들기 ───────── */
@@ -343,7 +353,13 @@ function showReveal() {
   if (it.syn) h = `<div class="t">${esc(it.k)} ≒ ${esc(it.syn)}</div><div class="e">${esc(it.m)} ≒ ${esc(it.sm)}</div>`;
   else if (S.mode === 'grammar') h = `<div class="t">${esc(it.p)} <small style="font-size:.8rem;color:var(--sub)">${esc(it.m)}</small></div><div class="e">${esc(it.s.replace(/[{}]/g, ''))}<br>${esc(it.t)}</div>`;
   else h = `<div class="t"><span>${esc(it.k)}</span> · <span class="r">${esc(it.r)}</span> · ${esc(it.m)}</div>${it.e ? `<div class="e">${esc(it.e)}<br>${esc(it.em || '')}</div>` : ''}`;
+  // 🔊 다시 듣기: 문법은 예문 전체, 단어는 읽기 (+예문)
+  const sayTxt = S.mode === 'grammar' ? it.s.replace(/[{}]/g, '') : it.syn ? it.k : (it.r || it.k);
+  const sayEx = S.mode !== 'grammar' && it.e ? it.e : '';
+  h += `<div class="sayrow"><button class="say" data-t="${esc(sayTxt)}">🔊 ${S.mode === 'grammar' ? '예문 듣기' : '발음'}</button>${sayEx ? `<button class="say" data-t="${esc(sayEx)}">🔊 예문</button>` : ''}</div>`;
   $('reveal').innerHTML = h; $('reveal').classList.add('on');
+  $('reveal').querySelectorAll('.say').forEach(b => b.onclick = e => { e.stopPropagation(); speak(b.dataset.t); });
+  if (S.mode === 'grammar' && S.speak) speak(sayTxt);
 }
 function nextQ() { finished = false; lock = false; newQ(); }
 
@@ -402,7 +418,7 @@ function openSheet(kind) {
   if (kind === 'set') {
     h = `<h3>설정</h3>
       <div class="row">보기 개수<div class="seg">${[3, 4].map(n => `<button class="${S.n === n ? 'on' : ''}" onclick="S.n=${n};save();openSheet('set');nextQ()">${n}개</button>`).join('')}</div></div>
-      <div class="row">정답 때 발음 듣기<div class="seg">${[['켜기', true], ['끄기', false]].map(([l, v]) => `<button class="${S.speak === v ? 'on' : ''}" onclick="S.speak=${v};save();openSheet('set')">${l}</button>`).join('')}</div></div>
+      <div class="row">정답 때 발음 듣기 (문법은 예문)<div class="seg">${[['켜기', true], ['끄기', false]].map(([l, v]) => `<button class="${S.speak === v ? 'on' : ''}" onclick="S.speak=${v};save();openSheet('set')">${l}</button>`).join('')}</div></div>
       <div class="row">책 ${D.book.length}개 · 단어 ${D.words.length}개 · 한자 ${D.kanji.length}개 · 문법 ${D.grammar.length}개</div>
       <button class="danger" onclick="if(confirm('${{ book: '책', words: '단어', kanji: '한자', grammar: '문법' }[S.mode]} 학습 기록을 처음부터 다시 할까요?')){S.prog[S.mode]={};S.wrong[S.mode]=[];save();closeSheet();updStats();nextQ()}">이 탭 기록 초기화</button>`;
   } else {

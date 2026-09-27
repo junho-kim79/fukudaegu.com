@@ -1,4 +1,4 @@
-const CACHE_NAME = 'fukudaegu-v8-book';
+const CACHE_NAME = 'fukudaegu-v9-spacing';
 const ASSETS = [
   '/',
   '/index.html',
