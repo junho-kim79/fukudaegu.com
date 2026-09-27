@@ -237,7 +237,7 @@ function buildSteps(item) {
       : [{ type: 'gmean' }, { type: 'blank' }];
   }
   if (item.syn) return [{ type: 'syn' }];   // 유의표현: 가장 가까운 표현 고르기
-  if (item.c && item.e && blankOf(item)) return item.k !== item.r && Math.random() < .5 ? [{ type: 'ctx' }, { type: 'k2r' }] : [{ type: 'ctx' }];
+  if (item.c && item.e && blankOf(item)) return !item.g && item.k !== item.r && Math.random() < .5 ? [{ type: 'ctx' }, { type: 'k2r' }] : [{ type: 'ctx' }];
   if (item.k === item.r) return [{ type: Math.random() < .7 ? 'k2m' : 'm2k' }];   // 가나로만 쓰는 단어
   if (item.w) return [{ type: 'r2k' }, { type: 'k2m' }];   // 책 '표기' 파트: 히라가나 보고 한자 고르기
   const rev = Math.random() < .22;   // 가끔 거꾸로: 뜻 → 한자
@@ -271,7 +271,7 @@ function renderStep() {
     const [a, b] = blankOf(item), e = item.e;
     q = `<div class="sent">${esc(e.slice(0, a))}<u>　</u>${esc(e.slice(b))}</div><div class="sub">${esc(item.em || '')}</div>`;
     ask = '빈칸에 들어갈 말은?'; field = 'k'; jp = true;
-    opts = distract('k', item, n, x => x.c && !x.syn);
+    opts = distract('k', item, n, x => x.c && !x.syn && (item.g ? x.s === item.s : !x.g));   // 조사는 조사끼리, 부사는 부사끼리
   } else if (t === 'syn') {
     q = `<div class="big long" style="font-family:inherit;font-weight:900">${esc(item.k)}</div><div class="sub">${esc(item.m)}</div>`;
     ask = '가장 가까운 의미는?'; field = 'syn'; jp = true;
@@ -447,7 +447,7 @@ let KEYBITS = null;
 function unlock(bits) { KEYBITS = bits; $('lock').classList.add('off'); start(); }
 async function loadBook() {
   try {
-    const b64 = await (await fetch('/data/book.enc?v=4')).text();
+    const b64 = await (await fetch('/data/book.enc?v=5')).text();
     const raw = Uint8Array.from(atob(b64.trim()), c => c.charCodeAt(0));
     const key = await crypto.subtle.importKey('raw', KEYBITS, 'AES-GCM', false, ['decrypt']);
     const plain = await crypto.subtle.decrypt({ name: 'AES-GCM', iv: raw.slice(0, 12) }, key, raw.slice(12));
