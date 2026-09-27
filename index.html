@@ -223,7 +223,7 @@ function answer(btn) {
     if (cur !== mine) return;
     lock = false;
     if (!last) { cur.si++; renderStep(); }
-    else { finishWord(true); setTimeout(() => { if (cur === mine) nextQ(); }, 650); }
+    else { finishWord(true); $('nextBtn').classList.add('on'); }   // 마지막 카드는 '다음'을 누를 때까지 그대로
   }, last ? 250 : 480);
   updStats();
 }
