@@ -475,7 +475,7 @@ function addMine() {
 }
 document.addEventListener('keydown', e => { if (!ME) return; const k = +e.key; if (k >= 1 && k <= 4 && !e.target.closest('input,textarea')) { const b = $('opts').querySelectorAll('button')[k - 1]; if (b) b.click(); } if (e.key === 'Enter' && $('nextBtn').classList.contains('on') && !e.target.closest('input,textarea')) nextQ(); });
 
-if ('serviceWorker' in navigator) window.addEventListener('load', () => navigator.serviceWorker.register('/sw.js').catch(() => {}));
+if ('serviceWorker' in navigator) window.addEventListener('load', () => navigator.serviceWorker.register('/sw.js', { updateViaCache: 'none' }).catch(() => {}));
 </script>
 </body>
 </html>

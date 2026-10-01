@@ -486,7 +486,7 @@ Promise.all([fetch('/data/n3.json?v=2').then(r => r.json()), loadBook()]).then((
 })
   .catch(() => { $('q').innerHTML = '<div class="sub">데이터를 불러오지 못했어요. 새로고침해 주세요.</div>'; });
 }
-if ('serviceWorker' in navigator) window.addEventListener('load', () => navigator.serviceWorker.register('/sw.js'));
+if ('serviceWorker' in navigator) window.addEventListener('load', () => navigator.serviceWorker.register('/sw.js', { updateViaCache: 'none' }));
 </script>
 </body>
 </html>

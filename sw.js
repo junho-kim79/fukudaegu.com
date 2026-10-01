@@ -1,4 +1,4 @@
-const CACHE_NAME = 'fukudaegu-v10-family';
+const CACHE_NAME = 'fukudaegu-v11-family';
 const ASSETS = [
   '/',
   '/index.html',
@@ -23,7 +23,7 @@ self.addEventListener('activate', e => {
 
 self.addEventListener('fetch', e => {
   e.respondWith(
-    fetch(e.request)
+    fetch(e.request, { cache: 'no-cache' })   // 늘 서버에서 새 버전 확인 (옛 화면에 머물지 않게)
       .then(res => {
         const clone = res.clone();
         caches.open(CACHE_NAME).then(cache => cache.put(e.request, clone));
