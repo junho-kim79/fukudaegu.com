@@ -108,6 +108,26 @@ textarea.fld{min-height:170px;line-height:1.6;resize:vertical}
 .bv-row .m{font-weight:700;font-size:.96rem;color:#2F4A39}
 .bv-row .ex{grid-column:1/-1;font-size:.86rem;color:var(--sub);line-height:1.6;border-top:1px dashed var(--line);padding-top:6px;white-space:pre-line}
 .bv-row .hid{color:transparent;background:#EFE8DA;border-radius:6px}
+.bv-tabs{display:flex;gap:6px;overflow-x:auto;padding-bottom:8px;position:sticky;top:58px;background:var(--paper);z-index:2}
+.bv-tabs button{flex-shrink:0;border:1px solid var(--line);background:#fff;border-radius:999px;padding:7px 12px;font-weight:800;font-size:.85rem;color:var(--sub);cursor:pointer}
+.bv-tabs button.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+.bk-u{margin:18px 2px 8px;font-size:1.15rem;font-weight:900;color:var(--ink);display:flex;align-items:center;gap:8px}
+.bk-u:before{content:'';width:6px;height:20px;border-radius:3px;background:var(--acc)}
+.bk{background:#fff;border:1px solid var(--line);border-radius:18px;padding:14px 14px 12px;margin-top:10px}
+.bk h4{font-size:1.02rem;font-weight:900;color:var(--acc);margin-bottom:6px}
+.bk .ld{font-size:.95rem;line-height:1.65;font-weight:600;margin-bottom:6px}
+.bk .kv{display:grid;grid-template-columns:minmax(84px,.8fr) 1.6fr;gap:8px;padding:8px 0;border-top:1px dashed var(--line);font-size:.93rem;line-height:1.55;cursor:pointer}
+.bk .kv:first-of-type{border-top:none}
+.bk .kv b{font-weight:900}.bk .kv span{font-weight:600;color:#2E3A55}
+.bk .kv span.hid{color:transparent;background:#EFE8DA;border-radius:6px}
+.bk table{width:100%;border-collapse:collapse;margin-top:6px;font-size:.88rem;text-align:center}
+.bk th{background:var(--ink);color:#fff;font-weight:800;padding:7px 4px}
+.bk th:first-child{border-radius:10px 0 0 0}.bk th:last-child{border-radius:0 10px 0 0}
+.bk td{border-bottom:1px solid var(--line);padding:7px 4px;font-weight:700}
+.bk td.hid{color:transparent;background:#EFE8DA}
+.bk .key{margin-top:10px;background:#EEF0F7;border-radius:12px;padding:9px 11px;font-size:.88rem;line-height:1.6;font-weight:700}
+.bk .key i{font-style:normal;color:var(--acc);font-weight:900;margin-right:4px}
+.bk .tp{margin-top:8px;background:#FBF2D9;color:#7A5A12;border-radius:12px;padding:8px 11px;font-size:.88rem;line-height:1.6;font-weight:800}
 .bv-row .del{grid-column:1/-1;justify-self:end;font-size:.74rem;color:var(--acc);font-weight:800}
 </style>
 </head>
@@ -116,7 +136,7 @@ textarea.fld{min-height:170px;line-height:1.6;resize:vertical}
   <header>
     <div class="logo" onclick="switchWho()"><div class="mark" id="meMark">福</div><div><span id="meName">암기장</span><small>시험범위 무한 반복</small></div></div>
     <div class="sp"></div>
-    <button class="ibtn" onclick="openBook()">📖 전체</button>
+    <button class="ibtn" onclick="openBook()">📖 책 보기</button>
     <button class="ibtn" onclick="openSheet('review')">📕 오답</button>
     <button class="ibtn" onclick="openSheet('set')">⚙︎</button>
   </header>
@@ -166,8 +186,9 @@ textarea.fld{min-height:170px;line-height:1.6;resize:vertical}
   <div class="bv-top">
     <button class="ibtn" onclick="closeBook()">‹ 닫기</button>
     <input id="bvQ" placeholder="찾기" oninput="renderBook()">
-    <button class="ibtn" id="bvHide" onclick="bvHide=(bvHide+1)%2;renderBook()">가리기</button>
+    <button class="ibtn" id="bvHide" onclick="bvHide=(bvHide+1)%2;bvOpen.clear();renderBook()">가리기</button>
   </div>
+  <div class="bv-tabs" id="bvTabs"></div>
   <div id="bvList"></div>
 </div>
 <div class="sheet" id="sheet" onclick="if(event.target===this)closeSheet()"><div id="sheetBody"></div></div>
@@ -265,7 +286,7 @@ async function loadBase(p, bits) {
     const key = await crypto.subtle.importKey('raw', bits, 'AES-GCM', false, ['decrypt']);
     const plain = await crypto.subtle.decrypt({ name: 'AES-GCM', iv: raw.slice(0, 12) }, key, raw.slice(12));
     const d = JSON.parse(new TextDecoder().decode(plain));
-    return { items: d.items || [], exams: d.exams || [] };
+    return { items: d.items || [], exams: d.exams || [], book: d.book || [] };
   } catch (e) { return { items: [], exams: [] }; }
 }
 async function unlock(p, bits) {
@@ -402,9 +423,36 @@ function updStats() {
 let bvHide = 0, bvOpen = new Set();
 function openBook() { if (!ME) return; $('bookv').classList.add('on'); renderBook(); }
 function closeBook() { $('bookv').classList.remove('on'); }
+let bvTab = '';
 function renderBook() {
-  $('bvHide').textContent = ['가리기', '답 가림'][bvHide];
+  const book = (BASE.book || []).filter(b => S.sub === '전체' || (b.s || '과학') === S.sub);
+  const units = [...new Set(book.map(b => b.u))];
+  const tabs = [...units, '📝 문제 목록'];
+  if (!tabs.includes(bvTab)) bvTab = tabs[0];
+  $('bvTabs').innerHTML = tabs.map(t => `<button class="${t === bvTab ? 'on' : ''}" data-t="${esc(t)}">${esc(t)}</button>`).join('');
+  $('bvTabs').querySelectorAll('button').forEach(b => b.onclick = () => { bvTab = b.dataset.t; bvOpen.clear(); renderBook(); $('bookv').scrollTop = 0; });
+  $('bvHide').textContent = ['가리기', '가림 ✓'][bvHide];
   const q = $('bvQ').value.trim();
+  if (bvTab !== '📝 문제 목록') {
+    let secs = book.filter(b => b.u === bvTab);
+    if (q) secs = secs.filter(b => JSON.stringify(b).includes(q));
+    let h = `<div class="bk-u">${esc(bvTab)}</div>`, n = 0;
+    secs.forEach(b => {
+      h += `<div class="bk"><h4>${esc(b.h)}</h4>${b.p ? `<div class="ld">${esc(b.p)}</div>` : ''}`;
+      (b.rows || []).forEach(([k, v]) => { const id = 'r' + (n++), hd = bvHide && !bvOpen.has(id); h += `<div class="kv" data-o="${id}"><b>${esc(k)}</b><span class="${hd ? 'hid' : ''}">${esc(v)}</span></div>`; });
+      if (b.table) {
+        h += `<table><tr>${b.table.head.map(x => `<th>${esc(x)}</th>`).join('')}</tr>`;
+        b.table.rows.forEach(r => { const id = 'r' + (n++), hd = bvHide && !bvOpen.has(id); h += `<tr data-o="${id}">${r.map((x, c) => `<td class="${hd && c > 0 ? 'hid' : ''}">${esc(x)}</td>`).join('')}</tr>`; });
+        h += '</table>';
+      }
+      if (b.key && !bvHide) h += `<div class="key">${b.key.map(x => `<div><i>✔</i>${esc(x)}</div>`).join('')}</div>`;
+      if (b.tip && !bvHide) h += `<div class="tp">💡 ${esc(b.tip)}</div>`;
+      h += '</div>';
+    });
+    $('bvList').innerHTML = h;
+    $('bvList').querySelectorAll('[data-o]').forEach(r => r.onclick = () => { const id = r.dataset.o; bvOpen.has(id) ? bvOpen.delete(id) : bvOpen.add(id); renderBook(); });
+    return;
+  }
   let list = pool();
   if (q) list = list.filter(x => [x.k, x.m, x.e, x.u].some(v => v && String(v).includes(q)));
   let h = '', last = null;
