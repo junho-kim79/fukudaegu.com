@@ -118,12 +118,13 @@ textarea.fld{min-height:170px;line-height:1.6;resize:vertical}
 .bk .ld{font-size:.95rem;line-height:1.65;font-weight:600;margin-bottom:6px}
 .bk .kv{display:grid;grid-template-columns:minmax(84px,.8fr) 1.6fr;gap:8px;padding:8px 0;border-top:1px dashed var(--line);font-size:.93rem;line-height:1.55;cursor:pointer}
 .bk .kv:first-of-type{border-top:none}
-.bk .kv b{font-weight:900}.bk .kv span{font-weight:600;color:#2E3A55}
+.bk .kv b{font-weight:900;white-space:pre-line}.bk .kv span{font-weight:600;color:#2E3A55}
 .bk .kv span.hid{color:transparent;background:#EFE8DA;border-radius:6px}
 .bk table{width:100%;border-collapse:collapse;margin-top:6px;font-size:.88rem;text-align:center}
 .bk th{background:var(--ink);color:#fff;font-weight:800;padding:7px 4px}
 .bk th:first-child{border-radius:10px 0 0 0}.bk th:last-child{border-radius:0 10px 0 0}
 .bk td{border-bottom:1px solid var(--line);padding:7px 4px;font-weight:700}
+.bk td .kn{display:block;font-size:1.45rem;font-weight:700;font-family:'Hiragino Sans','Noto Sans JP',sans-serif}.bk td small{display:block;font-size:.85rem;color:var(--acc);font-weight:900}.bk td small.hid{color:transparent;background:#EFE8DA;border-radius:4px}
 .bk td.hid{color:transparent;background:#EFE8DA}
 .bk .key{margin-top:10px;background:#EEF0F7;border-radius:12px;padding:9px 11px;font-size:.88rem;line-height:1.6;font-weight:700}
 .bk .key i{font-style:normal;color:var(--acc);font-weight:900;margin-right:4px}
@@ -355,6 +356,9 @@ function grade(id, good) {
 /* ───────── 문제 ───────── */
 let cur = null, lock = false, finished = false;
 const isEn = t => /^[\x20-\x7E’‘“”…–—]+$/.test(String(t || '').trim()) && /[a-z]/i.test(t);
+const isJa = t => /[ぁ-んァ-ヶ]/.test(String(t || ''));
+const canSay = t => isEn(t) || isJa(t);
+const rOf = k => { const x = ITEMS.find(y => y.k === k); return x && x.r ? x.r : ''; };
 function distract(field, item, n) {
   if (item.o && field === 'm') return shuffle([item.m, ...shuffle(item.o.filter(x => x !== item.m)).slice(0, n - 1)]);
   const fit = x => field !== 'k' || (!/[?？]$/.test(x.k) && !x.o && String(x.k).length <= 25);   // 거꾸로 문제엔 질문형 보기 빼기
@@ -388,12 +392,12 @@ function newQ() {
   $('boxLv').textContent = (item.st ? '⭐중요 · ' : '') + (s && s.seen ? '★'.repeat(s.b) + '☆'.repeat(5 - s.b) : 'NEW');
   const front = t === 'k2m' ? item.k : item.m, field = t === 'k2m' ? 'm' : 'k';
   cur.field = field;
-  $('q').innerHTML = `<div class="${bigCls(front)}">${esc(front)}</div>`;
-  $('ask').textContent = t === 'k2m' ? (isEn(item.k) ? '뜻은?' : '답은?') : (isEn(item.k) ? '영어로?' : '무엇일까요?');
+  $('q').innerHTML = `<div class="${bigCls(front)}">${esc(front)}</div>${t === 'k2m' && item.r ? `<div class="sub" style="font-size:1.3rem;color:var(--acc);font-weight:900">${esc(item.r)}</div>` : ''}`;
+  $('ask').textContent = t === 'k2m' ? (isJa(item.k) ? (item.r ? '무슨 뜻일까요?' : '어떻게 읽을까요?') : isEn(item.k) ? '뜻은?' : '답은?') : (isJa(item.k) ? '일본어로?' : isEn(item.k) ? '영어로?' : '무엇일까요?');
   const opts = distract(field, item, S.n);
-  $('opts').innerHTML = opts.map(o => `<button data-v="${esc(o)}">${esc(o)}</button>`).join('');
+  $('opts').innerHTML = opts.map(o => { const r = field === 'k' ? rOf(o) : ''; return `<button data-v="${esc(o)}">${esc(o)}${r ? `<small style="display:block;font-size:.85rem;opacity:.75;margin-top:2px">${esc(r)}</small>` : ''}</button>`; }).join('');
   $('opts').querySelectorAll('button').forEach(b => b.onclick = () => answer(b));
-  if (t === 'k2m' && S.speak && isEn(item.k)) speak(item.k);
+  if (t === 'k2m' && S.speak && (isEn(item.k) || (isJa(item.k) && item.r))) speak(item.k);
 }
 function answer(btn) {
   if (lock) return; lock = true;
@@ -402,19 +406,19 @@ function answer(btn) {
   if (!good) { btn.classList.add('ng'); $('card').classList.add('ngfx'); if (navigator.vibrate) navigator.vibrate(60); }
   else $('card').classList.add('okfx');
   S.tot++; S.today++; if (good) { S.ok++; S.streak++; } else S.streak = 0;
-  if (good && S.speak && isEn(cur.item.k) && cur.type === 'm2k') speak(cur.item.k);
+  if (good && S.speak && canSay(cur.item.k)) speak(cur.item.k);
   showReveal(); finishQ(good); $('nextBtn').classList.add('on'); lock = false;
 }
 function finishQ(good) { if (finished) return; finished = true; S.tick++; grade(cur.item.id, good); save(); updStats(); }
 function showReveal() {
   const it = cur.item;
-  let h = `<div class="t">${esc(it.k)} → <em>${esc(it.m)}</em></div>${it.e ? `<div class="e">${esc(it.e)}</div>` : ''}${it.t ? `<div class="tip">💡 ${esc(it.t)}</div>` : ''}`;
-  if (isEn(it.k)) h += `<button class="say" data-t="${esc(it.k)}">🔊 발음</button>`;
+  let h = `<div class="t">${esc(it.k)}${it.r ? ` <small style="font-size:.9rem;color:var(--sub)">(${esc(it.r)})</small>` : ''} → <em>${esc(it.m)}</em></div>${it.e ? `<div class="e">${esc(it.e)}</div>` : ''}${it.t ? `<div class="tip">💡 ${esc(it.t)}</div>` : ''}`;
+  if (canSay(it.k)) h += `<button class="say" data-t="${esc(it.k)}">🔊 발음</button>`;
   $('reveal').innerHTML = h; $('reveal').classList.add('on');
   $('reveal').querySelectorAll('.say').forEach(b => b.onclick = e => { e.stopPropagation(); speak(b.dataset.t); });
 }
 function nextQ() { newQ(); }
-function speak(txt) { try { if (!window.speechSynthesis) return; speechSynthesis.cancel(); const u = new SpeechSynthesisUtterance(txt); u.lang = 'en-US'; u.rate = .92; speechSynthesis.speak(u); } catch (e) {} }
+function speak(txt) { try { if (!window.speechSynthesis) return; speechSynthesis.cancel(); const u = new SpeechSynthesisUtterance(txt); u.lang = isJa(txt) ? 'ja-JP' : 'en-US'; u.rate = isJa(txt) ? .85 : .92; speechSynthesis.speak(u); } catch (e) {} }
 
 function updStats() {
   $('stToday').textContent = S.today;
@@ -448,7 +452,7 @@ function renderBook() {
       (b.rows || []).forEach(([k, v]) => { const id = 'r' + (n++), hd = bvHide && !bvOpen.has(id); h += `<div class="kv" data-o="${id}"><b>${esc(k)}</b><span class="${hd ? 'hid' : ''}">${esc(v)}</span></div>`; });
       if (b.table) {
         h += `<table><tr>${b.table.head.map(x => `<th>${esc(x)}</th>`).join('')}</tr>`;
-        b.table.rows.forEach(r => { const id = 'r' + (n++), hd = bvHide && !bvOpen.has(id); h += `<tr data-o="${id}">${r.map((x, c) => `<td class="${hd && c > 0 ? 'hid' : ''}">${esc(x)}</td>`).join('')}</tr>`; });
+        b.table.rows.forEach(r => { const id = 'r' + (n++), hd = bvHide && !bvOpen.has(id); h += `<tr data-o="${id}">${r.map((x, c) => { const [big, small] = String(x).split('|'); return small !== undefined ? `<td><b class="kn">${esc(big)}</b><small class="${hd ? 'hid' : ''}">${esc(small)}</small></td>` : `<td class="${hd && c > 0 ? 'hid' : ''}">${esc(x)}</td>`; }).join('')}</tr>`; });
         h += '</table>';
       }
       if (b.key && !bvHide) h += `<div class="key">${b.key.map(x => `<div><i>✔</i>${esc(x)}</div>`).join('')}</div>`;
@@ -485,7 +489,7 @@ function openSheet(kind) {
       <button class="pbtn" onclick="openSheet('add')">＋ 직접 추가</button>
       <button class="pbtn" style="background:#fff;color:var(--ink);border:1px solid var(--line)" onclick="openSheet('exam')">📅 시험 날짜 (D-day)</button>
       <div class="row">보기 개수<div class="seg">${[3, 4].map(n => `<button class="${S.n === n ? 'on' : ''}" onclick="S.n=${n};save();openSheet('set');nextQ()">${n}개</button>`).join('')}</div></div>
-      <div class="row">영어 발음 듣기<div class="seg">${[['켜기', true], ['끄기', false]].map(([l, v]) => `<button class="${S.speak === v ? 'on' : ''}" onclick="S.speak=${v};save();openSheet('set')">${l}</button>`).join('')}</div></div>
+      <div class="row">발음 듣기 (영어·일본어)<div class="seg">${[['켜기', true], ['끄기', false]].map(([l, v]) => `<button class="${S.speak === v ? 'on' : ''}" onclick="S.speak=${v};save();openSheet('set')">${l}</button>`).join('')}</div></div>
       <div class="row">전체 ${ITEMS.length}개 · ${subjects().map(s => `${esc(s)} ${ITEMS.filter(x => (x.s || '기타') === s).length}`).join(' · ') || '없음'}</div>
       ${S.hidden.length ? `<button class="danger" style="border-color:var(--line);color:var(--sub)" onclick="S.hidden=[];save();rebuild();closeSheet()">뺀 문제 ${S.hidden.length}개 되살리기</button>` : ''}
       <button class="danger" onclick="if(confirm('${S.sub === '전체' ? '전체' : esc(S.sub)} 학습 기록을 처음부터 다시 할까요?')){pool().forEach(x=>delete S.prog[x.id]);S.wrong=S.wrong.filter(id=>!pool().some(x=>x.id===id));save();closeSheet();updStats();nextQ()}">${S.sub === '전체' ? '전체' : esc(S.sub)} 기록 초기화</button>
