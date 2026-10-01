@@ -130,6 +130,64 @@ textarea.fld{min-height:170px;line-height:1.6;resize:vertical}
 .bk .key i{font-style:normal;color:var(--acc);font-weight:900;margin-right:4px}
 .bk .tp{margin-top:8px;background:#FBF2D9;color:#7A5A12;border-radius:12px;padding:8px 11px;font-size:.88rem;line-height:1.6;font-weight:800}
 .bv-row .del{grid-column:1/-1;justify-self:end;font-size:.74rem;color:var(--acc);font-weight:800}
+
+/* ───── 🎮 레슨 (상호작용) ───── */
+.lsbtn{width:100%;margin-top:12px;border:none;border-radius:18px;padding:15px;background:linear-gradient(135deg,#58CC02,#46A302);color:#fff;font-weight:900;font-size:1.08rem;box-shadow:0 4px 0 #3A8A02;cursor:pointer}
+.lsbtn:active{transform:translateY(3px);box-shadow:0 1px 0 #3A8A02}
+.lsbtn small{display:block;font-size:.75rem;font-weight:700;opacity:.9;margin-top:2px}
+.ls{position:fixed;inset:0;z-index:40;background:#fff;display:none;flex-direction:column}
+.ls.on{display:flex}
+.ls-top{display:flex;align-items:center;gap:12px;padding:14px 16px 6px;max-width:520px;width:100%;margin:0 auto}
+.ls-x{border:none;background:none;font-size:1.6rem;color:#AFAFAF;cursor:pointer;line-height:1}
+.ls-bar{flex:1;height:16px;border-radius:10px;background:#E5E5E5;overflow:hidden}.ls-bar i{display:block;height:100%;background:#58CC02;border-radius:10px;transition:width .35s;box-shadow:inset 0 -4px 0 rgba(0,0,0,.08)}
+.ls-combo{font-weight:900;color:#FF9600;font-size:.95rem;min-width:44px;text-align:right}
+.ls-body{flex:1;overflow:auto;max-width:520px;width:100%;margin:0 auto;padding:10px 18px 20px}
+.ls-h{font-size:1.35rem;font-weight:900;color:#3C3C3C;margin:10px 0 16px}
+.ls-say{display:flex;align-items:center;gap:12px;border:2px solid #E5E5E5;border-radius:18px;padding:14px 16px;margin-bottom:18px}
+.ls-say .spk{width:54px;height:54px;border-radius:14px;border:none;background:#1CB0F6;color:#fff;font-size:1.5rem;box-shadow:0 4px 0 #1899D6;cursor:pointer;flex-shrink:0}
+.ls-say .spk.slow{width:42px;height:42px;font-size:1.05rem;background:#fff;color:#1CB0F6;border:2px solid #E5E5E5;box-shadow:0 3px 0 #E5E5E5}
+.ls-say .jp{font-size:2rem;font-weight:700;font-family:'Hiragino Sans','Noto Sans JP',sans-serif;line-height:1.2}
+.ls-say .rd{font-size:1rem;font-weight:900;color:#1CB0F6;margin-top:2px}
+.ls-say .mn{font-size:1.15rem;font-weight:900;color:#3C3C3C}
+.ls-ch{display:grid;gap:10px}
+.ls-ch.two{grid-template-columns:1fr 1fr}
+.ls-ch button,.ls-tile,.ls-m button{border:2px solid #E5E5E5;background:#fff;border-radius:16px;padding:14px 12px;font-size:1.15rem;font-weight:800;color:#3C3C3C;box-shadow:0 4px 0 #E5E5E5;cursor:pointer;font-family:inherit}
+.ls-ch button small,.ls-m button small{display:block;font-size:.8rem;color:#1CB0F6;font-weight:900;margin-top:2px}
+.ls-ch button.sel,.ls-m button.sel{border-color:#84D8FF;background:#DDF4FF;box-shadow:0 4px 0 #84D8FF}
+.ls-ch button.big{font-size:2rem;padding:18px 8px;font-family:'Hiragino Sans','Noto Sans JP',sans-serif}
+.ls-m{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.ls-m button.done{opacity:.25;pointer-events:none;box-shadow:none}
+.ls-m button.bad{border-color:#FF4B4B;background:#FFDFE0;animation:shake .3s}
+.ls-m button.good{border-color:#58CC02;background:#D7FFB8}
+.ls-line{min-height:64px;border-bottom:2px solid #E5E5E5;display:flex;flex-wrap:wrap;gap:8px;padding:8px 0;margin-bottom:22px}
+.ls-bank{display:flex;flex-wrap:wrap;gap:8px;justify-content:center}
+.ls-tile{padding:10px 14px;font-size:1.15rem;font-family:'Hiragino Sans','Noto Sans JP',sans-serif}
+.ls-tile small{display:block;font-size:.72rem;color:#1CB0F6;font-weight:900;font-family:inherit}
+.ls-tile.gone{visibility:hidden}
+.ls-mic{display:block;margin:26px auto 10px;width:96px;height:96px;border-radius:24px;border:none;background:#1CB0F6;color:#fff;font-size:2.4rem;box-shadow:0 5px 0 #1899D6;cursor:pointer}
+.ls-mic.rec{background:#FF4B4B;box-shadow:0 5px 0 #EA2B2B;animation:pulse 1s infinite}
+@keyframes pulse{50%{transform:scale(1.06)}}
+.ls-heard{text-align:center;font-weight:800;color:#777;min-height:1.4em}
+.ls-skip{display:block;margin:10px auto;border:none;background:none;color:#AFAFAF;font-weight:900;font-size:.9rem;cursor:pointer}
+.ls-foot{border-top:2px solid #E5E5E5;padding:14px 18px 22px}
+.ls-foot>div{max-width:520px;margin:0 auto}
+.ls-foot.ok{background:#D7FFB8;border-color:#D7FFB8}.ls-foot.ng{background:#FFDFE0;border-color:#FFDFE0}
+.ls-fb{font-weight:900;font-size:1.2rem;margin-bottom:10px;display:none}
+.ls-foot.ok .ls-fb{display:block;color:#58A700}.ls-foot.ng .ls-fb{display:block;color:#EA2B2B}
+.ls-fb small{display:block;font-size:.95rem;font-weight:800;margin-top:4px}
+.ls-go{width:100%;border:none;border-radius:16px;padding:15px;font-weight:900;font-size:1.05rem;background:#58CC02;color:#fff;box-shadow:0 4px 0 #58A700;cursor:pointer}
+.ls-go:disabled{background:#E5E5E5;color:#AFAFAF;box-shadow:0 4px 0 #CFCFCF}
+.ls-foot.ng .ls-go{background:#FF4B4B;box-shadow:0 4px 0 #EA2B2B}
+.ls-pop{position:fixed;left:50%;top:38%;transform:translate(-50%,-50%) scale(.6);z-index:60;font-size:1.8rem;font-weight:900;color:#FF9600;opacity:0;pointer-events:none;transition:.25s;text-shadow:0 3px 0 #fff}
+.ls-pop.on{opacity:1;transform:translate(-50%,-50%) scale(1)}
+.ls-end{text-align:center;padding-top:40px}
+.ls-end .em{font-size:5rem;animation:pop .5s}
+.ls-end h2{font-size:1.6rem;font-weight:900;color:#FFC800;margin-top:8px}
+.ls-end .st{display:flex;gap:10px;justify-content:center;margin-top:22px}
+.ls-end .st div{border:2px solid;border-radius:16px;padding:10px 14px;min-width:92px;font-weight:900}
+.ls-end .st span{display:block;font-size:.75rem;color:#fff;margin:-10px -14px 8px;padding:4px;border-radius:12px 12px 0 0}
+.cf{position:fixed;top:-10px;width:10px;height:14px;z-index:70;animation:fall 2.4s linear forwards;pointer-events:none}
+@keyframes fall{to{transform:translateY(110vh) rotate(720deg)}}
 </style>
 </head>
 <body>
@@ -151,6 +209,7 @@ textarea.fld{min-height:170px;line-height:1.6;resize:vertical}
     <div><span>외운 것</span><b id="stMaster">0</b></div>
   </div>
   <div class="prog"><i id="progBar" style="width:0"></i></div>
+  <button class="lsbtn" onclick="startLesson()">🎮 레슨 시작<small id="lsSub">듣고 · 맞추고 · 만들고 · 말하기 · 12문제</small></button>
   <div class="card" id="card">
     <div class="step" id="steps"></div>
     <div class="box" id="boxLv"></div>
@@ -197,6 +256,14 @@ textarea.fld{min-height:170px;line-height:1.6;resize:vertical}
   <div class="bv-tabs" id="bvTabs"></div>
   <div id="bvList"></div>
 </div>
+
+<!-- 🎮 레슨 -->
+<div class="ls" id="ls">
+  <div class="ls-top"><button class="ls-x" onclick="quitLesson()">✕</button><div class="ls-bar"><i id="lsBar"></i></div><div class="ls-combo" id="lsCombo"></div></div>
+  <div class="ls-body" id="lsBody"></div>
+  <div class="ls-foot" id="lsFoot"><div><div class="ls-fb" id="lsFb"></div><button class="ls-go" id="lsGo" disabled>확인</button></div></div>
+</div>
+<div class="ls-pop" id="lsPop"></div>
 <div class="sheet" id="sheet" onclick="if(event.target===this)closeSheet()"><div id="sheetBody"></div></div>
 
 <script>
@@ -309,6 +376,7 @@ function rebuild() {
   const hid = new Set(S.hidden || []), seen = new Set();
   ITEMS = [...BASE.items, ...(S.mine || []).map(x => ({ ...x, mine: 1 }))].filter(x => x && x.k && x.m).filter(x => { const id = idOf(x); if (seen.has(id) || hid.has(id)) return false; seen.add(id); return true; });
   ITEMS.forEach(x => x.id = idOf(x));
+  ITEMS.forEach(x => { if (isJa(x.k) && [...x.k].length === 1) KANA[x.k] = x.m; });   // 글자 타일 읽기
   renderTabs(); renderDday(); updStats(); nextQ();
 }
 const subjects = () => [...new Set(ITEMS.map(x => x.s || '기타'))];
@@ -546,6 +614,154 @@ let deferredPrompt = null;
 window.addEventListener('beforeinstallprompt', e => { e.preventDefault(); deferredPrompt = e; $('installBtn').style.display = 'inline-block'; });
 async function doInstall() { if (!deferredPrompt) return; deferredPrompt.prompt(); await deferredPrompt.userChoice; deferredPrompt = null; $('installBtn').style.display = 'none'; }
 if ('serviceWorker' in navigator) window.addEventListener('load', () => navigator.serviceWorker.register('/sw.js', { updateViaCache: 'none' }).catch(() => {}));
+
+/* ───────── 🎮 레슨: 듣기 · 짝 맞추기 · 문장 만들기 · 말하기 (듀오링고처럼) ───────── */
+let L = null;
+const AC = window.AudioContext || window.webkitAudioContext; let actx = null;
+function beep(good) {
+  try { actx = actx || new AC(); const t = actx.currentTime;
+    (good ? [[880, 0], [1320, .09]] : [[220, 0], [180, .12]]).forEach(([f, d]) => { const o = actx.createOscillator(), g = actx.createGain(); o.type = good ? 'sine' : 'square'; o.frequency.value = f; g.gain.setValueAtTime(.12, t + d); g.gain.exponentialRampToValueAtTime(.001, t + d + .18); o.connect(g); g.connect(actx.destination); o.start(t + d); o.stop(t + d + .2); });
+  } catch (e) {}
+}
+function sayJ(txt, slow) { try { if (!window.speechSynthesis) return; speechSynthesis.cancel(); const u = new SpeechSynthesisUtterance(txt); u.lang = isJa(txt) ? 'ja-JP' : 'en-US'; u.rate = slow ? .55 : .85; speechSynthesis.speak(u); } catch (e) {} }
+const SR = window.SpeechRecognition || window.webkitSpeechRecognition;
+function lessonPool() { return pool().filter(x => String(x.k).length <= 24 && String(x.m).length <= 30); }
+function startLesson() {
+  const P = lessonPool();
+  if (P.length < 4) { alert('레슨을 하려면 문제가 4개 이상 있어야 해요'); return; }
+  // 복습 + 새 것 섞기: 아직 덜 외운 것 위주
+  const p = S.prog, score = x => { const q = p[x.id]; return (q && q.seen ? q.b * 10 : 25) + Math.random() * 18; };
+  const base = P.slice().sort((a, b) => score(a) - score(b)).slice(0, 14);
+  const ja = P.some(x => isJa(x.k));
+  const plan = [];
+  const pickOne = (f) => { const c = base.filter(f).filter(x => !plan.some(q => q.item === x)); return c[0] || null; };
+  const types = ['pick', 'listen', 'match', 'pick', 'build', 'speak', 'listen', 'pick', 'match', 'build', 'speak', 'pick'];
+  types.forEach(t => {
+    if (t === 'match') { plan.push({ t }); return; }
+    let it = null;
+    if (t === 'build') it = pickOne(x => x.w && x.w.length >= 2) || pickOne(x => isJa(x.k) && [...x.k].length >= 2 && [...x.k].length <= 6);
+    else if (t === 'listen' || t === 'speak') { if (!ja && !P.some(x => isEn(x.k))) t = 'pick'; it = pickOne(x => canSay(x.k)); }
+    if (t === 'speak' && !SR) t = 'listen';
+    if (!it) { t = 'pick'; it = pickOne(() => true) || base[Math.floor(Math.random() * base.length)]; }
+    plan.push({ t, item: it });
+  });
+  L = { plan, i: 0, ok: 0, tot: 0, combo: 0, best: 0, xp: 0, P };
+  $('ls').classList.add('on'); renderEx();
+}
+function quitLesson() { if (L && L.i > 0 && L.i < L.plan.length && !confirm('레슨을 그만할까요?')) return; $('ls').classList.remove('on'); L = null; try { speechSynthesis.cancel(); } catch (e) {} updStats(); }
+function foot(state, fb, label) {
+  const f = $('lsFoot'); f.className = 'ls-foot' + (state ? ' ' + state : '');
+  $('lsFb').innerHTML = fb || ''; $('lsGo').textContent = label || '확인';
+}
+function setGo(enabled, fn) { const g = $('lsGo'); g.disabled = !enabled; g.onclick = fn || null; }
+const optLabel = (v, withR) => { const r = withR ? rOf(v) : ''; return `${esc(v)}${r ? `<small>${esc(r)}</small>` : ''}`; };
+function renderEx() {
+  $('lsBar').style.width = (L.i / L.plan.length * 100) + '%';
+  $('lsCombo').textContent = L.combo >= 2 ? '🔥' + L.combo : '';
+  if (L.i >= L.plan.length) return endLesson();
+  const ex = L.plan[L.i], it = ex.item, B = $('lsBody');
+  foot('', '', '확인'); setGo(false);
+  if (ex.t === 'pick') {
+    const rev = !it.o && Math.random() < .35 && it.k.length <= 12;
+    const field = rev ? 'k' : 'm', opts = distract(field, it, 4);
+    B.innerHTML = `<div class="ls-h">${rev ? '알맞은 것을 고르세요' : '무슨 뜻일까요?'}</div>
+      <div class="ls-say">${canSay(it.k) && !rev ? '<button class="spk" id="exSpk">🔊</button>' : ''}<div>${rev ? `<div class="mn">${esc(it.m)}</div>` : `<div class="jp">${esc(it.k)}</div>${it.r ? `<div class="rd">${esc(it.r)}</div>` : ''}`}</div></div>
+      <div class="ls-ch ${opts.every(o => String(o).length <= 6) ? 'two' : ''}">${opts.map(o => `<button data-v="${esc(o)}" class="${rev && String(o).length <= 2 ? 'big' : ''}">${optLabel(o, rev)}</button>`).join('')}</div>`;
+    if ($('exSpk')) { $('exSpk').onclick = () => sayJ(it.k); if (S.speak) sayJ(it.k); }
+    choose(B, v => v === String(it[field]), it, `${it.k}${it.r ? ' (' + it.r + ')' : ''} = ${it.m}`);
+  } else if (ex.t === 'listen') {
+    const field = [...it.k].length <= 2 ? 'k' : 'm', opts = distract(field, it, 4);
+    B.innerHTML = `<div class="ls-h">듣고 ${field === 'k' ? '알맞은 글자를' : '뜻을'} 고르세요</div>
+      <div class="ls-say" style="justify-content:center;border:none"><button class="spk" id="exSpk" style="width:90px;height:90px;font-size:2.4rem;border-radius:22px">🔊</button><button class="spk slow" id="exSlow">🐢</button></div>
+      <div class="ls-ch two">${opts.map(o => `<button data-v="${esc(o)}" class="${field === 'k' ? 'big' : ''}">${esc(o)}</button>`).join('')}</div>`;
+    $('exSpk').onclick = () => sayJ(it.k); $('exSlow').onclick = () => sayJ(it.k, true); setTimeout(() => sayJ(it.k), 250);
+    choose(B, v => v === String(it[field]), it, `${it.k}${it.r ? ' (' + it.r + ')' : ''} = ${it.m}`);
+  } else if (ex.t === 'match') {
+    const used = new Set(), pairs = [];
+    shuffle(L.P.slice()).forEach(x => { if (pairs.length < 5 && !used.has(x.k) && !used.has(x.m) && String(x.m).length <= 14) { used.add(x.k); used.add(x.m); pairs.push(x); } });
+    const left = shuffle(pairs.slice()), right = shuffle(pairs.slice());
+    B.innerHTML = `<div class="ls-h">짝을 맞춰 보세요</div><div class="ls-m">${left.map((x, i) => `<button data-s="L" data-id="${esc(x.id)}" style="grid-column:1;grid-row:${i + 1}">${esc(x.k)}${x.r ? `<small>${esc(x.r)}</small>` : ''}</button>`).join('')}${right.map((x, i) => `<button data-s="R" data-id="${esc(x.id)}" style="grid-column:2;grid-row:${i + 1}">${esc(x.m)}</button>`).join('')}</div>`;
+    let sel = null, left2 = pairs.length, miss = 0;
+    B.querySelectorAll('.ls-m button').forEach(b => b.onclick = () => {
+      if (b.dataset.s === 'L' && isJa(b.textContent)) { const x = pairs.find(q => q.id === b.dataset.id); if (x) sayJ(x.k); }
+      if (!sel || sel.dataset.s === b.dataset.s) { if (sel) sel.classList.remove('sel'); sel = b; b.classList.add('sel'); return; }
+      const a = sel; sel = null; a.classList.remove('sel');
+      if (a.dataset.id === b.dataset.id) { beep(true); [a, b].forEach(x => { x.classList.add('good'); setTimeout(() => x.classList.add('done'), 250); }); grade(a.dataset.id, true); if (--left2 === 0) { S.tick++; save(); result(miss === 0, '', true); } }
+      else { beep(false); miss++; [a, b].forEach(x => { x.classList.add('bad'); setTimeout(() => x.classList.remove('bad'), 400); }); }
+    });
+  } else if (ex.t === 'build') {
+    const tiles = it.w && it.w.length >= 2 ? it.w.slice() : [...it.k].filter(c => c.trim());
+    const pool2 = it.w ? L.P.filter(x => x.w && x !== it).flatMap(x => x.w) : L.P.filter(x => isJa(x.k)).flatMap(x => [...x.k]);
+    const extra = shuffle([...new Set(pool2)].filter(t => !tiles.includes(t))).slice(0, Math.min(3, 7 - tiles.length));
+    const bank = shuffle([...tiles, ...extra].map((t, i) => ({ t, i })));
+    const rdOf = t => { if (!it.w) return KANA[t] || ''; const x = L.P.find(q => q.w && q.r && q.w.includes(t)); if (!x) return ''; const ri = x.w.indexOf(t), rs = (x.rw || []); return rs[ri] || ''; };
+    B.innerHTML = `<div class="ls-h">일본어로 만들어 보세요</div>
+      <div class="ls-say"><div><div class="mn">${esc(it.m)}</div>${it.r ? `<div class="rd">${esc(it.r)}</div>` : ''}</div></div>
+      <div class="ls-line" id="bLine"></div><div class="ls-bank" id="bBank">${bank.map(b => `<button class="ls-tile" data-i="${b.i}" data-t="${esc(b.t)}">${esc(b.t)}${rdOf(b.t) ? `<small>${esc(rdOf(b.t))}</small>` : ''}</button>`).join('')}</div>`;
+    const line = [];
+    const draw = () => { $('bLine').innerHTML = line.map((b, j) => `<button class="ls-tile" data-j="${j}">${esc(b.t)}</button>`).join(''); $('bLine').querySelectorAll('button').forEach(x => x.onclick = () => { const b = line.splice(+x.dataset.j, 1)[0]; B.querySelector(`#bBank [data-i="${b.i}"]`).classList.remove('gone'); draw(); }); setGo(line.length > 0, check); };
+    B.querySelectorAll('#bBank button').forEach(x => x.onclick = () => { if (x.classList.contains('gone')) return; x.classList.add('gone'); line.push({ t: x.dataset.t, i: +x.dataset.i }); if (isJa(x.dataset.t)) sayJ(x.dataset.t); draw(); });
+    const check = () => { const good = line.map(b => b.t).join(it.w ? ' ' : '') === tiles.join(it.w ? ' ' : ''); grade(it.id, good); S.tick++; save(); if (good) sayJ(it.k); result(good, `${it.k}${it.r ? ' (' + it.r + ')' : ''}`); };
+  } else if (ex.t === 'speak') {
+    B.innerHTML = `<div class="ls-h">듣고 따라 말해 보세요</div>
+      <div class="ls-say"><button class="spk" id="exSpk">🔊</button><div><div class="jp">${esc(it.k)}</div>${it.r ? `<div class="rd">${esc(it.r)}</div>` : ''}<div style="font-size:.9rem;color:#777;font-weight:700">${esc(it.m)}</div></div></div>
+      <button class="ls-mic" id="mic">🎤</button><div class="ls-heard" id="heard">마이크를 누르고 말해요</div>
+      <button class="ls-skip" id="skip">지금 말할 수 없어요</button>`;
+    $('exSpk').onclick = () => sayJ(it.k); setTimeout(() => sayJ(it.k), 250);
+    $('skip').onclick = () => { L.i++; renderEx(); };
+    $('mic').onclick = () => {
+      try { speechSynthesis.cancel(); } catch (e) {}
+      const r = new SR(); r.lang = isJa(it.k) ? 'ja-JP' : 'en-US'; r.interimResults = false; r.maxAlternatives = 5;
+      $('mic').classList.add('rec'); $('heard').textContent = '듣고 있어요…';
+      r.onresult = e => {
+        const alts = [...e.results[0]].map(a => a.transcript);
+        const norm = t => String(t).replace(/[\s、。！？!?.,ー〜]/g, '').toLowerCase();
+        const want = [it.k, ...(it.kj || [])].map(norm);
+        const good = alts.some(a => want.some(w => norm(a).includes(w) || w.includes(norm(a)) && norm(a).length >= Math.max(1, w.length - 1)));
+        $('heard').textContent = '들린 말: ' + alts[0];
+        grade(it.id, good); S.tick++; save();
+        if (good) result(true, '발음 좋아요! 👏');
+        else { result(false, '조금 다르게 들렸어요. 다시 해볼까요?', false, true); }
+      };
+      r.onerror = () => { $('heard').textContent = '소리를 못 들었어요. 다시 눌러 주세요'; };
+      r.onend = () => $('mic').classList.remove('rec');
+      try { r.start(); } catch (e) { $('heard').textContent = '이 폰에서는 마이크를 쓸 수 없어요'; }
+    };
+  }
+}
+const KANA = {};
+function choose(B, isRight, it, ans) {
+  let pickV = null;
+  B.querySelectorAll('.ls-ch button').forEach(b => b.onclick = () => { B.querySelectorAll('.ls-ch button').forEach(x => x.classList.remove('sel')); b.classList.add('sel'); pickV = b.dataset.v; if (isJa(pickV) && [...pickV].length <= 6) sayJ(pickV); setGo(true, () => { const good = isRight(pickV); grade(it.id, good); S.tick++; save(); B.querySelectorAll('.ls-ch button').forEach(x => x.style.pointerEvents = 'none'); if (good) sayJ(it.k); result(good, ans); }); });
+}
+function result(good, ans, auto, retry) {
+  L.tot++; S.tot++; S.today++;
+  if (good) { L.ok++; S.ok++; L.combo++; S.streak++; L.best = Math.max(L.best, L.combo); L.xp += 10 + (L.combo >= 3 ? 5 : 0); }
+  else { L.combo = 0; S.streak = 0; if (navigator.vibrate) navigator.vibrate(80); }
+  save(); beep(good);
+  $('lsCombo').textContent = L.combo >= 2 ? '🔥' + L.combo : '';
+  if (good && [3, 5, 8, 10].includes(L.combo)) pop(L.combo + ' 콤보!');
+  const msgs = good ? ['잘했어요!', '훌륭해요!', '정답!', '최고예요!', '완벽해요!'] : ['정답은:'];
+  foot(good ? 'ok' : 'ng', `${good ? '✔ ' : '✖ '}${msgs[Math.floor(Math.random() * msgs.length)]}${ans ? `<small>${esc(ans)}</small>` : ''}`, '계속');
+  setGo(true, () => { L.i++; renderEx(); });
+  if (retry) { $('lsGo').textContent = '다시 말하기'; setGo(true, () => renderEx()); $('lsFb').insertAdjacentHTML('beforeend', `<button class="ls-skip" style="margin:6px 0 0" onclick="L.i++;renderEx()">넘어가기 →</button>`); }
+}
+function pop(t) { const p = $('lsPop'); p.textContent = t; p.classList.add('on'); setTimeout(() => p.classList.remove('on'), 900); }
+function endLesson() {
+  const today = todayStr(); S.days = S.days || [];
+  if (!S.days.includes(today)) S.days.push(today);
+  let streak = 0; for (let d = new Date(today); S.days.includes(d.toISOString().slice(0, 10)); d.setDate(d.getDate() - 1)) streak++;
+  S.lessons = (S.lessons || 0) + 1; S.xp = (S.xp || 0) + L.xp; save();
+  const rate = L.tot ? Math.round(L.ok / L.tot * 100) : 100;
+  $('lsBar').style.width = '100%';
+  $('lsBody').innerHTML = `<div class="ls-end"><div class="em">${rate >= 90 ? '🏆' : rate >= 60 ? '🎉' : '💪'}</div><h2>${rate >= 90 ? '완벽한 레슨!' : rate >= 60 ? '레슨 완료!' : '잘 버텼어요!'}</h2>
+    <div class="st"><div style="border-color:#FFC800;color:#FFC800"><span style="background:#FFC800">경험치</span>⚡${L.xp}</div><div style="border-color:#58CC02;color:#58CC02"><span style="background:#58CC02">정답률</span>🎯${rate}%</div><div style="border-color:#FF9600;color:#FF9600"><span style="background:#FF9600">연속</span>🔥${streak}일</div></div>
+    <p style="margin-top:18px;color:#777;font-weight:800">최고 콤보 ${L.best} · 지금까지 레슨 ${S.lessons}번 · 총 ⚡${S.xp}</p></div>`;
+  foot('', '', '계속'); setGo(true, () => { $('ls').classList.remove('on'); L = null; updStats(); nextQ(); });
+  beep(true); setTimeout(() => beep(true), 180);
+  const colors = ['#58CC02', '#1CB0F6', '#FFC800', '#FF4B4B', '#CE82FF'];
+  for (let i = 0; i < 40; i++) { const c = document.createElement('i'); c.className = 'cf'; c.style.left = Math.random() * 100 + 'vw'; c.style.background = colors[i % 5]; c.style.animationDelay = Math.random() * .6 + 's'; document.body.appendChild(c); setTimeout(() => c.remove(), 3200); }
+}
 </script>
 </body>
 </html>
