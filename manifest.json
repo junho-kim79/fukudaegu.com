@@ -1,7 +1,7 @@
 {
-  "name": "福大邱 N3 - 무한 반복 일본어 암기",
-  "short_name": "福大邱 N3",
-  "description": "JLPT N3 단어·한자·문법을 한자-히라가나-뜻 연결로 무한 반복",
+  "name": "福大邱 · 우리집 암기장",
+  "short_name": "福大邱",
+  "description": "아빠 일본어 N3 · 동원 · 경원 · 지윤 시험기간 암기장",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#F6F1E7",

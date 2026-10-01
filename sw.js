@@ -1,7 +1,8 @@
-const CACHE_NAME = 'fukudaegu-v9-spacing';
+const CACHE_NAME = 'fukudaegu-v10-family';
 const ASSETS = [
   '/',
   '/index.html',
+  '/n3.html',
   '/manifest.json',
   '/data/n3.json'
 ];
