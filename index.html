@@ -362,7 +362,8 @@ function distract(field, item, n) {
   const sameU = same.filter(x => x.u && x.u === item.u), others = same.filter(x => !sameU.includes(x));
   let c = [...sameU, ...others];
   const lenOk = x => Math.abs(String(x[field]).length - String(item[field]).length) <= Math.max(6, String(item[field]).length * .8);
-  c = [...c.filter(lenOk), ...c.filter(x => !lenOk(x))];
+  const ko = t => /[가-힣]/.test(String(t)), langOk = x => ko(x[field]) === ko(item[field]);   // 한글 답엔 한글 보기, 영어 답엔 영어 보기
+  c = [...c.filter(x => langOk(x) && lenOk(x)), ...c.filter(x => langOk(x) && !lenOk(x)), ...c.filter(x => !langOk(x))];
   const rest = shuffle(ITEMS.filter(x => x !== item && fit(x) && x[field] !== item[field] && !c.includes(x)));
   const vals = [];
   for (const x of [...c, ...rest]) { if (vals.length >= n - 1) break; if (!vals.includes(x[field])) vals.push(x[field]); }
