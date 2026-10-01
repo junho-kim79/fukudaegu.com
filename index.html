@@ -171,6 +171,11 @@ textarea.fld{min-height:170px;line-height:1.6;resize:vertical}
   </div>
   <div class="clock"><span class="d" data-clk="d"></span><span class="t" data-clk="t"></span></div>
   <div class="people" id="people"></div>
+  <div style="display:flex;gap:8px;margin-top:18px">
+    <button class="ibtn" style="padding:10px 16px;font-size:.9rem" onclick="shareApp()">📤 앱 공유하기</button>
+    <button class="ibtn" id="installBtn" style="display:none;padding:10px 16px;font-size:.9rem" onclick="doInstall()">📲 홈 화면에 설치</button>
+  </div>
+  <p id="shareMsg" style="font-size:.8rem;min-height:1.2em;margin-top:8px"></p>
 </div>
 <!-- 비밀번호 -->
 <div class="lock" id="lock">
@@ -523,6 +528,18 @@ function addMine() {
 }
 document.addEventListener('keydown', e => { if (!ME) return; const k = +e.key; if (k >= 1 && k <= 4 && !e.target.closest('input,textarea')) { const b = $('opts').querySelectorAll('button')[k - 1]; if (b) b.click(); } if (e.key === 'Enter' && $('nextBtn').classList.contains('on') && !e.target.closest('input,textarea')) nextQ(); });
 
+/* ───────── 공유 · 설치 ───────── */
+const SHARE_URL = 'https://fukudaegu.com/';
+const SHARE_TXT = '福大邱 · 우리집 암기장 📚\n시험기간 암기 앱이야. 링크 열고 "홈 화면에 추가"(아이폰은 공유 → 홈 화면에 추가) 하면 앱처럼 쓸 수 있어!';
+async function shareApp() {
+  if (navigator.share) { try { await navigator.share({ title: '福大邱 · 우리집 암기장', text: SHARE_TXT, url: SHARE_URL }); return; } catch (e) { if (e.name === 'AbortError') return; } }
+  const t = SHARE_TXT + '\n' + SHARE_URL;
+  try { await navigator.clipboard.writeText(t); $('shareMsg').textContent = '링크를 복사했어요. 카톡에 붙여넣기 하세요.'; }
+  catch (e) { prompt('아래 내용을 복사해서 보내세요', t); }
+}
+let deferredPrompt = null;
+window.addEventListener('beforeinstallprompt', e => { e.preventDefault(); deferredPrompt = e; $('installBtn').style.display = 'inline-block'; });
+async function doInstall() { if (!deferredPrompt) return; deferredPrompt.prompt(); await deferredPrompt.userChoice; deferredPrompt = null; $('installBtn').style.display = 'none'; }
 if ('serviceWorker' in navigator) window.addEventListener('load', () => navigator.serviceWorker.register('/sw.js', { updateViaCache: 'none' }).catch(() => {}));
 </script>
 </body>
