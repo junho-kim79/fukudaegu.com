@@ -147,7 +147,7 @@ textarea.fld{min-height:170px;line-height:1.6;resize:vertical}
   <div class="sign">
     <div class="mark hanko" style="width:72px;height:72px;font-size:2.3rem;border-radius:20px;margin:0 auto">福</div>
     <div class="sm" style="margin-top:14px">FUKUDAEGU</div>
-    <h1 style="margin-top:4px">福大邱 · 우리집 암기장</h1><p>보고 · 고르고 · 무한 반복 · 본인만 들어가요</p>
+    <h1 style="margin-top:4px">福大邱 · 우리집 암기장</h1><p>보고 · 고르고 · 무한 반복</p>
   </div>
   <div class="clock"><span class="d" data-clk="d"></span><span class="t" data-clk="t"></span></div>
   <div class="people" id="people"></div>
@@ -209,10 +209,12 @@ setInterval(tickClock, 1000);
 
 /* ───────── 사람 고르기 · 잠금 ───────── */
 let ME = null, KEYBITS = null;
-$('people').innerHTML = PEOPLE.map((p, i) => `<button onclick="pickWho(${i})"><i style="background:${p.color}">${p.mark}</i><div>${p.name} 암기장<small>${p.sub ? p.sub + ' · ' : ''}🔒 비밀번호</small></div></button>`).join('');
+$('people').innerHTML = PEOPLE.map((p, i) => `<button onclick="pickWho(${i})"><i style="background:${p.color}">${p.mark}</i><div>${p.name} 암기장<small>${p.sub ? p.sub + ' · 🔒 비밀번호' : '바로 들어가기'}</small></div></button>`).join('');
 function pickWho(i) {
   const p = PEOPLE[i];
   if (p.href) { location.href = p.href; return; }
+  deriveBits(p, '000000').then(bits => unlock(p, bits));   // 아이들은 비밀번호 없이 바로
+  return;
   const saved = ls.get('ipsi_study_key_' + p.id);   // 이 폰에서 한 번 열었으면 바로
   if (saved) checkOf(unhex(saved)).then(c => { if (p.check && c === p.check) unlock(p, unhex(saved)); else openLock(p); }).catch(() => openLock(p));
   else openLock(p);
@@ -243,7 +245,6 @@ $('pinPad').querySelectorAll('button').forEach(b => b.onclick = async () => {
 });
 drawPin();
 function switchWho() {   // 로고 누르면 잠그고 사람 고르기로
-  if (ME && !confirm(ME.name + ' 암기장을 잠글까요?')) return;
   if (ME) ls.del('ipsi_study_key_' + ME.id);
   ME = null; KEYBITS = null; $('who').classList.remove('off');
 }
@@ -434,7 +435,7 @@ function openSheet(kind) {
       <div class="row">전체 ${ITEMS.length}개 · ${subjects().map(s => `${esc(s)} ${ITEMS.filter(x => (x.s || '기타') === s).length}`).join(' · ') || '없음'}</div>
       ${S.hidden.length ? `<button class="danger" style="border-color:var(--line);color:var(--sub)" onclick="S.hidden=[];save();rebuild();closeSheet()">뺀 문제 ${S.hidden.length}개 되살리기</button>` : ''}
       <button class="danger" onclick="if(confirm('${S.sub === '전체' ? '전체' : esc(S.sub)} 학습 기록을 처음부터 다시 할까요?')){pool().forEach(x=>delete S.prog[x.id]);S.wrong=S.wrong.filter(id=>!pool().some(x=>x.id===id));save();closeSheet();updStats();nextQ()}">${S.sub === '전체' ? '전체' : esc(S.sub)} 기록 초기화</button>
-      <button class="danger" style="border-color:var(--line);color:var(--sub)" onclick="closeSheet();switchWho()">🔒 잠그고 나가기</button>`;
+      <button class="danger" style="border-color:var(--line);color:var(--sub)" onclick="closeSheet();switchWho()">🏠 처음 화면으로</button>`;
   } else if (kind === 'add') {
     h = `<h3>＋ 직접 추가</h3>
       <label class="lbl">과목</label><input class="fld" id="adS" list="subList" value="${S.sub === '전체' ? '' : esc(S.sub)}" placeholder="예: 영어, 한국사, 과학">
